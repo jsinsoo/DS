@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- saved from url=(0203)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터52_막대그래프와 원그래프_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#f97316,#2563eb);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px} header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#f97316}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#ea580c;border-left:8px solid #2563eb;padding-left:12px}
+h3{color:#1d4ed8;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#fff7ed;border-left:6px solid #f97316}
+.quote{font-size:18px;background:#eff6ff;border-left:7px solid #2563eb;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#fed7aa}
+.q{border:1px solid #fed7aa;background:#fffaf5;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#ffedd5}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#f97316;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#ea580c}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터52. 막대그래프와 원그래프</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅴ. 데이터 시각화 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B052_%EB%A7%89%EB%8C%80%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80%EC%9B%90%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>막대그래프는 범주별 크기 비교에, 원그래프는 전체 중 구성 비율 표현에 적합한 시각화 방법이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>그래프는 데이터의 목적에 맞게 선택해야 하며, 잘못 선택하면 비교와 해석이 왜곡될 수 있다.</div>
+<div class="card goal"><b>핵심 질문</b><br>이 데이터는 “비교”가 중요한가, 아니면 “전체 중 비율”이 중요한가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅴ. 데이터 시각화 - 막대그래프와 원그래프</td></tr>
+<tr><td>수업 목표</td><td>① 막대그래프와 원그래프의 의미와 차이를 설명한다.<br>② 범주별 크기 비교와 전체 구성비 표현을 구별한다.<br>③ Matplotlib으로 막대그래프와 원그래프를 작성한다.<br>④ 그래프의 제목, 축, 단위, 비율 표시를 적절히 설정한다.<br>⑤ 그래프 선택과 축 표현의 윤리적 책임을 이해한다.</td></tr>
+<tr><td>지식 목표</td><td>범주형 데이터, 빈도, 비율, 구성비, 막대그래프, 원그래프, 축, 레이블, 범례의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>bar, barh, pie, value_counts, autopct를 이용해 그래프를 만들고 해석한다.</td></tr>
+<tr><td>태도 목표</td><td>그래프를 보기 좋게 꾸미기보다 데이터의 의미를 정직하게 전달하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 같은 자료를 막대그래프와 원그래프로 비교 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 그래프 선택 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 그래프 선택 이유 설명 활동</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+학생들이 좋아하는 급식 메뉴를 조사했다고 해 봅시다.
+“어떤 메뉴가 가장 인기 있는가?”를 알고 싶다면 막대그래프가 좋습니다.
+하지만 “전체 선택 중 카레가 차지하는 비율은 얼마인가?”를 알고 싶다면 원그래프가 더 어울릴 수 있습니다.
+인문 철학적으로 그래프 선택은 “무엇을 중심으로 세상을 볼 것인가”의 문제입니다.
+오늘 우리는 같은 데이터도 질문에 따라 다르게 보일 수 있음을 배우고, 목적에 맞는 그래프를 선택하는 힘을 기릅니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 막대그래프</h3>
+<p>막대그래프는 범주별 값의 크기를 막대의 길이로 나타내는 그래프이다. 학급별 평균 점수, 메뉴별 선호도, 지역별 이용자 수처럼 서로 다른 범주를 비교할 때 적합하다.</p>
+
+<h3>② 원그래프</h3>
+<p>원그래프는 전체를 하나의 원으로 보고, 각 항목이 차지하는 비율을 부채꼴 조각으로 나타내는 그래프이다. 전체 예산 중 항목별 비중, 설문 응답 비율, 관심 분야 구성비 등을 표현할 때 사용할 수 있다.</p>
+
+<h3>③ 범주형 데이터</h3>
+<p>범주형 데이터는 값을 몇 개의 종류나 분류로 나눈 데이터이다. 예를 들어 메뉴, 지역, 학급, 성별, 동아리 이름 등이 범주형 데이터이다.</p>
+
+<h3>④ 빈도</h3>
+<p>빈도는 어떤 범주가 몇 번 나타났는지를 뜻한다. 설문에서 카레를 선택한 학생 수, 특정 지역의 방문자 수처럼 개수를 세는 데 사용된다.</p>
+
+<h3>⑤ 비율과 구성비</h3>
+<p>비율은 전체 중 특정 항목이 차지하는 정도이다. 원그래프는 각 범주의 비율을 직관적으로 보여 주지만, 정확한 값 비교에는 막대그래프가 더 나은 경우가 많다.</p>
+
+<h3>⑥ 막대그래프가 적합한 경우</h3>
+<p>범주별 값을 정확히 비교하고 싶을 때 막대그래프가 좋다. 항목이 많거나 값 차이를 자세히 비교해야 할 때 원그래프보다 막대그래프가 더 읽기 쉽다.</p>
+
+<h3>⑦ 원그래프가 적합한 경우</h3>
+<p>전체 중 몇 개 항목의 비율을 간단히 보여 줄 때 원그래프가 적합하다. 그러나 항목이 많거나 비율이 비슷한 경우에는 비교가 어렵다.</p>
+
+<h3>⑧ 축과 레이블</h3>
+<p>막대그래프에서는 축 이름과 단위가 중요하다. 원그래프에서는 조각의 이름과 비율 표시가 중요하다. 제목, 축, 레이블이 없으면 그래프 의미를 오해할 수 있다.</p>
+
+<h3>⑨ 그래프 선택의 윤리</h3>
+<p>그래프는 사람의 판단에 영향을 준다. 일부 항목을 숨기거나, 축을 왜곡하거나, 전체 비율을 잘못 표시하면 사실을 다르게 보이게 할 수 있다. 그래프는 정직하고 투명하게 만들어야 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① 기본 막대그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+menus = ["Rice", "Curry", "Pasta", "Soup"]
+votes = [35, 50, 42, 28]
+
+plt.bar(menus, votes)
+plt.title("Menu Preference")
+plt.xlabel("Menu")
+plt.ylabel("Votes")
+plt.show()</code></pre>
+<p>메뉴별 투표 수를 막대그래프로 비교한다.</p>
+
+<h3>② 가로 막대그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+clubs = ["AI", "Robot", "Bio", "Math"]
+members = [30, 25, 20, 15]
+
+plt.barh(clubs, members)
+plt.title("Club Members")
+plt.xlabel("Members")
+plt.ylabel("Club")
+plt.show()</code></pre>
+<p>항목 이름이 길거나 항목 수가 많을 때 가로 막대그래프를 사용할 수 있다.</p>
+
+<h3>③ 기본 원그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+labels = ["AI", "Robot", "Bio", "Math"]
+values = [30, 25, 20, 25]
+
+plt.pie(values, labels=labels, autopct="%1.1f%%")
+plt.title("Club Interest Ratio")
+plt.show()</code></pre>
+<p>전체 동아리 관심 중 각 항목의 비율을 원그래프로 표현한다.</p>
+
+<h3>④ Pandas value_counts로 빈도 계산</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "menu": ["Rice", "Curry", "Rice", "Pasta", "Curry", "Curry"]
+})
+
+counts = df["menu"].value_counts()
+print(counts)</code></pre>
+<p>범주형 데이터에서 각 범주의 빈도를 계산한다.</p>
+
+<h3>⑤ 빈도 계산 후 막대그래프</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "menu": ["Rice", "Curry", "Rice", "Pasta", "Curry", "Curry"]
+})
+
+counts = df["menu"].value_counts()
+counts.plot(kind="bar")
+
+plt.title("Menu Counts")
+plt.xlabel("Menu")
+plt.ylabel("Count")
+plt.show()</code></pre>
+<p>설문 응답에서 메뉴별 선택 빈도를 계산하고 막대그래프로 나타낸다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 급식 메뉴 선호도 막대그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+menu = ["Bibimbap", "Curry", "Noodles", "Sandwich"]
+votes = [42, 55, 31, 20]
+
+plt.bar(menu, votes)
+plt.title("Lunch Menu Preference")
+plt.xlabel("Menu")
+plt.ylabel("Votes")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 메뉴별 투표 수를 비교할 때 막대그래프가 적합하다. 막대가 길수록 선택한 학생 수가 많다.</p>
+
+<h3>예제 2. 동아리 가입 비율 원그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+clubs = ["AI", "Robot", "Bio", "Math"]
+members = [40, 30, 20, 10]
+
+plt.pie(members, labels=clubs, autopct="%1.1f%%")
+plt.title("Club Member Ratio")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 전체 동아리 가입자 중 각 동아리가 차지하는 비율을 보여 준다.</p>
+
+<h3>예제 3. 지역별 도서관 이용자 수</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "region": ["Jeonju", "Iksan", "Gunsan", "Namwon"],
+    "users": [1200, 850, 930, 640]
+})
+
+plt.bar(df["region"], df["users"])
+plt.title("Library Users by Region")
+plt.xlabel("Region")
+plt.ylabel("Users")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 지역별 이용자 수를 비교한다. 지역 간 크기 차이가 막대 길이로 드러난다.</p>
+
+<h3>예제 4. 예산 구성비 원그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+items = ["Education", "Meal", "Facility", "Activity"]
+budget = [45, 25, 20, 10]
+
+plt.pie(budget, labels=items, autopct="%1.1f%%")
+plt.title("Budget Composition")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 전체 예산 중 각 항목이 차지하는 비중을 보여 준다.</p>
+
+<h3>예제 5. 원그래프보다 막대그래프가 나은 경우</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+subjects = ["Math", "Science", "English", "Korean", "History", "Art"]
+scores = [82, 85, 79, 81, 77, 80]
+
+plt.bar(subjects, scores)
+plt.title("Average Score by Subject")
+plt.xlabel("Subject")
+plt.ylabel("Score")
+plt.ylim(0, 100)
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 여러 과목 점수를 정확히 비교하려면 원그래프보다 막대그래프가 더 적합하다. y축을 0~100으로 두어 과장된 해석을 줄인다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q"><b>OX 1. 막대그래프는 범주별 값의 크기를 비교하는 데 적합하다.</b>
+   <div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 막대의 길이가 값의 크기를 나타내므로 범주 간 비교에 적합하다.</div></div><div class="q"><b>OX 2. 원그래프는 전체 중 각 항목이 차지하는 비율을 보여 줄 때 적합하다.</b>
+   <div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 원그래프는 전체를 100%로 보고 각 부분의 구성 비율을 표현한다.</div></div><div class="q"><b>OX 3. 막대그래프의 막대 길이는 데이터 값과 관련이 없다.</b>
+   <div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 막대 길이는 값의 크기를 시각적으로 표현한다.</div></div><div class="q"><b>OX 4. 원그래프는 항목이 너무 많을 때도 항상 가장 읽기 쉽다.</b>
+   <div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 항목이 많으면 조각이 많아져 비교가 어렵다.</div></div><div class="q"><b>OX 5. 범주별 투표 수를 비교할 때 막대그래프를 사용할 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 메뉴별 투표 수, 동아리별 인원수처럼 범주별 수량 비교에 적합하다.</div></div><div class="q"><b>OX 6. 전체 예산 중 항목별 비중을 보여 줄 때 원그래프를 사용할 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 전체를 구성하는 부분의 비율을 보여 주는 데 원그래프가 적합할 수 있다.</div></div><div class="q"><b>OX 7. 막대그래프의 y축은 해석에 영향을 줄 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 축 범위가 차이를 과장하거나 축소해 보이게 할 수 있다.</div></div><div class="q"><b>OX 8. 원그래프의 각 조각 합은 보통 전체 100%를 이룬다.</b>
+   <div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 원그래프는 전체에 대한 구성비를 나타낸다.</div></div><div class="q"><b>OX 9. 범주 이름, 단위, 제목 없이도 그래프는 항상 정확하게 해석된다.</b>
+   <div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 제목, 축, 단위, 범례가 없으면 의미를 오해할 수 있다.</div></div><div class="q"><b>OX 10. 그래프 선택은 데이터의 목적과 형태에 따라 달라져야 한다.</b>
+   <div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 비교 목적이면 막대그래프, 구성비 목적이면 원그래프가 더 적합할 수 있다.</div></div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q"><b>문항 1. 막대그래프가 가장 적합한 경우는?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 범주별 값의 크기를 비교할 때</label><label><input type="radio" name="mc0" value="1"> 2. 전체 중 구성비만 보여 줄 때</label><label><input type="radio" name="mc0" value="2"> 3. 두 수치형 변수 관계만 볼 때</label><label><input type="radio" name="mc0" value="3"> 4. 시간 변화만 볼 때</label><label><input type="radio" name="mc0" value="4"> 5. 문자열을 암호화할 때</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대그래프는 범주별 수량이나 크기 비교에 적합하다.</div></div><div class="q"><b>문항 2. 원그래프가 가장 적합한 경우는?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 전체 중 각 항목의 비율을 보여 줄 때</label><label><input type="radio" name="mc1" value="1"> 2. 두 변수의 상관관계를 볼 때</label><label><input type="radio" name="mc1" value="2"> 3. 시간 흐름을 볼 때</label><label><input type="radio" name="mc1" value="3"> 4. 결측값을 찾을 때</label><label><input type="radio" name="mc1" value="4"> 5. 자료형을 변환할 때</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 원그래프는 전체를 구성하는 부분의 비율을 보여 줄 때 사용한다.</div></div><div class="q"><b>문항 3. 메뉴별 선호도 투표 수를 비교할 때 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 막대그래프</label><label><input type="radio" name="mc2" value="1"> 2. 원그래프만</label><label><input type="radio" name="mc2" value="2"> 3. 산점도만</label><label><input type="radio" name="mc2" value="3"> 4. 지도</label><label><input type="radio" name="mc2" value="4"> 5. 히트맵만</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 범주별 투표 수 비교에는 막대그래프가 직관적이다.</div></div><div class="q"><b>문항 4. 예산 전체 중 교육비·급식비·시설비 비율을 보여 줄 때 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 원그래프</label><label><input type="radio" name="mc3" value="1"> 2. 산점도</label><label><input type="radio" name="mc3" value="2"> 3. 상자그림만</label><label><input type="radio" name="mc3" value="3"> 4. 선그래프만</label><label><input type="radio" name="mc3" value="4"> 5. 텍스트 파일</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 전체 예산을 구성하는 비율을 보여 줄 때 원그래프가 적합할 수 있다.</div></div><div class="q"><b>문항 5. 막대그래프 해석에서 확인해야 할 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 축 범위와 단위</label><label><input type="radio" name="mc4" value="1"> 2. 컴퓨터 배경화면</label><label><input type="radio" name="mc4" value="2"> 3. 마우스 속도</label><label><input type="radio" name="mc4" value="3"> 4. 파일 확장자만</label><label><input type="radio" name="mc4" value="4"> 5. 코드 줄 수만</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대그래프는 축 범위와 단위가 해석에 중요하다.</div></div><div class="q"><b>문항 6. 원그래프 사용 시 주의할 점은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 항목이 너무 많으면 비교가 어려울 수 있다</label><label><input type="radio" name="mc5" value="1"> 2. 항목이 많을수록 항상 좋다</label><label><input type="radio" name="mc5" value="2"> 3. 합계가 100%가 아니어도 무조건 원그래프가 좋다</label><label><input type="radio" name="mc5" value="3"> 4. 축 이름이 반드시 필요하다</label><label><input type="radio" name="mc5" value="4"> 5. 시간 변화에 가장 적합하다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 원그래프는 항목이 많으면 조각 비교가 어려워진다.</div></div><div class="q"><b>문항 7. 막대그래프의 막대 길이가 의미하는 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 값의 크기</label><label><input type="radio" name="mc6" value="1"> 2. 파일 크기</label><label><input type="radio" name="mc6" value="2"> 3. 자료형</label><label><input type="radio" name="mc6" value="3"> 4. 그래프 제목</label><label><input type="radio" name="mc6" value="4"> 5. 컴퓨터 속도</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대 길이는 데이터 값의 크기를 나타낸다.</div></div><div class="q"><b>문항 8. 원그래프에서 각 조각이 의미하는 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 전체 중 해당 항목의 비율</label><label><input type="radio" name="mc7" value="1"> 2. 항상 시간 순서</label><label><input type="radio" name="mc7" value="2"> 3. 두 변수의 관계</label><label><input type="radio" name="mc7" value="3"> 4. 결측값 개수</label><label><input type="radio" name="mc7" value="4"> 5. 자료형 변환</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 원그래프의 조각은 전체에서 차지하는 비중을 나타낸다.</div></div><div class="q"><b>문항 9. 그래프를 정직하게 표현하기 위한 태도는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 제목, 단위, 출처를 명확히 한다</label><label><input type="radio" name="mc8" value="1"> 2. 축을 의도적으로 숨긴다</label><label><input type="radio" name="mc8" value="2"> 3. 불리한 항목을 삭제한다</label><label><input type="radio" name="mc8" value="3"> 4. 값을 임의로 바꾼다</label><label><input type="radio" name="mc8" value="4"> 5. 비율 합계를 속인다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 정직한 그래프는 제목, 단위, 출처, 기준을 분명히 제시한다.</div></div><div class="q"><b>문항 10. 다음 중 막대그래프보다 원그래프가 더 적합한 질문은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 전체 동아리 가입자 중 AI동아리 비율은 얼마인가?</label><label><input type="radio" name="mc9" value="1"> 2. 학급별 평균 점수는 어느 반이 높은가?</label><label><input type="radio" name="mc9" value="2"> 3. 월별 매출은 어떻게 변했는가?</label><label><input type="radio" name="mc9" value="3"> 4. 수면 시간과 집중도는 어떤 관계인가?</label><label><input type="radio" name="mc9" value="4"> 5. 점수 분포는 어떤가?</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 전체 중 한 항목의 비중을 묻는 질문에는 원그래프가 적합할 수 있다.</div></div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터52_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 막대그래프와 원그래프가 서로 다른 질문에 답한다는 것을 배웠습니다.
+컴퓨터과학은 데이터를 그래프로 바꾸는 도구를 제공하고, 수학은 빈도와 비율을 정확히 계산하게 하며, 과학은 그래프가 관찰 사실을 왜곡하지 않는지 확인하게 합니다.
+그리고 인문 철학은 우리에게 묻습니다. “우리는 비교를 보여 주고 싶은가, 아니면 전체 속 비중을 보여 주고 싶은가?”
+좋은 데이터 과학자는 그래프를 많이 그리는 사람이 아니라, 질문에 맞는 그래프를 정직하게 선택하는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터52 막대그래프와 원그래프</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [{"q": "막대그래프는 범주별 값의 크기를 비교하는 데 적합하다.", "a": "O", "e": "막대의 길이가 값의 크기를 나타내므로 범주 간 비교에 적합하다."}, {"q": "원그래프는 전체 중 각 항목이 차지하는 비율을 보여 줄 때 적합하다.", "a": "O", "e": "원그래프는 전체를 100%로 보고 각 부분의 구성 비율을 표현한다."}, {"q": "막대그래프의 막대 길이는 데이터 값과 관련이 없다.", "a": "X", "e": "막대 길이는 값의 크기를 시각적으로 표현한다."}, {"q": "원그래프는 항목이 너무 많을 때도 항상 가장 읽기 쉽다.", "a": "X", "e": "항목이 많으면 조각이 많아져 비교가 어렵다."}, {"q": "범주별 투표 수를 비교할 때 막대그래프를 사용할 수 있다.", "a": "O", "e": "메뉴별 투표 수, 동아리별 인원수처럼 범주별 수량 비교에 적합하다."}, {"q": "전체 예산 중 항목별 비중을 보여 줄 때 원그래프를 사용할 수 있다.", "a": "O", "e": "전체를 구성하는 부분의 비율을 보여 주는 데 원그래프가 적합할 수 있다."}, {"q": "막대그래프의 y축은 해석에 영향을 줄 수 있다.", "a": "O", "e": "축 범위가 차이를 과장하거나 축소해 보이게 할 수 있다."}, {"q": "원그래프의 각 조각 합은 보통 전체 100%를 이룬다.", "a": "O", "e": "원그래프는 전체에 대한 구성비를 나타낸다."}, {"q": "범주 이름, 단위, 제목 없이도 그래프는 항상 정확하게 해석된다.", "a": "X", "e": "제목, 축, 단위, 범례가 없으면 의미를 오해할 수 있다."}, {"q": "그래프 선택은 데이터의 목적과 형태에 따라 달라져야 한다.", "a": "O", "e": "비교 목적이면 막대그래프, 구성비 목적이면 원그래프가 더 적합할 수 있다."}];
+const mcQuestions = [{"q": "막대그래프가 가장 적합한 경우는?", "c": ["범주별 값의 크기를 비교할 때", "전체 중 구성비만 보여 줄 때", "두 수치형 변수 관계만 볼 때", "시간 변화만 볼 때", "문자열을 암호화할 때"], "a": 0, "e": "막대그래프는 범주별 수량이나 크기 비교에 적합하다."}, {"q": "원그래프가 가장 적합한 경우는?", "c": ["전체 중 각 항목의 비율을 보여 줄 때", "두 변수의 상관관계를 볼 때", "시간 흐름을 볼 때", "결측값을 찾을 때", "자료형을 변환할 때"], "a": 0, "e": "원그래프는 전체를 구성하는 부분의 비율을 보여 줄 때 사용한다."}, {"q": "메뉴별 선호도 투표 수를 비교할 때 적합한 그래프는?", "c": ["막대그래프", "원그래프만", "산점도만", "지도", "히트맵만"], "a": 0, "e": "범주별 투표 수 비교에는 막대그래프가 직관적이다."}, {"q": "예산 전체 중 교육비·급식비·시설비 비율을 보여 줄 때 적합한 그래프는?", "c": ["원그래프", "산점도", "상자그림만", "선그래프만", "텍스트 파일"], "a": 0, "e": "전체 예산을 구성하는 비율을 보여 줄 때 원그래프가 적합할 수 있다."}, {"q": "막대그래프 해석에서 확인해야 할 것은?", "c": ["축 범위와 단위", "컴퓨터 배경화면", "마우스 속도", "파일 확장자만", "코드 줄 수만"], "a": 0, "e": "막대그래프는 축 범위와 단위가 해석에 중요하다."}, {"q": "원그래프 사용 시 주의할 점은?", "c": ["항목이 너무 많으면 비교가 어려울 수 있다", "항목이 많을수록 항상 좋다", "합계가 100%가 아니어도 무조건 원그래프가 좋다", "축 이름이 반드시 필요하다", "시간 변화에 가장 적합하다"], "a": 0, "e": "원그래프는 항목이 많으면 조각 비교가 어려워진다."}, {"q": "막대그래프의 막대 길이가 의미하는 것은?", "c": ["값의 크기", "파일 크기", "자료형", "그래프 제목", "컴퓨터 속도"], "a": 0, "e": "막대 길이는 데이터 값의 크기를 나타낸다."}, {"q": "원그래프에서 각 조각이 의미하는 것은?", "c": ["전체 중 해당 항목의 비율", "항상 시간 순서", "두 변수의 관계", "결측값 개수", "자료형 변환"], "a": 0, "e": "원그래프의 조각은 전체에서 차지하는 비중을 나타낸다."}, {"q": "그래프를 정직하게 표현하기 위한 태도는?", "c": ["제목, 단위, 출처를 명확히 한다", "축을 의도적으로 숨긴다", "불리한 항목을 삭제한다", "값을 임의로 바꾼다", "비율 합계를 속인다"], "a": 0, "e": "정직한 그래프는 제목, 단위, 출처, 기준을 분명히 제시한다."}, {"q": "다음 중 막대그래프보다 원그래프가 더 적합한 질문은?", "c": ["전체 동아리 가입자 중 AI동아리 비율은 얼마인가?", "학급별 평균 점수는 어느 반이 높은가?", "월별 매출은 어떻게 변했는가?", "수면 시간과 집중도는 어떤 관계인가?", "점수 분포는 어떤가?"], "a": 0, "e": "전체 중 한 항목의 비중을 묻는 질문에는 원그래프가 적합할 수 있다."}];
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q"><b>OX ${i+1}. ${item.q}</b>
+   <div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{ labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`; });
+   area.innerHTML += `<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){ document.getElementById("scoreText").innerText = oxScore + mcScore; }
+function showAll(cls){ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block"); }
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\n";
+ content += "Ⅴ. 데이터 시각화 - 막대그래프와 원그래프\n";
+ content += "학번: " + id + "\n";
+ content += "이름: " + name + "\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\n";
+ content += "형성평가 점수: " + mcScore + " / 50\n";
+ content += "총점: " + total + " / 100\n";
+ content += "응시시각: " + time + "\n";
+ content += "\n[학습 성찰]\n막대그래프는 범주별 크기 비교에, 원그래프는 전체 중 구성 비율 표현에 적합하며 목적에 맞는 그래프 선택이 중요하다.\n";
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터52_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- saved from url=(0185)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터23_웹데이터수집기초_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f5f7fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#7c3aed,#0ea5e9);color:white;padding:34px 44px}
+header h1{margin:0;font-size:30px}
+header p{margin:10px 0 0;font-size:17px}
+.wrap{display:grid;grid-template-columns:265px 1fr;min-height:100vh}
+nav{background:#111827;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin-top:0}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#7c3aed}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#5b21b6;border-left:8px solid #0ea5e9;padding-left:12px}
+h3{color:#0369a1;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#eef2ff;border-left:6px solid #7c3aed}
+.quote{font-size:18px;background:#fff7ed;border-left:7px solid #f97316;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#e0f2fe}
+.q{border:1px solid #ddd6fe;background:#fbfaff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#f3e8ff}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#7c3aed;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#5b21b6}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;border-radius:20px;padding:4px 10px;margin:3px;font-size:13px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터23. 웹 데이터 수집 기초</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅱ. 데이터 수집 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B023_%EC%9B%B9%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>웹 데이터 수집은 인터넷에 공개된 정보를 목적에 맞게 요청·해석·정리하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>웹은 거대한 정보 공간이지만, 데이터를 수집할 때는 기술적 방법뿐 아니라 접근 허용, 저작권, 개인정보, 서버 부담을 함께 고려해야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>웹에 공개된 정보는 모두 자유롭게 수집해도 되는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅱ. 데이터 수집 - 웹 데이터 수집 기초</td></tr>
+<tr><td>수업 목표</td><td>① 웹 페이지의 기본 구조와 URL의 의미를 설명한다.<br>② HTTP 요청과 응답의 흐름을 이해한다.<br>③ requests, BeautifulSoup을 이용한 기초 웹 데이터 수집 과정을 설명한다.<br>④ 웹 데이터 수집 시 robots.txt, 저작권, 개인정보, 서버 부담을 고려한다.</td></tr>
+<tr><td>지식 목표</td><td>URL, HTML, 태그, HTTP, 상태 코드, 크롤링, 스크래핑, 파싱, robots.txt의 의미를 이해한다.</td></tr>
+<tr><td>기능 목표</td><td>웹 페이지 요청, HTML 일부 추출, 표 데이터 읽기, 문자열 정리, CSV 저장의 기초를 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>웹 데이터를 책임 있게 수집하고, 타인의 권리와 공공성을 존중하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 생활 속 웹 정보 찾기 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 윤리 기준 토론 → 평가 10분: OX 및 5지선다</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석 활동, 웹 데이터 수집 윤리 체크리스트 작성</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+우리는 매일 검색창에 질문을 입력하고, 뉴스 제목을 읽고, 날씨와 가격과 리뷰를 확인합니다.
+웹은 현대 사회의 거대한 기억 창고입니다.
+하지만 기억을 읽는 일에는 책임이 따릅니다.
+철학적으로 웹 데이터 수집은 “공개된 정보와 사적인 권리의 경계”를 생각하게 합니다.
+오늘 수업에서는 컴퓨터가 웹을 어떻게 읽는지 배우면서, 동시에 인간이 어떤 태도로 데이터를 다루어야 하는지도 함께 생각해 보겠습니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 웹 데이터</h3>
+<p>웹 데이터는 웹 페이지, 뉴스, 게시글, 표, 이미지 설명, 상품 정보, 날씨 정보처럼 인터넷을 통해 제공되는 다양한 정보이다. 웹 데이터는 실시간성이 높고 양이 많다는 장점이 있지만, 형식이 일정하지 않거나 저작권·개인정보 문제가 포함될 수 있다.</p>
+
+<h3>② URL</h3>
+<p>URL은 웹 자원의 주소이다. 예를 들어 <span class="badge">https</span>는 통신 방식, <span class="badge">example.com</span>은 도메인, <span class="badge">/news</span>는 경로, <span class="badge">?q=data</span>는 요청 조건을 나타낼 수 있다. URL을 이해하면 어떤 데이터를 어디에 요청하는지 파악할 수 있다.</p>
+
+<h3>③ HTML과 태그</h3>
+<p>HTML은 웹 페이지의 구조를 표현하는 언어이다. 제목은 h1, 문단은 p, 링크는 a, 표는 table 태그로 표현된다. 웹 스크래핑은 이러한 태그 구조를 분석하여 필요한 정보만 추출하는 과정이다.</p>
+
+<h3>④ HTTP 요청과 응답</h3>
+<p>브라우저나 파이썬 프로그램이 서버에 웹 페이지를 요청하면, 서버는 상태 코드와 함께 HTML, JSON 같은 데이터를 응답한다. 200은 성공, 404는 찾을 수 없음, 403은 접근 금지, 500은 서버 오류를 의미한다.</p>
+
+<h3>⑤ 크롤링과 스크래핑</h3>
+<p>크롤링은 여러 웹 페이지를 따라가며 데이터를 수집하는 과정이고, 스크래핑은 특정 웹 페이지에서 필요한 데이터를 추출하는 과정이다. 수업 초급 단계에서는 많은 페이지를 자동 방문하기보다, 허용된 예제 페이지나 저장된 HTML을 대상으로 구조를 이해하는 것이 좋다.</p>
+
+<h3>⑥ 파싱</h3>
+<p>파싱은 HTML이나 JSON 같은 데이터의 구조를 해석하여 필요한 요소를 꺼내는 과정이다. BeautifulSoup은 HTML 파싱에 자주 사용되는 파이썬 라이브러리이다.</p>
+
+<h3>⑦ robots.txt</h3>
+<p>robots.txt는 웹 사이트가 자동 수집 프로그램에게 접근 가능 범위를 알려 주는 파일이다. 법적 허용 여부를 완전히 대신하지는 않지만, 웹 데이터 수집을 시작하기 전에 반드시 확인해야 할 중요한 신호이다.</p>
+
+<h3>⑧ 웹 데이터 수집 윤리</h3>
+<p>웹에 보인다고 해서 모두 자유롭게 수집·복제·재배포할 수 있는 것은 아니다. 개인정보, 저작권, 이용 약관, 서버 부담, 출처 표기, 수집 목적의 정당성을 고려해야 한다. 교육용 실습에서는 공개 예제, 직접 만든 HTML, 공공데이터, 공식 API를 우선 활용하는 것이 안전하다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① URL 문자열 이해</h3>
+<pre><code>from urllib.parse import urlparse
+
+url = "https://example.com/search?q=data"
+parsed = urlparse(url)
+
+print(parsed.scheme)
+print(parsed.netloc)
+print(parsed.path)
+print(parsed.query)</code></pre>
+<p>URL을 통신 방식, 도메인, 경로, 쿼리 문자열로 나누어 확인한다.</p>
+
+<h3>② 웹 페이지 요청 기초</h3>
+<pre><code>import requests
+
+url = "https://example.com"
+response = requests.get(url, timeout=5)
+
+print(response.status_code)
+print(response.text[:100])</code></pre>
+<p>웹 서버에 요청을 보내고 응답 상태 코드와 HTML 앞부분을 확인한다. 실제 수업에서는 접속 가능한 안전한 예제 사이트를 사용한다.</p>
+
+<h3>③ HTML 태그 파싱</h3>
+<pre><code>from bs4 import BeautifulSoup
+
+html = "&lt;html&gt;&lt;body&gt;&lt;h1&gt;데이터 과학&lt;/h1&gt;&lt;p&gt;웹 데이터 수집&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+soup = BeautifulSoup(html, "html.parser")
+
+print(soup.find("h1").text)
+print(soup.find("p").text)</code></pre>
+<p>문자열로 저장된 HTML에서 h1 태그와 p 태그의 텍스트를 추출한다.</p>
+
+<h3>④ 표 데이터 읽기</h3>
+<pre><code>import pandas as pd
+
+html = """
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;지역&lt;/th&gt;&lt;th&gt;기온&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;전주&lt;/td&gt;&lt;td&gt;23&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;군산&lt;/td&gt;&lt;td&gt;21&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+"""
+
+tables = pd.read_html(html)
+print(tables[0])</code></pre>
+<p>HTML 안의 table 태그를 Pandas DataFrame으로 읽어 표 형태로 분석한다.</p>
+
+<h3>⑤ 수집한 데이터 CSV 저장</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "제목": ["날씨", "교통", "미세먼지"],
+    "분류": ["환경", "교통", "환경"]
+})
+
+df.to_csv("web_data.csv", index=False, encoding="utf-8-sig")
+print("저장 완료")</code></pre>
+<p>수집·정리한 데이터를 CSV 파일로 저장한다. utf-8-sig는 엑셀에서 한글이 깨지는 현상을 줄이는 데 도움이 된다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 뉴스 제목 HTML에서 제목 추출</h3>
+<pre><code>from bs4 import BeautifulSoup
+
+html = """
+&lt;div class='news'&gt;
+  &lt;h2&gt;전주 지역 청소년 데이터 캠프 개최&lt;/h2&gt;
+  &lt;h2&gt;미세먼지 예보 서비스 개선&lt;/h2&gt;
+&lt;/div&gt;
+"""
+
+soup = BeautifulSoup(html, "html.parser")
+titles = [tag.text for tag in soup.find_all("h2")]
+
+print(titles)</code></pre>
+<p><b>상세 설명:</b> 뉴스 페이지 구조를 단순화한 HTML에서 h2 태그만 찾아 제목 목록을 만든다. 실제 사이트를 무단 수집하지 않고도 구조 이해 실습이 가능하다.</p>
+
+<h3>예제 2. 상품 가격 문자열 정리</h3>
+<pre><code>prices = ["12,000원", "8,500원", "23,300원"]
+
+numbers = [int(p.replace(",", "").replace("원", "")) for p in prices]
+
+print(numbers)
+print("평균 가격:", sum(numbers) / len(numbers))</code></pre>
+<p><b>상세 설명:</b> 웹에서 가져온 가격 문자열에는 쉼표와 단위가 포함될 수 있다. 분석을 위해 숫자형으로 변환한다.</p>
+
+<h3>예제 3. 학교 급식 예시 데이터 추출</h3>
+<pre><code>from bs4 import BeautifulSoup
+
+html = """
+&lt;ul&gt;
+  &lt;li class='menu'&gt;현미밥&lt;/li&gt;
+  &lt;li class='menu'&gt;된장국&lt;/li&gt;
+  &lt;li class='menu'&gt;닭갈비&lt;/li&gt;
+&lt;/ul&gt;
+"""
+
+soup = BeautifulSoup(html, "html.parser")
+menus = [m.text for m in soup.select(".menu")]
+
+print("오늘의 급식:", menus)</code></pre>
+<p><b>상세 설명:</b> class 이름이 menu인 요소를 선택하여 급식 목록을 추출한다. CSS 선택자의 기초를 이해할 수 있다.</p>
+
+<h3>예제 4. 웹 수집 결과를 표로 정리</h3>
+<pre><code>import pandas as pd
+
+data = [
+    {"키워드": "기후", "빈도": 12},
+    {"키워드": "교통", "빈도": 8},
+    {"키워드": "복지", "빈도": 5}
+]
+
+df = pd.DataFrame(data)
+print(df.sort_values("빈도", ascending=False))</code></pre>
+<p><b>상세 설명:</b> 웹에서 수집한 키워드 빈도 데이터를 DataFrame으로 정리하고 빈도순으로 정렬한다.</p>
+
+<h3>예제 5. 수집 윤리 체크리스트 만들기</h3>
+<pre><code>checks = {
+    "robots.txt 확인": True,
+    "개인정보 제외": True,
+    "출처 표기": True,
+    "과도한 요청 방지": True,
+    "저작권 확인": False
+}
+
+for item, ok in checks.items():
+    print(item, "통과" if ok else "확인 필요")</code></pre>
+<p><b>상세 설명:</b> 웹 데이터 수집 전에 확인해야 할 윤리 항목을 점검한다. 기술 실습과 책임 있는 태도를 함께 연결한다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q">
+   <b>OX 1. 웹 데이터 수집은 웹에 있는 정보를 목적에 맞게 요청하고 정리하는 과정이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox0" value="O"> O</label>
+   <label><input type="radio" name="ox0" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 웹 페이지나 웹 API에서 필요한 데이터를 가져와 분석 가능한 형태로 정리하는 과정이다.</div>
+   </div><div class="q">
+   <b>OX 2. 웹에 공개된 정보는 모두 자유롭게 복사하고 재배포해도 된다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox1" value="O"> O</label>
+   <label><input type="radio" name="ox1" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 공개되어 있어도 저작권, 이용 약관, 개인정보, 수집 제한을 확인해야 한다.</div>
+   </div><div class="q">
+   <b>OX 3. URL은 웹 자원의 주소를 나타낸다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox2" value="O"> O</label>
+   <label><input type="radio" name="ox2" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> URL은 통신 방식, 도메인, 경로, 요청 조건 등을 포함할 수 있다.</div>
+   </div><div class="q">
+   <b>OX 4. HTML은 웹 페이지의 구조를 표현하는 언어이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox3" value="O"> O</label>
+   <label><input type="radio" name="ox3" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> HTML은 제목, 문단, 링크, 표 등 웹 문서의 구조를 태그로 표현한다.</div>
+   </div><div class="q">
+   <b>OX 5. HTTP 상태 코드 404는 일반적으로 요청이 성공했다는 뜻이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox4" value="O"> O</label>
+   <label><input type="radio" name="ox4" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 404는 요청한 자원을 찾을 수 없음을 의미한다. 성공은 보통 200이다.</div>
+   </div><div class="q">
+   <b>OX 6. 스크래핑은 웹 페이지에서 필요한 정보를 추출하는 과정이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox5" value="O"> O</label>
+   <label><input type="radio" name="ox5" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 스크래핑은 HTML 등에서 원하는 데이터만 골라내는 과정이다.</div>
+   </div><div class="q">
+   <b>OX 7. robots.txt는 자동 수집 프로그램에게 접근 가능 범위를 알려 주는 파일이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox6" value="O"> O</label>
+   <label><input type="radio" name="ox6" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> robots.txt는 크롤러가 접근해도 되는 영역과 제한 영역을 안내한다.</div>
+   </div><div class="q">
+   <b>OX 8. BeautifulSoup은 HTML 파싱에 활용될 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox7" value="O"> O</label>
+   <label><input type="radio" name="ox7" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> BeautifulSoup은 HTML이나 XML 구조를 해석하고 태그를 찾는 데 사용된다.</div>
+   </div><div class="q">
+   <b>OX 9. 웹 데이터 수집 시 서버에 과도하게 많은 요청을 보내도 상관없다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox8" value="O"> O</label>
+   <label><input type="radio" name="ox8" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 과도한 요청은 서버에 부담을 주므로 요청 간격과 횟수를 조절해야 한다.</div>
+   </div><div class="q">
+   <b>OX 10. 웹 데이터 수집 결과를 분석하려면 문자열 정리와 표 형태 정리가 필요할 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox9" value="O"> O</label>
+   <label><input type="radio" name="ox9" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 가격, 날짜, 단위 등이 포함된 문자열은 분석 전에 정리해야 한다.</div>
+   </div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q">
+   <b>문항 1. 웹 데이터 수집에 대한 설명으로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 웹에 있는 정보를 목적에 맞게 요청·추출·정리하는 과정</label><label><input type="radio" name="mc0" value="1"> 2. 컴퓨터를 포맷하는 과정</label><label><input type="radio" name="mc0" value="2"> 3. 인터넷 속도를 측정하는 과정</label><label><input type="radio" name="mc0" value="3"> 4. 모든 파일을 삭제하는 과정</label><label><input type="radio" name="mc0" value="4"> 5. 그래프 색깔만 바꾸는 과정</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 웹 데이터 수집은 웹 자원에서 필요한 정보를 가져와 분석 가능한 형태로 정리하는 과정이다.</div>
+   </div><div class="q">
+   <b>문항 2. URL의 역할로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 웹 자원의 주소를 나타낸다</label><label><input type="radio" name="mc1" value="1"> 2. 이미지 색상을 바꾼다</label><label><input type="radio" name="mc1" value="2"> 3. 파이썬 변수를 삭제한다</label><label><input type="radio" name="mc1" value="3"> 4. 컴퓨터 전원을 켠다</label><label><input type="radio" name="mc1" value="4"> 5. 표 계산식을 자동 생성한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> URL은 웹 페이지나 파일 같은 자원의 위치와 요청 정보를 나타낸다.</div>
+   </div><div class="q">
+   <b>문항 3. HTML 태그 중 제목을 나타낼 때 자주 사용하는 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc2" value="0"> 1. h1</label><label><input type="radio" name="mc2" value="1"> 2. print</label><label><input type="radio" name="mc2" value="2"> 3. csv</label><label><input type="radio" name="mc2" value="3"> 4. int</label><label><input type="radio" name="mc2" value="4"> 5. while</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> h1, h2 등은 HTML에서 제목 구조를 나타내는 태그이다.</div>
+   </div><div class="q">
+   <b>문항 4. HTTP 상태 코드 200의 일반적인 의미는?</b>
+   <div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 요청 성공</label><label><input type="radio" name="mc3" value="1"> 2. 찾을 수 없음</label><label><input type="radio" name="mc3" value="2"> 3. 접근 금지</label><label><input type="radio" name="mc3" value="3"> 4. 서버 오류</label><label><input type="radio" name="mc3" value="4"> 5. 문법 오류</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 200은 일반적으로 요청이 성공적으로 처리되었음을 의미한다.</div>
+   </div><div class="q">
+   <b>문항 5. BeautifulSoup의 주요 용도는?</b>
+   <div class="choices"><label><input type="radio" name="mc4" value="0"> 1. HTML 파싱</label><label><input type="radio" name="mc4" value="1"> 2. 컴퓨터 종료</label><label><input type="radio" name="mc4" value="2"> 3. 음악 재생</label><label><input type="radio" name="mc4" value="3"> 4. 이미지 압축</label><label><input type="radio" name="mc4" value="4"> 5. 비밀번호 생성</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> BeautifulSoup은 HTML 구조를 해석하고 원하는 태그나 텍스트를 추출하는 데 사용된다.</div>
+   </div><div class="q">
+   <b>문항 6. 웹 데이터 수집 전에 robots.txt를 확인하는 이유는?</b>
+   <div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 자동 수집 접근 가능 범위를 확인하기 위해</label><label><input type="radio" name="mc5" value="1"> 2. 화면 밝기를 조절하기 위해</label><label><input type="radio" name="mc5" value="2"> 3. 코드 글꼴을 바꾸기 위해</label><label><input type="radio" name="mc5" value="3"> 4. CSV 파일을 암호화하기 위해</label><label><input type="radio" name="mc5" value="4"> 5. 프린터를 선택하기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> robots.txt는 크롤러가 접근 가능한 영역과 제한 영역을 안내한다.</div>
+   </div><div class="q">
+   <b>문항 7. 웹에서 가져온 '12,000원'을 숫자로 분석하려면 필요한 작업은?</b>
+   <div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 쉼표와 원 문자를 제거하고 정수형으로 변환</label><label><input type="radio" name="mc6" value="1"> 2. 그대로 평균 계산</label><label><input type="radio" name="mc6" value="2"> 3. 파일을 삭제</label><label><input type="radio" name="mc6" value="3"> 4. HTML 태그를 모두 추가</label><label><input type="radio" name="mc6" value="4"> 5. 컴퓨터를 재부팅</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 문자열에 포함된 단위와 쉼표를 제거해야 수치 분석이 가능하다.</div>
+   </div><div class="q">
+   <b>문항 8. 웹 데이터 수집 윤리로 적절하지 않은 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 개인정보 무단 수집</label><label><input type="radio" name="mc7" value="1"> 2. 출처 표기</label><label><input type="radio" name="mc7" value="2"> 3. 서버 부담 줄이기</label><label><input type="radio" name="mc7" value="3"> 4. 저작권 확인</label><label><input type="radio" name="mc7" value="4"> 5. 이용 약관 확인</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 개인정보를 무단으로 수집하는 것은 적절하지 않다.</div>
+   </div><div class="q">
+   <b>문항 9. 크롤링과 스크래핑의 관계로 적절한 설명은?</b>
+   <div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 크롤링은 여러 페이지를 탐색하며 수집하고, 스크래핑은 필요한 정보를 추출한다</label><label><input type="radio" name="mc8" value="1"> 2. 둘 다 컴퓨터를 끄는 말이다</label><label><input type="radio" name="mc8" value="2"> 3. 스크래핑은 수학 공식만 푸는 일이다</label><label><input type="radio" name="mc8" value="3"> 4. 크롤링은 파일 압축만 의미한다</label><label><input type="radio" name="mc8" value="4"> 5. 두 용어는 데이터와 무관하다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 크롤링은 탐색·수집의 흐름, 스크래핑은 필요한 데이터 추출에 초점이 있다.</div>
+   </div><div class="q">
+   <b>문항 10. 교육용 웹 데이터 수집 실습에서 가장 안전한 자료는?</b>
+   <div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 직접 만든 예제 HTML 또는 공식 API</label><label><input type="radio" name="mc9" value="1"> 2. 로그인이 필요한 개인 게시판</label><label><input type="radio" name="mc9" value="2"> 3. 개인정보가 포함된 명단</label><label><input type="radio" name="mc9" value="3"> 4. 저작권이 불명확한 유료 자료</label><label><input type="radio" name="mc9" value="4"> 5. 접근 금지된 서버</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 직접 만든 HTML, 공개 예제, 공식 API, 공공데이터를 활용하면 윤리적 위험을 줄일 수 있다.</div>
+   </div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터23_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 웹을 사람이 보는 화면이 아니라 컴퓨터가 해석할 수 있는 구조로 바라보았습니다.
+컴퓨터과학은 요청과 응답, 파싱과 저장의 방법을 알려 주고,
+수학은 수집된 데이터 속 패턴을 정량적으로 해석하게 하며,
+과학은 관찰과 검증의 태도를 요구합니다.
+그러나 인문 철학은 한 가지 질문을 던집니다.
+“수집할 수 있다는 것이 곧 수집해도 된다는 뜻인가?”
+좋은 데이터 과학자는 많이 모으는 사람이 아니라, 필요한 데이터를 정당하고 책임 있게 다루는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터23 웹 데이터 수집 기초</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [
+ {q:"웹 데이터 수집은 웹에 있는 정보를 목적에 맞게 요청하고 정리하는 과정이다.", a:"O", e:"웹 페이지나 웹 API에서 필요한 데이터를 가져와 분석 가능한 형태로 정리하는 과정이다."},
+ {q:"웹에 공개된 정보는 모두 자유롭게 복사하고 재배포해도 된다.", a:"X", e:"공개되어 있어도 저작권, 이용 약관, 개인정보, 수집 제한을 확인해야 한다."},
+ {q:"URL은 웹 자원의 주소를 나타낸다.", a:"O", e:"URL은 통신 방식, 도메인, 경로, 요청 조건 등을 포함할 수 있다."},
+ {q:"HTML은 웹 페이지의 구조를 표현하는 언어이다.", a:"O", e:"HTML은 제목, 문단, 링크, 표 등 웹 문서의 구조를 태그로 표현한다."},
+ {q:"HTTP 상태 코드 404는 일반적으로 요청이 성공했다는 뜻이다.", a:"X", e:"404는 요청한 자원을 찾을 수 없음을 의미한다. 성공은 보통 200이다."},
+ {q:"스크래핑은 웹 페이지에서 필요한 정보를 추출하는 과정이다.", a:"O", e:"스크래핑은 HTML 등에서 원하는 데이터만 골라내는 과정이다."},
+ {q:"robots.txt는 자동 수집 프로그램에게 접근 가능 범위를 알려 주는 파일이다.", a:"O", e:"robots.txt는 크롤러가 접근해도 되는 영역과 제한 영역을 안내한다."},
+ {q:"BeautifulSoup은 HTML 파싱에 활용될 수 있다.", a:"O", e:"BeautifulSoup은 HTML이나 XML 구조를 해석하고 태그를 찾는 데 사용된다."},
+ {q:"웹 데이터 수집 시 서버에 과도하게 많은 요청을 보내도 상관없다.", a:"X", e:"과도한 요청은 서버에 부담을 주므로 요청 간격과 횟수를 조절해야 한다."},
+ {q:"웹 데이터 수집 결과를 분석하려면 문자열 정리와 표 형태 정리가 필요할 수 있다.", a:"O", e:"가격, 날짜, 단위 등이 포함된 문자열은 분석 전에 정리해야 한다."}
+];
+
+const mcQuestions = [
+ {q:"웹 데이터 수집에 대한 설명으로 가장 적절한 것은?", c:["웹에 있는 정보를 목적에 맞게 요청·추출·정리하는 과정","컴퓨터를 포맷하는 과정","인터넷 속도를 측정하는 과정","모든 파일을 삭제하는 과정","그래프 색깔만 바꾸는 과정"], a:0, e:"웹 데이터 수집은 웹 자원에서 필요한 정보를 가져와 분석 가능한 형태로 정리하는 과정이다."},
+ {q:"URL의 역할로 가장 적절한 것은?", c:["웹 자원의 주소를 나타낸다","이미지 색상을 바꾼다","파이썬 변수를 삭제한다","컴퓨터 전원을 켠다","표 계산식을 자동 생성한다"], a:0, e:"URL은 웹 페이지나 파일 같은 자원의 위치와 요청 정보를 나타낸다."},
+ {q:"HTML 태그 중 제목을 나타낼 때 자주 사용하는 것은?", c:["h1","print","csv","int","while"], a:0, e:"h1, h2 등은 HTML에서 제목 구조를 나타내는 태그이다."},
+ {q:"HTTP 상태 코드 200의 일반적인 의미는?", c:["요청 성공","찾을 수 없음","접근 금지","서버 오류","문법 오류"], a:0, e:"200은 일반적으로 요청이 성공적으로 처리되었음을 의미한다."},
+ {q:"BeautifulSoup의 주요 용도는?", c:["HTML 파싱","컴퓨터 종료","음악 재생","이미지 압축","비밀번호 생성"], a:0, e:"BeautifulSoup은 HTML 구조를 해석하고 원하는 태그나 텍스트를 추출하는 데 사용된다."},
+ {q:"웹 데이터 수집 전에 robots.txt를 확인하는 이유는?", c:["자동 수집 접근 가능 범위를 확인하기 위해","화면 밝기를 조절하기 위해","코드 글꼴을 바꾸기 위해","CSV 파일을 암호화하기 위해","프린터를 선택하기 위해"], a:0, e:"robots.txt는 크롤러가 접근 가능한 영역과 제한 영역을 안내한다."},
+ {q:"웹에서 가져온 '12,000원'을 숫자로 분석하려면 필요한 작업은?", c:["쉼표와 원 문자를 제거하고 정수형으로 변환","그대로 평균 계산","파일을 삭제","HTML 태그를 모두 추가","컴퓨터를 재부팅"], a:0, e:"문자열에 포함된 단위와 쉼표를 제거해야 수치 분석이 가능하다."},
+ {q:"웹 데이터 수집 윤리로 적절하지 않은 것은?", c:["개인정보 무단 수집","출처 표기","서버 부담 줄이기","저작권 확인","이용 약관 확인"], a:0, e:"개인정보를 무단으로 수집하는 것은 적절하지 않다."},
+ {q:"크롤링과 스크래핑의 관계로 적절한 설명은?", c:["크롤링은 여러 페이지를 탐색하며 수집하고, 스크래핑은 필요한 정보를 추출한다","둘 다 컴퓨터를 끄는 말이다","스크래핑은 수학 공식만 푸는 일이다","크롤링은 파일 압축만 의미한다","두 용어는 데이터와 무관하다"], a:0, e:"크롤링은 탐색·수집의 흐름, 스크래핑은 필요한 데이터 추출에 초점이 있다."},
+ {q:"교육용 웹 데이터 수집 실습에서 가장 안전한 자료는?", c:["직접 만든 예제 HTML 또는 공식 API","로그인이 필요한 개인 게시판","개인정보가 포함된 명단","저작권이 불명확한 유료 자료","접근 금지된 서버"], a:0, e:"직접 만든 HTML, 공개 예제, 공식 API, 공공데이터를 활용하면 윤리적 위험을 줄일 수 있다."}
+];
+
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q">
+   <b>OX ${i+1}. ${item.q}</b>
+   <div class="choices">
+   <label><input type="radio" name="ox${i}" value="O"> O</label>
+   <label><input type="radio" name="ox${i}" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{
+     labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;
+   });
+   area.innerHTML += `<div class="q">
+   <b>문항 ${i+1}. ${item.q}</b>
+   <div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){
+ document.getElementById("scoreText").innerText = oxScore + mcScore;
+}
+
+function showAll(cls){
+ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block");
+}
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\\n";
+ content += "Ⅱ. 데이터 수집 - 웹 데이터 수집 기초\\n";
+ content += "학번: " + id + "\\n";
+ content += "이름: " + name + "\\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\\n";
+ content += "형성평가 점수: " + mcScore + " / 50\\n";
+ content += "총점: " + total + " / 100\\n";
+ content += "응시시각: " + time + "\\n";
+ content += "\\n[학습 성찰]\\n웹 데이터 수집은 기술적 가능성뿐 아니라 robots.txt, 저작권, 개인정보, 서버 부담을 함께 고려해야 한다.\\n";
+
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터23_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

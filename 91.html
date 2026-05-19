@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0203)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터91_환경 문제 해결과 데이터_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#064e3b,#16a34a,#0ea5e9);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#16a34a}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#15803d;border-left:8px solid #0ea5e9;padding-left:12px}h3{color:#0369a1;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#f0fdf4;border-left:6px solid #16a34a}
+.quote{font-size:18px;background:#ecfeff;border-left:7px solid #0ea5e9;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#dcfce7;border:1px solid #86efac;border-radius:999px;padding:8px 13px;font-weight:700;color:#14532d}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#bbf7d0}
+.q{border:1px solid #bbf7d0;background:#fbfffc;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#dcfce7}
+.answer{display:none;background:#eff6ff;border-left:6px solid #3b82f6;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#16a34a;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#15803d}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터91. 환경 문제 해결과 데이터</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅸ. 데이터 과학과 미래 사회 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B091_%ED%99%98%EA%B2%BD%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>환경 문제 해결과 데이터는 환경 상태와 인간 활동의 영향을 수치로 분석하여 지속 가능한 해결책을 찾는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터는 환경 문제를 보이게 만들고 해결책의 근거를 제공하지만, 해석에는 과학적 검토와 윤리적 책임이 함께 필요하다.</div>
+<div class="card goal"><b>핵심 질문</b><br>데이터는 우리가 환경 문제를 더 정확히 이해하고 더 책임 있게 행동하도록 어떻게 도울 수 있는가?</div></div>
+<div class="flow"><span class="step">기후</span><span class="step">탄소</span><span class="step">대기질</span><span class="step">에너지</span><span class="step">쓰레기</span><span class="step">생태</span><span class="step">환경 정의</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅸ. 데이터 과학과 미래 사회 - 환경 문제 해결과 데이터</td></tr>
+<tr><td>수업 목표</td><td>① 환경 데이터의 종류와 의미를 설명한다.<br>② Pandas로 환경 지표를 정리하고 요약 통계를 계산한다.<br>③ Matplotlib으로 환경 지표의 변화와 비교를 시각화한다.<br>④ 상관관계와 인과관계를 구별하여 환경 데이터를 해석한다.<br>⑤ 데이터 기반 환경 해결책과 윤리적 책임을 제안한다.</td></tr>
+<tr><td>지식 목표</td><td>환경 데이터, 탄소 배출량, 대기질, 에너지 사용량, 쓰레기 배출량, 재활용률, 생태 데이터, 환경 정의, 지속 가능성의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>Pandas 통계 계산·변화량 계산, Matplotlib 선그래프·막대그래프·산점도 작성, 환경 해결 제안문 작성을 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>환경 데이터를 개인과 공동체, 미래 세대의 책임이라는 관점에서 해석하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: “환경 문제는 왜 데이터가 필요할까?” 질문 제시 → 전개 35분: 환경 데이터 분석 코드 실습 → 정리 10분: 데이터 기반 해결책 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 환경 문제 해결 데이터 분석 미니 보고서</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">환경 문제는 멀리 있는 이야기가 아닙니다. 우리가 사용하는 전기, 버리는 쓰레기, 숨 쉬는 공기, 이동하는 방식이 모두 데이터로 기록될 수 있습니다. 데이터는 눈에 보이지 않던 환경 변화를 보이게 만들고, 막연한 걱정을 구체적인 행동으로 바꾸는 근거가 됩니다. 인문 철학적으로 환경 데이터 분석은 “우리는 미래 세대에게 어떤 지구를 남길 것인가?”라는 질문과 연결됩니다. 오늘 우리는 환경 문제를 데이터로 읽고, 더 지속 가능한 선택을 제안하는 방법을 배웁니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 환경 데이터</h3><p>환경 데이터는 기온, 강수량, 미세먼지, 탄소 배출량, 전력 사용량, 쓰레기 배출량, 재활용률, 생물 다양성처럼 환경 상태와 인간 활동의 영향을 수치로 기록한 데이터이다.</p>
+<h3>② 기후 변화 데이터</h3><p>기후 변화 데이터는 장기간의 기온, 해수면, 강수 패턴, 온실가스 농도 변화를 포함한다. 단기간의 날씨와 장기간의 기후를 구별해 해석해야 한다.</p>
+<h3>③ 탄소 배출량</h3><p>탄소 배출량은 에너지 사용, 산업 활동, 교통, 소비 활동 등에서 발생하는 온실가스 배출을 나타내는 지표이다. 기후 변화 대응 정책의 중요한 근거가 된다.</p>
+<h3>④ 대기질 데이터</h3><p>미세먼지, 초미세먼지, 오존, 이산화질소 같은 대기질 데이터는 호흡 건강과 도시 환경을 이해하는 데 활용된다.</p>
+<h3>⑤ 에너지 사용 데이터</h3><p>전력, 가스, 연료 사용량 데이터는 에너지 소비 패턴을 파악하고 절약 방안을 찾는 데 도움이 된다.</p>
+<h3>⑥ 쓰레기와 재활용 데이터</h3><p>쓰레기 배출량, 재활용률, 음식물 쓰레기량 데이터는 자원 순환과 폐기물 감축 정책을 설계하는 데 사용될 수 있다.</p>
+<h3>⑦ 생태 데이터</h3><p>생물종 개체 수, 서식지 변화, 수질, 토양 상태 같은 데이터는 생태계 건강성을 판단하는 데 활용된다.</p>
+<h3>⑧ 데이터 기반 해결 과정</h3><p>환경 문제 해결은 문제 정의, 데이터 수집, 전처리, 분석, 시각화, 원인 가설 검토, 해결책 제안, 효과 평가의 흐름으로 진행될 수 있다.</p>
+<h3>⑨ 환경 시각화</h3><p>선그래프는 시간 변화, 막대그래프는 지역 비교, 산점도는 두 변수 관계, 지도 시각화는 공간적 차이를 보여 주는 데 유용하다.</p>
+<h3>⑩ 환경 정의와 윤리</h3><p>환경 피해는 모든 사람에게 동일하게 나타나지 않는다. 취약 계층, 지역 격차, 미래 세대의 권리를 고려하는 환경 정의 관점이 중요하다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 환경 DataFrame 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "electricity": [320, 300, 280, 260],
+    "waste": [45, 42, 40, 38],
+    "pm10": [55, 48, 42, 35]
+})
+
+print(df)</code></pre><p>월별 전력 사용량, 쓰레기 배출량, 미세먼지 데이터를 표 형태로 만든다.</p>
+
+<h3>② 요약 통계 확인</h3><pre><code>print(df[["electricity", "waste", "pm10"]].describe())</code></pre><p>환경 지표의 평균, 최솟값, 최댓값을 확인한다.</p>
+
+<h3>③ 평균 전력 사용량 계산</h3><pre><code>avg_electricity = df["electricity"].mean()
+print("Average electricity:", avg_electricity)</code></pre><p>분석 기간 동안의 평균 전력 사용량을 계산한다.</p>
+
+<h3>④ 쓰레기 배출량 감소 확인</h3><pre><code>first = df["waste"].iloc[0]
+last = df["waste"].iloc[-1]
+change = last - first
+
+print("Waste change:", change)</code></pre><p>처음 달과 마지막 달의 쓰레기 배출량 차이를 계산한다.</p>
+
+<h3>⑤ 환경 지표 변화 선그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+plt.plot(df["month"], df["electricity"], marker="o", label="Electricity")
+plt.plot(df["month"], df["waste"], marker="o", label="Waste")
+plt.title("Environmental Indicators")
+plt.xlabel("Month")
+plt.ylabel("Value")
+plt.legend()
+plt.show()</code></pre><p>월별 환경 지표 변화를 선그래프로 비교한다.</p>
+
+<h3>⑥ 전력 사용량과 미세먼지 산점도</h3><pre><code>plt.scatter(df["electricity"], df["pm10"])
+plt.title("Electricity and PM10")
+plt.xlabel("Electricity")
+plt.ylabel("PM10")
+plt.show()</code></pre><p>전력 사용량과 미세먼지 농도의 관계를 살펴본다. 상관관계가 인과관계를 의미하지는 않는다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 월별 전력 사용량 평균</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "electricity": [320, 300, 280, 260]
+})
+
+print("average:", df["electricity"].mean())</code></pre><p><b>상세 설명:</b> 월별 전력 사용량 평균을 계산해 에너지 소비 수준을 파악한다.</p>
+
+<h3>예제 2. 쓰레기 배출량 감소율 계산</h3><pre><code>start_waste = 50
+end_waste = 40
+
+reduction_rate = (start_waste - end_waste) / start_waste * 100
+print("reduction rate:", reduction_rate)</code></pre><p><b>상세 설명:</b> 쓰레기 감축 캠페인 전후의 감소율을 계산한다.</p>
+
+<h3>예제 3. 지역별 재활용률 비교</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "region": ["A", "B", "C"],
+    "recycle_rate": [62, 75, 58]
+})
+
+print(df.sort_values("recycle_rate", ascending=False))</code></pre><p><b>상세 설명:</b> 재활용률이 높은 지역과 낮은 지역을 비교한다.</p>
+
+<h3>예제 4. 미세먼지 변화 그래프</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "pm10": [55, 48, 42, 35]
+})
+
+plt.plot(df["month"], df["pm10"], marker="o")
+plt.title("Monthly PM10")
+plt.xlabel("Month")
+plt.ylabel("PM10")
+plt.show()</code></pre><p><b>상세 설명:</b> 월별 PM10 변화 추세를 선그래프로 확인한다.</p>
+
+<h3>예제 5. 환경 행동 실천 점수 분석</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "action": ["save energy", "recycle", "use bus"],
+    "score": [8, 9, 7]
+})
+
+print("average action score:", df["score"].mean())</code></pre><p><b>상세 설명:</b> 에너지 절약, 재활용, 대중교통 이용 같은 환경 행동 실천 점수를 평균으로 요약한다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 환경 문제 해결에서 데이터는 오염 상태와 변화 추세를 객관적으로 파악하는 데 도움을 준다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 기온, 미세먼지, 탄소 배출량, 쓰레기 배출량 같은 데이터는 환경 문제의 규모와 변화를 이해하게 해 준다.</div></div><div class="q"><b>OX 2. 환경 데이터는 시간과 지역에 따라 달라질 수 있다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 환경 문제는 계절, 날씨, 지역, 인구, 산업 활동 등에 따라 차이가 나타난다.</div></div><div class="q"><b>OX 3. 탄소 배출량 데이터는 기후 변화 문제를 이해하는 데 활용될 수 있다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 탄소 배출량은 온실가스와 기후 변화 논의에서 중요한 지표이다.</div></div><div class="q"><b>OX 4. 쓰레기 배출량 데이터는 자원 순환 정책과 관련이 없다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 쓰레기 배출량과 재활용률 데이터는 자원 순환과 폐기물 정책 개선에 활용될 수 있다.</div></div><div class="q"><b>OX 5. 환경 데이터 분석에서는 결측값과 이상값을 확인할 필요가 있다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 센서 오류, 수집 누락, 특수 사건으로 결측값과 이상값이 발생할 수 있다.</div></div><div class="q"><b>OX 6. 환경 문제에서 상관관계가 보이면 반드시 인과관계로 결론 내릴 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않으며 추가 근거와 과학적 검토가 필요하다.</div></div><div class="q"><b>OX 7. 환경 데이터 시각화는 문제의 심각성과 변화 추세를 이해하는 데 도움을 준다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 그래프와 지도는 환경 문제의 패턴과 지역 차이를 직관적으로 보여 준다.</div></div><div class="q"><b>OX 8. 데이터 기반 환경 정책은 과학적 근거를 제공할 수 있다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 정책 결정에 데이터는 문제 진단과 효과 평가의 근거가 될 수 있다.</div></div><div class="q"><b>OX 9. 환경 데이터 분석에서 개인과 공동체의 행동 변화도 중요한 해석 대상이 될 수 있다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 에너지 절약, 분리배출, 대중교통 이용 같은 행동은 환경 지표와 연결될 수 있다.</div></div><div class="q"><b>OX 10. 환경 문제 해결을 위한 데이터 활용에는 윤리, 공정성, 미래 세대에 대한 책임도 고려해야 한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 환경 문제는 현재 세대뿐 아니라 미래 세대와 취약 계층에도 영향을 준다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 환경 문제 해결에 활용하기 어려운 데이터는?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 마우스 색상</label><label><input type="radio" name="mc0" value="1"> 2. 탄소 배출량</label><label><input type="radio" name="mc0" value="2"> 3. 미세먼지 농도</label><label><input type="radio" name="mc0" value="3"> 4. 쓰레기 배출량</label><label><input type="radio" name="mc0" value="4"> 5. 전력 사용량</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 마우스 색상은 일반적인 환경 문제 분석과 직접 관련이 적다.</div></div><div class="q"><b>문항 2. 탄소 배출량 데이터가 주로 관련되는 문제는?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 기후 변화</label><label><input type="radio" name="mc1" value="1"> 2. 글꼴 선택</label><label><input type="radio" name="mc1" value="2"> 3. 파일 압축</label><label><input type="radio" name="mc1" value="3"> 4. 키보드 배열</label><label><input type="radio" name="mc1" value="4"> 5. 화면 밝기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 탄소 배출량은 온실가스와 기후 변화 문제를 이해하는 핵심 지표이다.</div></div><div class="q"><b>문항 3. 시간에 따른 기온 변화 분석에 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 선그래프</label><label><input type="radio" name="mc2" value="1"> 2. 원그래프만</label><label><input type="radio" name="mc2" value="2"> 3. 파일 목록</label><label><input type="radio" name="mc2" value="3"> 4. 문자열 표</label><label><input type="radio" name="mc2" value="4"> 5. 아이콘</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 선그래프는 시간에 따른 변화와 추세를 나타내기 좋다.</div></div><div class="q"><b>문항 4. 지역별 쓰레기 배출량 비교에 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 막대그래프</label><label><input type="radio" name="mc3" value="1"> 2. 산점도만</label><label><input type="radio" name="mc3" value="2"> 3. 히스토그램만</label><label><input type="radio" name="mc3" value="3"> 4. 음악 파일</label><label><input type="radio" name="mc3" value="4"> 5. 문자열</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대그래프는 지역별 값의 크기를 비교하기 좋다.</div></div><div class="q"><b>문항 5. 환경 데이터 전처리에서 확인해야 할 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 결측값과 이상값</label><label><input type="radio" name="mc4" value="1"> 2. 배경 음악</label><label><input type="radio" name="mc4" value="2"> 3. 마우스 속도</label><label><input type="radio" name="mc4" value="3"> 4. 글꼴 색상만</label><label><input type="radio" name="mc4" value="4"> 5. 파일 아이콘</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 환경 데이터에는 누락값과 비정상 값이 있을 수 있다.</div></div><div class="q"><b>문항 6. Pandas에서 전력 사용량 평균을 구하는 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. df['electricity'].mean()</label><label><input type="radio" name="mc5" value="1"> 2. df['electricity'].paint()</label><label><input type="radio" name="mc5" value="2"> 3. df.sleep()</label><label><input type="radio" name="mc5" value="3"> 4. df.delete_all()</label><label><input type="radio" name="mc5" value="4"> 5. df.sound()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> mean()은 평균을 계산한다.</div></div><div class="q"><b>문항 7. 상관관계 해석에서 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 인과관계로 단정하지 않고 추가 근거를 확인한다</label><label><input type="radio" name="mc6" value="1"> 2. 무조건 원인이라고 말한다</label><label><input type="radio" name="mc6" value="2"> 3. 그래프를 숨긴다</label><label><input type="radio" name="mc6" value="3"> 4. 데이터 출처를 지운다</label><label><input type="radio" name="mc6" value="4"> 5. 결측값을 무시한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않는다.</div></div><div class="q"><b>문항 8. 환경 데이터 분석 결과 활용 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 에너지 절약 정책과 분리배출 개선</label><label><input type="radio" name="mc7" value="1"> 2. 파일 이름 꾸미기</label><label><input type="radio" name="mc7" value="2"> 3. 마우스 교체</label><label><input type="radio" name="mc7" value="3"> 4. 배경화면 선택</label><label><input type="radio" name="mc7" value="4"> 5. 글꼴 변경</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 환경 데이터는 정책 개선과 생활 행동 변화의 근거가 될 수 있다.</div></div><div class="q"><b>문항 9. 환경 문제 해결에서 데이터 윤리가 중요한 이유는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 환경 피해가 지역·계층·미래 세대에 다르게 영향을 줄 수 있기 때문</label><label><input type="radio" name="mc8" value="1"> 2. 데이터는 절대 사람과 관련 없기 때문</label><label><input type="radio" name="mc8" value="2"> 3. 그래프는 항상 완벽하기 때문</label><label><input type="radio" name="mc8" value="3"> 4. 출처가 필요 없기 때문</label><label><input type="radio" name="mc8" value="4"> 5. 모든 수치가 자동으로 공정하기 때문</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 환경 문제는 공정성과 책임의 문제와 연결된다.</div></div><div class="q"><b>문항 10. 좋은 환경 데이터 분석 보고서에 필요한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 데이터 출처, 기간, 분석 방법, 결과, 한계, 해결 제안</label><label><input type="radio" name="mc9" value="1"> 2. 결론만 한 줄</label><label><input type="radio" name="mc9" value="2"> 3. 출처 없는 그래프</label><label><input type="radio" name="mc9" value="3"> 4. 단위 숨기기</label><label><input type="radio" name="mc9" value="4"> 5. 불리한 값 삭제</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 신뢰할 수 있는 보고서에는 근거, 한계, 제안이 함께 포함되어야 한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터91_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 환경 문제를 데이터로 읽고 해결책으로 연결하는 방법을 배웠습니다. 컴퓨터과학은 환경 데이터를 수집하고 분석하는 도구를 제공하고, 수학은 변화량과 평균, 상관관계를 설명하며, 과학은 기후와 대기, 생태 현상을 검증하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “데이터가 경고하는 미래 앞에서 우리는 어떤 책임 있는 선택을 할 것인가?” 좋은 데이터 과학자는 환경 지표를 계산하는 사람을 넘어, 그 데이터를 바탕으로 사람과 자연이 함께 살아갈 길을 제안하는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터91 환경 문제 해결과 데이터</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "환경 문제 해결에서 데이터는 오염 상태와 변화 추세를 객관적으로 파악하는 데 도움을 준다.", "a": "O", "e": "기온, 미세먼지, 탄소 배출량, 쓰레기 배출량 같은 데이터는 환경 문제의 규모와 변화를 이해하게 해 준다."}, {"q": "환경 데이터는 시간과 지역에 따라 달라질 수 있다.", "a": "O", "e": "환경 문제는 계절, 날씨, 지역, 인구, 산업 활동 등에 따라 차이가 나타난다."}, {"q": "탄소 배출량 데이터는 기후 변화 문제를 이해하는 데 활용될 수 있다.", "a": "O", "e": "탄소 배출량은 온실가스와 기후 변화 논의에서 중요한 지표이다."}, {"q": "쓰레기 배출량 데이터는 자원 순환 정책과 관련이 없다.", "a": "X", "e": "쓰레기 배출량과 재활용률 데이터는 자원 순환과 폐기물 정책 개선에 활용될 수 있다."}, {"q": "환경 데이터 분석에서는 결측값과 이상값을 확인할 필요가 있다.", "a": "O", "e": "센서 오류, 수집 누락, 특수 사건으로 결측값과 이상값이 발생할 수 있다."}, {"q": "환경 문제에서 상관관계가 보이면 반드시 인과관계로 결론 내릴 수 있다.", "a": "X", "e": "상관관계는 인과관계를 증명하지 않으며 추가 근거와 과학적 검토가 필요하다."}, {"q": "환경 데이터 시각화는 문제의 심각성과 변화 추세를 이해하는 데 도움을 준다.", "a": "O", "e": "그래프와 지도는 환경 문제의 패턴과 지역 차이를 직관적으로 보여 준다."}, {"q": "데이터 기반 환경 정책은 과학적 근거를 제공할 수 있다.", "a": "O", "e": "정책 결정에 데이터는 문제 진단과 효과 평가의 근거가 될 수 있다."}, {"q": "환경 데이터 분석에서 개인과 공동체의 행동 변화도 중요한 해석 대상이 될 수 있다.", "a": "O", "e": "에너지 절약, 분리배출, 대중교통 이용 같은 행동은 환경 지표와 연결될 수 있다."}, {"q": "환경 문제 해결을 위한 데이터 활용에는 윤리, 공정성, 미래 세대에 대한 책임도 고려해야 한다.", "a": "O", "e": "환경 문제는 현재 세대뿐 아니라 미래 세대와 취약 계층에도 영향을 준다."}];
+const mcQuestions = [{"q": "환경 문제 해결에 활용하기 어려운 데이터는?", "c": ["마우스 색상", "탄소 배출량", "미세먼지 농도", "쓰레기 배출량", "전력 사용량"], "a": 0, "e": "마우스 색상은 일반적인 환경 문제 분석과 직접 관련이 적다."}, {"q": "탄소 배출량 데이터가 주로 관련되는 문제는?", "c": ["기후 변화", "글꼴 선택", "파일 압축", "키보드 배열", "화면 밝기"], "a": 0, "e": "탄소 배출량은 온실가스와 기후 변화 문제를 이해하는 핵심 지표이다."}, {"q": "시간에 따른 기온 변화 분석에 적합한 그래프는?", "c": ["선그래프", "원그래프만", "파일 목록", "문자열 표", "아이콘"], "a": 0, "e": "선그래프는 시간에 따른 변화와 추세를 나타내기 좋다."}, {"q": "지역별 쓰레기 배출량 비교에 적합한 그래프는?", "c": ["막대그래프", "산점도만", "히스토그램만", "음악 파일", "문자열"], "a": 0, "e": "막대그래프는 지역별 값의 크기를 비교하기 좋다."}, {"q": "환경 데이터 전처리에서 확인해야 할 것은?", "c": ["결측값과 이상값", "배경 음악", "마우스 속도", "글꼴 색상만", "파일 아이콘"], "a": 0, "e": "환경 데이터에는 누락값과 비정상 값이 있을 수 있다."}, {"q": "Pandas에서 전력 사용량 평균을 구하는 코드로 적절한 것은?", "c": ["df['electricity'].mean()", "df['electricity'].paint()", "df.sleep()", "df.delete_all()", "df.sound()"], "a": 0, "e": "mean()은 평균을 계산한다."}, {"q": "상관관계 해석에서 바람직한 태도는?", "c": ["인과관계로 단정하지 않고 추가 근거를 확인한다", "무조건 원인이라고 말한다", "그래프를 숨긴다", "데이터 출처를 지운다", "결측값을 무시한다"], "a": 0, "e": "상관관계는 인과관계를 증명하지 않는다."}, {"q": "환경 데이터 분석 결과 활용 예로 적절한 것은?", "c": ["에너지 절약 정책과 분리배출 개선", "파일 이름 꾸미기", "마우스 교체", "배경화면 선택", "글꼴 변경"], "a": 0, "e": "환경 데이터는 정책 개선과 생활 행동 변화의 근거가 될 수 있다."}, {"q": "환경 문제 해결에서 데이터 윤리가 중요한 이유는?", "c": ["환경 피해가 지역·계층·미래 세대에 다르게 영향을 줄 수 있기 때문", "데이터는 절대 사람과 관련 없기 때문", "그래프는 항상 완벽하기 때문", "출처가 필요 없기 때문", "모든 수치가 자동으로 공정하기 때문"], "a": 0, "e": "환경 문제는 공정성과 책임의 문제와 연결된다."}, {"q": "좋은 환경 데이터 분석 보고서에 필요한 것은?", "c": ["데이터 출처, 기간, 분석 방법, 결과, 한계, 해결 제안", "결론만 한 줄", "출처 없는 그래프", "단위 숨기기", "불리한 값 삭제"], "a": 0, "e": "신뢰할 수 있는 보고서에는 근거, 한계, 제안이 함께 포함되어야 한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅸ. 데이터 과학과 미래 사회 - 환경 문제 해결과 데이터\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n환경 문제 해결과 데이터는 환경 지표를 분석하여 지속 가능한 해결책과 책임 있는 행동을 제안하는 데이터 과학 활동이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터91_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

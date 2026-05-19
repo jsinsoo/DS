@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터51_데이터 시각화의 의미_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#7c3aed,#06b6d4);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px} header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#7c3aed}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#6d28d9;border-left:8px solid #06b6d4;padding-left:12px}
+h3{color:#0e7490;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#faf5ff;border-left:6px solid #7c3aed}
+.quote{font-size:18px;background:#ecfeff;border-left:7px solid #06b6d4;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#ede9fe}
+.q{border:1px solid #c4b5fd;background:#fdfbff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#ede9fe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#7c3aed;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#6d28d9}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터51. 데이터 시각화의 의미</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅴ. 데이터 시각화 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B051_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98%EC%9D%98%EB%AF%B8_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>데이터 시각화는 데이터를 시각적 요소로 표현하여 패턴, 차이, 추세, 관계를 이해하고 전달하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>좋은 시각화는 복잡한 데이터를 쉽게 이해하게 하지만, 잘못된 시각화는 오해와 왜곡을 만들 수 있다.</div>
+<div class="card goal"><b>핵심 질문</b><br>그래프는 데이터를 있는 그대로 보여 주는가, 아니면 우리가 보도록 선택한 방식으로 보여 주는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅴ. 데이터 시각화 - 데이터 시각화의 의미</td></tr>
+<tr><td>수업 목표</td><td>① 데이터 시각화의 의미와 필요성을 설명한다.<br>② 그래프가 패턴, 차이, 추세, 관계를 표현하는 방식을 이해한다.<br>③ 막대그래프, 선그래프, 산점도, 원그래프의 기본 용도를 구별한다.<br>④ Matplotlib으로 기초 그래프를 작성한다.<br>⑤ 시각화의 왜곡 가능성과 윤리적 책임을 설명한다.</td></tr>
+<tr><td>지식 목표</td><td>시각화, 시각적 인코딩, 그래프 선택, 축, 단위, 범례, 추세, 관계, 왜곡, 시각화 윤리의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>막대그래프, 선그래프, 산점도, 원그래프를 만들고 제목·축 이름·범례를 설정한다.</td></tr>
+<tr><td>태도 목표</td><td>그래프를 예쁘게 만드는 것보다 정직하고 명확하게 전달하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 같은 데이터 다른 그래프 비교 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 그래프 왜곡 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 그래프 선택 이유 설명 활동</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+숫자 100개가 빽빽하게 적힌 표를 보면 우리는 쉽게 지칩니다.
+하지만 그 숫자들이 그래프가 되는 순간, 증가하는 흐름, 갑자기 튀는 값, 서로 다른 집단의 차이가 한눈에 보입니다.
+인문 철학적으로 데이터 시각화는 “보이지 않던 질서를 보이게 만드는 언어”입니다.
+그러나 보여 주는 방식은 언제나 선택을 포함합니다.
+오늘 우리는 데이터를 잘 보이게 만드는 법과, 동시에 정직하게 보이게 만드는 책임을 함께 배웁니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 데이터 시각화</h3>
+<p>데이터 시각화는 표나 숫자로 표현된 데이터를 그래프, 차트, 지도, 그림 등 시각적 형태로 바꾸어 의미를 쉽게 파악하도록 돕는 과정이다. 시각화는 데이터 탐색, 분석 결과 전달, 의사결정 지원에 활용된다.</p>
+
+<h3>② 시각화의 목적</h3>
+<p>시각화의 목적은 데이터를 예쁘게 꾸미는 것이 아니라 이해하기 쉽게 만드는 것이다. 차이, 추세, 분포, 관계, 이상값을 효과적으로 보여 주어야 한다.</p>
+
+<h3>③ 시각적 인코딩</h3>
+<p>시각적 인코딩은 데이터를 위치, 길이, 색, 크기, 모양 같은 시각 요소로 표현하는 방식이다. 예를 들어 막대의 길이는 값의 크기를 나타내고, 색은 범주를 구분할 수 있다.</p>
+
+<h3>④ 그래프 선택</h3>
+<p>데이터의 성격에 따라 적절한 그래프가 다르다. 범주별 비교는 막대그래프, 시간 변화는 선그래프, 두 수치형 변수의 관계는 산점도, 전체 중 비율은 원그래프가 적합할 수 있다.</p>
+
+<h3>⑤ 막대그래프</h3>
+<p>막대그래프는 범주별 값을 비교하는 데 유용하다. 각 막대의 길이가 값의 크기를 나타내므로 학급별 평균, 메뉴별 선호도, 지역별 이용자 수 등을 비교하기 좋다.</p>
+
+<h3>⑥ 선그래프</h3>
+<p>선그래프는 시간에 따른 변화나 추세를 보여 주는 데 적합하다. 월별 매출, 일별 기온, 연도별 인구 변화처럼 시간 순서가 있는 데이터에 사용된다.</p>
+
+<h3>⑦ 산점도</h3>
+<p>산점도는 두 수치형 변수의 관계를 확인하는 그래프이다. 공부 시간과 점수, 수면 시간과 집중도처럼 두 변수 사이의 관계, 군집, 이상값을 볼 수 있다.</p>
+
+<h3>⑧ 원그래프</h3>
+<p>원그래프는 전체 중 각 항목이 차지하는 비율을 보여 준다. 항목 수가 너무 많거나 값 차이가 작으면 비교가 어려울 수 있으므로 주의해야 한다.</p>
+
+<h3>⑨ 시각화 윤리</h3>
+<p>그래프는 사람의 판단에 강한 영향을 준다. 축 범위를 왜곡하거나 불리한 값을 숨기거나 부적절한 색과 크기를 사용하면 사실을 다르게 보이게 할 수 있다. 정직한 시각화는 출처, 단위, 축, 한계를 분명히 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① 막대그래프</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "class": ["A", "B", "C"],
+    "score": [82, 88, 79]
+})
+
+plt.bar(df["class"], df["score"])
+plt.title("Average Score by Class")
+plt.xlabel("Class")
+plt.ylabel("Score")
+plt.show()</code></pre>
+<p>학급별 평균 점수를 막대그래프로 비교한다.</p>
+
+<h3>② 선그래프</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "month": [1, 2, 3, 4],
+    "sales": [100, 120, 150, 130]
+})
+
+plt.plot(df["month"], df["sales"], marker="o")
+plt.title("Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()</code></pre>
+<p>월별 판매량의 변화 흐름을 선그래프로 나타낸다.</p>
+
+<h3>③ 산점도</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "study": [1, 2, 3, 4, 5],
+    "score": [55, 65, 72, 83, 90]
+})
+
+plt.scatter(df["study"], df["score"])
+plt.title("Study Time and Score")
+plt.xlabel("Study Time")
+plt.ylabel("Score")
+plt.show()</code></pre>
+<p>공부 시간과 점수의 관계를 산점도로 확인한다.</p>
+
+<h3>④ 원그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+labels = ["Python", "Data", "AI"]
+values = [40, 35, 25]
+
+plt.pie(values, labels=labels, autopct="%1.1f%%")
+plt.title("Interest Ratio")
+plt.show()</code></pre>
+<p>전체 관심 분야 중 각 항목의 비율을 원그래프로 나타낸다.</p>
+
+<h3>⑤ 축 범위 설정</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"year": [2024, 2025, 2026], "score": [80, 82, 83]})
+
+plt.plot(df["year"], df["score"], marker="o")
+plt.ylim(0, 100)
+plt.title("Score Change")
+plt.xlabel("Year")
+plt.ylabel("Score")
+plt.show()</code></pre>
+<p>y축을 0부터 100까지 설정하여 변화가 과장되어 보이지 않도록 한다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 급식 메뉴 선호도 막대그래프</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "menu": ["rice", "curry", "pasta", "soup"],
+    "votes": [35, 50, 42, 28]
+})
+
+plt.bar(df["menu"], df["votes"])
+plt.title("Menu Preference")
+plt.xlabel("Menu")
+plt.ylabel("Votes")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 메뉴별 투표 수처럼 범주별 크기를 비교할 때 막대그래프가 적합하다.</p>
+
+<h3>예제 2. 월별 독서량 선그래프</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "books": [12, 18, 15, 22]
+})
+
+plt.plot(df["month"], df["books"], marker="o")
+plt.title("Monthly Reading")
+plt.xlabel("Month")
+plt.ylabel("Books")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 월별 독서량의 변화와 추세를 선그래프로 확인할 수 있다.</p>
+
+<h3>예제 3. 공부 시간과 점수 산점도</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "study_hour": [1, 2, 2.5, 3, 4, 5],
+    "score": [55, 62, 68, 72, 84, 90]
+})
+
+plt.scatter(df["study_hour"], df["score"])
+plt.title("Study and Score")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 두 수치형 변수의 관계를 살펴볼 때 산점도가 적합하다.</p>
+
+<h3>예제 4. 동아리 관심 비율 원그래프</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+clubs = ["AI", "Robot", "Bio", "Math"]
+counts = [30, 25, 20, 25]
+
+plt.pie(counts, labels=clubs, autopct="%1.1f%%")
+plt.title("Club Interest")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 전체 관심 중 각 동아리의 비율을 보여 준다. 항목이 많아지면 막대그래프가 더 나을 수 있다.</p>
+
+<h3>예제 5. 그래프 왜곡 줄이기</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "year": [2024, 2025, 2026],
+    "rate": [91, 92, 93]
+})
+
+plt.bar(df["year"], df["rate"])
+plt.ylim(0, 100)
+plt.title("Satisfaction Rate")
+plt.xlabel("Year")
+plt.ylabel("Rate")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 만족도 91, 92, 93의 차이를 과장하지 않기 위해 y축 범위를 0부터 100까지 설정한다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q"><b>OX 1. 데이터 시각화는 데이터를 그래프나 그림으로 표현하여 의미를 쉽게 파악하게 하는 과정이다.</b>
+   <div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 시각화는 표와 숫자만으로 보기 어려운 패턴, 차이, 추세, 관계를 눈으로 이해하게 돕는다.</div></div><div class="q"><b>OX 2. 데이터 시각화는 단순히 예쁘게 꾸미는 작업이다.</b>
+   <div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 시각화의 핵심은 아름다움보다 정확한 전달과 해석이다.</div></div><div class="q"><b>OX 3. 막대그래프는 범주별 크기를 비교하는 데 자주 사용된다.</b>
+   <div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 막대그래프는 지역, 메뉴, 학급 등 범주별 값을 비교하기 좋다.</div></div><div class="q"><b>OX 4. 선그래프는 시간에 따른 변화나 추세를 나타내는 데 적합하다.</b>
+   <div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 선그래프는 시간 순서가 있는 데이터를 연결해 변화 흐름을 보여 준다.</div></div><div class="q"><b>OX 5. 산점도는 두 수치형 변수의 관계를 보는 데 유용하다.</b>
+   <div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 산점도는 x축과 y축에 두 변수를 놓고 관계, 군집, 이상값을 확인한다.</div></div><div class="q"><b>OX 6. 그래프의 축 범위는 해석에 영향을 주지 않는다.</b>
+   <div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 축 범위를 어떻게 설정하느냐에 따라 차이가 과장되거나 축소되어 보일 수 있다.</div></div><div class="q"><b>OX 7. 좋은 시각화는 제목, 축 이름, 단위, 범례를 적절히 포함해야 한다.</b>
+   <div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 그래프의 의미를 정확히 전달하려면 제목, 축, 단위, 범례가 중요하다.</div></div><div class="q"><b>OX 8. 원그래프는 모든 종류의 데이터에 가장 적합한 그래프이다.</b>
+   <div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 원그래프는 전체 중 구성 비율을 보여 줄 때 제한적으로 적합하며, 많은 항목 비교에는 부적합할 수 있다.</div></div><div class="q"><b>OX 9. 시각화는 데이터 해석을 돕지만 잘못 만들면 오해를 만들 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 축 왜곡, 부적절한 그래프 선택, 과도한 장식은 잘못된 해석을 유도할 수 있다.</div></div><div class="q"><b>OX 10. 데이터 시각화에도 윤리적 책임이 필요하다.</b>
+   <div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 그래프는 사람의 판단에 영향을 주므로 왜곡 없이 정직하게 표현해야 한다.</div></div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q"><b>문항 1. 데이터 시각화의 가장 중요한 목적은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 데이터의 패턴과 의미를 이해하기 쉽게 전달하기 위해</label><label><input type="radio" name="mc0" value="1"> 2. 색을 무조건 많이 쓰기 위해</label><label><input type="radio" name="mc0" value="2"> 3. 파일 크기를 늘리기 위해</label><label><input type="radio" name="mc0" value="3"> 4. 숫자를 숨기기 위해</label><label><input type="radio" name="mc0" value="4"> 5. 데이터를 삭제하기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 시각화는 데이터의 차이, 추세, 관계를 더 쉽게 이해하도록 돕는다.</div></div><div class="q"><b>문항 2. 범주별 값을 비교하는 데 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 막대그래프</label><label><input type="radio" name="mc1" value="1"> 2. 선그래프만</label><label><input type="radio" name="mc1" value="2"> 3. 소리 파일</label><label><input type="radio" name="mc1" value="3"> 4. 문자열 표</label><label><input type="radio" name="mc1" value="4"> 5. 압축 파일</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대그래프는 범주별 크기 비교에 적합하다.</div></div><div class="q"><b>문항 3. 시간에 따른 변화를 나타내기 좋은 그래프는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 선그래프</label><label><input type="radio" name="mc2" value="1"> 2. 원그래프만</label><label><input type="radio" name="mc2" value="2"> 3. 파일 아이콘</label><label><input type="radio" name="mc2" value="3"> 4. 문자표</label><label><input type="radio" name="mc2" value="4"> 5. 폴더 구조</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 선그래프는 시간 순서에 따른 변화와 추세를 보여 주기 좋다.</div></div><div class="q"><b>문항 4. 두 수치형 변수의 관계를 확인하는 데 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 산점도</label><label><input type="radio" name="mc3" value="1"> 2. 원그래프</label><label><input type="radio" name="mc3" value="2"> 3. 문서 제목</label><label><input type="radio" name="mc3" value="3"> 4. 파일명 목록</label><label><input type="radio" name="mc3" value="4"> 5. 색상표</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 산점도는 두 변수의 관계와 군집, 이상값을 살펴보는 데 유용하다.</div></div><div class="q"><b>문항 5. 좋은 그래프에 필요한 요소로 적절하지 않은 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 의도적인 축 왜곡</label><label><input type="radio" name="mc4" value="1"> 2. 제목</label><label><input type="radio" name="mc4" value="2"> 3. 축 이름</label><label><input type="radio" name="mc4" value="3"> 4. 단위</label><label><input type="radio" name="mc4" value="4"> 5. 범례</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 축을 의도적으로 왜곡하면 잘못된 해석을 유도할 수 있다.</div></div><div class="q"><b>문항 6. 그래프의 y축을 일부러 좁게 자르면 생길 수 있는 문제는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 차이가 실제보다 과장되어 보일 수 있다</label><label><input type="radio" name="mc5" value="1"> 2. 항상 더 정확해진다</label><label><input type="radio" name="mc5" value="2"> 3. 데이터가 자동으로 증가한다</label><label><input type="radio" name="mc5" value="3"> 4. 범례가 사라진다</label><label><input type="radio" name="mc5" value="4"> 5. 파일이 삭제된다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 축 범위 조정은 차이를 과장하거나 축소해 보이게 만들 수 있다.</div></div><div class="q"><b>문항 7. 원그래프가 비교적 적합한 경우는?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 전체 중 각 항목의 구성 비율을 보여 줄 때</label><label><input type="radio" name="mc6" value="1"> 2. 시간 변화 추세를 보여 줄 때</label><label><input type="radio" name="mc6" value="2"> 3. 두 변수의 관계를 보여 줄 때</label><label><input type="radio" name="mc6" value="3"> 4. 수백 개 항목을 비교할 때</label><label><input type="radio" name="mc6" value="4"> 5. 결측값을 찾을 때</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 원그래프는 전체를 구성하는 비율을 보여 줄 때 제한적으로 사용할 수 있다.</div></div><div class="q"><b>문항 8. 데이터 시각화에서 시각적 인코딩의 예는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 길이, 위치, 색, 크기로 값을 표현하는 것</label><label><input type="radio" name="mc7" value="1"> 2. 데이터를 숨기는 것</label><label><input type="radio" name="mc7" value="2"> 3. 파일을 압축하는 것</label><label><input type="radio" name="mc7" value="3"> 4. 컴퓨터를 끄는 것</label><label><input type="radio" name="mc7" value="4"> 5. 코드를 삭제하는 것</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 시각적 인코딩은 데이터를 위치, 길이, 색, 크기 등 시각 요소로 표현하는 방식이다.</div></div><div class="q"><b>문항 9. 시각화 해석에서 확인해야 할 사항은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 제목, 축, 단위, 출처, 표본 수</label><label><input type="radio" name="mc8" value="1"> 2. 글꼴만</label><label><input type="radio" name="mc8" value="2"> 3. 배경색만</label><label><input type="radio" name="mc8" value="3"> 4. 파일 확장자만</label><label><input type="radio" name="mc8" value="4"> 5. 마우스 모양만</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 그래프 해석에는 제목, 축, 단위, 출처, 표본 수 확인이 중요하다.</div></div><div class="q"><b>문항 10. 윤리적인 데이터 시각화 태도로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 데이터를 왜곡하지 않고 해석의 한계를 함께 제시한다</label><label><input type="radio" name="mc9" value="1"> 2. 유리한 부분만 확대한다</label><label><input type="radio" name="mc9" value="2"> 3. 축을 숨긴다</label><label><input type="radio" name="mc9" value="3"> 4. 출처를 지운다</label><label><input type="radio" name="mc9" value="4"> 5. 값을 임의로 바꾼다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 정직한 시각화는 왜곡 없이 정보를 전달하고 한계를 함께 보여 준다.</div></div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터51_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 데이터 시각화가 단순한 꾸미기가 아니라 데이터를 이해하고 전달하는 강력한 언어임을 배웠습니다.
+컴퓨터과학은 데이터를 그래프로 변환하는 도구를 제공하고, 수학은 값의 크기와 관계를 정확히 표현하게 하며, 과학은 그래프가 관찰 사실을 정직하게 보여 주는지 묻게 합니다.
+그리고 인문 철학은 우리에게 질문합니다. “무엇을 보이게 하고, 무엇을 보이지 않게 하고 있는가?”
+좋은 데이터 과학자는 보기 좋은 그래프보다 정직하고 명확한 그래프를 만드는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터51 데이터 시각화의 의미</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [{"q": "데이터 시각화는 데이터를 그래프나 그림으로 표현하여 의미를 쉽게 파악하게 하는 과정이다.", "a": "O", "e": "시각화는 표와 숫자만으로 보기 어려운 패턴, 차이, 추세, 관계를 눈으로 이해하게 돕는다."}, {"q": "데이터 시각화는 단순히 예쁘게 꾸미는 작업이다.", "a": "X", "e": "시각화의 핵심은 아름다움보다 정확한 전달과 해석이다."}, {"q": "막대그래프는 범주별 크기를 비교하는 데 자주 사용된다.", "a": "O", "e": "막대그래프는 지역, 메뉴, 학급 등 범주별 값을 비교하기 좋다."}, {"q": "선그래프는 시간에 따른 변화나 추세를 나타내는 데 적합하다.", "a": "O", "e": "선그래프는 시간 순서가 있는 데이터를 연결해 변화 흐름을 보여 준다."}, {"q": "산점도는 두 수치형 변수의 관계를 보는 데 유용하다.", "a": "O", "e": "산점도는 x축과 y축에 두 변수를 놓고 관계, 군집, 이상값을 확인한다."}, {"q": "그래프의 축 범위는 해석에 영향을 주지 않는다.", "a": "X", "e": "축 범위를 어떻게 설정하느냐에 따라 차이가 과장되거나 축소되어 보일 수 있다."}, {"q": "좋은 시각화는 제목, 축 이름, 단위, 범례를 적절히 포함해야 한다.", "a": "O", "e": "그래프의 의미를 정확히 전달하려면 제목, 축, 단위, 범례가 중요하다."}, {"q": "원그래프는 모든 종류의 데이터에 가장 적합한 그래프이다.", "a": "X", "e": "원그래프는 전체 중 구성 비율을 보여 줄 때 제한적으로 적합하며, 많은 항목 비교에는 부적합할 수 있다."}, {"q": "시각화는 데이터 해석을 돕지만 잘못 만들면 오해를 만들 수 있다.", "a": "O", "e": "축 왜곡, 부적절한 그래프 선택, 과도한 장식은 잘못된 해석을 유도할 수 있다."}, {"q": "데이터 시각화에도 윤리적 책임이 필요하다.", "a": "O", "e": "그래프는 사람의 판단에 영향을 주므로 왜곡 없이 정직하게 표현해야 한다."}];
+const mcQuestions = [{"q": "데이터 시각화의 가장 중요한 목적은?", "c": ["데이터의 패턴과 의미를 이해하기 쉽게 전달하기 위해", "색을 무조건 많이 쓰기 위해", "파일 크기를 늘리기 위해", "숫자를 숨기기 위해", "데이터를 삭제하기 위해"], "a": 0, "e": "시각화는 데이터의 차이, 추세, 관계를 더 쉽게 이해하도록 돕는다."}, {"q": "범주별 값을 비교하는 데 적합한 그래프는?", "c": ["막대그래프", "선그래프만", "소리 파일", "문자열 표", "압축 파일"], "a": 0, "e": "막대그래프는 범주별 크기 비교에 적합하다."}, {"q": "시간에 따른 변화를 나타내기 좋은 그래프는?", "c": ["선그래프", "원그래프만", "파일 아이콘", "문자표", "폴더 구조"], "a": 0, "e": "선그래프는 시간 순서에 따른 변화와 추세를 보여 주기 좋다."}, {"q": "두 수치형 변수의 관계를 확인하는 데 적합한 그래프는?", "c": ["산점도", "원그래프", "문서 제목", "파일명 목록", "색상표"], "a": 0, "e": "산점도는 두 변수의 관계와 군집, 이상값을 살펴보는 데 유용하다."}, {"q": "좋은 그래프에 필요한 요소로 적절하지 않은 것은?", "c": ["의도적인 축 왜곡", "제목", "축 이름", "단위", "범례"], "a": 0, "e": "축을 의도적으로 왜곡하면 잘못된 해석을 유도할 수 있다."}, {"q": "그래프의 y축을 일부러 좁게 자르면 생길 수 있는 문제는?", "c": ["차이가 실제보다 과장되어 보일 수 있다", "항상 더 정확해진다", "데이터가 자동으로 증가한다", "범례가 사라진다", "파일이 삭제된다"], "a": 0, "e": "축 범위 조정은 차이를 과장하거나 축소해 보이게 만들 수 있다."}, {"q": "원그래프가 비교적 적합한 경우는?", "c": ["전체 중 각 항목의 구성 비율을 보여 줄 때", "시간 변화 추세를 보여 줄 때", "두 변수의 관계를 보여 줄 때", "수백 개 항목을 비교할 때", "결측값을 찾을 때"], "a": 0, "e": "원그래프는 전체를 구성하는 비율을 보여 줄 때 제한적으로 사용할 수 있다."}, {"q": "데이터 시각화에서 시각적 인코딩의 예는?", "c": ["길이, 위치, 색, 크기로 값을 표현하는 것", "데이터를 숨기는 것", "파일을 압축하는 것", "컴퓨터를 끄는 것", "코드를 삭제하는 것"], "a": 0, "e": "시각적 인코딩은 데이터를 위치, 길이, 색, 크기 등 시각 요소로 표현하는 방식이다."}, {"q": "시각화 해석에서 확인해야 할 사항은?", "c": ["제목, 축, 단위, 출처, 표본 수", "글꼴만", "배경색만", "파일 확장자만", "마우스 모양만"], "a": 0, "e": "그래프 해석에는 제목, 축, 단위, 출처, 표본 수 확인이 중요하다."}, {"q": "윤리적인 데이터 시각화 태도로 가장 적절한 것은?", "c": ["데이터를 왜곡하지 않고 해석의 한계를 함께 제시한다", "유리한 부분만 확대한다", "축을 숨긴다", "출처를 지운다", "값을 임의로 바꾼다"], "a": 0, "e": "정직한 시각화는 왜곡 없이 정보를 전달하고 한계를 함께 보여 준다."}];
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q"><b>OX ${i+1}. ${item.q}</b>
+   <div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{ labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`; });
+   area.innerHTML += `<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){ document.getElementById("scoreText").innerText = oxScore + mcScore; }
+function showAll(cls){ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block"); }
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\n";
+ content += "Ⅴ. 데이터 시각화 - 데이터 시각화의 의미\n";
+ content += "학번: " + id + "\n";
+ content += "이름: " + name + "\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\n";
+ content += "형성평가 점수: " + mcScore + " / 50\n";
+ content += "총점: " + total + " / 100\n";
+ content += "응시시각: " + time + "\n";
+ content += "\n[학습 성찰]\n데이터 시각화는 패턴과 의미를 쉽게 전달하지만, 그래프 선택과 축 설정에 따라 해석이 달라질 수 있으므로 정직하게 표현해야 한다.\n";
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터51_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

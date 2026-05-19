@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- saved from url=(0182)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터61_인공지능의 이해_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#111827,#2563eb,#7c3aed);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#2563eb}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#1d4ed8;border-left:8px solid #7c3aed;padding-left:12px}
+h3{color:#6d28d9;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#eef2ff;border-left:6px solid #2563eb}
+.quote{font-size:18px;background:#faf5ff;border-left:7px solid #7c3aed;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#dbeafe}
+.q{border:1px solid #c7d2fe;background:#fbfdff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#e0e7ff}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#2563eb;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#1d4ed8}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터61. 인공지능의 이해</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅵ. 인공지능과 머신러닝 · 개념기반 목표지향 수업지도안</p>
+</header>
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B061_%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%98%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>인공지능은 컴퓨터가 인식, 추론, 학습, 의사결정 같은 지능적 기능을 수행하도록 만드는 기술과 학문이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>인공지능은 데이터를 바탕으로 문제를 해결하고 인간의 판단을 돕지만, 오류·편향·책임 문제를 함께 고려해야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>컴퓨터가 똑똑하게 행동한다는 것은 무엇을 의미하며, 그 판단을 어디까지 믿을 수 있는가?</div>
+</div>
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅵ. 인공지능과 머신러닝 - 인공지능의 이해</td></tr>
+<tr><td>수업 목표</td><td>① 인공지능의 의미와 특징을 설명한다.<br>② 규칙 기반 인공지능과 머신러닝 기반 인공지능의 차이를 이해한다.<br>③ 지능 에이전트의 환경 인식·판단·행동 구조를 설명한다.<br>④ 파이썬으로 간단한 규칙 기반 AI와 분류 예제를 구현한다.<br>⑤ 인공지능의 편향, 개인정보, 책임성 등 윤리적 쟁점을 설명한다.</td></tr>
+<tr><td>지식 목표</td><td>인공지능, 머신러닝, 규칙 기반 시스템, 지능 에이전트, 데이터, 모델, 예측, 편향, AI 윤리의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>조건문 기반 판단, 간단한 추천, 텍스트 분류 규칙, 거리 기반 분류, 데이터 기반 예측 코드를 해석한다.</td></tr>
+<tr><td>태도 목표</td><td>AI 결과를 무조건 믿지 않고, 근거와 한계, 사회적 영향을 함께 검토하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 생활 속 AI 찾기 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: AI 윤리 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, AI 활용 사례와 윤리 쟁점 발표</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+우리는 이미 인공지능과 함께 살고 있습니다. 스마트폰은 얼굴을 인식하고, 영상 플랫폼은 다음에 볼 콘텐츠를 추천하며, 챗봇은 우리의 질문에 답합니다.
+하지만 인공지능이 답을 준다고 해서 항상 옳은 것은 아닙니다.
+인문 철학적으로 인공지능은 “생각한다는 것은 무엇인가?”, “판단의 책임은 누구에게 있는가?”라는 오래된 질문을 새롭게 던집니다.
+오늘 우리는 AI를 마법처럼 받아들이지 않고, 데이터와 규칙과 모델이 어떻게 지능적인 행동처럼 보이는 결과를 만드는지 차근차근 살펴보겠습니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 인공지능</h3><p>인공지능은 컴퓨터가 인간의 지능적 활동과 비슷한 기능을 수행하도록 만드는 기술과 학문 분야이다. 여기에는 언어 이해, 이미지 인식, 음성 인식, 추론, 예측, 의사결정 등이 포함된다.</p>
+<h3>② 약한 인공지능</h3><p>약한 인공지능은 특정 과제를 잘 수행하도록 설계된 AI이다. 현재 우리가 사용하는 대부분의 AI는 번역, 추천, 분류, 검색처럼 특정 목적을 수행하는 약한 인공지능이다.</p>
+<h3>③ 규칙 기반 인공지능</h3><p>규칙 기반 인공지능은 사람이 미리 정한 조건과 규칙에 따라 판단하는 방식이다. 예를 들어 “온도가 30도 이상이면 더움”처럼 명시적인 규칙을 사용한다.</p>
+<h3>④ 머신러닝</h3><p>머신러닝은 데이터를 통해 패턴을 학습하고, 새로운 데이터에 대해 예측이나 판단을 수행하는 인공지능 방법이다. 사람이 모든 규칙을 직접 쓰지 않고 데이터로부터 규칙성을 찾는다.</p>
+<h3>⑤ 모델</h3><p>모델은 입력 데이터를 바탕으로 출력이나 판단을 만드는 계산 구조이다. 머신러닝 모델은 학습 데이터를 이용해 내부 기준이나 가중치를 조정한다.</p>
+<h3>⑥ 지능 에이전트</h3><p>지능 에이전트는 환경을 인식하고 목표에 맞게 행동하는 시스템이다. 센서나 입력으로 환경을 파악하고, 판단 과정을 거쳐 행동을 선택한다.</p>
+<h3>⑦ 데이터와 학습</h3><p>AI가 좋은 판단을 하려면 적절한 데이터가 필요하다. 데이터가 부족하거나 편향되어 있으면 AI의 결과도 부정확하거나 불공정할 수 있다.</p>
+<h3>⑧ AI 활용 사례</h3><p>챗봇, 음성 비서, 추천 시스템, 자율주행, 의료 영상 분석, 번역기, 스팸 필터, 얼굴 인식 등이 인공지능 활용 사례이다.</p>
+<h3>⑨ AI 윤리</h3><p>인공지능은 사람의 삶에 영향을 주므로 공정성, 개인정보 보호, 설명 가능성, 책임성, 안전성 문제가 중요하다. AI가 내린 판단이라도 최종 책임과 검토는 인간 사회의 몫이다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 규칙 기반 AI</h3>
+<pre><code>temperature = 32
+
+if temperature &gt;= 30:
+    result = "Hot"
+else:
+    result = "Normal"
+
+print(result)</code></pre>
+<p>온도 조건에 따라 더움 또는 보통을 판단하는 간단한 규칙 기반 AI 예제이다.</p>
+
+<h3>② 간단한 챗봇 규칙</h3>
+<pre><code>message = "hello"
+
+if message == "hello":
+    reply = "Hi, nice to meet you!"
+else:
+    reply = "I do not understand."
+
+print(reply)</code></pre>
+<p>입력 문장에 따라 정해진 답을 출력한다. 실제 챗봇은 훨씬 복잡한 언어 처리 과정을 사용한다.</p>
+
+<h3>③ 추천 시스템 기초</h3>
+<pre><code>liked_genre = "science"
+
+if liked_genre == "science":
+    recommendation = "Data Science Documentary"
+else:
+    recommendation = "General Movie"
+
+print(recommendation)</code></pre>
+<p>사용자의 선호에 따라 콘텐츠를 추천하는 기본 아이디어를 보여 준다.</p>
+
+<h3>④ 거리 기반 간단 분류</h3>
+<pre><code>new_height = 170
+
+if new_height &gt;= 165:
+    label = "Group A"
+else:
+    label = "Group B"
+
+print(label)</code></pre>
+<p>하나의 기준값을 이용해 데이터를 두 집단으로 분류한다. 실제 머신러닝은 여러 특징을 함께 사용할 수 있다.</p>
+
+<h3>⑤ 데이터 기반 평균 예측</h3>
+<pre><code>scores = [70, 80, 90]
+prediction = sum(scores) / len(scores)
+
+print("Predicted score:", prediction)</code></pre>
+<p>과거 점수의 평균을 이용해 단순 예측을 수행한다. 데이터 기반 예측의 가장 기초적인 형태이다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 스팸 메시지 규칙 분류</h3>
+<pre><code>message = "free money now"
+
+spam_words = ["free", "money", "win"]
+
+if any(word in message for word in spam_words):
+    print("Spam")
+else:
+    print("Normal")</code></pre>
+<p><b>상세 설명:</b> 특정 단어가 포함되어 있으면 스팸으로 분류한다. 규칙 기반 분류의 예이다.</p>
+
+<h3>예제 2. 날씨 추천 AI</h3>
+<pre><code>temperature = 8
+
+if temperature &lt; 10:
+    print("Wear a coat")
+elif temperature &lt; 25:
+    print("Light jacket is enough")
+else:
+    print("Wear cool clothes")</code></pre>
+<p><b>상세 설명:</b> 온도에 따라 옷차림을 추천한다. 센서 데이터나 날씨 데이터와 연결할 수 있다.</p>
+
+<h3>예제 3. 간단한 음악 추천</h3>
+<pre><code>mood = "happy"
+
+recommend = {
+    "happy": "dance music",
+    "sad": "calm piano",
+    "focus": "lofi music"
+}
+
+print(recommend.get(mood, "popular music"))</code></pre>
+<p><b>상세 설명:</b> 사용자의 기분 입력에 따라 음악을 추천한다. 실제 추천 시스템은 많은 사용자 행동 데이터를 활용한다.</p>
+
+<h3>예제 4. 공부 시간 기반 점수 예측</h3>
+<pre><code>study_hour = 4
+
+predicted_score = 50 + study_hour * 8
+
+print("Predicted score:", predicted_score)</code></pre>
+<p><b>상세 설명:</b> 공부 시간이 늘수록 점수가 증가한다고 가정한 단순 예측식이다. 실제 예측은 여러 요인과 데이터를 검토해야 한다.</p>
+
+<h3>예제 5. AI 편향 체험</h3>
+<pre><code>training_data = ["soccer", "soccer", "soccer", "piano"]
+
+from collections import Counter
+
+most_common = Counter(training_data).most_common(1)[0][0]
+print("AI recommends:", most_common)</code></pre>
+<p><b>상세 설명:</b> 학습 데이터에 soccer가 지나치게 많으면 추천도 soccer로 치우친다. 데이터 편향이 결과 편향으로 이어질 수 있다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 인공지능은 인간의 지능적 활동을 컴퓨터가 수행하도록 만드는 기술과 학문 분야이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 인공지능은 인식, 추론, 학습, 의사결정, 문제 해결 등 지능적 기능을 컴퓨터로 구현하려는 분야이다.</div></div><div class="q"><b>OX 2. 인공지능은 반드시 사람처럼 감정을 느껴야 한다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 인공지능은 특정 과제를 지능적으로 수행할 수 있지만, 인간처럼 감정을 느낀다고 단정할 수 없다.</div></div><div class="q"><b>OX 3. 규칙 기반 인공지능은 사람이 미리 정한 조건과 규칙에 따라 판단한다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> if-else와 같은 명시적 규칙을 사용해 입력에 대한 출력을 결정할 수 있다.</div></div><div class="q"><b>OX 4. 머신러닝은 데이터에서 패턴을 학습해 판단이나 예측을 수행하는 인공지능 방법이다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 머신러닝은 사람이 모든 규칙을 직접 작성하지 않고 데이터로부터 규칙성을 학습한다.</div></div><div class="q"><b>OX 5. 모든 인공지능은 머신러닝이다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 머신러닝은 인공지능의 한 분야이며, 규칙 기반 시스템처럼 머신러닝이 아닌 AI도 있다.</div></div><div class="q"><b>OX 6. 지능 에이전트는 환경을 인식하고 목표에 따라 행동하는 시스템으로 설명할 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 에이전트는 센서로 환경을 인식하고, 판단 후 행동을 선택하는 구조로 이해할 수 있다.</div></div><div class="q"><b>OX 7. 인공지능은 항상 완벽하고 편향이 없다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 인공지능은 학습 데이터, 설계 방식, 사용 맥락에 따라 오류나 편향을 가질 수 있다.</div></div><div class="q"><b>OX 8. AI 모델의 출력은 근거 없이 무조건 믿어도 된다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> AI 결과는 데이터와 모델의 한계가 있으므로 검토와 책임 있는 판단이 필요하다.</div></div><div class="q"><b>OX 9. 챗봇, 추천 시스템, 이미지 인식, 음성 인식은 인공지능 활용 사례가 될 수 있다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 이러한 시스템은 언어, 선호, 이미지, 소리를 처리해 지능적 기능을 수행한다.</div></div><div class="q"><b>OX 10. 인공지능을 배울 때 기술뿐 아니라 윤리와 사회적 영향도 함께 고려해야 한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> AI는 사람과 사회에 영향을 주므로 공정성, 개인정보, 책임, 안전성을 함께 살펴야 한다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 인공지능의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 인간의 지능적 활동을 컴퓨터가 수행하도록 하는 기술과 학문</label><label><input type="radio" name="mc0" value="1"> 2. 파일을 무조건 압축하는 방법</label><label><input type="radio" name="mc0" value="2"> 3. 컴퓨터 화면 밝기 조절만</label><label><input type="radio" name="mc0" value="3"> 4. 문서의 글꼴 변경만</label><label><input type="radio" name="mc0" value="4"> 5. 키보드 입력 속도 측정</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 인공지능은 인식, 추론, 학습, 의사결정 같은 지능적 기능을 구현하려는 분야이다.</div></div><div class="q"><b>문항 2. 규칙 기반 인공지능의 특징은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 사람이 정한 조건과 규칙에 따라 판단한다</label><label><input type="radio" name="mc1" value="1"> 2. 데이터를 절대 사용하지 못한다</label><label><input type="radio" name="mc1" value="2"> 3. 항상 인간보다 뛰어나다</label><label><input type="radio" name="mc1" value="3"> 4. 감정을 느낀다</label><label><input type="radio" name="mc1" value="4"> 5. 인터넷 없이 존재할 수 없다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 규칙 기반 AI는 명시적 규칙을 바탕으로 판단한다.</div></div><div class="q"><b>문항 3. 머신러닝의 설명으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 데이터에서 패턴을 학습해 예측이나 판단을 수행한다</label><label><input type="radio" name="mc2" value="1"> 2. 모든 규칙을 사람이 하나씩 적는 방식만 뜻한다</label><label><input type="radio" name="mc2" value="2"> 3. 그래프 색을 바꾸는 기술이다</label><label><input type="radio" name="mc2" value="3"> 4. 파일 삭제 프로그램이다</label><label><input type="radio" name="mc2" value="4"> 5. 단순 계산기와 같다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 머신러닝은 데이터로부터 규칙성과 패턴을 학습한다.</div></div><div class="q"><b>문항 4. 인공지능과 머신러닝의 관계로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 머신러닝은 인공지능의 한 분야이다</label><label><input type="radio" name="mc3" value="1"> 2. 인공지능은 머신러닝의 작은 일부일 뿐이다</label><label><input type="radio" name="mc3" value="2"> 3. 둘은 완전히 같은 말이다</label><label><input type="radio" name="mc3" value="3"> 4. 머신러닝은 데이터와 무관하다</label><label><input type="radio" name="mc3" value="4"> 5. 인공지능은 컴퓨터 없이 가능하다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 머신러닝은 인공지능을 구현하는 여러 방법 중 하나이다.</div></div><div class="q"><b>문항 5. 지능 에이전트의 기본 구조로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 환경 인식 → 판단 → 행동</label><label><input type="radio" name="mc4" value="1"> 2. 파일 저장 → 압축 → 삭제</label><label><input type="radio" name="mc4" value="2"> 3. 글꼴 선택 → 색 변경 → 출력</label><label><input type="radio" name="mc4" value="3"> 4. 마우스 이동 → 클릭만</label><label><input type="radio" name="mc4" value="4"> 5. 전원 켜기만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 에이전트는 환경을 인식하고 목표에 따라 행동한다.</div></div><div class="q"><b>문항 6. 다음 중 인공지능 활용 사례로 보기 어려운 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 종이에 연필로만 쓴 임의 낙서</label><label><input type="radio" name="mc5" value="1"> 2. 음성 인식</label><label><input type="radio" name="mc5" value="2"> 3. 추천 시스템</label><label><input type="radio" name="mc5" value="3"> 4. 이미지 분류</label><label><input type="radio" name="mc5" value="4"> 5. 챗봇</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 음성 인식, 추천, 이미지 분류, 챗봇은 AI 활용 사례가 될 수 있다.</div></div><div class="q"><b>문항 7. AI가 편향될 수 있는 이유로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 학습 데이터나 설계 과정에 편향이 포함될 수 있기 때문</label><label><input type="radio" name="mc6" value="1"> 2. AI는 항상 감정을 느끼기 때문</label><label><input type="radio" name="mc6" value="2"> 3. 컴퓨터는 숫자를 못 다루기 때문</label><label><input type="radio" name="mc6" value="3"> 4. 모든 데이터가 완벽하기 때문</label><label><input type="radio" name="mc6" value="4"> 5. 모델은 절대 오류가 없기 때문</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> AI는 데이터와 설계의 영향을 받으므로 편향이 발생할 수 있다.</div></div><div class="q"><b>문항 8. AI 결과를 사용할 때 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 결과의 근거와 한계를 검토한다</label><label><input type="radio" name="mc7" value="1"> 2. 무조건 믿는다</label><label><input type="radio" name="mc7" value="2"> 3. 출처를 숨긴다</label><label><input type="radio" name="mc7" value="3"> 4. 오류 가능성을 부정한다</label><label><input type="radio" name="mc7" value="4"> 5. 사람의 판단을 완전히 포기한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> AI 결과는 검토와 책임 있는 판단이 필요하다.</div></div><div class="q"><b>문항 9. 인공지능 윤리에서 중요한 주제로 적절하지 않은 것은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 글꼴 장식만</label><label><input type="radio" name="mc8" value="1"> 2. 공정성</label><label><input type="radio" name="mc8" value="2"> 3. 개인정보 보호</label><label><input type="radio" name="mc8" value="3"> 4. 책임성</label><label><input type="radio" name="mc8" value="4"> 5. 안전성</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 글꼴 장식은 핵심 윤리 주제가 아니며, 공정성·개인정보·책임·안전성이 중요하다.</div></div><div class="q"><b>문항 10. 좋은 AI 학습 태도로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 기술 원리와 사회적 영향을 함께 이해한다</label><label><input type="radio" name="mc9" value="1"> 2. 코드만 외우고 결과는 검토하지 않는다</label><label><input type="radio" name="mc9" value="2"> 3. AI를 마법처럼 생각한다</label><label><input type="radio" name="mc9" value="3"> 4. 데이터의 출처를 무시한다</label><label><input type="radio" name="mc9" value="4"> 5. 오류를 숨긴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> AI는 기술적 원리와 함께 윤리적·사회적 영향을 이해해야 한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터61_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 인공지능이 마법이 아니라 데이터, 규칙, 모델, 판단 구조로 이루어진 기술임을 배웠습니다.
+컴퓨터과학은 AI를 구현하는 알고리즘과 시스템을 제공하고, 수학은 패턴과 예측의 논리를 설명하며, 과학은 결과를 검증하고 오류를 점검하게 합니다.
+그리고 인문 철학은 우리에게 묻습니다. “기계가 판단할 때, 그 판단의 책임은 누구에게 있는가?”
+좋은 데이터 과학자는 AI를 잘 사용하는 사람을 넘어, AI의 한계와 사회적 영향을 함께 설명할 수 있는 사람입니다.
+</div>
+</section>
+<footer>© 데이터 과학 수업자료 · 데이터61 인공지능의 이해</footer>
+</main></div>
+
+<script>
+const oxQuestions = [{"q": "인공지능은 인간의 지능적 활동을 컴퓨터가 수행하도록 만드는 기술과 학문 분야이다.", "a": "O", "e": "인공지능은 인식, 추론, 학습, 의사결정, 문제 해결 등 지능적 기능을 컴퓨터로 구현하려는 분야이다."}, {"q": "인공지능은 반드시 사람처럼 감정을 느껴야 한다.", "a": "X", "e": "인공지능은 특정 과제를 지능적으로 수행할 수 있지만, 인간처럼 감정을 느낀다고 단정할 수 없다."}, {"q": "규칙 기반 인공지능은 사람이 미리 정한 조건과 규칙에 따라 판단한다.", "a": "O", "e": "if-else와 같은 명시적 규칙을 사용해 입력에 대한 출력을 결정할 수 있다."}, {"q": "머신러닝은 데이터에서 패턴을 학습해 판단이나 예측을 수행하는 인공지능 방법이다.", "a": "O", "e": "머신러닝은 사람이 모든 규칙을 직접 작성하지 않고 데이터로부터 규칙성을 학습한다."}, {"q": "모든 인공지능은 머신러닝이다.", "a": "X", "e": "머신러닝은 인공지능의 한 분야이며, 규칙 기반 시스템처럼 머신러닝이 아닌 AI도 있다."}, {"q": "지능 에이전트는 환경을 인식하고 목표에 따라 행동하는 시스템으로 설명할 수 있다.", "a": "O", "e": "에이전트는 센서로 환경을 인식하고, 판단 후 행동을 선택하는 구조로 이해할 수 있다."}, {"q": "인공지능은 항상 완벽하고 편향이 없다.", "a": "X", "e": "인공지능은 학습 데이터, 설계 방식, 사용 맥락에 따라 오류나 편향을 가질 수 있다."}, {"q": "AI 모델의 출력은 근거 없이 무조건 믿어도 된다.", "a": "X", "e": "AI 결과는 데이터와 모델의 한계가 있으므로 검토와 책임 있는 판단이 필요하다."}, {"q": "챗봇, 추천 시스템, 이미지 인식, 음성 인식은 인공지능 활용 사례가 될 수 있다.", "a": "O", "e": "이러한 시스템은 언어, 선호, 이미지, 소리를 처리해 지능적 기능을 수행한다."}, {"q": "인공지능을 배울 때 기술뿐 아니라 윤리와 사회적 영향도 함께 고려해야 한다.", "a": "O", "e": "AI는 사람과 사회에 영향을 주므로 공정성, 개인정보, 책임, 안전성을 함께 살펴야 한다."}];
+const mcQuestions = [{"q": "인공지능의 설명으로 가장 적절한 것은?", "c": ["인간의 지능적 활동을 컴퓨터가 수행하도록 하는 기술과 학문", "파일을 무조건 압축하는 방법", "컴퓨터 화면 밝기 조절만", "문서의 글꼴 변경만", "키보드 입력 속도 측정"], "a": 0, "e": "인공지능은 인식, 추론, 학습, 의사결정 같은 지능적 기능을 구현하려는 분야이다."}, {"q": "규칙 기반 인공지능의 특징은?", "c": ["사람이 정한 조건과 규칙에 따라 판단한다", "데이터를 절대 사용하지 못한다", "항상 인간보다 뛰어나다", "감정을 느낀다", "인터넷 없이 존재할 수 없다"], "a": 0, "e": "규칙 기반 AI는 명시적 규칙을 바탕으로 판단한다."}, {"q": "머신러닝의 설명으로 옳은 것은?", "c": ["데이터에서 패턴을 학습해 예측이나 판단을 수행한다", "모든 규칙을 사람이 하나씩 적는 방식만 뜻한다", "그래프 색을 바꾸는 기술이다", "파일 삭제 프로그램이다", "단순 계산기와 같다"], "a": 0, "e": "머신러닝은 데이터로부터 규칙성과 패턴을 학습한다."}, {"q": "인공지능과 머신러닝의 관계로 가장 적절한 것은?", "c": ["머신러닝은 인공지능의 한 분야이다", "인공지능은 머신러닝의 작은 일부일 뿐이다", "둘은 완전히 같은 말이다", "머신러닝은 데이터와 무관하다", "인공지능은 컴퓨터 없이 가능하다"], "a": 0, "e": "머신러닝은 인공지능을 구현하는 여러 방법 중 하나이다."}, {"q": "지능 에이전트의 기본 구조로 적절한 것은?", "c": ["환경 인식 → 판단 → 행동", "파일 저장 → 압축 → 삭제", "글꼴 선택 → 색 변경 → 출력", "마우스 이동 → 클릭만", "전원 켜기만"], "a": 0, "e": "에이전트는 환경을 인식하고 목표에 따라 행동한다."}, {"q": "다음 중 인공지능 활용 사례로 보기 어려운 것은?", "c": ["종이에 연필로만 쓴 임의 낙서", "음성 인식", "추천 시스템", "이미지 분류", "챗봇"], "a": 0, "e": "음성 인식, 추천, 이미지 분류, 챗봇은 AI 활용 사례가 될 수 있다."}, {"q": "AI가 편향될 수 있는 이유로 적절한 것은?", "c": ["학습 데이터나 설계 과정에 편향이 포함될 수 있기 때문", "AI는 항상 감정을 느끼기 때문", "컴퓨터는 숫자를 못 다루기 때문", "모든 데이터가 완벽하기 때문", "모델은 절대 오류가 없기 때문"], "a": 0, "e": "AI는 데이터와 설계의 영향을 받으므로 편향이 발생할 수 있다."}, {"q": "AI 결과를 사용할 때 바람직한 태도는?", "c": ["결과의 근거와 한계를 검토한다", "무조건 믿는다", "출처를 숨긴다", "오류 가능성을 부정한다", "사람의 판단을 완전히 포기한다"], "a": 0, "e": "AI 결과는 검토와 책임 있는 판단이 필요하다."}, {"q": "인공지능 윤리에서 중요한 주제로 적절하지 않은 것은?", "c": ["글꼴 장식만", "공정성", "개인정보 보호", "책임성", "안전성"], "a": 0, "e": "글꼴 장식은 핵심 윤리 주제가 아니며, 공정성·개인정보·책임·안전성이 중요하다."}, {"q": "좋은 AI 학습 태도로 가장 적절한 것은?", "c": ["기술 원리와 사회적 영향을 함께 이해한다", "코드만 외우고 결과는 검토하지 않는다", "AI를 마법처럼 생각한다", "데이터의 출처를 무시한다", "오류를 숨긴다"], "a": 0, "e": "AI는 기술적 원리와 함께 윤리적·사회적 영향을 이해해야 한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅵ. 인공지능과 머신러닝 - 인공지능의 이해\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n인공지능은 지능적 기능을 수행하는 기술이며, 데이터·규칙·모델의 한계와 윤리적 책임을 함께 고려해야 한다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터61_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

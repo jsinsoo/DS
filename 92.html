@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터92_데이터 기반 의사결정_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#1e293b,#2563eb,#f59e0b);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#2563eb}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#1d4ed8;border-left:8px solid #f59e0b;padding-left:12px}h3{color:#d97706;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#eff6ff;border-left:6px solid #2563eb}
+.quote{font-size:18px;background:#fffbeb;border-left:7px solid #f59e0b;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#dbeafe;border:1px solid #93c5fd;border-radius:999px;padding:8px 13px;font-weight:700;color:#1e3a8a}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#fef3c7}
+.q{border:1px solid #bfdbfe;background:#fbfdff;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#dbeafe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#2563eb;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#1d4ed8}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터92. 데이터 기반 의사결정</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅸ. 데이터 과학과 미래 사회 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B092_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EB%B0%98%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>데이터 기반 의사결정은 문제를 정의하고 데이터를 분석하여 대안을 비교한 뒤 근거 있는 선택을 실행·평가·개선하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>좋은 의사결정은 데이터의 수치적 근거와 인간의 맥락적 판단, 윤리적 책임이 함께 결합될 때 가능하다.</div>
+<div class="card goal"><b>핵심 질문</b><br>우리는 중요한 선택을 할 때 어떤 데이터를 근거로 삼고, 그 결정의 책임을 어떻게 질 수 있는가?</div></div>
+<div class="flow"><span class="step">문제 정의</span><span class="step">데이터 수집</span><span class="step">지표 설정</span><span class="step">분석</span><span class="step">대안 비교</span><span class="step">결정</span><span class="step">평가</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅸ. 데이터 과학과 미래 사회 - 데이터 기반 의사결정</td></tr>
+<tr><td>수업 목표</td><td>① 데이터 기반 의사결정의 의미와 절차를 설명한다.<br>② 문제 정의와 지표 설정의 중요성을 이해한다.<br>③ Pandas로 대안을 비교하고 종합 점수를 계산한다.<br>④ Matplotlib으로 대안별 결과를 시각화한다.<br>⑤ 데이터 편향, 개인정보, 책임 있는 선택의 필요성을 설명한다.</td></tr>
+<tr><td>지식 목표</td><td>문제 정의, 지표, 대안, 비용, 효과, 위험, 공정성, 편향, 실행 평가, 책임 있는 의사결정의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>대안 비교표 만들기, 지표별 정렬, 종합 점수 계산, 막대그래프 시각화, 실행 전후 변화량 계산을 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>데이터를 맹신하지 않고, 사람과 사회에 미치는 영향을 고려해 책임 있게 결정하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: “감으로 결정할까, 데이터로 결정할까?” 질문 제시 → 전개 35분: 의사결정 데이터 분석 코드 실습 → 정리 10분: 윤리와 책임 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 데이터 기반 의사결정 미니 보고서</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">우리는 매일 선택합니다. 어떤 메뉴를 개선할지, 어떤 정책을 먼저 실행할지, 어떤 프로그램에 예산을 배분할지 결정해야 합니다. 감과 경험도 중요하지만, 데이터는 선택의 이유를 더 분명하게 만들어 줍니다. 그러나 숫자가 있다고 해서 결정이 자동으로 옳아지는 것은 아닙니다. 인문 철학적으로 데이터 기반 의사결정은 “무엇을 기준으로 좋은 선택이라고 말할 수 있는가?”라는 질문과 연결됩니다. 오늘 우리는 데이터를 근거로 삼되, 인간의 책임과 윤리를 함께 고려하는 의사결정 방법을 배웁니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 데이터 기반 의사결정</h3><p>데이터 기반 의사결정은 직관, 경험, 권위에만 의존하지 않고 데이터를 수집·분석하여 근거 있는 결정을 내리는 과정이다. 학교, 기업, 공공기관, 환경 정책, 의료, 교통 등 다양한 분야에서 활용된다.</p>
+<h3>② 문제 정의</h3><p>의사결정은 “무엇을 결정해야 하는가?”를 분명히 하는 것에서 시작한다. 문제 정의가 모호하면 데이터 수집과 분석 방향도 흔들린다.</p>
+<h3>③ 데이터 수집</h3><p>의사결정에 필요한 데이터를 모으는 단계이다. 설문, 센서, 공공데이터, 업무 기록, 실험 결과 등을 활용할 수 있으며 출처와 신뢰도를 확인해야 한다.</p>
+<h3>④ 지표 설정</h3><p>지표는 판단의 기준이다. 비용, 시간, 만족도, 효율, 정확도, 위험도, 공정성, 지속 가능성 같은 지표를 상황에 맞게 정한다.</p>
+<h3>⑤ 데이터 분석</h3><p>수집한 데이터를 평균, 합계, 비율, 변화량, 상관관계, 그룹 비교 등으로 분석한다. 분석 결과는 대안을 비교하는 근거가 된다.</p>
+<h3>⑥ 대안 비교</h3><p>여러 선택지를 지표에 따라 비교한다. 어떤 대안이 비용은 낮지만 효과도 낮을 수 있고, 어떤 대안은 효과는 크지만 위험이 클 수 있다.</p>
+<h3>⑦ 시각화</h3><p>그래프는 대안의 차이와 변화 추세를 한눈에 보여 준다. 막대그래프는 대안 비교, 선그래프는 시간 변화, 산점도는 변수 관계를 표현하는 데 유용하다.</p>
+<h3>⑧ 실행과 평가</h3><p>결정을 실행한 뒤 결과 데이터를 다시 수집해 목표가 달성되었는지 평가한다. 데이터 기반 의사결정은 한 번의 선택이 아니라 반복적 개선 과정이다.</p>
+<h3>⑨ 편향과 한계</h3><p>데이터가 특정 집단을 과소대표하거나 잘못 측정되면 의사결정도 불공정해질 수 있다. 데이터의 출처, 수집 방식, 표본, 해석의 한계를 점검해야 한다.</p>
+<h3>⑩ 책임 있는 의사결정</h3><p>데이터는 결정을 돕는 도구이지만 최종 책임은 인간에게 있다. 공정성, 개인정보 보호, 설명 가능성, 사회적 영향을 함께 고려해야 한다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 의사결정용 DataFrame 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "option": ["A", "B", "C"],
+    "cost": [100, 80, 120],
+    "satisfaction": [85, 70, 95],
+    "risk": [20, 30, 15]
+})
+
+print(df)</code></pre><p>여러 대안의 비용, 만족도, 위험도 데이터를 표로 만든다.</p>
+
+<h3>② 지표별 정렬</h3><pre><code>print(df.sort_values("satisfaction", ascending=False))</code></pre><p>만족도가 높은 대안부터 정렬해 비교한다.</p>
+
+<h3>③ 종합 점수 계산</h3><pre><code>df["score"] = df["satisfaction"] - df["cost"] * 0.3 - df["risk"] * 0.5
+print(df)</code></pre><p>만족도는 높이고 비용과 위험은 낮추는 방향으로 단순 종합 점수를 만든다.</p>
+
+<h3>④ 최적 대안 찾기</h3><pre><code>best = df.loc[df["score"].idxmax()]
+print(best)</code></pre><p>종합 점수가 가장 높은 대안을 선택한다.</p>
+
+<h3>⑤ 대안 비교 막대그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+plt.bar(df["option"], df["score"])
+plt.title("Decision Score by Option")
+plt.xlabel("Option")
+plt.ylabel("Score")
+plt.show()</code></pre><p>대안별 종합 점수를 막대그래프로 비교한다.</p>
+
+<h3>⑥ 실행 후 평가</h3><pre><code>before = 70
+after = 82
+
+change = after - before
+print("Improvement:", change)</code></pre><p>의사결정 실행 전후 지표 변화를 계산해 효과를 평가한다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 급식 메뉴 개선 의사결정</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "menu": ["Rice", "Curry", "Pasta"],
+    "satisfaction": [70, 90, 85],
+    "cost": [50, 65, 70]
+})
+
+df["score"] = df["satisfaction"] - df["cost"] * 0.5
+print(df.sort_values("score", ascending=False))</code></pre><p><b>상세 설명:</b> 만족도와 비용을 함께 고려해 메뉴 개선 우선순위를 정한다.</p>
+
+<h3>예제 2. 동아리 예산 배분 비교</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "club": ["Science", "Music", "Sports"],
+    "students": [45, 30, 50],
+    "need": [80, 70, 75]
+})
+
+df["priority"] = df["students"] * 0.4 + df["need"] * 0.6
+print(df.sort_values("priority", ascending=False))</code></pre><p><b>상세 설명:</b> 참여 학생 수와 필요도를 함께 고려해 예산 배분 우선순위를 비교한다.</p>
+
+<h3>예제 3. 에너지 절약 정책 선택</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "policy": ["LED", "AC control", "Solar"],
+    "saving": [30, 25, 45],
+    "cost": [10, 5, 40]
+})
+
+df["efficiency"] = df["saving"] / df["cost"]
+print(df.sort_values("efficiency", ascending=False))</code></pre><p><b>상세 설명:</b> 비용 대비 절감 효과를 계산해 효율적인 정책을 찾는다.</p>
+
+<h3>예제 4. 대안별 점수 시각화</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "option": ["A", "B", "C"],
+    "score": [78, 85, 72]
+})
+
+plt.bar(df["option"], df["score"])
+plt.title("Option Score")
+plt.xlabel("Option")
+plt.ylabel("Score")
+plt.show()</code></pre><p><b>상세 설명:</b> 대안별 점수를 막대그래프로 표현해 비교를 쉽게 한다.</p>
+
+<h3>예제 5. 실행 전후 만족도 평가</h3><pre><code>before = [70, 72, 68]
+after = [80, 82, 78]
+
+improvement = sum(after) / len(after) - sum(before) / len(before)
+print("average improvement:", improvement)</code></pre><p><b>상세 설명:</b> 의사결정 실행 전후 평균 만족도 차이를 계산해 효과를 평가한다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 데이터 기반 의사결정은 직관이나 감에만 의존하지 않고 데이터를 근거로 판단하는 과정이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터 기반 의사결정은 문제를 정의하고 데이터를 분석하여 더 합리적인 선택을 하도록 돕는다.</div></div><div class="q"><b>OX 2. 데이터 기반 의사결정에서는 먼저 해결하려는 문제를 명확히 정의하는 것이 중요하다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 문제가 명확해야 어떤 데이터를 모으고 어떤 지표를 볼지 결정할 수 있다.</div></div><div class="q"><b>OX 3. 지표는 의사결정에서 비교와 판단의 기준이 되는 수치나 기준이다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 예를 들어 비용, 만족도, 정확도, 시간, 위험도 등이 지표가 될 수 있다.</div></div><div class="q"><b>OX 4. 데이터가 많으면 언제나 좋은 의사결정이 자동으로 보장된다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 데이터의 품질, 편향, 해석 방식, 맥락이 중요하다.</div></div><div class="q"><b>OX 5. 대안을 비교할 때 여러 지표를 함께 고려할 수 있다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 비용만 볼 수도 있지만 효과, 안전성, 공정성, 지속 가능성도 함께 고려할 수 있다.</div></div><div class="q"><b>OX 6. 상관관계를 발견하면 바로 인과관계로 결론 내릴 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않으므로 추가 근거와 맥락 검토가 필요하다.</div></div><div class="q"><b>OX 7. 데이터 시각화는 의사결정 과정에서 대안과 결과를 이해하는 데 도움이 된다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 그래프는 복잡한 데이터를 비교하고 추세를 파악하는 데 유용하다.</div></div><div class="q"><b>OX 8. 데이터 기반 의사결정에서도 윤리와 책임은 중요하다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터가 특정 집단을 불리하게 만들거나 개인정보를 침해할 수 있으므로 윤리적 검토가 필요하다.</div></div><div class="q"><b>OX 9. 의사결정 결과는 실행 후 다시 평가하고 개선할 수 있다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터 기반 의사결정은 실행, 평가, 개선으로 이어지는 반복 과정이다.</div></div><div class="q"><b>OX 10. 데이터 기반 의사결정은 인간의 판단을 완전히 없애는 과정이다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 데이터는 판단을 돕는 근거이며, 최종 책임과 맥락 판단은 인간에게 남아 있다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 데이터 기반 의사결정의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 데이터를 근거로 문제를 판단하고 선택하는 과정</label><label><input type="radio" name="mc0" value="1"> 2. 감으로만 결정하는 과정</label><label><input type="radio" name="mc0" value="2"> 3. 데이터를 모두 삭제하는 과정</label><label><input type="radio" name="mc0" value="3"> 4. 그래프 색만 고르는 과정</label><label><input type="radio" name="mc0" value="4"> 5. 파일 이름을 바꾸는 과정</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 데이터 기반 의사결정은 데이터를 분석해 근거 있는 판단을 돕는다.</div></div><div class="q"><b>문항 2. 데이터 기반 의사결정의 첫 단계로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 문제 정의</label><label><input type="radio" name="mc1" value="1"> 2. 결론 먼저 쓰기</label><label><input type="radio" name="mc1" value="2"> 3. 그래프 색 정하기</label><label><input type="radio" name="mc1" value="3"> 4. 데이터 출처 숨기기</label><label><input type="radio" name="mc1" value="4"> 5. 파일 압축</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 문제 정의가 명확해야 적절한 데이터와 지표를 정할 수 있다.</div></div><div class="q"><b>문항 3. 의사결정 지표의 예로 적절하지 않은 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 마우스 색상만</label><label><input type="radio" name="mc2" value="1"> 2. 비용</label><label><input type="radio" name="mc2" value="2"> 3. 만족도</label><label><input type="radio" name="mc2" value="3"> 4. 시간</label><label><input type="radio" name="mc2" value="4"> 5. 위험도</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 마우스 색상은 일반적인 의사결정 기준으로 적절하지 않다.</div></div><div class="q"><b>문항 4. 데이터가 많아도 좋은 결정이 보장되지 않는 이유는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 데이터 품질과 편향, 해석 맥락이 중요하기 때문</label><label><input type="radio" name="mc3" value="1"> 2. 데이터는 항상 완벽하기 때문</label><label><input type="radio" name="mc3" value="2"> 3. 그래프가 필요 없기 때문</label><label><input type="radio" name="mc3" value="3"> 4. 수치는 의미가 없기 때문</label><label><input type="radio" name="mc3" value="4"> 5. 컴퓨터가 항상 틀리기 때문</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 양보다 품질과 맥락이 중요하다.</div></div><div class="q"><b>문항 5. 대안 비교에서 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 여러 지표를 함께 고려한다</label><label><input type="radio" name="mc4" value="1"> 2. 비용 하나만 보고 무조건 결정한다</label><label><input type="radio" name="mc4" value="2"> 3. 불리한 자료는 숨긴다</label><label><input type="radio" name="mc4" value="3"> 4. 출처를 지운다</label><label><input type="radio" name="mc4" value="4"> 5. 결과를 평가하지 않는다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 좋은 의사결정은 비용, 효과, 공정성, 위험 등을 함께 고려한다.</div></div><div class="q"><b>문항 6. 상관관계 해석에서 옳은 태도는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 인과관계로 단정하지 않고 추가 근거를 확인한다</label><label><input type="radio" name="mc5" value="1"> 2. 무조건 원인이라고 말한다</label><label><input type="radio" name="mc5" value="2"> 3. 데이터를 삭제한다</label><label><input type="radio" name="mc5" value="3"> 4. 그래프를 숨긴다</label><label><input type="radio" name="mc5" value="4"> 5. 단위를 제거한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않는다.</div></div><div class="q"><b>문항 7. 의사결정 결과를 실행한 뒤 해야 할 일로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 성과를 평가하고 개선한다</label><label><input type="radio" name="mc6" value="1"> 2. 검토하지 않는다</label><label><input type="radio" name="mc6" value="2"> 3. 출처를 삭제한다</label><label><input type="radio" name="mc6" value="3"> 4. 오류를 숨긴다</label><label><input type="radio" name="mc6" value="4"> 5. 데이터를 모두 버린다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 실행 후 평가는 다음 의사결정 개선에 필요하다.</div></div><div class="q"><b>문항 8. 데이터 시각화가 의사결정에 도움이 되는 이유는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 비교와 추세를 쉽게 이해하게 해 주기 때문</label><label><input type="radio" name="mc7" value="1"> 2. 숫자를 모두 숨기기 위해</label><label><input type="radio" name="mc7" value="2"> 3. 데이터를 왜곡하기 위해</label><label><input type="radio" name="mc7" value="3"> 4. 개인정보를 공개하기 위해</label><label><input type="radio" name="mc7" value="4"> 5. 결론을 무조건 바꾸기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 시각화는 복잡한 데이터를 쉽게 비교하고 해석하게 한다.</div></div><div class="q"><b>문항 9. 데이터 기반 의사결정에서 윤리가 중요한 이유는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 결정이 사람과 사회에 영향을 줄 수 있기 때문</label><label><input type="radio" name="mc8" value="1"> 2. 데이터는 사람과 무관하기 때문</label><label><input type="radio" name="mc8" value="2"> 3. 모든 결정은 자동으로 공정하기 때문</label><label><input type="radio" name="mc8" value="3"> 4. 개인정보는 중요하지 않기 때문</label><label><input type="radio" name="mc8" value="4"> 5. 그래프가 항상 진실이기 때문</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 데이터 기반 결정도 공정성, 개인정보, 책임성을 고려해야 한다.</div></div><div class="q"><b>문항 10. 좋은 데이터 기반 의사결정 보고서에 필요한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 문제, 데이터, 지표, 분석, 대안 비교, 결정, 한계</label><label><input type="radio" name="mc9" value="1"> 2. 결론만 한 줄</label><label><input type="radio" name="mc9" value="2"> 3. 출처 없는 그래프</label><label><input type="radio" name="mc9" value="3"> 4. 불리한 결과 삭제</label><label><input type="radio" name="mc9" value="4"> 5. 단위 숨기기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 보고서는 근거와 한계를 포함해야 신뢰할 수 있다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터92_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 데이터를 근거로 문제를 정의하고, 지표를 설정하고, 대안을 비교하며, 실행 후 다시 평가하는 의사결정 과정을 배웠습니다. 컴퓨터과학은 데이터를 처리하고 자동화하는 도구를 제공하고, 수학은 점수화와 비교, 변화량 계산의 논리를 설명하며, 과학은 선택의 효과를 검증하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “좋은 결정은 효율만 높은 결정인가, 아니면 공정하고 책임 있는 결정인가?” 좋은 데이터 과학자는 숫자를 계산하는 사람을 넘어, 데이터와 인간의 가치를 함께 고려해 더 나은 선택을 이끄는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터92 데이터 기반 의사결정</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "데이터 기반 의사결정은 직관이나 감에만 의존하지 않고 데이터를 근거로 판단하는 과정이다.", "a": "O", "e": "데이터 기반 의사결정은 문제를 정의하고 데이터를 분석하여 더 합리적인 선택을 하도록 돕는다."}, {"q": "데이터 기반 의사결정에서는 먼저 해결하려는 문제를 명확히 정의하는 것이 중요하다.", "a": "O", "e": "문제가 명확해야 어떤 데이터를 모으고 어떤 지표를 볼지 결정할 수 있다."}, {"q": "지표는 의사결정에서 비교와 판단의 기준이 되는 수치나 기준이다.", "a": "O", "e": "예를 들어 비용, 만족도, 정확도, 시간, 위험도 등이 지표가 될 수 있다."}, {"q": "데이터가 많으면 언제나 좋은 의사결정이 자동으로 보장된다.", "a": "X", "e": "데이터의 품질, 편향, 해석 방식, 맥락이 중요하다."}, {"q": "대안을 비교할 때 여러 지표를 함께 고려할 수 있다.", "a": "O", "e": "비용만 볼 수도 있지만 효과, 안전성, 공정성, 지속 가능성도 함께 고려할 수 있다."}, {"q": "상관관계를 발견하면 바로 인과관계로 결론 내릴 수 있다.", "a": "X", "e": "상관관계는 인과관계를 증명하지 않으므로 추가 근거와 맥락 검토가 필요하다."}, {"q": "데이터 시각화는 의사결정 과정에서 대안과 결과를 이해하는 데 도움이 된다.", "a": "O", "e": "그래프는 복잡한 데이터를 비교하고 추세를 파악하는 데 유용하다."}, {"q": "데이터 기반 의사결정에서도 윤리와 책임은 중요하다.", "a": "O", "e": "데이터가 특정 집단을 불리하게 만들거나 개인정보를 침해할 수 있으므로 윤리적 검토가 필요하다."}, {"q": "의사결정 결과는 실행 후 다시 평가하고 개선할 수 있다.", "a": "O", "e": "데이터 기반 의사결정은 실행, 평가, 개선으로 이어지는 반복 과정이다."}, {"q": "데이터 기반 의사결정은 인간의 판단을 완전히 없애는 과정이다.", "a": "X", "e": "데이터는 판단을 돕는 근거이며, 최종 책임과 맥락 판단은 인간에게 남아 있다."}];
+const mcQuestions = [{"q": "데이터 기반 의사결정의 설명으로 가장 적절한 것은?", "c": ["데이터를 근거로 문제를 판단하고 선택하는 과정", "감으로만 결정하는 과정", "데이터를 모두 삭제하는 과정", "그래프 색만 고르는 과정", "파일 이름을 바꾸는 과정"], "a": 0, "e": "데이터 기반 의사결정은 데이터를 분석해 근거 있는 판단을 돕는다."}, {"q": "데이터 기반 의사결정의 첫 단계로 가장 적절한 것은?", "c": ["문제 정의", "결론 먼저 쓰기", "그래프 색 정하기", "데이터 출처 숨기기", "파일 압축"], "a": 0, "e": "문제 정의가 명확해야 적절한 데이터와 지표를 정할 수 있다."}, {"q": "의사결정 지표의 예로 적절하지 않은 것은?", "c": ["마우스 색상만", "비용", "만족도", "시간", "위험도"], "a": 0, "e": "마우스 색상은 일반적인 의사결정 기준으로 적절하지 않다."}, {"q": "데이터가 많아도 좋은 결정이 보장되지 않는 이유는?", "c": ["데이터 품질과 편향, 해석 맥락이 중요하기 때문", "데이터는 항상 완벽하기 때문", "그래프가 필요 없기 때문", "수치는 의미가 없기 때문", "컴퓨터가 항상 틀리기 때문"], "a": 0, "e": "양보다 품질과 맥락이 중요하다."}, {"q": "대안 비교에서 바람직한 태도는?", "c": ["여러 지표를 함께 고려한다", "비용 하나만 보고 무조건 결정한다", "불리한 자료는 숨긴다", "출처를 지운다", "결과를 평가하지 않는다"], "a": 0, "e": "좋은 의사결정은 비용, 효과, 공정성, 위험 등을 함께 고려한다."}, {"q": "상관관계 해석에서 옳은 태도는?", "c": ["인과관계로 단정하지 않고 추가 근거를 확인한다", "무조건 원인이라고 말한다", "데이터를 삭제한다", "그래프를 숨긴다", "단위를 제거한다"], "a": 0, "e": "상관관계는 인과관계를 증명하지 않는다."}, {"q": "의사결정 결과를 실행한 뒤 해야 할 일로 적절한 것은?", "c": ["성과를 평가하고 개선한다", "검토하지 않는다", "출처를 삭제한다", "오류를 숨긴다", "데이터를 모두 버린다"], "a": 0, "e": "실행 후 평가는 다음 의사결정 개선에 필요하다."}, {"q": "데이터 시각화가 의사결정에 도움이 되는 이유는?", "c": ["비교와 추세를 쉽게 이해하게 해 주기 때문", "숫자를 모두 숨기기 위해", "데이터를 왜곡하기 위해", "개인정보를 공개하기 위해", "결론을 무조건 바꾸기 위해"], "a": 0, "e": "시각화는 복잡한 데이터를 쉽게 비교하고 해석하게 한다."}, {"q": "데이터 기반 의사결정에서 윤리가 중요한 이유는?", "c": ["결정이 사람과 사회에 영향을 줄 수 있기 때문", "데이터는 사람과 무관하기 때문", "모든 결정은 자동으로 공정하기 때문", "개인정보는 중요하지 않기 때문", "그래프가 항상 진실이기 때문"], "a": 0, "e": "데이터 기반 결정도 공정성, 개인정보, 책임성을 고려해야 한다."}, {"q": "좋은 데이터 기반 의사결정 보고서에 필요한 것은?", "c": ["문제, 데이터, 지표, 분석, 대안 비교, 결정, 한계", "결론만 한 줄", "출처 없는 그래프", "불리한 결과 삭제", "단위 숨기기"], "a": 0, "e": "보고서는 근거와 한계를 포함해야 신뢰할 수 있다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅸ. 데이터 과학과 미래 사회 - 데이터 기반 의사결정\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n데이터 기반 의사결정은 문제 정의·지표 설정·분석·대안 비교·실행 평가를 통해 근거 있고 책임 있는 선택을 돕는 과정이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터92_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

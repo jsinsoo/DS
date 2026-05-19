@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터85_학교 생활 데이터 분석_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f172a,#8b5cf6,#ec4899);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#8b5cf6}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#7c3aed;border-left:8px solid #ec4899;padding-left:12px}h3{color:#db2777;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#f5f3ff;border-left:6px solid #8b5cf6}
+.quote{font-size:18px;background:#fdf2f8;border-left:7px solid #ec4899;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#ede9fe;border:1px solid #c4b5fd;border-radius:999px;padding:8px 13px;font-weight:700;color:#4c1d95}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#fbcfe8}
+.q{border:1px solid #ddd6fe;background:#fdfbff;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#f5f3ff}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#8b5cf6;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#7c3aed}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터85. 학교 생활 데이터 분석</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅷ. 실생활 데이터 프로젝트 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B085_%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>학교 생활 데이터 분석은 학교 안의 다양한 활동 기록을 정리·시각화하여 학생 지원과 학교 환경 개선의 근거를 찾는 프로젝트이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>학교 생활 데이터는 학생들의 삶과 직접 연결되므로 분석의 목적은 감시가 아니라 이해, 지원, 개선이어야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>학교 생활 데이터를 어떻게 활용하면 학생을 더 잘 이해하고 더 나은 학교를 만들 수 있을까?</div></div>
+<div class="flow"><span class="step">출석</span><span class="step">급식</span><span class="step">도서관</span><span class="step">학습 시간</span><span class="step">동아리</span><span class="step">익명화</span><span class="step">개선</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅷ. 실생활 데이터 프로젝트 - 학교 생활 데이터 분석</td></tr>
+<tr><td>수업 목표</td><td>① 학교 생활 데이터의 종류와 활용 가능성을 설명한다.<br>② Pandas로 학교 생활 데이터를 정리하고 요약 통계를 계산한다.<br>③ 반별·메뉴별·월별 데이터를 그래프로 표현한다.<br>④ 분석 결과를 학생 지원과 학교 개선 방향으로 해석한다.<br>⑤ 개인정보 보호와 익명화의 필요성을 설명한다.</td></tr>
+<tr><td>지식 목표</td><td>출석 데이터, 급식 만족도, 도서관 이용, 학습 시간, 동아리 활동, 결측값, 이상값, 익명화, 데이터 윤리의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>Pandas 필터링·그룹화·통계 계산, Matplotlib 선그래프·막대그래프·산점도 작성, 익명화 코드를 작성한다.</td></tr>
+<tr><td>태도 목표</td><td>학교 데이터를 학생 지원과 환경 개선을 위해 사용하고, 개인을 낙인찍지 않는 책임 있는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: “좋은 학교 생활을 데이터로 알 수 있을까?” 질문 제시 → 전개 35분: 학교 생활 데이터 분석 코드 실습 → 정리 10분: 개인정보와 학생 지원 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 학교 생활 데이터 분석 미니 보고서</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">학교에는 매일 수많은 데이터가 생깁니다. 도서관을 얼마나 이용했는지, 어떤 급식을 좋아했는지, 동아리에 얼마나 참여했는지, 상담 신청이 어느 달에 늘었는지 같은 기록입니다. 하지만 이 데이터는 단순한 숫자가 아니라 학생들의 생활과 감정, 필요를 담고 있습니다. 인문 철학적으로 학교 생활 데이터 분석은 “학생을 평가하기 위한 데이터인가, 학생을 더 잘 돕기 위한 데이터인가?”라는 질문을 던집니다. 오늘 우리는 학교 데이터를 더 나은 학교를 만드는 근거로 활용하는 방법을 배웁니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 학교 생활 데이터</h3><p>학교 생활 데이터는 출석, 지각, 급식 만족도, 도서관 이용, 동아리 활동, 학습 시간, 상담 신청, 시설 이용처럼 학교 안에서 발생하는 여러 활동 기록이다.</p>
+<h3>② 문제 정의</h3><p>학교 생활 데이터 분석은 “학생들이 도서관을 언제 많이 이용할까?”, “급식 만족도는 어떤 메뉴에서 높을까?”처럼 구체적인 질문을 정하는 것에서 시작한다.</p>
+<h3>③ 출석 데이터</h3><p>출석 데이터는 결석, 지각, 조퇴 같은 학교 생활 패턴을 보여 준다. 학생 개인을 낙인찍기보다 지원이 필요한 상황을 찾는 데 활용해야 한다.</p>
+<h3>④ 급식 만족도 데이터</h3><p>급식 만족도 데이터는 메뉴별 선호도와 개선 의견을 분석하는 데 사용된다. 평균뿐 아니라 응답자 수와 의견의 다양성을 함께 봐야 한다.</p>
+<h3>⑤ 도서관 이용 데이터</h3><p>도서관 방문 횟수, 대출 권수, 이용 시간대는 독서 문화와 학습 공간 활용을 이해하는 데 도움이 된다.</p>
+<h3>⑥ 학습 시간 데이터</h3><p>학습 시간 데이터는 성적, 집중도, 수면 시간 등과 함께 분석될 수 있다. 그러나 학습 시간이 많다고 항상 성과가 높다고 단정할 수는 없다.</p>
+<h3>⑦ 동아리 활동 데이터</h3><p>동아리 참여 시간, 활동 분야, 만족도는 학생 자율 활동과 진로 탐색을 이해하는 데 활용될 수 있다.</p>
+<h3>⑧ 데이터 전처리</h3><p>학교 생활 데이터에는 기록 누락, 중복 입력, 잘못된 값이 있을 수 있다. 결측값과 이상값을 확인해야 정확한 분석이 가능하다.</p>
+<h3>⑨ 시각화와 해석</h3><p>막대그래프는 반별·메뉴별 비교, 선그래프는 월별 변화, 산점도는 학습 시간과 성적 같은 두 변수의 관계를 표현하는 데 유용하다.</p>
+<h3>⑩ 개인정보와 윤리</h3><p>학교 생활 데이터는 학생 개인의 생활과 관련되므로 익명화, 최소 수집, 목적 제한, 접근 권한 관리가 중요하다. 분석 결과는 낙인이 아니라 지원과 개선을 위해 사용되어야 한다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 학교 생활 DataFrame 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "class": ["A", "A", "B", "B"],
+    "library_visits": [5, 8, 3, 6],
+    "study_hour": [12, 15, 10, 14],
+    "satisfaction": [4, 5, 3, 4]
+})
+
+print(df)</code></pre><p>반, 도서관 방문 횟수, 학습 시간, 만족도 데이터를 표 형태로 만든다.</p>
+
+<h3>② 요약 통계 확인</h3><pre><code>print(df[["library_visits", "study_hour", "satisfaction"]].describe())</code></pre><p>학교 생활 데이터의 평균, 최솟값, 최댓값 등을 확인한다.</p>
+
+<h3>③ 반별 평균 만족도</h3><pre><code>print(df.groupby("class")["satisfaction"].mean())</code></pre><p>반별 평균 만족도를 계산한다.</p>
+
+<h3>④ 도서관 이용이 많은 학생 찾기</h3><pre><code>active = df[df["library_visits"] &gt;= 6]
+print(active)</code></pre><p>도서관 방문 횟수가 6회 이상인 데이터를 선택한다.</p>
+
+<h3>⑤ 학습 시간과 만족도 산점도</h3><pre><code>import matplotlib.pyplot as plt
+
+plt.scatter(df["study_hour"], df["satisfaction"])
+plt.title("Study Hour and Satisfaction")
+plt.xlabel("Study Hour")
+plt.ylabel("Satisfaction")
+plt.show()</code></pre><p>학습 시간과 만족도의 관계를 산점도로 살펴본다.</p>
+
+<h3>⑥ 반별 도서관 이용 막대그래프</h3><pre><code>summary = df.groupby("class")["library_visits"].mean()
+
+summary.plot(kind="bar")
+plt.title("Library Visits by Class")
+plt.xlabel("Class")
+plt.ylabel("Average Visits")
+plt.show()</code></pre><p>반별 평균 도서관 이용 횟수를 막대그래프로 비교한다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 반별 도서관 이용 평균</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "class": ["A", "A", "B", "B"],
+    "visits": [4, 6, 3, 7]
+})
+
+print(df.groupby("class")["visits"].mean())</code></pre><p><b>상세 설명:</b> 반별 도서관 방문 평균을 계산해 학습 공간 이용 차이를 살펴본다.</p>
+
+<h3>예제 2. 급식 메뉴 만족도 분석</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "menu": ["Rice", "Curry", "Rice", "Curry"],
+    "score": [4, 5, 3, 5]
+})
+
+print(df.groupby("menu")["score"].mean())</code></pre><p><b>상세 설명:</b> 메뉴별 평균 만족도를 계산하여 선호도가 높은 메뉴를 찾는다.</p>
+
+<h3>예제 3. 월별 상담 신청 변화</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "counseling": [12, 18, 15, 20]
+})
+
+plt.plot(df["month"], df["counseling"], marker="o")
+plt.title("Counseling Requests")
+plt.xlabel("Month")
+plt.ylabel("Requests")
+plt.show()</code></pre><p><b>상세 설명:</b> 월별 상담 신청 수 변화를 확인한다. 원인 해석에는 학사 일정 등 맥락이 필요하다.</p>
+
+<h3>예제 4. 학습 시간과 성적 관계</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "study_hour": [5, 8, 10, 12, 15],
+    "score": [60, 70, 78, 82, 88]
+})
+
+plt.scatter(df["study_hour"], df["score"])
+plt.title("Study Hour and Score")
+plt.xlabel("Study Hour")
+plt.ylabel("Score")
+plt.show()</code></pre><p><b>상세 설명:</b> 학습 시간과 성적의 관계를 살펴보되, 인과관계로 단정하지 않는다.</p>
+
+<h3>예제 5. 개인정보 보호를 위한 익명화</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "name": ["Kim", "Lee", "Park"],
+    "score": [85, 90, 78]
+})
+
+df["student_id"] = ["S1", "S2", "S3"]
+safe_df = df[["student_id", "score"]]
+
+print(safe_df)</code></pre><p><b>상세 설명:</b> 이름을 제거하고 익명 ID를 사용하여 개인정보 노출을 줄인다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 학교 생활 데이터 분석은 학교 안에서 발생하는 출석, 학습, 급식, 도서관, 동아리 활동 데이터를 분석하는 활동이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 학교 생활 데이터는 학생들의 일상과 학습 환경을 이해하는 데 도움이 된다.</div></div><div class="q"><b>OX 2. 학교 생활 데이터에는 개인정보가 포함될 수 있으므로 보호가 중요하다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 학번, 이름, 건강, 성적, 상담 기록 등은 민감할 수 있어 익명화와 최소 수집이 필요하다.</div></div><div class="q"><b>OX 3. 출석 데이터는 학생 생활 패턴을 이해하는 데 활용될 수 있다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 지각, 결석, 조퇴 등의 패턴을 통해 생활 리듬이나 지원 필요성을 살펴볼 수 있다.</div></div><div class="q"><b>OX 4. 급식 만족도 데이터는 학교 생활 개선에 활용될 수 있다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 메뉴 선호도와 만족도를 분석하면 급식 개선 의견을 근거 있게 제시할 수 있다.</div></div><div class="q"><b>OX 5. 학교 생활 데이터는 목적 없이 최대한 많이 수집하는 것이 항상 좋다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 분석 목적에 필요한 최소한의 데이터만 수집하는 것이 개인정보 보호와 윤리에 적합하다.</div></div><div class="q"><b>OX 6. 도서관 이용 데이터는 독서 활동과 학습 공간 활용을 이해하는 데 도움이 된다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 이용 시간, 대출 권수, 방문 횟수 등을 분석할 수 있다.</div></div><div class="q"><b>OX 7. 학습 시간과 성적 사이에 상관관계가 보여도 바로 인과관계라고 단정하면 안 된다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 학습 방법, 수면, 과목 난이도, 개인차 등 다른 요인이 있을 수 있다.</div></div><div class="q"><b>OX 8. 학교 생활 데이터 분석에서 결측값과 이상값을 확인할 필요가 있다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 누락 기록이나 입력 오류가 분석 결과를 왜곡할 수 있다.</div></div><div class="q"><b>OX 9. 학교 생활 데이터 분석 결과는 학생 지원, 학교 환경 개선, 프로그램 기획에 활용될 수 있다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 분석 결과는 더 나은 학교 생활을 위한 의사결정 근거가 될 수 있다.</div></div><div class="q"><b>OX 10. 분석 보고서에는 데이터 출처, 기간, 분석 방법, 결과, 한계를 포함하는 것이 좋다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 분석 과정을 투명하게 제시해야 결과를 신뢰할 수 있다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 학교 생활 데이터 분석에 적합한 데이터가 아닌 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 교실 벽 페인트 제조사만</label><label><input type="radio" name="mc0" value="1"> 2. 도서관 이용 횟수</label><label><input type="radio" name="mc0" value="2"> 3. 급식 만족도</label><label><input type="radio" name="mc0" value="3"> 4. 출석 기록</label><label><input type="radio" name="mc0" value="4"> 5. 동아리 참여 시간</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 페인트 제조사만으로는 일반적인 학교 생활 패턴 분석에 적합하지 않다.</div></div><div class="q"><b>문항 2. 학교 생활 데이터 분석에서 가장 중요한 윤리 원칙은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 개인정보 보호와 목적에 맞는 최소 수집</label><label><input type="radio" name="mc1" value="1"> 2. 이름을 모두 공개하기</label><label><input type="radio" name="mc1" value="2"> 3. 불리한 결과 숨기기</label><label><input type="radio" name="mc1" value="3"> 4. 동의 없이 공유하기</label><label><input type="radio" name="mc1" value="4"> 5. 데이터 출처 삭제하기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 학교 데이터에는 개인정보가 포함될 수 있으므로 보호가 중요하다.</div></div><div class="q"><b>문항 3. 급식 만족도 분석에 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 메뉴별 평균 만족도 막대그래프</label><label><input type="radio" name="mc2" value="1"> 2. 파일 목록</label><label><input type="radio" name="mc2" value="2"> 3. 문자열 표만</label><label><input type="radio" name="mc2" value="3"> 4. 압축 파일</label><label><input type="radio" name="mc2" value="4"> 5. 아이콘</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대그래프는 메뉴별 만족도 비교에 적합하다.</div></div><div class="q"><b>문항 4. 도서관 이용량의 월별 변화를 보기 좋은 그래프는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 선그래프</label><label><input type="radio" name="mc3" value="1"> 2. 원그래프만</label><label><input type="radio" name="mc3" value="2"> 3. 파일 트리</label><label><input type="radio" name="mc3" value="3"> 4. 글꼴 목록</label><label><input type="radio" name="mc3" value="4"> 5. 음악 파일</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 선그래프는 시간 흐름에 따른 변화를 나타내기 좋다.</div></div><div class="q"><b>문항 5. 학습 시간과 성적의 관계를 살펴볼 때 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 산점도</label><label><input type="radio" name="mc4" value="1"> 2. 막대그래프만</label><label><input type="radio" name="mc4" value="2"> 3. 원그래프만</label><label><input type="radio" name="mc4" value="3"> 4. 문자열만</label><label><input type="radio" name="mc4" value="4"> 5. 파일 경로</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 두 수치형 변수의 관계는 산점도로 확인할 수 있다.</div></div><div class="q"><b>문항 6. Pandas에서 반별 평균 만족도를 구하는 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. df.groupby('class')['satisfaction'].mean()</label><label><input type="radio" name="mc5" value="1"> 2. df['class'].paint()</label><label><input type="radio" name="mc5" value="2"> 3. df.sleep()</label><label><input type="radio" name="mc5" value="3"> 4. df.delete_all()</label><label><input type="radio" name="mc5" value="4"> 5. df.sound()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> groupby와 mean을 사용하면 반별 평균을 계산할 수 있다.</div></div><div class="q"><b>문항 7. 학교 생활 데이터 전처리에서 확인해야 할 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 결측값, 이상값, 중복값</label><label><input type="radio" name="mc6" value="1"> 2. 배경 음악</label><label><input type="radio" name="mc6" value="2"> 3. 마우스 속도</label><label><input type="radio" name="mc6" value="3"> 4. 글꼴 색상만</label><label><input type="radio" name="mc6" value="4"> 5. 파일 아이콘</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 학교 생활 데이터에도 누락, 오류, 중복이 있을 수 있다.</div></div><div class="q"><b>문항 8. 상관관계 해석에서 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 인과관계로 단정하지 않고 추가 맥락을 확인한다</label><label><input type="radio" name="mc7" value="1"> 2. 무조건 원인이라고 말한다</label><label><input type="radio" name="mc7" value="2"> 3. 그래프를 숨긴다</label><label><input type="radio" name="mc7" value="3"> 4. 데이터 출처를 지운다</label><label><input type="radio" name="mc7" value="4"> 5. 결측값을 무시한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않는다.</div></div><div class="q"><b>문항 9. 학교 생활 데이터 분석 결과 활용 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 학생 지원 프로그램 개선</label><label><input type="radio" name="mc8" value="1"> 2. 개인정보 공개</label><label><input type="radio" name="mc8" value="2"> 3. 출처 숨기기</label><label><input type="radio" name="mc8" value="3"> 4. 단위 삭제</label><label><input type="radio" name="mc8" value="4"> 5. 불리한 데이터 조작</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 분석 결과는 학생 지원과 학교 환경 개선에 활용될 수 있다.</div></div><div class="q"><b>문항 10. 좋은 학교 생활 데이터 분석 보고서에 필요한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 문제 정의, 데이터 출처, 분석 방법, 결과, 한계</label><label><input type="radio" name="mc9" value="1"> 2. 결론만 한 줄</label><label><input type="radio" name="mc9" value="2"> 3. 출처 없는 그래프</label><label><input type="radio" name="mc9" value="3"> 4. 개인 이름 전체 공개</label><label><input type="radio" name="mc9" value="4"> 5. 단위 숨기기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 보고서는 근거와 한계를 포함해야 신뢰할 수 있다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터85_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 학교 생활 데이터를 통해 학생들의 생활과 학교 환경을 더 깊이 이해하는 방법을 배웠습니다. 컴퓨터과학은 데이터를 정리하고 분석하는 도구를 제공하고, 수학은 평균과 비교, 관계 분석을 설명하며, 과학은 관찰과 근거에 기반한 개선을 가능하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “데이터는 학생을 통제하기 위한 도구인가, 학생을 돕기 위한 언어인가?” 좋은 데이터 과학자는 학교 생활 데이터를 숫자로만 보지 않고, 그 뒤에 있는 학생의 삶과 존엄을 함께 존중하는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터85 학교 생활 데이터 분석</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "학교 생활 데이터 분석은 학교 안에서 발생하는 출석, 학습, 급식, 도서관, 동아리 활동 데이터를 분석하는 활동이다.", "a": "O", "e": "학교 생활 데이터는 학생들의 일상과 학습 환경을 이해하는 데 도움이 된다."}, {"q": "학교 생활 데이터에는 개인정보가 포함될 수 있으므로 보호가 중요하다.", "a": "O", "e": "학번, 이름, 건강, 성적, 상담 기록 등은 민감할 수 있어 익명화와 최소 수집이 필요하다."}, {"q": "출석 데이터는 학생 생활 패턴을 이해하는 데 활용될 수 있다.", "a": "O", "e": "지각, 결석, 조퇴 등의 패턴을 통해 생활 리듬이나 지원 필요성을 살펴볼 수 있다."}, {"q": "급식 만족도 데이터는 학교 생활 개선에 활용될 수 있다.", "a": "O", "e": "메뉴 선호도와 만족도를 분석하면 급식 개선 의견을 근거 있게 제시할 수 있다."}, {"q": "학교 생활 데이터는 목적 없이 최대한 많이 수집하는 것이 항상 좋다.", "a": "X", "e": "분석 목적에 필요한 최소한의 데이터만 수집하는 것이 개인정보 보호와 윤리에 적합하다."}, {"q": "도서관 이용 데이터는 독서 활동과 학습 공간 활용을 이해하는 데 도움이 된다.", "a": "O", "e": "이용 시간, 대출 권수, 방문 횟수 등을 분석할 수 있다."}, {"q": "학습 시간과 성적 사이에 상관관계가 보여도 바로 인과관계라고 단정하면 안 된다.", "a": "O", "e": "학습 방법, 수면, 과목 난이도, 개인차 등 다른 요인이 있을 수 있다."}, {"q": "학교 생활 데이터 분석에서 결측값과 이상값을 확인할 필요가 있다.", "a": "O", "e": "누락 기록이나 입력 오류가 분석 결과를 왜곡할 수 있다."}, {"q": "학교 생활 데이터 분석 결과는 학생 지원, 학교 환경 개선, 프로그램 기획에 활용될 수 있다.", "a": "O", "e": "분석 결과는 더 나은 학교 생활을 위한 의사결정 근거가 될 수 있다."}, {"q": "분석 보고서에는 데이터 출처, 기간, 분석 방법, 결과, 한계를 포함하는 것이 좋다.", "a": "O", "e": "분석 과정을 투명하게 제시해야 결과를 신뢰할 수 있다."}];
+const mcQuestions = [{"q": "학교 생활 데이터 분석에 적합한 데이터가 아닌 것은?", "c": ["교실 벽 페인트 제조사만", "도서관 이용 횟수", "급식 만족도", "출석 기록", "동아리 참여 시간"], "a": 0, "e": "페인트 제조사만으로는 일반적인 학교 생활 패턴 분석에 적합하지 않다."}, {"q": "학교 생활 데이터 분석에서 가장 중요한 윤리 원칙은?", "c": ["개인정보 보호와 목적에 맞는 최소 수집", "이름을 모두 공개하기", "불리한 결과 숨기기", "동의 없이 공유하기", "데이터 출처 삭제하기"], "a": 0, "e": "학교 데이터에는 개인정보가 포함될 수 있으므로 보호가 중요하다."}, {"q": "급식 만족도 분석에 적합한 그래프는?", "c": ["메뉴별 평균 만족도 막대그래프", "파일 목록", "문자열 표만", "압축 파일", "아이콘"], "a": 0, "e": "막대그래프는 메뉴별 만족도 비교에 적합하다."}, {"q": "도서관 이용량의 월별 변화를 보기 좋은 그래프는?", "c": ["선그래프", "원그래프만", "파일 트리", "글꼴 목록", "음악 파일"], "a": 0, "e": "선그래프는 시간 흐름에 따른 변화를 나타내기 좋다."}, {"q": "학습 시간과 성적의 관계를 살펴볼 때 적합한 그래프는?", "c": ["산점도", "막대그래프만", "원그래프만", "문자열만", "파일 경로"], "a": 0, "e": "두 수치형 변수의 관계는 산점도로 확인할 수 있다."}, {"q": "Pandas에서 반별 평균 만족도를 구하는 코드로 적절한 것은?", "c": ["df.groupby('class')['satisfaction'].mean()", "df['class'].paint()", "df.sleep()", "df.delete_all()", "df.sound()"], "a": 0, "e": "groupby와 mean을 사용하면 반별 평균을 계산할 수 있다."}, {"q": "학교 생활 데이터 전처리에서 확인해야 할 것은?", "c": ["결측값, 이상값, 중복값", "배경 음악", "마우스 속도", "글꼴 색상만", "파일 아이콘"], "a": 0, "e": "학교 생활 데이터에도 누락, 오류, 중복이 있을 수 있다."}, {"q": "상관관계 해석에서 바람직한 태도는?", "c": ["인과관계로 단정하지 않고 추가 맥락을 확인한다", "무조건 원인이라고 말한다", "그래프를 숨긴다", "데이터 출처를 지운다", "결측값을 무시한다"], "a": 0, "e": "상관관계는 인과관계를 증명하지 않는다."}, {"q": "학교 생활 데이터 분석 결과 활용 예로 적절한 것은?", "c": ["학생 지원 프로그램 개선", "개인정보 공개", "출처 숨기기", "단위 삭제", "불리한 데이터 조작"], "a": 0, "e": "분석 결과는 학생 지원과 학교 환경 개선에 활용될 수 있다."}, {"q": "좋은 학교 생활 데이터 분석 보고서에 필요한 것은?", "c": ["문제 정의, 데이터 출처, 분석 방법, 결과, 한계", "결론만 한 줄", "출처 없는 그래프", "개인 이름 전체 공개", "단위 숨기기"], "a": 0, "e": "보고서는 근거와 한계를 포함해야 신뢰할 수 있다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅷ. 실생활 데이터 프로젝트 - 학교 생활 데이터 분석\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n학교 생활 데이터 분석은 출석·급식·도서관·학습·동아리 데이터를 분석하여 학생 지원과 학교 환경 개선의 근거를 찾는 프로젝트이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터85_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

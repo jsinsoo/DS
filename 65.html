@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0176)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터65_모델 평가와 활용_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#1e1b4b,#2563eb,#f97316);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#2563eb}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#1d4ed8;border-left:8px solid #f97316;padding-left:12px}
+h3{color:#ea580c;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#eff6ff;border-left:6px solid #2563eb}
+.quote{font-size:18px;background:#fff7ed;border-left:7px solid #f97316;padding:18px;border-radius:14px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.step{background:#dbeafe;border:1px solid #93c5fd;border-radius:999px;padding:8px 13px;font-weight:700;color:#1e3a8a}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#fed7aa}
+.q{border:1px solid #bfdbfe;background:#fbfdff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#dbeafe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#2563eb;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#1d4ed8}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터65. 모델 평가와 활용</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅵ. 인공지능과 머신러닝 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B065_%EB%AA%A8%EB%8D%B8%ED%8F%89%EA%B0%80%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>모델 평가는 AI가 새로운 데이터에서도 신뢰할 수 있는 판단을 하는지 확인하고, 활용은 그 결과를 실제 문제 해결에 책임 있게 적용하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>모델의 가치는 높은 점수 하나가 아니라, 사용 맥락에서의 정확성·공정성·안전성·책임성을 함께 만족할 때 생긴다.</div>
+<div class="card goal"><b>핵심 질문</b><br>모델이 맞혔다고 해서 바로 믿어도 되는가, 그리고 틀렸을 때의 책임은 누구에게 있는가?</div>
+</div>
+<div class="flow">
+<span class="step">예측</span><span class="step">실제값 비교</span><span class="step">성능 지표 계산</span><span class="step">오류 분석</span><span class="step">개선</span><span class="step">책임 있는 활용</span>
+</div>
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅵ. 인공지능과 머신러닝 - 모델 평가와 활용</td></tr>
+<tr><td>수업 목표</td><td>① 모델 평가의 필요성을 설명한다.<br>② 정확도, 오차, 혼동행렬의 의미를 이해한다.<br>③ 과적합과 일반화 성능을 구별한다.<br>④ 모델 활용 시 공정성, 개인정보, 책임성을 고려한다.<br>⑤ 평가 결과를 바탕으로 모델 개선 방향을 제안한다.</td></tr>
+<tr><td>지식 목표</td><td>정확도, 오차, 혼동행렬, 정밀도, 재현율, 과적합, 일반화, 테스트 데이터, 모델 활용, AI 윤리의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>정확도 계산, 평균오차 계산, 혼동행렬 작성, 과적합 판단, 활용 가능성 점검 코드를 해석한다.</td></tr>
+<tr><td>태도 목표</td><td>성능 지표만 보지 않고, 오류가 사람과 사회에 미치는 영향을 책임 있게 고려한다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: AI가 맞혔지만 위험한 경우 토론 → 전개 30분: 평가 지표와 코드 실습 → 정리 10분: 활용 윤리 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 모델 활용 체크리스트 작성</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+AI 모델이 90%를 맞혔다고 하면 좋아 보입니다. 그러나 나머지 10%가 중요한 질병을 놓친 경우라면 어떨까요?
+추천 모델이 정확해 보여도 특정 집단에게 불리하게 작동한다면 사용할 수 있을까요?
+인문 철학적으로 모델 평가는 “맞고 틀림”을 넘어 “그 판단을 사회가 받아들여도 되는가”라는 질문과 연결됩니다.
+오늘 우리는 모델의 성능을 숫자로 평가하는 방법과, 그 숫자를 실제 삶에 적용할 때 필요한 책임을 함께 배웁니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 모델 평가</h3><p>모델 평가는 모델이 예측한 결과와 실제 정답을 비교하여 성능을 확인하는 과정이다. 학습 데이터가 아니라 새로운 데이터에서도 잘 작동하는지 확인하는 것이 중요하다.</p>
+<h3>② 테스트 데이터</h3><p>테스트 데이터는 모델 학습에 사용하지 않고 평가에만 사용하는 데이터이다. 모델이 훈련 데이터를 외운 것인지, 실제로 일반화한 것인지 확인하는 데 필요하다.</p>
+<h3>③ 정확도</h3><p>정확도는 전체 예측 중 맞힌 예측의 비율이다. 간단하고 직관적이지만, 데이터가 불균형할 때는 성능을 과대평가할 수 있다.</p>
+<h3>④ 오차</h3><p>오차는 예측값과 실제값의 차이이다. 회귀 모델에서는 평균절대오차처럼 예측 수치가 실제 수치와 얼마나 차이 나는지를 평가한다.</p>
+<h3>⑤ 혼동행렬</h3><p>혼동행렬은 분류 모델에서 실제값과 예측값의 조합을 표로 정리한 것이다. 어떤 종류의 오답이 많이 발생하는지 확인할 수 있다.</p>
+<h3>⑥ 정밀도와 재현율</h3><p>정밀도는 양성이라고 예측한 것 중 실제 양성의 비율이고, 재현율은 실제 양성 중 모델이 양성으로 찾아낸 비율이다. 질병 탐지처럼 놓치면 위험한 문제에서는 재현율이 중요할 수 있다.</p>
+<h3>⑦ 과적합</h3><p>과적합은 훈련 데이터에는 매우 잘 맞지만 새로운 데이터에는 잘 맞지 않는 상태이다. 훈련 정확도와 테스트 정확도의 차이가 크면 과적합을 의심할 수 있다.</p>
+<h3>⑧ 모델 활용</h3><p>모델 활용은 평가된 모델을 실제 문제 해결에 적용하는 과정이다. 추천, 예측, 분류, 진단 보조, 위험 감지 등 다양한 분야에서 사용될 수 있다.</p>
+<h3>⑨ 책임 있는 AI 활용</h3><p>모델을 실제로 활용할 때는 정확도뿐 아니라 공정성, 개인정보 보호, 설명 가능성, 안전성, 책임 소재를 함께 검토해야 한다. 중요한 결정에서는 인간의 검토가 필요하다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 정확도 계산</h3>
+<pre><code>real = ["spam", "normal", "spam", "normal"]
+pred = ["spam", "normal", "normal", "normal"]
+
+accuracy = sum(r == p for r, p in zip(real, pred)) / len(real)
+print("Accuracy:", accuracy)</code></pre>
+<p>전체 예측 중 실제 정답과 일치한 비율을 계산한다.</p>
+
+<h3>② 회귀 오차 계산</h3>
+<pre><code>real = [80, 90, 70]
+pred = [78, 92, 75]
+
+errors = [abs(r - p) for r, p in zip(real, pred)]
+mae = sum(errors) / len(errors)
+
+print("Errors:", errors)
+print("Mean Absolute Error:", mae)</code></pre>
+<p>예측 점수와 실제 점수의 차이를 절댓값으로 계산하고 평균을 구한다.</p>
+
+<h3>③ 혼동행렬 직접 만들기</h3>
+<pre><code>real = ["positive", "negative", "positive", "negative"]
+pred = ["positive", "positive", "negative", "negative"]
+
+tp = sum(r == "positive" and p == "positive" for r, p in zip(real, pred))
+tn = sum(r == "negative" and p == "negative" for r, p in zip(real, pred))
+fp = sum(r == "negative" and p == "positive" for r, p in zip(real, pred))
+fn = sum(r == "positive" and p == "negative" for r, p in zip(real, pred))
+
+print("TP:", tp, "TN:", tn, "FP:", fp, "FN:", fn)</code></pre>
+<p>분류 결과를 참양성, 참음성, 거짓양성, 거짓음성으로 나누어 확인한다.</p>
+
+<h3>④ 과적합 판단</h3>
+<pre><code>train_accuracy = 0.98
+test_accuracy = 0.65
+
+if train_accuracy - test_accuracy &gt; 0.2:
+    print("Possible overfitting")
+else:
+    print("Generalization looks acceptable")</code></pre>
+<p>훈련 성능과 테스트 성능의 차이가 크면 과적합을 의심할 수 있다.</p>
+
+<h3>⑤ 활용 가능성 체크</h3>
+<pre><code>accuracy = 0.92
+has_bias_check = True
+has_privacy_check = True
+
+if accuracy &gt;= 0.9 and has_bias_check and has_privacy_check:
+    print("Ready for careful use")
+else:
+    print("Need more evaluation")</code></pre>
+<p>성능뿐 아니라 편향 점검과 개인정보 점검이 함께 필요함을 보여 준다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 스팸 필터 정확도 평가</h3>
+<pre><code>real = ["spam", "normal", "normal", "spam", "spam"]
+pred = ["spam", "normal", "spam", "spam", "normal"]
+
+accuracy = sum(r == p for r, p in zip(real, pred)) / len(real)
+print("Spam filter accuracy:", accuracy)</code></pre>
+<p><b>상세 설명:</b> 스팸 필터가 실제 정답과 얼마나 일치하는지 정확도로 평가한다.</p>
+
+<h3>예제 2. 시험 점수 예측 모델 평가</h3>
+<pre><code>real_scores = [88, 76, 92, 65]
+pred_scores = [85, 80, 90, 70]
+
+mae = sum(abs(r - p) for r, p in zip(real_scores, pred_scores)) / len(real_scores)
+print("Mean Absolute Error:", mae)</code></pre>
+<p><b>상세 설명:</b> 예측 점수와 실제 점수의 평균적인 차이를 계산한다.</p>
+
+<h3>예제 3. 질병 탐지 오답 유형 확인</h3>
+<pre><code>real = ["disease", "normal", "disease", "normal", "disease"]
+pred = ["disease", "normal", "normal", "normal", "disease"]
+
+missed = sum(r == "disease" and p == "normal" for r, p in zip(real, pred))
+print("Missed disease cases:", missed)</code></pre>
+<p><b>상세 설명:</b> 질병이 있는데 정상으로 예측한 경우는 위험할 수 있으므로 따로 확인해야 한다.</p>
+
+<h3>예제 4. 추천 모델 활용 점검</h3>
+<pre><code>groups = ["A", "A", "A", "B"]
+recommendations = ["science", "science", "science", "music"]
+
+from collections import Counter
+
+print(Counter(zip(groups, recommendations)))</code></pre>
+<p><b>상세 설명:</b> 특정 집단에 특정 추천만 몰리는지 확인해 편향 가능성을 점검한다.</p>
+
+<h3>예제 5. 모델 배포 전 체크리스트</h3>
+<pre><code>checks = {
+    "accuracy_ok": True,
+    "bias_checked": True,
+    "privacy_checked": True,
+    "human_review": True
+}
+
+if all(checks.values()):
+    print("Deploy with monitoring")
+else:
+    print("Do not deploy yet")</code></pre>
+<p><b>상세 설명:</b> 모델을 실제로 활용하기 전 성능, 편향, 개인정보, 인간 검토 조건을 확인한다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 모델 평가는 모델의 예측 결과가 실제값과 얼마나 잘 맞는지 확인하는 과정이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 평가는 모델이 훈련 데이터뿐 아니라 새로운 데이터에서도 잘 작동하는지 확인하는 과정이다.</div></div><div class="q"><b>OX 2. 정확도는 전체 예측 중 맞힌 예측의 비율이다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 정확도는 맞힌 개수/전체 개수로 계산할 수 있다.</div></div><div class="q"><b>OX 3. 테스트 데이터는 모델을 평가하기 위해 학습에 사용하지 않은 데이터이다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 테스트 데이터는 모델의 일반화 성능을 확인하는 데 사용한다.</div></div><div class="q"><b>OX 4. 훈련 정확도가 높으면 테스트 정확도도 반드시 높다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 훈련 데이터에만 지나치게 맞춘 과적합 모델은 테스트 성능이 낮을 수 있다.</div></div><div class="q"><b>OX 5. 과적합은 모델이 훈련 데이터의 세부 패턴을 지나치게 외워 새로운 데이터에 약한 상태이다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 과적합은 일반화 성능이 떨어지는 대표적인 문제이다.</div></div><div class="q"><b>OX 6. 혼동행렬은 분류 모델의 예측 결과를 실제값과 예측값의 조합으로 정리한 표이다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 혼동행렬은 정답/오답의 유형을 구체적으로 보여 준다.</div></div><div class="q"><b>OX 7. 회귀 모델은 정확도만으로 평가해야 한다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 회귀 모델은 평균절대오차, 평균제곱오차 등 오차 기반 지표를 주로 사용한다.</div></div><div class="q"><b>OX 8. 모델 활용에서는 성능뿐 아니라 공정성, 개인정보 보호, 책임성도 고려해야 한다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> AI 모델은 사람과 사회에 영향을 줄 수 있으므로 윤리적 점검이 필요하다.</div></div><div class="q"><b>OX 9. 모델의 평가 결과가 좋으면 어떤 상황에서도 바로 사용해도 된다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 데이터 범위, 사용 맥락, 위험성, 법적·윤리적 문제를 검토해야 한다.</div></div><div class="q"><b>OX 10. 좋은 모델 활용은 예측 결과를 인간의 판단과 함께 검토하는 과정을 포함할 수 있다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 특히 중요한 의사결정에서는 AI 결과를 보조 자료로 사용하고 사람이 책임 있게 검토해야 한다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 모델 평가의 목적은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 모델이 실제값을 얼마나 잘 예측하는지 확인하기 위해</label><label><input type="radio" name="mc0" value="1"> 2. 파일 이름을 바꾸기 위해</label><label><input type="radio" name="mc0" value="2"> 3. 그래프 색을 고르기 위해</label><label><input type="radio" name="mc0" value="3"> 4. 데이터를 모두 삭제하기 위해</label><label><input type="radio" name="mc0" value="4"> 5. 컴퓨터를 종료하기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 모델 평가는 예측 성능과 일반화 가능성을 확인하는 과정이다.</div></div><div class="q"><b>문항 2. 정확도의 계산 방법으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 맞힌 예측 수 / 전체 예측 수</label><label><input type="radio" name="mc1" value="1"> 2. 전체 예측 수 / 맞힌 예측 수</label><label><input type="radio" name="mc1" value="2"> 3. 오답 수만 세기</label><label><input type="radio" name="mc1" value="3"> 4. 파일 크기 계산</label><label><input type="radio" name="mc1" value="4"> 5. 색상 개수 세기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 정확도는 전체 중 맞힌 비율이다.</div></div><div class="q"><b>문항 3. 테스트 데이터의 역할은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 학습에 쓰지 않은 데이터로 모델 성능을 평가한다</label><label><input type="radio" name="mc2" value="1"> 2. 모델이 외우도록 반복 학습시킨다</label><label><input type="radio" name="mc2" value="2"> 3. 항상 훈련 데이터와 같아야 한다</label><label><input type="radio" name="mc2" value="3"> 4. 레이블을 삭제하는 데만 쓴다</label><label><input type="radio" name="mc2" value="4"> 5. 그래프를 꾸미는 데만 쓴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 테스트 데이터는 새로운 데이터에 대한 성능을 평가한다.</div></div><div class="q"><b>문항 4. 과적합의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 훈련 데이터에는 잘 맞지만 새로운 데이터에는 약한 상태</label><label><input type="radio" name="mc3" value="1"> 2. 아무것도 학습하지 않은 상태</label><label><input type="radio" name="mc3" value="2"> 3. 항상 좋은 상태</label><label><input type="radio" name="mc3" value="3"> 4. 데이터가 없는 상태</label><label><input type="radio" name="mc3" value="4"> 5. 정확도가 항상 0인 상태</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 과적합은 훈련 데이터에 지나치게 맞춰 일반화 성능이 떨어지는 현상이다.</div></div><div class="q"><b>문항 5. 혼동행렬이 보여 주는 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 실제값과 예측값의 조합별 결과</label><label><input type="radio" name="mc4" value="1"> 2. 파일 저장 위치</label><label><input type="radio" name="mc4" value="2"> 3. 그래프 제목</label><label><input type="radio" name="mc4" value="3"> 4. 문자열 길이</label><label><input type="radio" name="mc4" value="4"> 5. 모델 이름만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 혼동행렬은 분류 결과의 맞고 틀린 유형을 표로 보여 준다.</div></div><div class="q"><b>문항 6. 회귀 모델 평가에 적합한 지표는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 평균절대오차</label><label><input type="radio" name="mc5" value="1"> 2. 스팸 정확도만</label><label><input type="radio" name="mc5" value="2"> 3. 범례 개수</label><label><input type="radio" name="mc5" value="3"> 4. 색상표 이름</label><label><input type="radio" name="mc5" value="4"> 5. 파일 확장자</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 회귀 모델은 실제 수치와 예측 수치의 차이를 오차로 평가한다.</div></div><div class="q"><b>문항 7. 모델 활용 전에 확인해야 할 사항으로 적절하지 않은 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 불리한 결과는 숨겨도 된다</label><label><input type="radio" name="mc6" value="1"> 2. 성능</label><label><input type="radio" name="mc6" value="2"> 3. 데이터 범위</label><label><input type="radio" name="mc6" value="3"> 4. 편향 가능성</label><label><input type="radio" name="mc6" value="4"> 5. 개인정보 보호</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 불리한 결과를 숨기는 것은 책임 있는 AI 활용이 아니다.</div></div><div class="q"><b>문항 8. 정밀도와 재현율을 함께 고려해야 하는 경우는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 양성/음성 판단에서 오답 유형의 비용이 다를 때</label><label><input type="radio" name="mc7" value="1"> 2. 그래프 배경색을 고를 때</label><label><input type="radio" name="mc7" value="2"> 3. 파일을 압축할 때</label><label><input type="radio" name="mc7" value="3"> 4. 문자열을 정렬할 때</label><label><input type="radio" name="mc7" value="4"> 5. 코드 주석을 지울 때</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 질병 탐지나 스팸 분류처럼 오답 유형의 영향이 다를 때 정밀도와 재현율이 중요하다.</div></div><div class="q"><b>문항 9. 모델 활용에서 인간의 검토가 중요한 이유는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 모델이 오류나 편향을 가질 수 있기 때문에</label><label><input type="radio" name="mc8" value="1"> 2. AI는 항상 완벽하기 때문에</label><label><input type="radio" name="mc8" value="2"> 3. 사람은 아무 책임이 없기 때문에</label><label><input type="radio" name="mc8" value="3"> 4. 데이터는 사회와 무관하기 때문에</label><label><input type="radio" name="mc8" value="4"> 5. 모델은 설명이 필요 없기 때문에</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> AI 결과는 검토와 책임 있는 판단이 필요하다.</div></div><div class="q"><b>문항 10. 좋은 모델 평가 태도로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 여러 지표와 사용 맥락을 함께 고려한다</label><label><input type="radio" name="mc9" value="1"> 2. 정확도 하나만 보고 무조건 배포한다</label><label><input type="radio" name="mc9" value="2"> 3. 테스트 없이 사용한다</label><label><input type="radio" name="mc9" value="3"> 4. 오류 사례를 삭제한다</label><label><input type="radio" name="mc9" value="4"> 5. 출처를 숨긴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 평가 지표와 실제 사용 맥락, 한계를 함께 살펴야 한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터65_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 모델을 평가하고 활용한다는 것이 단순히 높은 정확도를 확인하는 일이 아님을 배웠습니다.
+컴퓨터과학은 성능 지표와 평가 절차를 제공하고, 수학은 오차와 비율을 통해 모델의 판단을 수치화하며, 과학은 그 결과가 실제 상황에서도 타당한지 검증하게 합니다.
+그리고 인문 철학은 우리에게 묻습니다. “AI가 틀렸을 때 피해는 누구에게 가며, 책임은 누가 져야 하는가?”
+좋은 데이터 과학자는 모델을 만드는 사람을 넘어, 모델을 언제 어떻게 써야 하는지 책임 있게 판단하는 사람입니다.
+</div>
+</section>
+<footer>© 데이터 과학 수업자료 · 데이터65 모델 평가와 활용</footer>
+</main></div>
+
+<script>
+const oxQuestions = [{"q": "모델 평가는 모델의 예측 결과가 실제값과 얼마나 잘 맞는지 확인하는 과정이다.", "a": "O", "e": "평가는 모델이 훈련 데이터뿐 아니라 새로운 데이터에서도 잘 작동하는지 확인하는 과정이다."}, {"q": "정확도는 전체 예측 중 맞힌 예측의 비율이다.", "a": "O", "e": "정확도는 맞힌 개수/전체 개수로 계산할 수 있다."}, {"q": "테스트 데이터는 모델을 평가하기 위해 학습에 사용하지 않은 데이터이다.", "a": "O", "e": "테스트 데이터는 모델의 일반화 성능을 확인하는 데 사용한다."}, {"q": "훈련 정확도가 높으면 테스트 정확도도 반드시 높다.", "a": "X", "e": "훈련 데이터에만 지나치게 맞춘 과적합 모델은 테스트 성능이 낮을 수 있다."}, {"q": "과적합은 모델이 훈련 데이터의 세부 패턴을 지나치게 외워 새로운 데이터에 약한 상태이다.", "a": "O", "e": "과적합은 일반화 성능이 떨어지는 대표적인 문제이다."}, {"q": "혼동행렬은 분류 모델의 예측 결과를 실제값과 예측값의 조합으로 정리한 표이다.", "a": "O", "e": "혼동행렬은 정답/오답의 유형을 구체적으로 보여 준다."}, {"q": "회귀 모델은 정확도만으로 평가해야 한다.", "a": "X", "e": "회귀 모델은 평균절대오차, 평균제곱오차 등 오차 기반 지표를 주로 사용한다."}, {"q": "모델 활용에서는 성능뿐 아니라 공정성, 개인정보 보호, 책임성도 고려해야 한다.", "a": "O", "e": "AI 모델은 사람과 사회에 영향을 줄 수 있으므로 윤리적 점검이 필요하다."}, {"q": "모델의 평가 결과가 좋으면 어떤 상황에서도 바로 사용해도 된다.", "a": "X", "e": "데이터 범위, 사용 맥락, 위험성, 법적·윤리적 문제를 검토해야 한다."}, {"q": "좋은 모델 활용은 예측 결과를 인간의 판단과 함께 검토하는 과정을 포함할 수 있다.", "a": "O", "e": "특히 중요한 의사결정에서는 AI 결과를 보조 자료로 사용하고 사람이 책임 있게 검토해야 한다."}];
+const mcQuestions = [{"q": "모델 평가의 목적은?", "c": ["모델이 실제값을 얼마나 잘 예측하는지 확인하기 위해", "파일 이름을 바꾸기 위해", "그래프 색을 고르기 위해", "데이터를 모두 삭제하기 위해", "컴퓨터를 종료하기 위해"], "a": 0, "e": "모델 평가는 예측 성능과 일반화 가능성을 확인하는 과정이다."}, {"q": "정확도의 계산 방법으로 옳은 것은?", "c": ["맞힌 예측 수 / 전체 예측 수", "전체 예측 수 / 맞힌 예측 수", "오답 수만 세기", "파일 크기 계산", "색상 개수 세기"], "a": 0, "e": "정확도는 전체 중 맞힌 비율이다."}, {"q": "테스트 데이터의 역할은?", "c": ["학습에 쓰지 않은 데이터로 모델 성능을 평가한다", "모델이 외우도록 반복 학습시킨다", "항상 훈련 데이터와 같아야 한다", "레이블을 삭제하는 데만 쓴다", "그래프를 꾸미는 데만 쓴다"], "a": 0, "e": "테스트 데이터는 새로운 데이터에 대한 성능을 평가한다."}, {"q": "과적합의 설명으로 가장 적절한 것은?", "c": ["훈련 데이터에는 잘 맞지만 새로운 데이터에는 약한 상태", "아무것도 학습하지 않은 상태", "항상 좋은 상태", "데이터가 없는 상태", "정확도가 항상 0인 상태"], "a": 0, "e": "과적합은 훈련 데이터에 지나치게 맞춰 일반화 성능이 떨어지는 현상이다."}, {"q": "혼동행렬이 보여 주는 것은?", "c": ["실제값과 예측값의 조합별 결과", "파일 저장 위치", "그래프 제목", "문자열 길이", "모델 이름만"], "a": 0, "e": "혼동행렬은 분류 결과의 맞고 틀린 유형을 표로 보여 준다."}, {"q": "회귀 모델 평가에 적합한 지표는?", "c": ["평균절대오차", "스팸 정확도만", "범례 개수", "색상표 이름", "파일 확장자"], "a": 0, "e": "회귀 모델은 실제 수치와 예측 수치의 차이를 오차로 평가한다."}, {"q": "모델 활용 전에 확인해야 할 사항으로 적절하지 않은 것은?", "c": ["불리한 결과는 숨겨도 된다", "성능", "데이터 범위", "편향 가능성", "개인정보 보호"], "a": 0, "e": "불리한 결과를 숨기는 것은 책임 있는 AI 활용이 아니다."}, {"q": "정밀도와 재현율을 함께 고려해야 하는 경우는?", "c": ["양성/음성 판단에서 오답 유형의 비용이 다를 때", "그래프 배경색을 고를 때", "파일을 압축할 때", "문자열을 정렬할 때", "코드 주석을 지울 때"], "a": 0, "e": "질병 탐지나 스팸 분류처럼 오답 유형의 영향이 다를 때 정밀도와 재현율이 중요하다."}, {"q": "모델 활용에서 인간의 검토가 중요한 이유는?", "c": ["모델이 오류나 편향을 가질 수 있기 때문에", "AI는 항상 완벽하기 때문에", "사람은 아무 책임이 없기 때문에", "데이터는 사회와 무관하기 때문에", "모델은 설명이 필요 없기 때문에"], "a": 0, "e": "AI 결과는 검토와 책임 있는 판단이 필요하다."}, {"q": "좋은 모델 평가 태도로 가장 적절한 것은?", "c": ["여러 지표와 사용 맥락을 함께 고려한다", "정확도 하나만 보고 무조건 배포한다", "테스트 없이 사용한다", "오류 사례를 삭제한다", "출처를 숨긴다"], "a": 0, "e": "평가 지표와 실제 사용 맥락, 한계를 함께 살펴야 한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅵ. 인공지능과 머신러닝 - 모델 평가와 활용\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n모델 평가는 예측 성능과 오류 유형을 확인하는 과정이며, 활용에는 공정성·개인정보·책임성 검토가 필요하다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터65_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!-- saved from url=(0185)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터45_데이터 비교와 해석_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#1d4ed8,#db2777);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px} header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#1d4ed8}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#1d4ed8;border-left:8px solid #db2777;padding-left:12px}
+h3{color:#be185d;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#eff6ff;border-left:6px solid #1d4ed8}
+.quote{font-size:18px;background:#fdf2f8;border-left:7px solid #db2777;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#dbeafe}
+.q{border:1px solid #fbcfe8;background:#fffafd;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#fce7f3}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#1d4ed8;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#1e40af}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+.formula{background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:16px;font-size:18px;text-align:center}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]},
+  svg: {fontCache: 'global'}
+};
+</script>
+<script src="./45_2025교육과정 고등학교 데이터 과학 -데이터 비교와 해석_files/tex-svg.js.다운로드"></script><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style>
+<style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+<body>
+<header>
+<h1>데이터45. 데이터 비교와 해석</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅳ. 데이터 분석 기초 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B045_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B9%84%EA%B5%90%EC%99%80%ED%95%B4%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>데이터 비교와 해석은 여러 자료를 공정한 기준으로 비교하고, 수치와 그래프의 의미를 맥락 속에서 설명하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>비교는 기준·단위·비율·표본·그래프 표현 방식에 따라 달라질 수 있으므로 해석에는 근거와 한계가 함께 필요하다.</div>
+<div class="card goal"><b>핵심 질문</b><br>같은 데이터라도 비교 기준을 바꾸면 결론은 어떻게 달라지는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅳ. 데이터 분석 기초 - 데이터 비교와 해석</td></tr>
+<tr><td>수업 목표</td><td>① 데이터 비교의 목적과 기준을 설명한다.<br>② 절댓값 차이, 비율, 변화율의 차이를 이해한다.<br>③ 집단별 평균, 합계, 비율을 Pandas로 계산한다.<br>④ 그래프의 축, 단위, 표본 수에 따른 해석 오류를 파악한다.<br>⑤ 근거와 한계를 포함하여 데이터 해석을 표현한다.</td></tr>
+<tr><td>지식 목표</td><td>비교 기준, 절대 비교, 상대 비교, 비율, 변화율, 표본 수, 축 왜곡, 맥락 해석의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>groupby, mean, sum, count, 비율 계산, 변화율 계산, 막대그래프와 선그래프 해석을 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>숫자를 유리하게만 해석하지 않고, 공정한 기준과 맥락을 고려하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: “증가했다”는 말의 의미 비교 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 그래프 해석 오류 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 그래프 해석문 작성</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+“우리 학교 독서량이 10권 늘었습니다.” 이 말은 좋아 보입니다.
+하지만 전체 학생이 10명인지 1000명인지, 작년에는 몇 권이었는지, 평균인지 총합인지에 따라 의미는 완전히 달라집니다.
+인문 철학적으로 데이터 비교는 “무엇을 기준으로 공정하게 판단할 것인가”라는 질문과 연결됩니다.
+오늘 우리는 숫자를 단순히 크고 작게 보는 것을 넘어, 기준·단위·맥락을 따져 더 정직하게 해석하는 방법을 배웁니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 데이터 비교</h3>
+<p>데이터 비교는 둘 이상의 자료를 같은 기준으로 살펴보며 차이와 공통점을 찾는 과정이다. 집단 간 비교, 시점 간 비교, 지역 간 비교, 항목 간 비교 등이 있다.</p>
+
+<h3>② 비교 기준</h3>
+<p>비교 기준은 어떤 관점에서 데이터를 비교할 것인지를 정하는 것이다. 같은 자료라도 총합, 평균, 비율, 변화율 중 무엇을 기준으로 하느냐에 따라 결론이 달라질 수 있다.</p>
+
+<h3>③ 절대 비교</h3>
+<p>절대 비교는 값 자체의 차이를 비교하는 방식이다. 예를 들어 A반 평균이 85점, B반 평균이 80점이면 A반이 5점 높다고 말할 수 있다.</p>
+
+<h3>④ 상대 비교와 비율</h3>
+<p>상대 비교는 기준값에 대한 비율로 비교하는 방식이다. 규모가 다른 두 집단을 비교할 때는 단순 개수보다 비율이 더 공정할 수 있다.</p>
+
+<h3>⑤ 변화율</h3>
+<p>변화율은 처음 값에 비해 얼마나 증가하거나 감소했는지를 비율로 나타낸 값이다.</p>
+<div class="formula">변화율 = <mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="0" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="17.427ex" height="3.447ex" role="img" focusable="false" viewBox="0 -1011.8 7702.9 1523.5" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.158ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,481.4) scale(0.707)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="861.7px" font-family="serif">나</text><text data-variant="normal" transform="translate(862.1,0) scale(1,-1)" font-size="861.7px" font-family="serif">중</text><use data-c="20" xlink:href="#MJX-TEX-N-20" transform="translate(1724.2,0)"></use><text data-variant="normal" transform="translate(1974.2,0) scale(1,-1)" font-size="861.7px" font-family="serif">값</text></g><g data-mml-node="mo" transform="translate(2836.3,0)"><use data-c="2212" xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="mtext" transform="translate(3614.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="861.7px" font-family="serif">처</text><text data-variant="normal" transform="translate(832.6,0) scale(1,-1)" font-size="861.7px" font-family="serif">음</text><use data-c="20" xlink:href="#MJX-TEX-N-20" transform="translate(1694.8,0)"></use><text data-variant="normal" transform="translate(1944.8,0) scale(1,-1)" font-size="861.7px" font-family="serif">값</text></g></g><g data-mml-node="mtext" transform="translate(1497.9,-370.3) scale(0.707)"><text data-variant="normal" transform="scale(1,-1)" font-size="861.7px" font-family="serif">처</text><text data-variant="normal" transform="translate(832.6,0) scale(1,-1)" font-size="861.7px" font-family="serif">음</text><use data-c="20" xlink:href="#MJX-TEX-N-20" transform="translate(1694.8,0)"></use><text data-variant="normal" transform="translate(1944.8,0) scale(1,-1)" font-size="861.7px" font-family="serif">값</text></g><rect width="4740.5" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(5202.7,0)"><use data-c="D7" xlink:href="#MJX-TEX-N-D7"></use></g><g data-mml-node="mn" transform="translate(6202.9,0)"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use><use data-c="30" xlink:href="#MJX-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-TEX-N-30" transform="translate(1000,0)"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mtext>나중 값</mtext><mo>−</mo><mtext>처음 값</mtext></mrow><mtext>처음 값</mtext></mfrac><mo>×</mo><mn>100</mn></math></mjx-assistive-mml></mjx-container>%</div>
+
+<h3>⑥ 표본 수</h3>
+<p>표본 수는 비교의 신뢰도에 영향을 준다. 표본이 너무 작으면 우연한 차이가 크게 보일 수 있다. 두 집단을 비교할 때는 값뿐 아니라 참여자 수나 관측 수를 함께 확인해야 한다.</p>
+
+<h3>⑦ 그래프 해석</h3>
+<p>그래프는 데이터의 차이를 직관적으로 보여 주지만, 축 범위나 눈금 간격에 따라 차이가 과장되거나 축소될 수 있다. 그래프를 볼 때는 제목, 축, 단위, 출처를 확인해야 한다.</p>
+
+<h3>⑧ 맥락 기반 해석</h3>
+<p>데이터 해석은 계산 결과를 현실의 상황과 연결하는 과정이다. 같은 증가율이라도 정책 변화, 계절, 표본 구성, 측정 방식에 따라 의미가 달라질 수 있다.</p>
+
+<h3>⑨ 해석의 한계</h3>
+<p>좋은 해석은 결론만 말하지 않는다. 데이터 수집 방식, 표본 크기, 결측값, 이상값, 측정 기준의 한계를 함께 제시해야 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① 두 집단 평균 비교</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "반": ["A", "A", "B", "B"],
+    "점수": [90, 80, 85, 75]
+})
+
+print(df.groupby("반")["점수"].mean())</code></pre>
+<p>반별 평균 점수를 비교한다. groupby는 집단별 분석에 유용하다.</p>
+
+<h3>② 절댓값 차이 계산</h3>
+<pre><code>a = 90
+b = 75
+
+diff = a - b
+print("차이:", diff)</code></pre>
+<p>두 값의 실제 차이를 계산한다.</p>
+
+<h3>③ 비율 계산</h3>
+<pre><code>success = 45
+total = 60
+
+rate = success / total * 100
+print("성공률:", rate, "%")</code></pre>
+<p>전체 중 성공한 비율을 계산한다. 집단 규모가 다를 때 유용하다.</p>
+
+<h3>④ 변화율 계산</h3>
+<pre><code>last_year = 120
+this_year = 150
+
+growth_rate = (this_year - last_year) / last_year * 100
+print("증가율:", growth_rate, "%")</code></pre>
+<p>작년 대비 올해 값이 몇 퍼센트 증가했는지 계산한다.</p>
+
+<h3>⑤ 집단별 합계와 개수 함께 보기</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "지역": ["전주", "전주", "익산", "익산", "익산"],
+    "이용자수": [100, 120, 80, 90, 70]
+})
+
+result = df.groupby("지역")["이용자수"].agg(["sum", "mean", "count"])
+print(result)</code></pre>
+<p>합계, 평균, 개수를 함께 보면 집단 규모와 대표값을 동시에 해석할 수 있다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 두 동아리 참여율 비교</h3>
+<pre><code>clubs = {
+    "AI동아리": {"참여": 18, "전체": 30},
+    "로봇동아리": {"참여": 20, "전체": 50}
+}
+
+for name, data in clubs.items():
+    rate = data["참여"] / data["전체"] * 100
+    print(name, "참여율:", rate)</code></pre>
+<p><b>상세 설명:</b> 참여 인원만 보면 로봇동아리가 많지만, 참여율로 보면 다른 결론이 나올 수 있다.</p>
+
+<h3>예제 2. 월별 독서량 변화율</h3>
+<pre><code>last_month = 80
+this_month = 100
+
+growth = (this_month - last_month) / last_month * 100
+print("독서량 증가율:", growth, "%")</code></pre>
+<p><b>상세 설명:</b> 단순히 20권 증가했다는 사실뿐 아니라, 기준 대비 25% 증가했다는 상대적 의미를 확인한다.</p>
+
+<h3>예제 3. 지역별 평균 이용자 수 비교</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "지역": ["전주", "전주", "군산", "군산"],
+    "이용자수": [120, 140, 80, 100]
+})
+
+print(df.groupby("지역")["이용자수"].mean())</code></pre>
+<p><b>상세 설명:</b> 지역별 평균 이용자 수를 계산해 지역 간 차이를 비교한다.</p>
+
+<h3>예제 4. 평균과 표본 수 함께 비교</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "반": ["A", "A", "A", "B"],
+    "점수": [80, 85, 90, 100]
+})
+
+print(df.groupby("반")["점수"].agg(["mean", "count"]))</code></pre>
+<p><b>상세 설명:</b> B반 평균은 높지만 표본 수가 1명이다. 평균만 보고 일반화하면 위험하다.</p>
+
+<h3>예제 5. 그래프 축 범위 주의</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "year": [2024, 2025, 2026],
+    "score": [80, 82, 83]
+})
+
+plt.plot(df["year"], df["score"], marker="o")
+plt.title("Score Change")
+plt.xlabel("Year")
+plt.ylabel("Score")
+plt.ylim(0, 100)
+plt.show()</code></pre>
+<p><b>상세 설명:</b> y축을 0부터 100까지 표시하면 실제 변화 크기를 더 균형 있게 볼 수 있다. 축 범위는 그래프 해석에 영향을 준다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q"><b>OX 1. 데이터 비교는 두 개 이상의 자료를 기준에 따라 살펴보는 과정이다.</b>
+   <div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 비교는 집단, 시점, 항목, 조건 사이의 차이와 공통점을 파악하는 과정이다.</div></div><div class="q"><b>OX 2. 데이터를 비교할 때 기준과 단위를 확인해야 한다.</b>
+   <div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 단위와 기준이 다르면 비교 결과가 왜곡될 수 있다.</div></div><div class="q"><b>OX 3. 절댓값 차이와 비율 차이는 항상 같은 의미이다.</b>
+   <div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 절댓값 차이는 실제 크기 차이이고, 비율 차이는 기준 대비 상대적 차이를 나타낸다.</div></div><div class="q"><b>OX 4. 변화율은 처음 값에 비해 얼마나 변했는지를 비율로 나타낼 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 변화율은 보통 (나중 값-처음 값)/처음 값으로 계산한다.</div></div><div class="q"><b>OX 5. 그래프의 축 범위가 다르면 같은 데이터도 다르게 보일 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 축을 과도하게 잘라 보여 주면 차이가 실제보다 커 보일 수 있다.</div></div><div class="q"><b>OX 6. 평균만 비교하면 항상 충분한 해석이 가능하다.</b>
+   <div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 평균뿐 아니라 중앙값, 분산, 표준편차, 표본 수, 분포도 함께 보아야 한다.</div></div><div class="q"><b>OX 7. 집단 비교에서는 표본 수가 충분한지도 확인해야 한다.</b>
+   <div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 표본 수가 너무 작으면 우연한 차이를 일반화하기 어렵다.</div></div><div class="q"><b>OX 8. 데이터 해석에는 수치 계산뿐 아니라 맥락 이해가 필요하다.</b>
+   <div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터가 수집된 상황, 기준, 목적, 한계를 함께 고려해야 한다.</div></div><div class="q"><b>OX 9. 상대적 변화율은 작은 기준값에서 크게 나타날 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 기준값이 작으면 작은 절대 변화도 큰 비율 변화로 보일 수 있다.</div></div><div class="q"><b>OX 10. 좋은 데이터 해석은 결론뿐 아니라 근거와 한계를 함께 제시한다.</b>
+   <div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 근거와 한계를 함께 말해야 해석의 신뢰성이 높아진다.</div></div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q"><b>문항 1. 데이터 비교에서 가장 먼저 확인할 사항으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 비교 기준과 단위</label><label><input type="radio" name="mc0" value="1"> 2. 글꼴 종류</label><label><input type="radio" name="mc0" value="2"> 3. 컴퓨터 배경화면</label><label><input type="radio" name="mc0" value="3"> 4. 파일 아이콘</label><label><input type="radio" name="mc0" value="4"> 5. 마우스 속도</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 비교 기준과 단위가 맞아야 공정한 비교가 가능하다.</div></div><div class="q"><b>문항 2. 절댓값 차이의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 90점과 80점의 차이는 10점</label><label><input type="radio" name="mc1" value="1"> 2. 80점은 90점의 88.9%</label><label><input type="radio" name="mc1" value="2"> 3. 작년보다 20% 증가</label><label><input type="radio" name="mc1" value="3"> 4. 전체 중 30%</label><label><input type="radio" name="mc1" value="4"> 5. 평균 대비 2배</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 절댓값 차이는 실제 값의 차이를 말한다.</div></div><div class="q"><b>문항 3. 변화율 계산식으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. (나중 값-처음 값)/처음 값</label><label><input type="radio" name="mc2" value="1"> 2. 처음 값+나중 값</label><label><input type="radio" name="mc2" value="2"> 3. 나중 값만 보기</label><label><input type="radio" name="mc2" value="3"> 4. 처음 값만 보기</label><label><input type="radio" name="mc2" value="4"> 5. 최댓값-최솟값만</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 변화율은 기준값 대비 변화량의 비율이다.</div></div><div class="q"><b>문항 4. 그래프 해석에서 주의할 점은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 축 범위와 단위를 확인한다</label><label><input type="radio" name="mc3" value="1"> 2. 색이 예쁘면 무조건 믿는다</label><label><input type="radio" name="mc3" value="2"> 3. 제목만 보고 결론낸다</label><label><input type="radio" name="mc3" value="3"> 4. 출처는 보지 않는다</label><label><input type="radio" name="mc3" value="4"> 5. 값은 확인하지 않는다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 축 범위, 단위, 출처, 표본 수를 확인해야 한다.</div></div><div class="q"><b>문항 5. 두 학급의 평균 점수를 비교할 때 함께 보면 좋은 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 표준편차와 학생 수</label><label><input type="radio" name="mc4" value="1"> 2. 학생 이름 글자 수</label><label><input type="radio" name="mc4" value="2"> 3. 교실 벽 색깔</label><label><input type="radio" name="mc4" value="3"> 4. 파일 크기</label><label><input type="radio" name="mc4" value="4"> 5. 키보드 종류</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 평균만으로는 분포와 표본 크기를 알 수 없으므로 표준편차와 학생 수도 중요하다.</div></div><div class="q"><b>문항 6. 상대적 비율 비교가 특히 필요한 경우는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 기준 규모가 다른 두 집단을 비교할 때</label><label><input type="radio" name="mc5" value="1"> 2. 두 값이 완전히 같은 단위와 규모일 때만</label><label><input type="radio" name="mc5" value="2"> 3. 파일명을 비교할 때</label><label><input type="radio" name="mc5" value="3"> 4. 글자색을 바꿀 때</label><label><input type="radio" name="mc5" value="4"> 5. 표를 삭제할 때</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 규모가 다른 집단은 단순 개수보다 비율을 봐야 공정할 수 있다.</div></div><div class="q"><b>문항 7. 데이터 해석의 한계로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 데이터 수집 방식에 따라 편향이 있을 수 있다</label><label><input type="radio" name="mc6" value="1"> 2. 숫자는 항상 완벽하다</label><label><input type="radio" name="mc6" value="2"> 3. 표본 수는 전혀 중요하지 않다</label><label><input type="radio" name="mc6" value="3"> 4. 단위는 무의미하다</label><label><input type="radio" name="mc6" value="4"> 5. 그래프는 항상 진실만 보여 준다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 수집 방식, 표본, 결측값, 측정 오류에 따라 해석 한계가 생긴다.</div></div><div class="q"><b>문항 8. Pandas에서 그룹별 평균을 비교할 때 사용할 수 있는 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. groupby().mean()</label><label><input type="radio" name="mc7" value="1"> 2. color().paint()</label><label><input type="radio" name="mc7" value="2"> 3. sleep().run()</label><label><input type="radio" name="mc7" value="3"> 4. font().size()</label><label><input type="radio" name="mc7" value="4"> 5. music().play()</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> groupby().mean()은 집단별 평균 비교에 활용된다.</div></div><div class="q"><b>문항 9. 두 값의 비율을 계산하는 이유로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 기준 대비 상대적 크기를 보기 위해</label><label><input type="radio" name="mc8" value="1"> 2. 모든 값을 삭제하기 위해</label><label><input type="radio" name="mc8" value="2"> 3. 문자열을 숨기기 위해</label><label><input type="radio" name="mc8" value="3"> 4. 컴퓨터를 종료하기 위해</label><label><input type="radio" name="mc8" value="4"> 5. 그래프를 없애기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 비율은 기준값에 대한 상대적 크기를 보여 준다.</div></div><div class="q"><b>문항 10. 좋은 데이터 해석의 태도로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 근거, 맥락, 한계를 함께 제시한다</label><label><input type="radio" name="mc9" value="1"> 2. 유리한 숫자만 보여 준다</label><label><input type="radio" name="mc9" value="2"> 3. 축을 일부러 왜곡한다</label><label><input type="radio" name="mc9" value="3"> 4. 표본 수를 숨긴다</label><label><input type="radio" name="mc9" value="4"> 5. 원인을 무조건 단정한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 좋은 해석은 근거와 맥락, 한계까지 투명하게 설명한다.</div></div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터45_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 데이터를 비교하고 해석하는 방법을 배웠습니다.
+컴퓨터과학은 데이터를 집단별로 계산하고 시각화하게 해 주며, 수학은 차이·비율·변화율을 통해 비교의 기준을 정교하게 만들어 줍니다.
+과학은 측정 조건과 표본의 신뢰성을 묻게 하고, 인문 철학은 우리에게 묻습니다. “우리는 어떤 기준으로 공정하게 비교하고 있는가?”
+좋은 데이터 과학자는 숫자의 크기만 보는 사람이 아니라, 기준과 맥락과 한계를 함께 설명하는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터45 데이터 비교와 해석</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [{"q": "데이터 비교는 두 개 이상의 자료를 기준에 따라 살펴보는 과정이다.", "a": "O", "e": "비교는 집단, 시점, 항목, 조건 사이의 차이와 공통점을 파악하는 과정이다."}, {"q": "데이터를 비교할 때 기준과 단위를 확인해야 한다.", "a": "O", "e": "단위와 기준이 다르면 비교 결과가 왜곡될 수 있다."}, {"q": "절댓값 차이와 비율 차이는 항상 같은 의미이다.", "a": "X", "e": "절댓값 차이는 실제 크기 차이이고, 비율 차이는 기준 대비 상대적 차이를 나타낸다."}, {"q": "변화율은 처음 값에 비해 얼마나 변했는지를 비율로 나타낼 수 있다.", "a": "O", "e": "변화율은 보통 (나중 값-처음 값)/처음 값으로 계산한다."}, {"q": "그래프의 축 범위가 다르면 같은 데이터도 다르게 보일 수 있다.", "a": "O", "e": "축을 과도하게 잘라 보여 주면 차이가 실제보다 커 보일 수 있다."}, {"q": "평균만 비교하면 항상 충분한 해석이 가능하다.", "a": "X", "e": "평균뿐 아니라 중앙값, 분산, 표준편차, 표본 수, 분포도 함께 보아야 한다."}, {"q": "집단 비교에서는 표본 수가 충분한지도 확인해야 한다.", "a": "O", "e": "표본 수가 너무 작으면 우연한 차이를 일반화하기 어렵다."}, {"q": "데이터 해석에는 수치 계산뿐 아니라 맥락 이해가 필요하다.", "a": "O", "e": "데이터가 수집된 상황, 기준, 목적, 한계를 함께 고려해야 한다."}, {"q": "상대적 변화율은 작은 기준값에서 크게 나타날 수 있다.", "a": "O", "e": "기준값이 작으면 작은 절대 변화도 큰 비율 변화로 보일 수 있다."}, {"q": "좋은 데이터 해석은 결론뿐 아니라 근거와 한계를 함께 제시한다.", "a": "O", "e": "근거와 한계를 함께 말해야 해석의 신뢰성이 높아진다."}];
+const mcQuestions = [{"q": "데이터 비교에서 가장 먼저 확인할 사항으로 적절한 것은?", "c": ["비교 기준과 단위", "글꼴 종류", "컴퓨터 배경화면", "파일 아이콘", "마우스 속도"], "a": 0, "e": "비교 기준과 단위가 맞아야 공정한 비교가 가능하다."}, {"q": "절댓값 차이의 예로 적절한 것은?", "c": ["90점과 80점의 차이는 10점", "80점은 90점의 88.9%", "작년보다 20% 증가", "전체 중 30%", "평균 대비 2배"], "a": 0, "e": "절댓값 차이는 실제 값의 차이를 말한다."}, {"q": "변화율 계산식으로 가장 적절한 것은?", "c": ["(나중 값-처음 값)/처음 값", "처음 값+나중 값", "나중 값만 보기", "처음 값만 보기", "최댓값-최솟값만"], "a": 0, "e": "변화율은 기준값 대비 변화량의 비율이다."}, {"q": "그래프 해석에서 주의할 점은?", "c": ["축 범위와 단위를 확인한다", "색이 예쁘면 무조건 믿는다", "제목만 보고 결론낸다", "출처는 보지 않는다", "값은 확인하지 않는다"], "a": 0, "e": "축 범위, 단위, 출처, 표본 수를 확인해야 한다."}, {"q": "두 학급의 평균 점수를 비교할 때 함께 보면 좋은 것은?", "c": ["표준편차와 학생 수", "학생 이름 글자 수", "교실 벽 색깔", "파일 크기", "키보드 종류"], "a": 0, "e": "평균만으로는 분포와 표본 크기를 알 수 없으므로 표준편차와 학생 수도 중요하다."}, {"q": "상대적 비율 비교가 특히 필요한 경우는?", "c": ["기준 규모가 다른 두 집단을 비교할 때", "두 값이 완전히 같은 단위와 규모일 때만", "파일명을 비교할 때", "글자색을 바꿀 때", "표를 삭제할 때"], "a": 0, "e": "규모가 다른 집단은 단순 개수보다 비율을 봐야 공정할 수 있다."}, {"q": "데이터 해석의 한계로 적절한 것은?", "c": ["데이터 수집 방식에 따라 편향이 있을 수 있다", "숫자는 항상 완벽하다", "표본 수는 전혀 중요하지 않다", "단위는 무의미하다", "그래프는 항상 진실만 보여 준다"], "a": 0, "e": "수집 방식, 표본, 결측값, 측정 오류에 따라 해석 한계가 생긴다."}, {"q": "Pandas에서 그룹별 평균을 비교할 때 사용할 수 있는 것은?", "c": ["groupby().mean()", "color().paint()", "sleep().run()", "font().size()", "music().play()"], "a": 0, "e": "groupby().mean()은 집단별 평균 비교에 활용된다."}, {"q": "두 값의 비율을 계산하는 이유로 적절한 것은?", "c": ["기준 대비 상대적 크기를 보기 위해", "모든 값을 삭제하기 위해", "문자열을 숨기기 위해", "컴퓨터를 종료하기 위해", "그래프를 없애기 위해"], "a": 0, "e": "비율은 기준값에 대한 상대적 크기를 보여 준다."}, {"q": "좋은 데이터 해석의 태도로 가장 적절한 것은?", "c": ["근거, 맥락, 한계를 함께 제시한다", "유리한 숫자만 보여 준다", "축을 일부러 왜곡한다", "표본 수를 숨긴다", "원인을 무조건 단정한다"], "a": 0, "e": "좋은 해석은 근거와 맥락, 한계까지 투명하게 설명한다."}];
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q"><b>OX ${i+1}. ${item.q}</b>
+   <div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{ labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`; });
+   area.innerHTML += `<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){ document.getElementById("scoreText").innerText = oxScore + mcScore; }
+function showAll(cls){ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block"); }
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\n";
+ content += "Ⅳ. 데이터 분석 기초 - 데이터 비교와 해석\n";
+ content += "학번: " + id + "\n";
+ content += "이름: " + name + "\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\n";
+ content += "형성평가 점수: " + mcScore + " / 50\n";
+ content += "총점: " + total + " / 100\n";
+ content += "응시시각: " + time + "\n";
+ content += "\n[학습 성찰]\n데이터 비교와 해석은 기준·단위·비율·표본 수·그래프 표현 방식을 함께 고려해야 신뢰할 수 있다.\n";
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터45_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+<svg id="MJX-SVG-global-cache" style="display: none;"><defs><path id="MJX-TEX-N-20" d=""></path><path id="MJX-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-TEX-N-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path id="MJX-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs></svg></body></html>

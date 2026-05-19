@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0212)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터75_데이터 분석 프로젝트 구현_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f172a,#14b8a6,#6366f1);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#14b8a6}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#0f766e;border-left:8px solid #6366f1;padding-left:12px}h3{color:#4f46e5;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#ccfbf1;border-left:6px solid #14b8a6}
+.quote{font-size:18px;background:#eef2ff;border-left:7px solid #6366f1;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#ccfbf1;border:1px solid #5eead4;border-radius:999px;padding:8px 13px;font-weight:700;color:#134e4a}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#ccfbf1}
+.q{border:1px solid #a5b4fc;background:#fbfbff;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#eef2ff}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#14b8a6;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#0f766e}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터75. 데이터 분석 프로젝트 구현</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅶ. 데이터 과학 프로그래밍 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B075_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%ED%98%84_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>데이터 분석 프로젝트 구현은 실제 문제를 데이터로 정의하고, 수집·전처리·분석·시각화·해석을 통해 의미 있는 결론을 도출하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>좋은 프로젝트는 코드의 나열이 아니라 질문, 데이터, 분석 방법, 결과 해석, 한계가 논리적으로 연결된 탐구 과정이다.</div>
+<div class="card goal"><b>핵심 질문</b><br>우리는 데이터를 이용해 실제 문제에 대해 어떤 근거 있는 답을 제시할 수 있는가?</div></div>
+<div class="flow"><span class="step">문제 정의</span><span class="step">데이터 수집</span><span class="step">전처리</span><span class="step">분석</span><span class="step">시각화</span><span class="step">해석</span><span class="step">보고서</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅶ. 데이터 과학 프로그래밍 - 데이터 분석 프로젝트 구현</td></tr>
+<tr><td>수업 목표</td><td>① 데이터 분석 프로젝트의 전체 흐름을 설명한다.<br>② 문제 정의와 데이터 수집 계획을 세운다.<br>③ Pandas로 데이터를 전처리하고 분석한다.<br>④ Matplotlib으로 결과를 시각화한다.<br>⑤ 분석 결과의 의미와 한계, 윤리적 고려를 보고서로 정리한다.</td></tr>
+<tr><td>지식 목표</td><td>문제 정의, 데이터 출처, 전처리, 탐색적 분석, 시각화, 해석, 한계, 개인정보, 재현 가능성의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>Pandas와 Matplotlib을 이용해 간단한 분석 프로젝트를 구현하고 결과를 설명한다.</td></tr>
+<tr><td>태도 목표</td><td>데이터 분석 결과를 과장하지 않고, 근거·한계·윤리를 함께 제시하는 책임 있는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 생활 속 데이터 질문 만들기 → 전개 35분: 프로젝트 단계별 코드 실습 → 정리 10분: 보고서 구조 정리 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 구현, 분석 보고서 초안, 발표 평가</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">데이터 과학은 단순히 코드를 실행하는 과목이 아닙니다. “우리 학교 학생들은 언제 가장 많이 도서관을 이용할까?”, “운동 시간과 집중도는 관련이 있을까?” 같은 질문을 데이터로 탐구하는 과정입니다. 인문 철학적으로 데이터 분석 프로젝트는 세상을 숫자로 줄이는 일이 아니라, 숫자 속에서 삶의 맥락을 다시 읽는 일입니다. 오늘 우리는 문제를 정의하고, 데이터를 다루고, 그래프로 표현하고, 책임 있게 해석하는 하나의 작은 데이터 과학 프로젝트를 구현해 보겠습니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 문제 정의</h3><p>데이터 분석 프로젝트는 “무엇을 알고 싶은가?”라는 질문에서 시작한다. 문제 정의가 분명해야 데이터 수집, 분석 방법, 시각화 방향이 정해진다.</p>
+<h3>② 데이터 수집</h3><p>데이터 수집은 분석에 필요한 자료를 모으는 단계이다. 설문, 공공데이터, 센서, 웹, CSV 파일 등 다양한 출처를 활용할 수 있다.</p>
+<h3>③ 데이터 이해</h3><p>수집한 데이터의 열 이름, 자료형, 단위, 결측값, 표본 수, 수집 기간을 확인한다. 데이터의 구조를 모르면 잘못된 분석을 할 수 있다.</p>
+<h3>④ 데이터 전처리</h3><p>결측값, 이상값, 중복값, 자료형 오류를 정리하는 단계이다. 전처리는 분석 결과의 신뢰도를 높이는 핵심 과정이다.</p>
+<h3>⑤ 탐색적 데이터 분석</h3><p>평균, 중앙값, 최댓값, 최솟값, 분포, 상관관계 등을 살펴보며 데이터의 특징을 파악한다.</p>
+<h3>⑥ 데이터 시각화</h3><p>그래프를 이용해 변화, 비교, 관계, 분포를 한눈에 볼 수 있게 표현한다. 그래프 선택은 질문과 데이터 형태에 맞아야 한다.</p>
+<h3>⑦ 결과 해석</h3><p>분석 결과가 무엇을 의미하는지 설명하는 단계이다. 수치와 그래프를 근거로 결론을 제시하되, 인과관계를 성급히 단정하지 않는다.</p>
+<h3>⑧ 한계와 윤리</h3><p>데이터 출처, 표본 수, 수집 방식, 개인정보, 편향 가능성 등 분석의 한계를 함께 제시해야 한다.</p>
+<h3>⑨ 보고서 작성</h3><p>프로젝트 보고서는 문제 정의, 데이터 설명, 분석 방법, 결과, 시각화, 해석, 한계, 개선 방향을 포함하면 좋다.</p>
+<h3>⑩ 재현 가능성</h3><p>다른 사람이 같은 데이터와 코드로 같은 결과를 얻을 수 있도록 코드와 과정을 명확히 정리하는 것이 중요하다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 프로젝트용 데이터 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "reading": [12, 18, 15, 22],
+    "study_hour": [30, 35, 32, 40]
+})
+
+print(df)</code></pre><p>월별 독서량과 공부 시간을 표 데이터로 만든다.</p>
+
+<h3>② 데이터 구조 확인</h3><pre><code>print(df.head())
+print(df.info())
+print(df.describe())</code></pre><p>데이터의 앞부분, 자료형, 요약 통계를 확인한다.</p>
+
+<h3>③ 결측값 확인</h3><pre><code>print(df.isna().sum())</code></pre><p>열별 결측값 개수를 확인한다.</p>
+
+<h3>④ 기본 분석</h3><pre><code>print("reading average:", df["reading"].mean())
+print("study max:", df["study_hour"].max())</code></pre><p>독서량 평균과 공부 시간 최댓값을 계산한다.</p>
+
+<h3>⑤ 시각화</h3><pre><code>import matplotlib.pyplot as plt
+
+plt.plot(df["month"], df["reading"], marker="o", label="Reading")
+plt.plot(df["month"], df["study_hour"], marker="o", label="Study Hour")
+plt.title("Monthly Reading and Study")
+plt.xlabel("Month")
+plt.ylabel("Value")
+plt.legend()
+plt.show()</code></pre><p>월별 독서량과 공부 시간의 변화를 선그래프로 비교한다.</p>
+
+<h3>⑥ 해석문 출력</h3><pre><code>max_month = df.loc[df["reading"].idxmax(), "month"]
+print("Reading was highest in", max_month)
+print("More data is needed to explain the reason.")</code></pre><p>가장 독서량이 많은 달을 찾고, 원인 해석에는 추가 데이터가 필요하다는 한계를 함께 출력한다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 학교 독서량 프로젝트</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "class": ["A", "B", "C"],
+    "books": [120, 95, 140]
+})
+
+print(df.sort_values("books", ascending=False))</code></pre><p><b>상세 설명:</b> 학급별 독서량을 비교하고 가장 많은 학급을 찾는다.</p>
+
+<h3>예제 2. 월별 전기 사용량 분석</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "month": ["Jan", "Feb", "Mar", "Apr"],
+    "electricity": [320, 280, 250, 230]
+})
+
+print("average:", df["electricity"].mean())</code></pre><p><b>상세 설명:</b> 월별 전기 사용량의 평균을 계산하여 에너지 사용 패턴을 분석한다.</p>
+
+<h3>예제 3. 만족도 설문 분석</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "satisfaction": [5, 4, 3, 5, 4, None]
+})
+
+df["satisfaction"] = df["satisfaction"].fillna(df["satisfaction"].mean())
+print(df["satisfaction"].mean())</code></pre><p><b>상세 설명:</b> 결측값을 평균으로 채운 뒤 만족도 평균을 계산한다.</p>
+
+<h3>예제 4. 운동 시간과 집중도 관계</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "exercise": [1, 2, 3, 4, 5],
+    "focus": [60, 65, 72, 80, 82]
+})
+
+print(df.corr(numeric_only=True))</code></pre><p><b>상세 설명:</b> 운동 시간과 집중도 사이의 상관관계를 확인하되 인과관계로 단정하지 않는다.</p>
+
+<h3>예제 5. 분석 결과 그래프 만들기</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "visitors": [100, 130, 120, 160]
+})
+
+plt.bar(df["month"], df["visitors"])
+plt.title("Monthly Visitors")
+plt.xlabel("Month")
+plt.ylabel("Visitors")
+plt.show()</code></pre><p><b>상세 설명:</b> 월별 방문자 수를 막대그래프로 표현해 비교한다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 데이터 분석 프로젝트는 문제 정의에서 시작하는 것이 좋다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 무엇을 알고 싶은지 분명해야 필요한 데이터와 분석 방법을 정할 수 있다.</div></div><div class="q"><b>OX 2. 데이터 수집 후에는 결측값과 이상값을 확인하는 전처리 과정이 필요할 수 있다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터 품질이 낮으면 분석 결과도 왜곡될 수 있다.</div></div><div class="q"><b>OX 3. 데이터 분석 프로젝트에서는 분석 목적과 상관없는 데이터를 무조건 많이 모으는 것이 항상 좋다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 목적에 맞는 적절한 데이터가 중요하며, 불필요한 데이터는 개인정보와 편향 문제를 키울 수 있다.</div></div><div class="q"><b>OX 4. Pandas는 프로젝트에서 표 데이터를 정리하고 분석하는 데 활용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> Pandas는 DataFrame을 이용해 필터링, 정렬, 그룹화, 통계 분석을 수행할 수 있다.</div></div><div class="q"><b>OX 5. Matplotlib은 분석 결과를 그래프로 시각화하는 데 활용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> Matplotlib은 선그래프, 막대그래프, 산점도 등 다양한 그래프를 만들 수 있다.</div></div><div class="q"><b>OX 6. 프로젝트 결과 해석에서는 그래프가 보여 주는 패턴뿐 아니라 한계도 함께 설명해야 한다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터 범위, 표본 수, 수집 방식의 한계를 함께 제시해야 신뢰할 수 있다.</div></div><div class="q"><b>OX 7. 데이터 분석 프로젝트에서 모든 상관관계는 바로 인과관계로 결론 내릴 수 있다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않으므로 추가 근거와 맥락이 필요하다.</div></div><div class="q"><b>OX 8. 프로젝트 보고서에는 문제, 데이터, 분석 방법, 결과, 해석, 한계가 포함되면 좋다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 보고서는 분석 과정을 재현하고 검토할 수 있도록 구성해야 한다.</div></div><div class="q"><b>OX 9. 개인정보가 포함된 데이터는 목적과 보호 방법을 고려하여 신중히 다루어야 한다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터 분석 프로젝트에서는 개인정보 보호와 윤리적 책임이 중요하다.</div></div><div class="q"><b>OX 10. 좋은 데이터 분석 프로젝트는 코드 실행 결과뿐 아니라 질문에 대한 의미 있는 답을 제시한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 분석은 계산 자체보다 문제 해결과 해석을 목표로 한다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 데이터 분석 프로젝트의 첫 단계로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 문제 정의</label><label><input type="radio" name="mc0" value="1"> 2. 그래프 색 정하기</label><label><input type="radio" name="mc0" value="2"> 3. 결과 먼저 쓰기</label><label><input type="radio" name="mc0" value="3"> 4. 무조건 코드 복사</label><label><input type="radio" name="mc0" value="4"> 5. 파일 삭제</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 문제를 명확히 정의해야 데이터와 분석 방법을 결정할 수 있다.</div></div><div class="q"><b>문항 2. 전처리 과정에 해당하는 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 결측값과 이상값 확인</label><label><input type="radio" name="mc1" value="1"> 2. 보고서 표지만 만들기</label><label><input type="radio" name="mc1" value="2"> 3. 마우스 바꾸기</label><label><input type="radio" name="mc1" value="3"> 4. 인터넷 끄기</label><label><input type="radio" name="mc1" value="4"> 5. 그래프 색만 고르기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 전처리는 분석 전에 데이터 품질을 높이는 과정이다.</div></div><div class="q"><b>문항 3. Pandas가 프로젝트에서 주로 하는 역할은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 표 데이터 정리와 분석</label><label><input type="radio" name="mc2" value="1"> 2. 컴퓨터 전원 관리</label><label><input type="radio" name="mc2" value="2"> 3. 이미지 배경 제거</label><label><input type="radio" name="mc2" value="3"> 4. 음악 재생</label><label><input type="radio" name="mc2" value="4"> 5. 문서 번역만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> Pandas는 DataFrame을 이용해 표 데이터를 다룬다.</div></div><div class="q"><b>문항 4. Matplotlib의 역할로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 분석 결과 시각화</label><label><input type="radio" name="mc3" value="1"> 2. 데이터 삭제만</label><label><input type="radio" name="mc3" value="2"> 3. 파일 압축만</label><label><input type="radio" name="mc3" value="3"> 4. 문자열 암호화만</label><label><input type="radio" name="mc3" value="4"> 5. 키보드 제어</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> Matplotlib은 분석 결과를 그래프로 표현한다.</div></div><div class="q"><b>문항 5. 프로젝트 보고서에 포함되면 좋은 내용이 아닌 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 근거 없이 결론만 단정하기</label><label><input type="radio" name="mc4" value="1"> 2. 문제 정의</label><label><input type="radio" name="mc4" value="2"> 3. 데이터 출처</label><label><input type="radio" name="mc4" value="3"> 4. 분석 방법</label><label><input type="radio" name="mc4" value="4"> 5. 해석과 한계</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 근거 없는 단정은 좋은 보고서가 아니다.</div></div><div class="q"><b>문항 6. 상관관계 해석에서 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 인과관계로 단정하지 않고 추가 근거를 확인한다</label><label><input type="radio" name="mc5" value="1"> 2. 무조건 원인이라고 말한다</label><label><input type="radio" name="mc5" value="2"> 3. 그래프를 숨긴다</label><label><input type="radio" name="mc5" value="3"> 4. 데이터 출처를 지운다</label><label><input type="radio" name="mc5" value="4"> 5. 결측값을 무시한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않는다.</div></div><div class="q"><b>문항 7. 데이터 분석 프로젝트에서 시각화가 필요한 이유는?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 패턴과 차이를 쉽게 이해하고 전달하기 위해</label><label><input type="radio" name="mc6" value="1"> 2. 숫자를 모두 숨기기 위해</label><label><input type="radio" name="mc6" value="2"> 3. 데이터를 무조건 삭제하기 위해</label><label><input type="radio" name="mc6" value="3"> 4. 코드를 실행하지 않기 위해</label><label><input type="radio" name="mc6" value="4"> 5. 개인정보를 공개하기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 시각화는 분석 결과를 이해하고 전달하는 데 도움을 준다.</div></div><div class="q"><b>문항 8. 개인정보가 포함된 데이터를 다룰 때 필요한 태도는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 보호와 익명화, 사용 목적을 고려한다</label><label><input type="radio" name="mc7" value="1"> 2. 무조건 공개한다</label><label><input type="radio" name="mc7" value="2"> 3. 출처를 숨긴다</label><label><input type="radio" name="mc7" value="3"> 4. 동의 없이 배포한다</label><label><input type="radio" name="mc7" value="4"> 5. 필요 이상으로 수집한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 개인정보는 최소 수집, 보호, 익명화, 목적 제한을 고려해야 한다.</div></div><div class="q"><b>문항 9. 분석 결과의 한계를 쓰는 이유는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 결과를 더 신뢰성 있게 해석하기 위해</label><label><input type="radio" name="mc8" value="1"> 2. 분석을 망치기 위해</label><label><input type="radio" name="mc8" value="2"> 3. 코드를 길게 만들기 위해</label><label><input type="radio" name="mc8" value="3"> 4. 그래프를 없애기 위해</label><label><input type="radio" name="mc8" value="4"> 5. 데이터를 감추기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 한계를 밝히면 결과를 과장하지 않고 정확히 이해할 수 있다.</div></div><div class="q"><b>문항 10. 좋은 프로젝트 구현의 특징은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 문제 정의부터 해석과 보고까지 일관된 흐름이 있다</label><label><input type="radio" name="mc9" value="1"> 2. 코드만 있고 질문이 없다</label><label><input type="radio" name="mc9" value="2"> 3. 결과를 검토하지 않는다</label><label><input type="radio" name="mc9" value="3"> 4. 데이터 출처가 없다</label><label><input type="radio" name="mc9" value="4"> 5. 한계를 숨긴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 좋은 프로젝트는 질문, 데이터, 분석, 시각화, 해석이 연결된다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터75_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 데이터 분석 프로젝트가 문제 정의에서 시작하여 수집, 전처리, 분석, 시각화, 해석, 보고서 작성으로 이어지는 탐구 과정임을 배웠습니다. 컴퓨터과학은 데이터를 처리하고 자동화하는 도구를 제공하고, 수학은 평균·비율·상관관계의 의미를 설명하며, 과학은 결과가 실제 세계에서 타당한지 검증하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “데이터로 말할 때, 우리는 누구의 목소리를 담고 누구의 맥락을 놓치고 있는가?” 좋은 데이터 과학자는 코드를 잘 쓰는 사람을 넘어, 데이터로 근거 있게 질문하고 책임 있게 답하는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터75 데이터 분석 프로젝트 구현</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "데이터 분석 프로젝트는 문제 정의에서 시작하는 것이 좋다.", "a": "O", "e": "무엇을 알고 싶은지 분명해야 필요한 데이터와 분석 방법을 정할 수 있다."}, {"q": "데이터 수집 후에는 결측값과 이상값을 확인하는 전처리 과정이 필요할 수 있다.", "a": "O", "e": "데이터 품질이 낮으면 분석 결과도 왜곡될 수 있다."}, {"q": "데이터 분석 프로젝트에서는 분석 목적과 상관없는 데이터를 무조건 많이 모으는 것이 항상 좋다.", "a": "X", "e": "목적에 맞는 적절한 데이터가 중요하며, 불필요한 데이터는 개인정보와 편향 문제를 키울 수 있다."}, {"q": "Pandas는 프로젝트에서 표 데이터를 정리하고 분석하는 데 활용할 수 있다.", "a": "O", "e": "Pandas는 DataFrame을 이용해 필터링, 정렬, 그룹화, 통계 분석을 수행할 수 있다."}, {"q": "Matplotlib은 분석 결과를 그래프로 시각화하는 데 활용할 수 있다.", "a": "O", "e": "Matplotlib은 선그래프, 막대그래프, 산점도 등 다양한 그래프를 만들 수 있다."}, {"q": "프로젝트 결과 해석에서는 그래프가 보여 주는 패턴뿐 아니라 한계도 함께 설명해야 한다.", "a": "O", "e": "데이터 범위, 표본 수, 수집 방식의 한계를 함께 제시해야 신뢰할 수 있다."}, {"q": "데이터 분석 프로젝트에서 모든 상관관계는 바로 인과관계로 결론 내릴 수 있다.", "a": "X", "e": "상관관계는 인과관계를 증명하지 않으므로 추가 근거와 맥락이 필요하다."}, {"q": "프로젝트 보고서에는 문제, 데이터, 분석 방법, 결과, 해석, 한계가 포함되면 좋다.", "a": "O", "e": "보고서는 분석 과정을 재현하고 검토할 수 있도록 구성해야 한다."}, {"q": "개인정보가 포함된 데이터는 목적과 보호 방법을 고려하여 신중히 다루어야 한다.", "a": "O", "e": "데이터 분석 프로젝트에서는 개인정보 보호와 윤리적 책임이 중요하다."}, {"q": "좋은 데이터 분석 프로젝트는 코드 실행 결과뿐 아니라 질문에 대한 의미 있는 답을 제시한다.", "a": "O", "e": "분석은 계산 자체보다 문제 해결과 해석을 목표로 한다."}];
+const mcQuestions = [{"q": "데이터 분석 프로젝트의 첫 단계로 가장 적절한 것은?", "c": ["문제 정의", "그래프 색 정하기", "결과 먼저 쓰기", "무조건 코드 복사", "파일 삭제"], "a": 0, "e": "문제를 명확히 정의해야 데이터와 분석 방법을 결정할 수 있다."}, {"q": "전처리 과정에 해당하는 것은?", "c": ["결측값과 이상값 확인", "보고서 표지만 만들기", "마우스 바꾸기", "인터넷 끄기", "그래프 색만 고르기"], "a": 0, "e": "전처리는 분석 전에 데이터 품질을 높이는 과정이다."}, {"q": "Pandas가 프로젝트에서 주로 하는 역할은?", "c": ["표 데이터 정리와 분석", "컴퓨터 전원 관리", "이미지 배경 제거", "음악 재생", "문서 번역만"], "a": 0, "e": "Pandas는 DataFrame을 이용해 표 데이터를 다룬다."}, {"q": "Matplotlib의 역할로 적절한 것은?", "c": ["분석 결과 시각화", "데이터 삭제만", "파일 압축만", "문자열 암호화만", "키보드 제어"], "a": 0, "e": "Matplotlib은 분석 결과를 그래프로 표현한다."}, {"q": "프로젝트 보고서에 포함되면 좋은 내용이 아닌 것은?", "c": ["근거 없이 결론만 단정하기", "문제 정의", "데이터 출처", "분석 방법", "해석과 한계"], "a": 0, "e": "근거 없는 단정은 좋은 보고서가 아니다."}, {"q": "상관관계 해석에서 바람직한 태도는?", "c": ["인과관계로 단정하지 않고 추가 근거를 확인한다", "무조건 원인이라고 말한다", "그래프를 숨긴다", "데이터 출처를 지운다", "결측값을 무시한다"], "a": 0, "e": "상관관계는 인과관계를 증명하지 않는다."}, {"q": "데이터 분석 프로젝트에서 시각화가 필요한 이유는?", "c": ["패턴과 차이를 쉽게 이해하고 전달하기 위해", "숫자를 모두 숨기기 위해", "데이터를 무조건 삭제하기 위해", "코드를 실행하지 않기 위해", "개인정보를 공개하기 위해"], "a": 0, "e": "시각화는 분석 결과를 이해하고 전달하는 데 도움을 준다."}, {"q": "개인정보가 포함된 데이터를 다룰 때 필요한 태도는?", "c": ["보호와 익명화, 사용 목적을 고려한다", "무조건 공개한다", "출처를 숨긴다", "동의 없이 배포한다", "필요 이상으로 수집한다"], "a": 0, "e": "개인정보는 최소 수집, 보호, 익명화, 목적 제한을 고려해야 한다."}, {"q": "분석 결과의 한계를 쓰는 이유는?", "c": ["결과를 더 신뢰성 있게 해석하기 위해", "분석을 망치기 위해", "코드를 길게 만들기 위해", "그래프를 없애기 위해", "데이터를 감추기 위해"], "a": 0, "e": "한계를 밝히면 결과를 과장하지 않고 정확히 이해할 수 있다."}, {"q": "좋은 프로젝트 구현의 특징은?", "c": ["문제 정의부터 해석과 보고까지 일관된 흐름이 있다", "코드만 있고 질문이 없다", "결과를 검토하지 않는다", "데이터 출처가 없다", "한계를 숨긴다"], "a": 0, "e": "좋은 프로젝트는 질문, 데이터, 분석, 시각화, 해석이 연결된다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅶ. 데이터 과학 프로그래밍 - 데이터 분석 프로젝트 구현\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n데이터 분석 프로젝트 구현은 문제 정의부터 데이터 수집·전처리·분석·시각화·해석·보고서 작성까지 이어지는 통합 탐구 과정이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터75_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

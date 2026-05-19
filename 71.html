@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0158)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터71_파이썬 기초_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#111827,#f59e0b,#0ea5e9);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#f59e0b;color:#111827}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#d97706;border-left:8px solid #0ea5e9;padding-left:12px}h3{color:#0284c7;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#fffbeb;border-left:6px solid #f59e0b}
+.quote{font-size:18px;background:#ecfeff;border-left:7px solid #0ea5e9;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#fef3c7;border:1px solid #fbbf24;border-radius:999px;padding:8px 13px;font-weight:700;color:#78350f}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#fef3c7}
+.q{border:1px solid #fde68a;background:#fffdf5;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#fef3c7}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#f59e0b;color:#111827;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#d97706;color:white}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터71. 파이썬 기초</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅶ. 데이터 과학 프로그래밍 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B071_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B8%B0%EC%B4%88_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>파이썬 기초는 데이터를 표현하고 처리하며 분석과 시각화로 확장하기 위한 프로그래밍의 기본 언어이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터 과학에서 프로그래밍은 문제를 논리적으로 분해하고 재현 가능한 절차로 표현하는 과정이다.</div>
+<div class="card goal"><b>핵심 질문</b><br>사람의 생각과 문제 해결 절차를 컴퓨터가 실행할 수 있는 코드로 어떻게 바꿀 수 있는가?</div></div>
+<div class="flow"><span class="step">변수</span><span class="step">자료형</span><span class="step">입출력</span><span class="step">조건문</span><span class="step">반복문</span><span class="step">리스트</span><span class="step">함수</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅶ. 데이터 과학 프로그래밍 - 파이썬 기초</td></tr>
+<tr><td>수업 목표</td><td>① 파이썬이 데이터 과학에서 활용되는 이유를 설명한다.<br>② 변수, 자료형, 입력, 출력의 의미를 이해한다.<br>③ 조건문과 반복문을 사용해 실행 흐름을 제어한다.<br>④ 리스트와 함수를 이용해 데이터를 구조적으로 처리한다.<br>⑤ 간단한 실생활 데이터를 파이썬 코드로 계산하고 해석한다.</td></tr>
+<tr><td>지식 목표</td><td>변수, 정수, 실수, 문자열, 불린, 리스트, 조건문, 반복문, 함수, 형 변환, 들여쓰기의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>print, input, int, float, if, for, range, list, def를 활용하여 간단한 데이터 처리 코드를 작성한다.</td></tr>
+<tr><td>태도 목표</td><td>오류를 두려워하지 않고, 문제를 작은 단계로 나누어 논리적으로 해결하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 생활 속 계산 자동화 사례 → 전개 30분: 핵심 문법과 코드 실습 → 정리 10분: 데이터 과학과 파이썬 연결 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 읽기, 출력 결과 예측, 실생활 데이터 계산 활동</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">데이터 과학자는 숫자를 많이 아는 사람일 뿐 아니라, 반복되는 생각을 컴퓨터가 실행할 수 있는 절차로 바꾸는 사람입니다. 우리가 매일 하는 “평균을 구하자”, “조건에 맞는 학생을 찾자”, “여러 값을 하나씩 확인하자”라는 생각은 파이썬 코드가 될 수 있습니다. 인문 철학적으로 프로그래밍은 인간의 사고를 명확한 언어로 번역하는 일입니다. 오늘 우리는 데이터 과학의 언어인 파이썬을 통해 생각을 코드로 바꾸는 첫걸음을 시작합니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 파이썬</h3><p>파이썬은 문법이 비교적 간단하고 읽기 쉬워 데이터 분석, 인공지능, 웹 개발, 자동화 등 다양한 분야에서 사용되는 프로그래밍 언어이다.</p>
+<h3>② 변수</h3><p>변수는 값에 이름을 붙여 저장하는 방법이다. 예를 들어 <code>score = 90</code>은 90이라는 값을 score라는 이름으로 저장한다.</p>
+<h3>③ 자료형</h3><p>자료형은 데이터의 종류이다. 정수, 실수, 문자열, 참/거짓, 리스트 등이 있으며 자료형을 이해하면 계산 오류를 줄일 수 있다.</p>
+<h3>④ 입력과 출력</h3><p><code>input()</code>은 사용자에게 값을 입력받고, <code>print()</code>는 값을 화면에 출력한다.</p>
+<h3>⑤ 형 변환</h3><p>형 변환은 자료형을 바꾸는 것이다. <code>int("10")</code>은 문자열 "10"을 정수 10으로 바꾼다.</p>
+<h3>⑥ 조건문</h3><p>조건문은 조건의 참과 거짓에 따라 실행할 코드를 선택한다. <code>if</code>, <code>elif</code>, <code>else</code>를 사용한다.</p>
+<h3>⑦ 반복문</h3><p>반복문은 같은 작업을 여러 번 실행하는 문법이다. 데이터 목록을 하나씩 처리할 때 매우 유용하다.</p>
+<h3>⑧ 리스트</h3><p>리스트는 여러 값을 순서대로 저장하는 자료형이다. 점수 목록, 이름 목록, 측정값 목록처럼 여러 데이터를 묶어 처리할 수 있다.</p>
+<h3>⑨ 함수</h3><p>함수는 특정 작업을 수행하는 코드를 묶어 이름을 붙인 것이다. 같은 코드를 반복하지 않고 재사용할 수 있다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 변수와 출력</h3><pre><code>score = 90
+name = "Data"
+
+print(name)
+print(score)</code></pre><p>문자열과 숫자를 변수에 저장하고 출력한다.</p>
+<h3>② 자료형 확인</h3><pre><code>a = 10
+b = 3.14
+c = "python"
+d = True
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))</code></pre><p><code>type()</code>을 이용해 값의 자료형을 확인한다.</p>
+<h3>③ 입력과 형 변환</h3><pre><code>age_text = input("Age: ")
+age = int(age_text)
+
+print(age + 1)</code></pre><p>입력값을 정수로 변환하여 계산한다.</p>
+<h3>④ 조건문</h3><pre><code>score = 85
+
+if score &gt;= 80:
+    print("Good")
+else:
+    print("Try again")</code></pre><p>조건에 따라 다른 결과를 출력한다.</p>
+<h3>⑤ 반복문과 리스트</h3><pre><code>scores = [70, 80, 90]
+
+for score in scores:
+    print(score)</code></pre><p>리스트의 값을 하나씩 꺼내 출력한다.</p>
+<h3>⑥ 함수</h3><pre><code>def average(values):
+    return sum(values) / len(values)
+
+scores = [70, 80, 90]
+print(average(scores))</code></pre><p>평균 계산 함수를 정의하고 재사용한다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 시험 점수 평균 구하기</h3><pre><code>scores = [85, 90, 78, 92]
+avg = sum(scores) / len(scores)
+print("Average:", avg)</code></pre><p><b>상세 설명:</b> 여러 점수를 리스트에 저장하고 합계와 개수를 이용해 평균을 계산한다.</p>
+<h3>예제 2. 온도에 따른 옷차림 추천</h3><pre><code>temperature = 12
+
+if temperature &lt; 10:
+    print("Wear a coat")
+elif temperature &lt; 25:
+    print("Wear a jacket")
+else:
+    print("Wear light clothes")</code></pre><p><b>상세 설명:</b> 조건문을 이용해 온도에 따라 다른 추천을 출력한다.</p>
+<h3>예제 3. 지출 합계 계산</h3><pre><code>expenses = [3000, 4500, 2500, 6000]
+total = 0
+
+for money in expenses:
+    total += money
+
+print("Total expense:", total)</code></pre><p><b>상세 설명:</b> 반복문으로 지출 목록을 하나씩 더해 총액을 계산한다.</p>
+<h3>예제 4. 합격 여부 판정 함수</h3><pre><code>def pass_check(score):
+    if score &gt;= 60:
+        return "Pass"
+    return "Fail"
+
+print(pass_check(75))
+print(pass_check(45))</code></pre><p><b>상세 설명:</b> 함수로 합격 판정 규칙을 묶어 여러 점수에 재사용한다.</p>
+<h3>예제 5. 데이터에서 조건에 맞는 값 찾기</h3><pre><code>steps = [3500, 8000, 12000, 6000]
+high_steps = []
+
+for s in steps:
+    if s &gt;= 8000:
+        high_steps.append(s)
+
+print(high_steps)</code></pre><p><b>상세 설명:</b> 반복문과 조건문을 함께 사용해 8000보 이상 걸은 날만 리스트에 모은다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 파이썬은 데이터 분석과 인공지능 학습에 널리 사용되는 프로그래밍 언어이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 파이썬은 문법이 비교적 간단하고 데이터 과학 라이브러리가 풍부하다.</div></div><div class="q"><b>OX 2. 변수는 데이터를 저장하기 위해 이름을 붙인 공간으로 이해할 수 있다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 변수는 값에 이름을 붙여 프로그램에서 다시 사용할 수 있게 한다.</div></div><div class="q"><b>OX 3. 문자열은 따옴표로 감싸서 표현할 수 있다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 'data'나 "science"는 문자열이다.</div></div><div class="q"><b>OX 4. input() 함수는 항상 정수형 값을 바로 반환한다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> input()은 문자열을 반환하므로 숫자 계산에는 int()나 float() 변환이 필요하다.</div></div><div class="q"><b>OX 5. print() 함수는 값을 화면에 출력하는 데 사용한다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> print()는 변수 값, 문자열, 계산 결과 등을 출력한다.</div></div><div class="q"><b>OX 6. 조건문 if는 조건에 따라 실행할 코드를 다르게 선택한다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 조건이 참이면 if 블록이 실행되고, 거짓이면 else나 elif 블록이 실행될 수 있다.</div></div><div class="q"><b>OX 7. for 반복문은 정해진 범위나 자료를 반복 처리할 때 사용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> for문은 리스트, 문자열, range 등 반복 가능한 자료를 처리한다.</div></div><div class="q"><b>OX 8. 리스트는 여러 값을 하나의 변수에 순서대로 저장할 수 있는 자료형이다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 리스트는 [10, 20, 30]처럼 여러 값을 저장하고 인덱스로 접근할 수 있다.</div></div><div class="q"><b>OX 9. 함수는 같은 코드를 재사용하기 어렵게 만드는 문법이다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 함수는 반복되는 코드를 묶어 재사용하기 쉽게 만든다.</div></div><div class="q"><b>OX 10. 파이썬 코드는 들여쓰기가 중요하다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 파이썬은 들여쓰기로 코드 블록을 구분한다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 파이썬의 특징으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 문법이 비교적 간단하고 데이터 과학에 널리 활용된다</label><label><input type="radio" name="mc0" value="1"> 2. 반드시 기계어로만 작성해야 한다</label><label><input type="radio" name="mc0" value="2"> 3. 변수를 사용할 수 없다</label><label><input type="radio" name="mc0" value="3"> 4. 그래프를 절대 그릴 수 없다</label><label><input type="radio" name="mc0" value="4"> 5. 문자열을 처리할 수 없다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 파이썬은 읽기 쉬운 문법과 풍부한 라이브러리 덕분에 데이터 과학에 널리 쓰인다.</div></div><div class="q"><b>문항 2. 변수의 의미로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 값을 저장하고 이름으로 다시 사용하기 위한 것</label><label><input type="radio" name="mc1" value="1"> 2. 화면 색을 바꾸는 것</label><label><input type="radio" name="mc1" value="2"> 3. 컴퓨터를 끄는 명령</label><label><input type="radio" name="mc1" value="3"> 4. 파일만 삭제하는 도구</label><label><input type="radio" name="mc1" value="4"> 5. 인터넷 주소</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 변수는 값에 이름을 붙여 저장하는 역할을 한다.</div></div><div class="q"><b>문항 3. 다음 중 문자열 자료형으로 올바른 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. "Data"</label><label><input type="radio" name="mc2" value="1"> 2. 100</label><label><input type="radio" name="mc2" value="2"> 3. 3.14</label><label><input type="radio" name="mc2" value="3"> 4. True</label><label><input type="radio" name="mc2" value="4"> 5. [1,2,3]</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 따옴표로 감싼 값은 문자열이다.</div></div><div class="q"><b>문항 4. input()으로 받은 값을 숫자 계산에 사용하려면 보통 필요한 것은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. int() 또는 float()로 형 변환</label><label><input type="radio" name="mc3" value="1"> 2. print() 삭제</label><label><input type="radio" name="mc3" value="2"> 3. 변수명 제거</label><label><input type="radio" name="mc3" value="3"> 4. 컴퓨터 재부팅</label><label><input type="radio" name="mc3" value="4"> 5. 조건문 제거</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> input()은 문자열을 반환하므로 숫자 계산을 위해 형 변환이 필요하다.</div></div><div class="q"><b>문항 5. 조건문 if의 역할은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 조건에 따라 실행 흐름을 다르게 한다</label><label><input type="radio" name="mc4" value="1"> 2. 무조건 같은 코드를 반복한다</label><label><input type="radio" name="mc4" value="2"> 3. 파일을 압축한다</label><label><input type="radio" name="mc4" value="3"> 4. 문자열을 삭제한다</label><label><input type="radio" name="mc4" value="4"> 5. 그래프만 그린다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> if문은 조건의 참/거짓에 따라 실행할 코드를 선택한다.</div></div><div class="q"><b>문항 6. 반복문 for의 역할로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 자료나 범위를 순서대로 반복 처리한다</label><label><input type="radio" name="mc5" value="1"> 2. 조건을 항상 거짓으로 만든다</label><label><input type="radio" name="mc5" value="2"> 3. 변수를 사용할 수 없게 한다</label><label><input type="radio" name="mc5" value="3"> 4. 컴퓨터를 종료한다</label><label><input type="radio" name="mc5" value="4"> 5. 문자열을 숫자로만 만든다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> for문은 리스트나 range 같은 반복 가능한 객체를 순회한다.</div></div><div class="q"><b>문항 7. 리스트의 설명으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 여러 값을 순서대로 저장할 수 있다</label><label><input type="radio" name="mc6" value="1"> 2. 값을 하나도 저장할 수 없다</label><label><input type="radio" name="mc6" value="2"> 3. 항상 문자열 하나만 저장한다</label><label><input type="radio" name="mc6" value="3"> 4. 조건문과 함께 쓸 수 없다</label><label><input type="radio" name="mc6" value="4"> 5. 인덱스가 없다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 리스트는 여러 값을 순서대로 저장하고 인덱스로 접근할 수 있다.</div></div><div class="q"><b>문항 8. 함수를 사용하는 이유로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 코드를 묶어 재사용하고 구조화하기 위해</label><label><input type="radio" name="mc7" value="1"> 2. 코드를 무조건 길게 만들기 위해</label><label><input type="radio" name="mc7" value="2"> 3. 변수를 삭제하기 위해</label><label><input type="radio" name="mc7" value="3"> 4. 반복문을 금지하기 위해</label><label><input type="radio" name="mc7" value="4"> 5. 출력을 막기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 함수는 반복되는 작업을 이름 붙여 재사용하게 한다.</div></div><div class="q"><b>문항 9. 파이썬에서 코드 블록을 구분하는 중요한 요소는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 들여쓰기</label><label><input type="radio" name="mc8" value="1"> 2. 파일 크기</label><label><input type="radio" name="mc8" value="2"> 3. 마우스 위치</label><label><input type="radio" name="mc8" value="3"> 4. 화면 밝기</label><label><input type="radio" name="mc8" value="4"> 5. 인터넷 속도</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 파이썬은 들여쓰기로 if, for, 함수 등의 블록을 구분한다.</div></div><div class="q"><b>문항 10. 데이터 과학에서 파이썬 기초가 중요한 이유는?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 데이터 수집·처리·분석·시각화 코드의 기반이 되기 때문</label><label><input type="radio" name="mc9" value="1"> 2. 수학을 전혀 쓰지 않기 위해</label><label><input type="radio" name="mc9" value="2"> 3. 컴퓨터를 느리게 하기 위해</label><label><input type="radio" name="mc9" value="3"> 4. 파일명을 숨기기 위해</label><label><input type="radio" name="mc9" value="4"> 5. 그래프를 없애기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 파이썬 기초 문법은 데이터 과학 실습의 기반이다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터71_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 파이썬 기초 문법을 통해 데이터를 다루는 첫 도구를 배웠습니다. 컴퓨터과학은 문제를 절차와 알고리즘으로 표현하게 하고, 수학은 값과 조건과 반복의 논리를 제공하며, 과학은 관찰 데이터를 계산 가능한 형태로 정리하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “내 생각은 충분히 명확해서 컴퓨터에게 설명할 수 있는가?” 좋은 데이터 과학자는 코드를 외우는 사람이 아니라, 문제를 작게 나누고 데이터로 사고하며 책임 있게 결과를 해석하는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터71 파이썬 기초</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "파이썬은 데이터 분석과 인공지능 학습에 널리 사용되는 프로그래밍 언어이다.", "a": "O", "e": "파이썬은 문법이 비교적 간단하고 데이터 과학 라이브러리가 풍부하다."}, {"q": "변수는 데이터를 저장하기 위해 이름을 붙인 공간으로 이해할 수 있다.", "a": "O", "e": "변수는 값에 이름을 붙여 프로그램에서 다시 사용할 수 있게 한다."}, {"q": "문자열은 따옴표로 감싸서 표현할 수 있다.", "a": "O", "e": "'data'나 \"science\"는 문자열이다."}, {"q": "input() 함수는 항상 정수형 값을 바로 반환한다.", "a": "X", "e": "input()은 문자열을 반환하므로 숫자 계산에는 int()나 float() 변환이 필요하다."}, {"q": "print() 함수는 값을 화면에 출력하는 데 사용한다.", "a": "O", "e": "print()는 변수 값, 문자열, 계산 결과 등을 출력한다."}, {"q": "조건문 if는 조건에 따라 실행할 코드를 다르게 선택한다.", "a": "O", "e": "조건이 참이면 if 블록이 실행되고, 거짓이면 else나 elif 블록이 실행될 수 있다."}, {"q": "for 반복문은 정해진 범위나 자료를 반복 처리할 때 사용할 수 있다.", "a": "O", "e": "for문은 리스트, 문자열, range 등 반복 가능한 자료를 처리한다."}, {"q": "리스트는 여러 값을 하나의 변수에 순서대로 저장할 수 있는 자료형이다.", "a": "O", "e": "리스트는 [10, 20, 30]처럼 여러 값을 저장하고 인덱스로 접근할 수 있다."}, {"q": "함수는 같은 코드를 재사용하기 어렵게 만드는 문법이다.", "a": "X", "e": "함수는 반복되는 코드를 묶어 재사용하기 쉽게 만든다."}, {"q": "파이썬 코드는 들여쓰기가 중요하다.", "a": "O", "e": "파이썬은 들여쓰기로 코드 블록을 구분한다."}];
+const mcQuestions = [{"q": "파이썬의 특징으로 가장 적절한 것은?", "c": ["문법이 비교적 간단하고 데이터 과학에 널리 활용된다", "반드시 기계어로만 작성해야 한다", "변수를 사용할 수 없다", "그래프를 절대 그릴 수 없다", "문자열을 처리할 수 없다"], "a": 0, "e": "파이썬은 읽기 쉬운 문법과 풍부한 라이브러리 덕분에 데이터 과학에 널리 쓰인다."}, {"q": "변수의 의미로 옳은 것은?", "c": ["값을 저장하고 이름으로 다시 사용하기 위한 것", "화면 색을 바꾸는 것", "컴퓨터를 끄는 명령", "파일만 삭제하는 도구", "인터넷 주소"], "a": 0, "e": "변수는 값에 이름을 붙여 저장하는 역할을 한다."}, {"q": "다음 중 문자열 자료형으로 올바른 것은?", "c": ["\"Data\"", "100", "3.14", "True", "[1,2,3]"], "a": 0, "e": "따옴표로 감싼 값은 문자열이다."}, {"q": "input()으로 받은 값을 숫자 계산에 사용하려면 보통 필요한 것은?", "c": ["int() 또는 float()로 형 변환", "print() 삭제", "변수명 제거", "컴퓨터 재부팅", "조건문 제거"], "a": 0, "e": "input()은 문자열을 반환하므로 숫자 계산을 위해 형 변환이 필요하다."}, {"q": "조건문 if의 역할은?", "c": ["조건에 따라 실행 흐름을 다르게 한다", "무조건 같은 코드를 반복한다", "파일을 압축한다", "문자열을 삭제한다", "그래프만 그린다"], "a": 0, "e": "if문은 조건의 참/거짓에 따라 실행할 코드를 선택한다."}, {"q": "반복문 for의 역할로 적절한 것은?", "c": ["자료나 범위를 순서대로 반복 처리한다", "조건을 항상 거짓으로 만든다", "변수를 사용할 수 없게 한다", "컴퓨터를 종료한다", "문자열을 숫자로만 만든다"], "a": 0, "e": "for문은 리스트나 range 같은 반복 가능한 객체를 순회한다."}, {"q": "리스트의 설명으로 옳은 것은?", "c": ["여러 값을 순서대로 저장할 수 있다", "값을 하나도 저장할 수 없다", "항상 문자열 하나만 저장한다", "조건문과 함께 쓸 수 없다", "인덱스가 없다"], "a": 0, "e": "리스트는 여러 값을 순서대로 저장하고 인덱스로 접근할 수 있다."}, {"q": "함수를 사용하는 이유로 가장 적절한 것은?", "c": ["코드를 묶어 재사용하고 구조화하기 위해", "코드를 무조건 길게 만들기 위해", "변수를 삭제하기 위해", "반복문을 금지하기 위해", "출력을 막기 위해"], "a": 0, "e": "함수는 반복되는 작업을 이름 붙여 재사용하게 한다."}, {"q": "파이썬에서 코드 블록을 구분하는 중요한 요소는?", "c": ["들여쓰기", "파일 크기", "마우스 위치", "화면 밝기", "인터넷 속도"], "a": 0, "e": "파이썬은 들여쓰기로 if, for, 함수 등의 블록을 구분한다."}, {"q": "데이터 과학에서 파이썬 기초가 중요한 이유는?", "c": ["데이터 수집·처리·분석·시각화 코드의 기반이 되기 때문", "수학을 전혀 쓰지 않기 위해", "컴퓨터를 느리게 하기 위해", "파일명을 숨기기 위해", "그래프를 없애기 위해"], "a": 0, "e": "파이썬 기초 문법은 데이터 과학 실습의 기반이다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅶ. 데이터 과학 프로그래밍 - 파이썬 기초\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n파이썬 기초는 변수·자료형·조건문·반복문·리스트·함수를 활용해 데이터 과학 문제를 코드로 표현하는 기반이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터71_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

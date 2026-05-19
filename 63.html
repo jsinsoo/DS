@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0203)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터63_지도학습과 비지도학습_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#1e293b,#16a34a,#2563eb);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#16a34a}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#15803d;border-left:8px solid #2563eb;padding-left:12px}
+h3{color:#1d4ed8;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#f0fdf4;border-left:6px solid #16a34a}
+.quote{font-size:18px;background:#eff6ff;border-left:7px solid #2563eb;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#dcfce7}
+.q{border:1px solid #bbf7d0;background:#fbfffc;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#dcfce7}
+.answer{display:none;background:#eff6ff;border-left:6px solid #3b82f6;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#16a34a;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#15803d}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터63. 지도학습과 비지도학습</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅵ. 인공지능과 머신러닝 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B063_%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%EA%B3%BC%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>지도학습은 정답 레이블을 이용해 예측 규칙을 학습하고, 비지도학습은 정답 없이 데이터의 숨은 구조와 유사성을 찾는다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>학습 방법은 데이터에 정답이 있는지, 예측이 목적인지, 구조 탐색이 목적인지에 따라 달라진다.</div>
+<div class="card goal"><b>핵심 질문</b><br>컴퓨터에게 정답을 알려 주고 배우게 할 것인가, 아니면 스스로 비슷한 것끼리 찾아보게 할 것인가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅵ. 인공지능과 머신러닝 - 지도학습과 비지도학습</td></tr>
+<tr><td>수업 목표</td><td>① 지도학습과 비지도학습의 차이를 설명한다.<br>② 특징과 레이블의 의미를 이해한다.<br>③ 분류와 회귀를 지도학습 문제로 구별한다.<br>④ 군집화와 차원 축소를 비지도학습의 예로 설명한다.<br>⑤ 학습 방법 선택 시 데이터 목적과 윤리적 영향을 고려한다.</td></tr>
+<tr><td>지식 목표</td><td>지도학습, 비지도학습, 특징, 레이블, 분류, 회귀, 군집화, 차원 축소, 평가, 해석의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>간단한 분류 규칙, 회귀 예측, 군집화 아이디어, 유사도 기반 묶기 코드를 해석하고 작성한다.</td></tr>
+<tr><td>태도 목표</td><td>모델 결과를 무조건 정답으로 받아들이지 않고, 데이터 목적·편향·해석의 책임을 함께 고려한다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 정답지를 보고 배우기와 스스로 분류하기 비교 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 학습 방법 선택 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 지도/비지도 사례 분류 활동</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+선생님이 문제와 정답을 함께 보여 주며 가르치는 경우가 있습니다. 이것은 지도학습과 닮았습니다.
+반대로 정답을 주지 않고 여러 자료를 펼쳐 놓은 뒤 “비슷한 것끼리 묶어 보자”라고 하면, 이것은 비지도학습과 닮았습니다.
+인문 철학적으로 지도학습과 비지도학습은 “배움에는 정답이 먼저 필요한가, 아니면 관찰을 통해 구조를 발견할 수 있는가?”라는 질문을 던집니다.
+오늘 우리는 컴퓨터가 정답을 보고 배우는 방식과, 정답 없이 패턴을 찾아가는 방식을 비교해 보겠습니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 지도학습</h3><p>지도학습은 입력 데이터와 정답 레이블이 함께 주어진 상태에서 모델을 학습시키는 방법이다. 모델은 특징과 레이블 사이의 관계를 배워 새로운 데이터의 정답을 예측한다.</p>
+<h3>② 비지도학습</h3><p>비지도학습은 정답 레이블 없이 데이터의 숨은 구조, 유사성, 군집, 패턴을 찾는 방법이다. 모델이 찾아낸 결과의 의미는 사람이 맥락 속에서 해석해야 한다.</p>
+<h3>③ 특징</h3><p>특징은 모델이 판단에 사용하는 입력 변수이다. 예를 들어 학생 데이터에서는 공부 시간, 수면 시간, 과제 제출 횟수 등이 특징이 될 수 있다.</p>
+<h3>④ 레이블</h3><p>레이블은 지도학습에서 모델이 맞히려는 정답 값이다. 합격/불합격, 스팸/정상, 실제 점수, 실제 가격 등이 레이블이 될 수 있다.</p>
+<h3>⑤ 분류</h3><p>분류는 데이터를 정해진 범주 중 하나로 예측하는 지도학습 문제이다. 이메일 스팸 분류, 이미지 고양이/강아지 분류, 질병 양성/음성 판단이 예이다.</p>
+<h3>⑥ 회귀</h3><p>회귀는 연속적인 숫자 값을 예측하는 지도학습 문제이다. 집값, 온도, 시험 점수, 매출액처럼 수치형 결과를 예측한다.</p>
+<h3>⑦ 군집화</h3><p>군집화는 정답 없이 비슷한 데이터끼리 묶는 비지도학습 방법이다. 고객 세분화, 문서 묶기, 이미지 패턴 탐색 등에 활용된다.</p>
+<h3>⑧ 차원 축소</h3><p>차원 축소는 많은 특징을 더 적은 수의 특징으로 줄여 데이터 구조를 쉽게 파악하도록 돕는 비지도학습 방법이다. 시각화나 노이즈 감소에 활용될 수 있다.</p>
+<h3>⑨ 해석과 윤리</h3><p>지도학습은 레이블의 편향을 배울 수 있고, 비지도학습은 사람이 군집에 부여한 의미가 편견을 만들 수 있다. 따라서 데이터의 출처와 해석 기준을 투명하게 확인해야 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 지도학습 데이터 구조</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "study_hour": [1, 2, 3, 4],
+    "sleep_hour": [6, 7, 7, 8],
+    "pass": ["No", "No", "Yes", "Yes"]
+})
+
+X = df[["study_hour", "sleep_hour"]]
+y = df["pass"]
+
+print(X)
+print(y)</code></pre>
+<p>study_hour와 sleep_hour는 특징이고, pass는 정답 레이블이다.</p>
+
+<h3>② 간단한 분류 규칙</h3>
+<pre><code>study_hour = 4
+
+if study_hour &gt;= 3:
+    result = "Pass"
+else:
+    result = "Fail"
+
+print(result)</code></pre>
+<p>공부 시간이 3시간 이상이면 합격으로 분류하는 단순 규칙 예제이다.</p>
+
+<h3>③ 간단한 회귀 예측</h3>
+<pre><code>study_hour = 5
+
+predicted_score = 50 + study_hour * 8
+print("Predicted score:", predicted_score)</code></pre>
+<p>공부 시간을 이용해 점수라는 숫자 값을 예측한다. 이는 회귀 문제의 기초 예이다.</p>
+
+<h3>④ 비지도학습: 유사도 기반 묶기</h3>
+<pre><code>students = {
+    "A": 2,
+    "B": 3,
+    "C": 9,
+    "D": 10
+}
+
+low_group = []
+high_group = []
+
+for name, hour in students.items():
+    if hour &lt; 5:
+        low_group.append(name)
+    else:
+        high_group.append(name)
+
+print("Low study group:", low_group)
+print("High study group:", high_group)</code></pre>
+<p>정답 레이블 없이 공부 시간이 비슷한 학생끼리 묶는 군집화 아이디어를 보여 준다.</p>
+
+<h3>⑤ 군집 중심과 거리 개념</h3>
+<pre><code>point = 7
+center_a = 3
+center_b = 9
+
+distance_a = abs(point - center_a)
+distance_b = abs(point - center_b)
+
+if distance_a &lt; distance_b:
+    print("Group A")
+else:
+    print("Group B")</code></pre>
+<p>새로운 값이 어느 군집 중심에 더 가까운지 거리로 판단한다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 스팸 메일 지도학습 예시</h3>
+<pre><code>message = "free prize now"
+
+if "free" in message or "prize" in message:
+    print("Spam")
+else:
+    print("Normal")</code></pre>
+<p><b>상세 설명:</b> 스팸/정상이라는 정답 범주를 예측하는 분류 문제이다. 실제 모델은 많은 메일 데이터로 학습한다.</p>
+
+<h3>예제 2. 공부 시간 기반 점수 회귀</h3>
+<pre><code>study_hour = 6
+score = 45 + study_hour * 7
+
+print("Predicted score:", score)</code></pre>
+<p><b>상세 설명:</b> 점수라는 숫자를 예측하므로 회귀 문제이다.</p>
+
+<h3>예제 3. 고객 구매 패턴 군집화</h3>
+<pre><code>customers = {
+    "C1": 2,
+    "C2": 3,
+    "C3": 12,
+    "C4": 15
+}
+
+small_buyers = [k for k, v in customers.items() if v &lt; 5]
+big_buyers = [k for k, v in customers.items() if v &gt;= 5]
+
+print("Small buyers:", small_buyers)
+print("Big buyers:", big_buyers)</code></pre>
+<p><b>상세 설명:</b> 정답 없이 구매 횟수가 비슷한 고객을 묶는 비지도학습 아이디어이다.</p>
+
+<h3>예제 4. 뉴스 기사 관심 분야 묶기</h3>
+<pre><code>articles = {
+    "A": "AI data model",
+    "B": "machine learning data",
+    "C": "soccer player goal",
+    "D": "baseball team win"
+}
+
+tech = []
+sports = []
+
+for title, text in articles.items():
+    if "data" in text or "model" in text:
+        tech.append(title)
+    else:
+        sports.append(title)
+
+print("Tech-like:", tech)
+print("Sports-like:", sports)</code></pre>
+<p><b>상세 설명:</b> 문서의 단어 특징을 기준으로 비슷한 기사끼리 묶는 군집화의 기초 아이디어를 보여 준다.</p>
+
+<h3>예제 5. 지도학습과 비지도학습 선택</h3>
+<pre><code>has_label = True
+goal = "predict"
+
+if has_label and goal == "predict":
+    print("Use supervised learning")
+else:
+    print("Use unsupervised learning")</code></pre>
+<p><b>상세 설명:</b> 정답 레이블이 있고 예측이 목적이면 지도학습이 적합하다. 숨은 구조를 찾고 싶다면 비지도학습을 고려한다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 지도학습은 정답 레이블이 있는 데이터를 이용해 모델을 학습시키는 방법이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 지도학습은 입력 특징과 정답 레이블을 함께 사용하여 예측 규칙을 학습한다.</div></div><div class="q"><b>OX 2. 비지도학습은 정답 레이블 없이 데이터의 구조나 패턴을 찾는 방법이다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 비지도학습은 정답 없이 데이터 사이의 유사성, 군집, 숨은 구조를 찾는다.</div></div><div class="q"><b>OX 3. 분류는 지도학습의 대표적인 문제 유형이다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 스팸/정상, 합격/불합격처럼 범주를 예측하는 문제는 분류이다.</div></div><div class="q"><b>OX 4. 회귀는 비지도학습에서만 사용하는 방법이다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 회귀는 정답 수치 레이블을 예측하는 지도학습 문제이다.</div></div><div class="q"><b>OX 5. 군집화는 비슷한 데이터끼리 묶는 비지도학습 방법이다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 군집화는 정답 레이블 없이 데이터의 유사성에 따라 그룹을 찾는다.</div></div><div class="q"><b>OX 6. 지도학습에서는 특징과 레이블의 관계를 학습한다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 모델은 입력 특징으로부터 레이블을 예측하는 패턴을 학습한다.</div></div><div class="q"><b>OX 7. 비지도학습에는 정답이 없으므로 결과 해석이 필요 없다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 비지도학습 결과는 군집의 의미를 사람이 해석해야 하며, 맥락 검토가 중요하다.</div></div><div class="q"><b>OX 8. 고객을 구매 패턴에 따라 그룹으로 나누는 것은 군집화 사례가 될 수 있다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 구매 패턴의 유사성을 기준으로 고객을 묶는 것은 비지도학습의 예이다.</div></div><div class="q"><b>OX 9. 지도학습 모델의 성능은 테스트 데이터로 평가할 수 있다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 학습에 사용하지 않은 테스트 데이터로 일반화 성능을 확인한다.</div></div><div class="q"><b>OX 10. 지도학습과 비지도학습은 데이터의 목적과 정답 레이블 유무에 따라 선택한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 레이블이 있고 예측이 목적이면 지도학습, 숨은 구조 탐색이 목적이면 비지도학습이 적합하다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 지도학습의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 정답 레이블이 있는 데이터로 학습한다</label><label><input type="radio" name="mc0" value="1"> 2. 정답이 전혀 없는 데이터만 사용한다</label><label><input type="radio" name="mc0" value="2"> 3. 파일을 압축한다</label><label><input type="radio" name="mc0" value="3"> 4. 그래프 색만 바꾼다</label><label><input type="radio" name="mc0" value="4"> 5. 컴퓨터를 종료한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 지도학습은 입력과 정답의 관계를 학습한다.</div></div><div class="q"><b>문항 2. 비지도학습의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 정답 레이블 없이 데이터의 구조를 찾는다</label><label><input type="radio" name="mc1" value="1"> 2. 항상 정답 레이블이 필요하다</label><label><input type="radio" name="mc1" value="2"> 3. 사람이 모든 답을 직접 입력한다</label><label><input type="radio" name="mc1" value="3"> 4. 오직 회귀만 수행한다</label><label><input type="radio" name="mc1" value="4"> 5. 데이터를 삭제한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 비지도학습은 정답 없이 유사성이나 숨은 패턴을 찾는다.</div></div><div class="q"><b>문항 3. 분류 문제의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 이메일을 스팸/정상으로 나누기</label><label><input type="radio" name="mc2" value="1"> 2. 집값을 숫자로 예측하기</label><label><input type="radio" name="mc2" value="2"> 3. 학생들을 유사한 학습 패턴으로 묶기</label><label><input type="radio" name="mc2" value="3"> 4. 데이터를 2차원으로 줄이기</label><label><input type="radio" name="mc2" value="4"> 5. 결측값 확인</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 스팸/정상처럼 범주를 예측하는 것은 분류이다.</div></div><div class="q"><b>문항 4. 회귀 문제의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 공부 시간으로 시험 점수를 예측하기</label><label><input type="radio" name="mc3" value="1"> 2. 사진을 고양이/강아지로 나누기</label><label><input type="radio" name="mc3" value="2"> 3. 고객을 구매 패턴으로 묶기</label><label><input type="radio" name="mc3" value="3"> 4. 비슷한 문서끼리 묶기</label><label><input type="radio" name="mc3" value="4"> 5. 색상표 선택하기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 점수처럼 연속 수치를 예측하는 것은 회귀이다.</div></div><div class="q"><b>문항 5. 군집화의 설명으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 비슷한 데이터끼리 그룹으로 묶는다</label><label><input type="radio" name="mc4" value="1"> 2. 정답 레이블을 반드시 사용한다</label><label><input type="radio" name="mc4" value="2"> 3. 항상 숫자 하나를 예측한다</label><label><input type="radio" name="mc4" value="3"> 4. 파일명을 바꾼다</label><label><input type="radio" name="mc4" value="4"> 5. 그래프 축을 지운다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 군집화는 정답 없이 데이터의 유사성에 따라 묶는 방법이다.</div></div><div class="q"><b>문항 6. 지도학습에 필요한 대표 요소는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 특징과 레이블</label><label><input type="radio" name="mc5" value="1"> 2. 색상과 글꼴만</label><label><input type="radio" name="mc5" value="2"> 3. 파일명과 확장자만</label><label><input type="radio" name="mc5" value="3"> 4. 마우스와 키보드만</label><label><input type="radio" name="mc5" value="4"> 5. 배경화면과 아이콘</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 지도학습은 입력 특징과 정답 레이블을 사용한다.</div></div><div class="q"><b>문항 7. 비지도학습 결과 해석에서 중요한 점은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 군집이 실제로 어떤 의미인지 맥락 속에서 해석한다</label><label><input type="radio" name="mc6" value="1"> 2. 정답이 없으므로 무조건 맞다고 본다</label><label><input type="radio" name="mc6" value="2"> 3. 결과를 보지 않는다</label><label><input type="radio" name="mc6" value="3"> 4. 항상 사람을 차별하는 데 쓴다</label><label><input type="radio" name="mc6" value="4"> 5. 데이터 출처를 숨긴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 비지도학습 결과는 사람이 의미를 검토해야 한다.</div></div><div class="q"><b>문항 8. 고객 구매 패턴을 기준으로 고객을 여러 그룹으로 나누는 방법은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 군집화</label><label><input type="radio" name="mc7" value="1"> 2. 회귀</label><label><input type="radio" name="mc7" value="2"> 3. 정답 입력</label><label><input type="radio" name="mc7" value="3"> 4. 파일 압축</label><label><input type="radio" name="mc7" value="4"> 5. 문자열 번역</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 고객 세분화는 군집화의 대표 활용 사례이다.</div></div><div class="q"><b>문항 9. 지도학습과 비지도학습 선택 기준으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 정답 레이블 유무와 분석 목적</label><label><input type="radio" name="mc8" value="1"> 2. 컴퓨터 색상</label><label><input type="radio" name="mc8" value="2"> 3. 파일 크기</label><label><input type="radio" name="mc8" value="3"> 4. 키보드 종류</label><label><input type="radio" name="mc8" value="4"> 5. 인터넷 속도만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 레이블 유무와 목적에 따라 학습 방법을 선택한다.</div></div><div class="q"><b>문항 10. 다음 중 비지도학습 사례로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 비슷한 뉴스 기사끼리 자동으로 묶기</label><label><input type="radio" name="mc9" value="1"> 2. 시험 점수 정답으로 점수 예측하기</label><label><input type="radio" name="mc9" value="2"> 3. 스팸/정상 정답으로 이메일 분류하기</label><label><input type="radio" name="mc9" value="3"> 4. 집 크기와 가격으로 집값 예측하기</label><label><input type="radio" name="mc9" value="4"> 5. 합격/불합격 예측하기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 비슷한 기사끼리 묶는 것은 정답 없이 구조를 찾는 비지도학습 사례이다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터63_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 머신러닝이 정답을 보고 배우는 지도학습과, 정답 없이 구조를 찾는 비지도학습으로 나뉠 수 있음을 배웠습니다.
+컴퓨터과학은 학습 알고리즘을 구현하고, 수학은 거리·함수·확률로 패턴을 설명하며, 과학은 예측과 군집이 실제 세계에서 타당한지 검증하게 합니다.
+그리고 인문 철학은 우리에게 묻습니다. “누가 정답을 정하고, 누가 비슷함의 기준을 정하는가?”
+좋은 데이터 과학자는 모델을 선택할 때 기술적 성능뿐 아니라 데이터의 목적, 레이블의 의미, 해석의 책임까지 함께 생각하는 사람입니다.
+</div>
+</section>
+<footer>© 데이터 과학 수업자료 · 데이터63 지도학습과 비지도학습</footer>
+</main></div>
+
+<script>
+const oxQuestions = [{"q": "지도학습은 정답 레이블이 있는 데이터를 이용해 모델을 학습시키는 방법이다.", "a": "O", "e": "지도학습은 입력 특징과 정답 레이블을 함께 사용하여 예측 규칙을 학습한다."}, {"q": "비지도학습은 정답 레이블 없이 데이터의 구조나 패턴을 찾는 방법이다.", "a": "O", "e": "비지도학습은 정답 없이 데이터 사이의 유사성, 군집, 숨은 구조를 찾는다."}, {"q": "분류는 지도학습의 대표적인 문제 유형이다.", "a": "O", "e": "스팸/정상, 합격/불합격처럼 범주를 예측하는 문제는 분류이다."}, {"q": "회귀는 비지도학습에서만 사용하는 방법이다.", "a": "X", "e": "회귀는 정답 수치 레이블을 예측하는 지도학습 문제이다."}, {"q": "군집화는 비슷한 데이터끼리 묶는 비지도학습 방법이다.", "a": "O", "e": "군집화는 정답 레이블 없이 데이터의 유사성에 따라 그룹을 찾는다."}, {"q": "지도학습에서는 특징과 레이블의 관계를 학습한다.", "a": "O", "e": "모델은 입력 특징으로부터 레이블을 예측하는 패턴을 학습한다."}, {"q": "비지도학습에는 정답이 없으므로 결과 해석이 필요 없다.", "a": "X", "e": "비지도학습 결과는 군집의 의미를 사람이 해석해야 하며, 맥락 검토가 중요하다."}, {"q": "고객을 구매 패턴에 따라 그룹으로 나누는 것은 군집화 사례가 될 수 있다.", "a": "O", "e": "구매 패턴의 유사성을 기준으로 고객을 묶는 것은 비지도학습의 예이다."}, {"q": "지도학습 모델의 성능은 테스트 데이터로 평가할 수 있다.", "a": "O", "e": "학습에 사용하지 않은 테스트 데이터로 일반화 성능을 확인한다."}, {"q": "지도학습과 비지도학습은 데이터의 목적과 정답 레이블 유무에 따라 선택한다.", "a": "O", "e": "레이블이 있고 예측이 목적이면 지도학습, 숨은 구조 탐색이 목적이면 비지도학습이 적합하다."}];
+const mcQuestions = [{"q": "지도학습의 설명으로 가장 적절한 것은?", "c": ["정답 레이블이 있는 데이터로 학습한다", "정답이 전혀 없는 데이터만 사용한다", "파일을 압축한다", "그래프 색만 바꾼다", "컴퓨터를 종료한다"], "a": 0, "e": "지도학습은 입력과 정답의 관계를 학습한다."}, {"q": "비지도학습의 설명으로 가장 적절한 것은?", "c": ["정답 레이블 없이 데이터의 구조를 찾는다", "항상 정답 레이블이 필요하다", "사람이 모든 답을 직접 입력한다", "오직 회귀만 수행한다", "데이터를 삭제한다"], "a": 0, "e": "비지도학습은 정답 없이 유사성이나 숨은 패턴을 찾는다."}, {"q": "분류 문제의 예로 적절한 것은?", "c": ["이메일을 스팸/정상으로 나누기", "집값을 숫자로 예측하기", "학생들을 유사한 학습 패턴으로 묶기", "데이터를 2차원으로 줄이기", "결측값 확인"], "a": 0, "e": "스팸/정상처럼 범주를 예측하는 것은 분류이다."}, {"q": "회귀 문제의 예로 적절한 것은?", "c": ["공부 시간으로 시험 점수를 예측하기", "사진을 고양이/강아지로 나누기", "고객을 구매 패턴으로 묶기", "비슷한 문서끼리 묶기", "색상표 선택하기"], "a": 0, "e": "점수처럼 연속 수치를 예측하는 것은 회귀이다."}, {"q": "군집화의 설명으로 옳은 것은?", "c": ["비슷한 데이터끼리 그룹으로 묶는다", "정답 레이블을 반드시 사용한다", "항상 숫자 하나를 예측한다", "파일명을 바꾼다", "그래프 축을 지운다"], "a": 0, "e": "군집화는 정답 없이 데이터의 유사성에 따라 묶는 방법이다."}, {"q": "지도학습에 필요한 대표 요소는?", "c": ["특징과 레이블", "색상과 글꼴만", "파일명과 확장자만", "마우스와 키보드만", "배경화면과 아이콘"], "a": 0, "e": "지도학습은 입력 특징과 정답 레이블을 사용한다."}, {"q": "비지도학습 결과 해석에서 중요한 점은?", "c": ["군집이 실제로 어떤 의미인지 맥락 속에서 해석한다", "정답이 없으므로 무조건 맞다고 본다", "결과를 보지 않는다", "항상 사람을 차별하는 데 쓴다", "데이터 출처를 숨긴다"], "a": 0, "e": "비지도학습 결과는 사람이 의미를 검토해야 한다."}, {"q": "고객 구매 패턴을 기준으로 고객을 여러 그룹으로 나누는 방법은?", "c": ["군집화", "회귀", "정답 입력", "파일 압축", "문자열 번역"], "a": 0, "e": "고객 세분화는 군집화의 대표 활용 사례이다."}, {"q": "지도학습과 비지도학습 선택 기준으로 가장 적절한 것은?", "c": ["정답 레이블 유무와 분석 목적", "컴퓨터 색상", "파일 크기", "키보드 종류", "인터넷 속도만"], "a": 0, "e": "레이블 유무와 목적에 따라 학습 방법을 선택한다."}, {"q": "다음 중 비지도학습 사례로 적절한 것은?", "c": ["비슷한 뉴스 기사끼리 자동으로 묶기", "시험 점수 정답으로 점수 예측하기", "스팸/정상 정답으로 이메일 분류하기", "집 크기와 가격으로 집값 예측하기", "합격/불합격 예측하기"], "a": 0, "e": "비슷한 기사끼리 묶는 것은 정답 없이 구조를 찾는 비지도학습 사례이다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅵ. 인공지능과 머신러닝 - 지도학습과 비지도학습\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n지도학습은 정답 레이블을 활용해 예측하고, 비지도학습은 정답 없이 데이터의 숨은 구조와 유사성을 찾는다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터63_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

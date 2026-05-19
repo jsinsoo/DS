@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- saved from url=(0203)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터24_설문조사와데이터수집_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#16a34a,#0ea5e9);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}
+header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#16a34a}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#15803d;border-left:8px solid #0ea5e9;padding-left:12px}
+h3{color:#0369a1;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#ecfdf5;border-left:6px solid #22c55e}
+.quote{font-size:18px;background:#fff7ed;border-left:7px solid #f97316;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#dcfce7}
+.q{border:1px solid #bbf7d0;background:#fbfffc;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#dcfce7}
+.answer{display:none;background:#eff6ff;border-left:6px solid #3b82f6;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#16a34a;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#15803d}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;border-radius:20px;padding:4px 10px;margin:3px;font-size:13px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터24. 설문 조사와 데이터 수집</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅱ. 데이터 수집 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B024_%EC%84%A4%EB%AC%B8%EC%A1%B0%EC%82%AC%EC%99%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%88%98%EC%A7%91_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>설문 조사는 사람의 생각·경험·행동을 질문을 통해 데이터로 수집하는 방법이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>좋은 데이터 수집은 좋은 질문에서 시작되며, 질문 설계·표본·응답 편향·개인정보 보호가 분석 결과의 신뢰성을 결정한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>우리가 던지는 질문은 정말 응답자의 생각을 공정하게 담아내고 있는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅱ. 데이터 수집 - 설문 조사와 데이터 수집</td></tr>
+<tr><td>연계 주제</td><td>웹 데이터 수집 기초: 온라인 설문, 웹 폼, CSV 응답 다운로드, 응답 데이터 정리</td></tr>
+<tr><td>수업 목표</td><td>① 설문 조사의 목적과 절차를 설명한다.<br>② 좋은 문항과 나쁜 문항을 구별한다.<br>③ 표본, 모집단, 편향, 척도, 응답률의 의미를 이해한다.<br>④ 파이썬으로 설문 응답 데이터를 정리·집계·시각화할 수 있다.<br>⑤ 개인정보와 연구 윤리를 고려하여 설문을 설계한다.</td></tr>
+<tr><td>지식 목표</td><td>모집단, 표본, 표본 추출, 설문 문항, 척도, 선택형 문항, 서술형 문항, 편향, 결측 응답, 익명화의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>설문 응답 데이터를 DataFrame으로 만들고, 빈도표·비율·평균·교차표를 계산한다.</td></tr>
+<tr><td>태도 목표</td><td>응답자의 권리와 의견을 존중하고, 데이터를 왜곡 없이 해석하려는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 생활 속 설문 경험 공유 → 전개 30분: 문항 설계와 코드 실습 → 정리 10분: 편향과 개인정보 토론 → 평가 10분: OX 및 5지선다</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 문항 개선 활동, 설문 데이터 분석 코드 해석</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+여러분은 하루에도 여러 번 질문을 받습니다. “만족하셨나요?”, “추천하시겠습니까?”, “어떤 메뉴가 좋았나요?”
+설문 조사는 단순히 체크 표시를 모으는 일이 아닙니다.
+사람의 경험과 생각을 데이터라는 언어로 바꾸는 일입니다.
+인문 철학적으로 보면 설문은 “타인의 목소리를 어떻게 공정하게 들을 것인가”라는 질문과 연결됩니다.
+오늘 우리는 좋은 질문이 좋은 데이터를 만들고, 좋은 데이터가 더 나은 판단으로 이어지는 과정을 배웁니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 설문 조사</h3>
+<p>설문 조사는 정해진 질문을 통해 사람들의 의견, 행동, 경험, 선호를 수집하는 방법이다. 학교 만족도 조사, 급식 선호도 조사, 스마트폰 사용 시간 조사, 진로 희망 조사 등이 설문 조사에 해당한다.</p>
+
+<h3>② 모집단과 표본</h3>
+<p>모집단은 알고 싶은 전체 대상이고, 표본은 실제로 조사한 일부 대상이다. 예를 들어 “전교생의 스마트폰 사용 습관”을 알고 싶다면 전교생이 모집단이고, 실제 응답한 100명이 표본이다. 표본이 모집단을 잘 대표하지 못하면 결과가 왜곡될 수 있다.</p>
+
+<h3>③ 문항 설계</h3>
+<p>문항 설계는 설문에서 가장 중요한 단계이다. 질문은 명확하고 중립적이어야 한다. “우리 학교 급식이 매우 훌륭하다고 생각하지 않나요?”처럼 응답을 유도하는 질문은 좋은 문항이 아니다.</p>
+
+<h3>④ 응답 척도</h3>
+<p>척도는 응답을 측정하는 기준이다. 예를 들어 1점부터 5점까지 만족도를 표시하는 리커트 척도, 예/아니오, 객관식 선택, 순위 선택 등이 있다. 척도는 분석 방법과 직접 연결된다.</p>
+
+<h3>⑤ 정량 응답과 정성 응답</h3>
+<p>정량 응답은 숫자로 분석하기 쉬운 응답이다. 예를 들어 만족도 1~5점, 사용 시간, 선택 빈도 등이 있다. 정성 응답은 서술형 의견처럼 문장으로 표현된 응답이다. 정성 응답은 키워드 추출이나 범주화가 필요하다.</p>
+
+<h3>⑥ 응답 편향</h3>
+<p>응답 편향은 실제 생각과 다르게 응답이 치우치는 현상이다. 질문이 유도적이거나, 표본이 특정 집단에 몰리거나, 응답자가 사회적으로 바람직한 답을 하려 할 때 편향이 발생할 수 있다.</p>
+
+<h3>⑦ 결측 응답</h3>
+<p>결측 응답은 응답자가 문항에 답하지 않아 값이 비어 있는 경우이다. 결측값이 많은 문항은 분석 신뢰도를 떨어뜨릴 수 있으므로 원인을 확인하고 제외, 대체, 별도 표시 등의 처리가 필요하다.</p>
+
+<h3>⑧ 온라인 설문과 웹 데이터 수집</h3>
+<p>온라인 설문은 웹 폼을 통해 응답을 수집하고 CSV 또는 스프레드시트로 저장할 수 있다. 웹 데이터 수집 기초와 연결하면, 온라인 응답 데이터도 웹을 통해 생성되는 구조화된 데이터로 볼 수 있다.</p>
+
+<h3>⑨ 개인정보 보호와 동의</h3>
+<p>설문에는 이름, 연락처, 학번, 위치 정보처럼 개인을 식별할 수 있는 정보가 포함될 수 있다. 반드시 수집 목적을 설명하고 필요한 정보만 최소한으로 수집해야 하며, 가능하면 익명화해야 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① 설문 응답 DataFrame 만들기</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "학년": [1, 1, 2, 2, 3],
+    "만족도": [5, 4, 3, 4, 2],
+    "희망활동": ["코딩", "실험", "코딩", "독서", "실험"]
+})
+
+print(df)</code></pre>
+<p>설문 응답을 표 형태의 DataFrame으로 만든다. 각 행은 한 명의 응답, 각 열은 하나의 문항이다.</p>
+
+<h3>② 선택형 문항 빈도 계산</h3>
+<pre><code>counts = df["희망활동"].value_counts()
+print(counts)</code></pre>
+<p>선택형 문항에서 각 선택지가 몇 번 선택되었는지 계산한다.</p>
+
+<h3>③ 만족도 평균 계산</h3>
+<pre><code>mean_score = df["만족도"].mean()
+print("평균 만족도:", mean_score)</code></pre>
+<p>리커트 척도처럼 숫자로 입력된 응답의 평균을 구한다.</p>
+
+<h3>④ 학년별 평균 만족도</h3>
+<pre><code>group_mean = df.groupby("학년")["만족도"].mean()
+print(group_mean)</code></pre>
+<p>학년별로 만족도 평균을 비교하여 집단 간 차이를 살펴본다.</p>
+
+<h3>⑤ 결측 응답 확인</h3>
+<pre><code>missing = df.isna().sum()
+print(missing)</code></pre>
+<p>응답하지 않은 문항이 있는지 확인한다. 결측값은 분석 전에 반드시 점검해야 한다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 급식 만족도 설문 분석</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "학생": ["A", "B", "C", "D", "E"],
+    "만족도": [5, 3, 4, 2, 5]
+})
+
+print("평균 만족도:", df["만족도"].mean())
+print("최고점:", df["만족도"].max())
+print("최저점:", df["만족도"].min())</code></pre>
+<p><b>상세 설명:</b> 급식 만족도를 숫자형 척도로 수집하면 평균, 최고점, 최저점 등을 쉽게 계산할 수 있다.</p>
+
+<h3>예제 2. 진로 희망 분야 빈도표</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "진로": ["의학", "공학", "공학", "생명과학", "의학", "인공지능"]
+})
+
+print(df["진로"].value_counts())</code></pre>
+<p><b>상세 설명:</b> 학생들이 선택한 진로 분야를 빈도표로 정리한다. 가장 많이 선택된 분야를 빠르게 확인할 수 있다.</p>
+
+<h3>예제 3. 스마트폰 사용 시간 구간 분류</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가", "나", "다", "라"],
+    "사용시간": [1.5, 3.2, 5.1, 2.0]
+})
+
+def level(h):
+    if h &lt; 2:
+        return "낮음"
+    elif h &lt; 4:
+        return "보통"
+    return "높음"
+
+df["사용수준"] = df["사용시간"].apply(level)
+print(df)</code></pre>
+<p><b>상세 설명:</b> 숫자로 수집한 사용 시간을 낮음·보통·높음 범주로 바꾼다. 데이터를 해석하기 쉬운 정보로 변환하는 예이다.</p>
+
+<h3>예제 4. 학년과 선호 활동 교차표</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "학년": [1, 1, 2, 2, 3, 3],
+    "활동": ["코딩", "실험", "코딩", "독서", "실험", "코딩"]
+})
+
+table = pd.crosstab(df["학년"], df["활동"])
+print(table)</code></pre>
+<p><b>상세 설명:</b> 학년별로 어떤 활동을 선호하는지 교차표로 확인한다. 두 범주형 문항의 관계를 분석할 때 유용하다.</p>
+
+<h3>예제 5. 서술형 응답 키워드 간단 분석</h3>
+<pre><code>answers = [
+    "급식이 맛있고 메뉴가 다양하면 좋겠습니다",
+    "메뉴가 다양하지만 채소가 더 많으면 좋겠습니다",
+    "맛있고 따뜻한 급식이 좋습니다"
+]
+
+keywords = ["맛있", "다양", "채소", "따뜻"]
+for key in keywords:
+    count = sum(key in answer for answer in answers)
+    print(key, count)</code></pre>
+<p><b>상세 설명:</b> 서술형 응답에서 특정 키워드가 몇 번 등장하는지 간단히 확인한다. 정성 응답을 정량적으로 요약하는 기초 활동이다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q">
+   <b>OX 1. 설문 조사는 사람의 의견, 경험, 행동을 데이터로 수집하는 방법이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox0" value="O"> O</label>
+   <label><input type="radio" name="ox0" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 설문은 응답자의 생각과 경험을 질문을 통해 구조화된 데이터로 모으는 방법이다.</div>
+   </div><div class="q">
+   <b>OX 2. 모집단은 실제로 응답한 일부 사람만을 의미한다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox1" value="O"> O</label>
+   <label><input type="radio" name="ox1" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 모집단은 알고 싶은 전체 대상이고, 실제 응답한 일부는 표본이다.</div>
+   </div><div class="q">
+   <b>OX 3. 표본이 모집단을 잘 대표하지 못하면 조사 결과가 왜곡될 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox2" value="O"> O</label>
+   <label><input type="radio" name="ox2" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 특정 집단만 응답하면 전체의 의견처럼 일반화하기 어렵다.</div>
+   </div><div class="q">
+   <b>OX 4. 유도 질문은 설문 결과의 공정성을 높인다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox3" value="O"> O</label>
+   <label><input type="radio" name="ox3" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 유도 질문은 특정 답을 하도록 영향을 주므로 편향을 만든다.</div>
+   </div><div class="q">
+   <b>OX 5. 만족도 1~5점 문항은 응답 척도의 예이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox4" value="O"> O</label>
+   <label><input type="radio" name="ox4" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 리커트 척도처럼 숫자로 정도를 표시하는 방식은 응답 척도이다.</div>
+   </div><div class="q">
+   <b>OX 6. 서술형 응답은 절대 분석할 수 없다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox5" value="O"> O</label>
+   <label><input type="radio" name="ox5" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 서술형 응답도 키워드 추출, 범주화, 감성 분석 등으로 분석할 수 있다.</div>
+   </div><div class="q">
+   <b>OX 7. 결측 응답은 응답자가 문항에 답하지 않아 값이 비어 있는 경우이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox6" value="O"> O</label>
+   <label><input type="radio" name="ox6" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 결측값은 분석 전에 확인하고 적절히 처리해야 한다.</div>
+   </div><div class="q">
+   <b>OX 8. 온라인 설문 응답은 CSV나 스프레드시트 형태로 정리될 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox7" value="O"> O</label>
+   <label><input type="radio" name="ox7" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 웹 폼으로 받은 응답은 표 형태 데이터로 저장해 분석할 수 있다.</div>
+   </div><div class="q">
+   <b>OX 9. 설문에서 개인정보는 많이 수집할수록 무조건 좋다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox8" value="O"> O</label>
+   <label><input type="radio" name="ox8" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 개인정보는 목적에 필요한 최소한만 수집해야 하며, 가능하면 익명화해야 한다.</div>
+   </div><div class="q">
+   <b>OX 10. 좋은 설문 문항은 명확하고 중립적이어야 한다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox9" value="O"> O</label>
+   <label><input type="radio" name="ox9" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 질문이 모호하거나 편향되면 응답 결과의 신뢰성이 낮아진다.</div>
+   </div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q">
+   <b>문항 1. 설문 조사의 목적에 대한 설명으로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 사람의 의견과 경험을 질문을 통해 데이터로 수집하는 것</label><label><input type="radio" name="mc0" value="1"> 2. 컴퓨터를 빠르게 만드는 것</label><label><input type="radio" name="mc0" value="2"> 3. 파일을 압축하는 것</label><label><input type="radio" name="mc0" value="3"> 4. 그래프 색을 바꾸는 것</label><label><input type="radio" name="mc0" value="4"> 5. 인터넷 연결을 차단하는 것</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 설문 조사는 응답자의 의견, 행동, 경험, 선호 등을 데이터로 수집하는 방법이다.</div>
+   </div><div class="q">
+   <b>문항 2. 모집단의 의미로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 알고 싶은 전체 대상</label><label><input type="radio" name="mc1" value="1"> 2. 실제로 응답한 한 명</label><label><input type="radio" name="mc1" value="2"> 3. 삭제된 응답</label><label><input type="radio" name="mc1" value="3"> 4. 그래프 제목</label><label><input type="radio" name="mc1" value="4"> 5. 파이썬 코드</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 모집단은 연구자가 알고자 하는 전체 대상이다.</div>
+   </div><div class="q">
+   <b>문항 3. 표본에 대한 설명으로 옳은 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 모집단 중 실제로 조사한 일부 대상</label><label><input type="radio" name="mc2" value="1"> 2. 항상 전체 모집단과 같다</label><label><input type="radio" name="mc2" value="2"> 3. 질문지의 제목</label><label><input type="radio" name="mc2" value="3"> 4. 결측값만 모은 것</label><label><input type="radio" name="mc2" value="4"> 5. 응답자의 이름만 저장한 것</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 표본은 전체 모집단을 대신해 실제 조사에 참여한 일부 대상이다.</div>
+   </div><div class="q">
+   <b>문항 4. 좋은 설문 문항의 조건으로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 명확하고 중립적이어야 한다</label><label><input type="radio" name="mc3" value="1"> 2. 응답을 유도해야 한다</label><label><input type="radio" name="mc3" value="2"> 3. 한 문항에 여러 질문을 섞어야 한다</label><label><input type="radio" name="mc3" value="3"> 4. 어려운 전문 용어만 써야 한다</label><label><input type="radio" name="mc3" value="4"> 5. 개인정보를 많이 요구해야 한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 좋은 문항은 이해하기 쉽고 한 가지 내용만 묻고 중립적이어야 한다.</div>
+   </div><div class="q">
+   <b>문항 5. 응답 편향이 발생할 가능성이 큰 문항은?</b>
+   <div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 우리 학교 급식이 훌륭하다고 생각하지 않나요?</label><label><input type="radio" name="mc4" value="1"> 2. 오늘 급식 만족도는 몇 점인가요?</label><label><input type="radio" name="mc4" value="2"> 3. 가장 선호하는 활동은 무엇인가요?</label><label><input type="radio" name="mc4" value="3"> 4. 하루 평균 독서 시간은 얼마인가요?</label><label><input type="radio" name="mc4" value="4"> 5. 희망 진로 분야를 선택하세요.</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 칭찬 표현과 부정 의문이 섞인 유도 질문은 응답을 한쪽으로 치우치게 할 수 있다.</div>
+   </div><div class="q">
+   <b>문항 6. 리커트 척도의 예로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 매우 불만족 1점부터 매우 만족 5점까지 선택</label><label><input type="radio" name="mc5" value="1"> 2. 이름을 직접 쓰기</label><label><input type="radio" name="mc5" value="2"> 3. 사진 업로드하기</label><label><input type="radio" name="mc5" value="3"> 4. 파일 삭제하기</label><label><input type="radio" name="mc5" value="4"> 5. 웹 주소 복사하기</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 만족도나 동의 정도를 단계별 숫자로 표시하는 방식이 리커트 척도이다.</div>
+   </div><div class="q">
+   <b>문항 7. 결측 응답 처리와 관련된 설명으로 옳은 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 분석 전에 비어 있는 응답을 확인해야 한다</label><label><input type="radio" name="mc6" value="1"> 2. 항상 임의로 100을 넣는다</label><label><input type="radio" name="mc6" value="2"> 3. 무조건 숨긴다</label><label><input type="radio" name="mc6" value="3"> 4. 문항 전체를 조작한다</label><label><input type="radio" name="mc6" value="4"> 5. 결측은 분석에 전혀 영향이 없다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 결측값은 평균, 비율, 빈도 분석에 영향을 줄 수 있으므로 먼저 확인해야 한다.</div>
+   </div><div class="q">
+   <b>문항 8. 온라인 설문과 웹 데이터 수집의 연결로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 웹 폼 응답이 표 형태 데이터로 저장될 수 있다</label><label><input type="radio" name="mc7" value="1"> 2. 온라인 설문은 데이터와 무관하다</label><label><input type="radio" name="mc7" value="2"> 3. 웹에서는 질문을 만들 수 없다</label><label><input type="radio" name="mc7" value="3"> 4. CSV로 저장할 수 없다</label><label><input type="radio" name="mc7" value="4"> 5. 응답은 절대 분석할 수 없다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 온라인 설문 응답은 스프레드시트나 CSV로 저장되어 분석할 수 있다.</div>
+   </div><div class="q">
+   <b>문항 9. 설문에서 개인정보 보호를 위한 태도로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 목적에 필요한 최소한만 수집하고 익명화를 고려한다</label><label><input type="radio" name="mc8" value="1"> 2. 모든 응답자의 주소를 공개한다</label><label><input type="radio" name="mc8" value="2"> 3. 동의 없이 전화번호를 수집한다</label><label><input type="radio" name="mc8" value="3"> 4. 응답 결과를 임의로 유출한다</label><label><input type="radio" name="mc8" value="4"> 5. 수집 목적을 숨긴다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 개인정보는 목적에 필요한 최소 범위로 수집하고 동의와 보호 조치를 고려해야 한다.</div>
+   </div><div class="q">
+   <b>문항 10. 서술형 응답을 분석하는 방법으로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 키워드를 추출하거나 비슷한 의견을 범주화한다</label><label><input type="radio" name="mc9" value="1"> 2. 절대 읽지 않는다</label><label><input type="radio" name="mc9" value="2"> 3. 모두 같은 숫자로 바꾼다</label><label><input type="radio" name="mc9" value="3"> 4. 무조건 삭제한다</label><label><input type="radio" name="mc9" value="4"> 5. 응답자의 이름만 남긴다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 서술형 응답은 키워드 빈도, 범주화, 주제 분류 등을 통해 분석할 수 있다.</div>
+   </div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터24_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 설문 조사가 단순한 질문지가 아니라 사람의 경험을 데이터로 번역하는 과정임을 배웠습니다.
+컴퓨터과학은 응답을 저장하고 처리하는 방법을 제공하고,
+수학은 표본과 비율과 평균을 통해 결과를 해석하게 하며,
+과학은 조사 방법의 타당성과 신뢰성을 요구합니다.
+그리고 인문 철학은 우리에게 묻습니다.
+“우리는 타인의 목소리를 왜곡하지 않고 듣고 있는가?”
+좋은 데이터 과학자는 질문을 잘 만드는 사람이며, 응답자의 권리를 존중하면서 진실에 가까운 데이터를 만들려는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터24 설문 조사와 데이터 수집</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [
+ {q:"설문 조사는 사람의 의견, 경험, 행동을 데이터로 수집하는 방법이다.", a:"O", e:"설문은 응답자의 생각과 경험을 질문을 통해 구조화된 데이터로 모으는 방법이다."},
+ {q:"모집단은 실제로 응답한 일부 사람만을 의미한다.", a:"X", e:"모집단은 알고 싶은 전체 대상이고, 실제 응답한 일부는 표본이다."},
+ {q:"표본이 모집단을 잘 대표하지 못하면 조사 결과가 왜곡될 수 있다.", a:"O", e:"특정 집단만 응답하면 전체의 의견처럼 일반화하기 어렵다."},
+ {q:"유도 질문은 설문 결과의 공정성을 높인다.", a:"X", e:"유도 질문은 특정 답을 하도록 영향을 주므로 편향을 만든다."},
+ {q:"만족도 1~5점 문항은 응답 척도의 예이다.", a:"O", e:"리커트 척도처럼 숫자로 정도를 표시하는 방식은 응답 척도이다."},
+ {q:"서술형 응답은 절대 분석할 수 없다.", a:"X", e:"서술형 응답도 키워드 추출, 범주화, 감성 분석 등으로 분석할 수 있다."},
+ {q:"결측 응답은 응답자가 문항에 답하지 않아 값이 비어 있는 경우이다.", a:"O", e:"결측값은 분석 전에 확인하고 적절히 처리해야 한다."},
+ {q:"온라인 설문 응답은 CSV나 스프레드시트 형태로 정리될 수 있다.", a:"O", e:"웹 폼으로 받은 응답은 표 형태 데이터로 저장해 분석할 수 있다."},
+ {q:"설문에서 개인정보는 많이 수집할수록 무조건 좋다.", a:"X", e:"개인정보는 목적에 필요한 최소한만 수집해야 하며, 가능하면 익명화해야 한다."},
+ {q:"좋은 설문 문항은 명확하고 중립적이어야 한다.", a:"O", e:"질문이 모호하거나 편향되면 응답 결과의 신뢰성이 낮아진다."}
+];
+
+const mcQuestions = [
+ {q:"설문 조사의 목적에 대한 설명으로 가장 적절한 것은?", c:["사람의 의견과 경험을 질문을 통해 데이터로 수집하는 것","컴퓨터를 빠르게 만드는 것","파일을 압축하는 것","그래프 색을 바꾸는 것","인터넷 연결을 차단하는 것"], a:0, e:"설문 조사는 응답자의 의견, 행동, 경험, 선호 등을 데이터로 수집하는 방법이다."},
+ {q:"모집단의 의미로 가장 적절한 것은?", c:["알고 싶은 전체 대상","실제로 응답한 한 명","삭제된 응답","그래프 제목","파이썬 코드"], a:0, e:"모집단은 연구자가 알고자 하는 전체 대상이다."},
+ {q:"표본에 대한 설명으로 옳은 것은?", c:["모집단 중 실제로 조사한 일부 대상","항상 전체 모집단과 같다","질문지의 제목","결측값만 모은 것","응답자의 이름만 저장한 것"], a:0, e:"표본은 전체 모집단을 대신해 실제 조사에 참여한 일부 대상이다."},
+ {q:"좋은 설문 문항의 조건으로 적절한 것은?", c:["명확하고 중립적이어야 한다","응답을 유도해야 한다","한 문항에 여러 질문을 섞어야 한다","어려운 전문 용어만 써야 한다","개인정보를 많이 요구해야 한다"], a:0, e:"좋은 문항은 이해하기 쉽고 한 가지 내용만 묻고 중립적이어야 한다."},
+ {q:"응답 편향이 발생할 가능성이 큰 문항은?", c:["우리 학교 급식이 훌륭하다고 생각하지 않나요?","오늘 급식 만족도는 몇 점인가요?","가장 선호하는 활동은 무엇인가요?","하루 평균 독서 시간은 얼마인가요?","희망 진로 분야를 선택하세요."], a:0, e:"칭찬 표현과 부정 의문이 섞인 유도 질문은 응답을 한쪽으로 치우치게 할 수 있다."},
+ {q:"리커트 척도의 예로 가장 적절한 것은?", c:["매우 불만족 1점부터 매우 만족 5점까지 선택","이름을 직접 쓰기","사진 업로드하기","파일 삭제하기","웹 주소 복사하기"], a:0, e:"만족도나 동의 정도를 단계별 숫자로 표시하는 방식이 리커트 척도이다."},
+ {q:"결측 응답 처리와 관련된 설명으로 옳은 것은?", c:["분석 전에 비어 있는 응답을 확인해야 한다","항상 임의로 100을 넣는다","무조건 숨긴다","문항 전체를 조작한다","결측은 분석에 전혀 영향이 없다"], a:0, e:"결측값은 평균, 비율, 빈도 분석에 영향을 줄 수 있으므로 먼저 확인해야 한다."},
+ {q:"온라인 설문과 웹 데이터 수집의 연결로 적절한 것은?", c:["웹 폼 응답이 표 형태 데이터로 저장될 수 있다","온라인 설문은 데이터와 무관하다","웹에서는 질문을 만들 수 없다","CSV로 저장할 수 없다","응답은 절대 분석할 수 없다"], a:0, e:"온라인 설문 응답은 스프레드시트나 CSV로 저장되어 분석할 수 있다."},
+ {q:"설문에서 개인정보 보호를 위한 태도로 가장 적절한 것은?", c:["목적에 필요한 최소한만 수집하고 익명화를 고려한다","모든 응답자의 주소를 공개한다","동의 없이 전화번호를 수집한다","응답 결과를 임의로 유출한다","수집 목적을 숨긴다"], a:0, e:"개인정보는 목적에 필요한 최소 범위로 수집하고 동의와 보호 조치를 고려해야 한다."},
+ {q:"서술형 응답을 분석하는 방법으로 적절한 것은?", c:["키워드를 추출하거나 비슷한 의견을 범주화한다","절대 읽지 않는다","모두 같은 숫자로 바꾼다","무조건 삭제한다","응답자의 이름만 남긴다"], a:0, e:"서술형 응답은 키워드 빈도, 범주화, 주제 분류 등을 통해 분석할 수 있다."}
+];
+
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q">
+   <b>OX ${i+1}. ${item.q}</b>
+   <div class="choices">
+   <label><input type="radio" name="ox${i}" value="O"> O</label>
+   <label><input type="radio" name="ox${i}" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{
+     labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;
+   });
+   area.innerHTML += `<div class="q">
+   <b>문항 ${i+1}. ${item.q}</b>
+   <div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){
+ document.getElementById("scoreText").innerText = oxScore + mcScore;
+}
+
+function showAll(cls){
+ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block");
+}
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\\n";
+ content += "Ⅱ. 데이터 수집 - 설문 조사와 데이터 수집\\n";
+ content += "학번: " + id + "\\n";
+ content += "이름: " + name + "\\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\\n";
+ content += "형성평가 점수: " + mcScore + " / 50\\n";
+ content += "총점: " + total + " / 100\\n";
+ content += "응시시각: " + time + "\\n";
+ content += "\\n[학습 성찰]\\n설문 데이터 수집은 좋은 질문 설계, 대표성 있는 표본, 편향 점검, 개인정보 보호가 함께 이루어져야 신뢰할 수 있다.\\n";
+
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터24_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

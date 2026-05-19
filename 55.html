@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터55_시각화 결과 해석하기_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#334155,#8b5cf6);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#8b5cf6}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#6d28d9;border-left:8px solid #334155;padding-left:12px}h3{color:#334155;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#f5f3ff;border-left:6px solid #8b5cf6}
+.quote{font-size:18px;background:#f8fafc;border-left:7px solid #334155;padding:18px;border-radius:14px}pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#ede9fe}
+.q{border:1px solid #c4b5fd;background:#fdfbff;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#ede9fe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#8b5cf6;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#7c3aed}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터55. 시각화 결과 해석하기</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅴ. 데이터 시각화 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B055_%EC%8B%9C%EA%B0%81%ED%99%94%EA%B2%B0%EA%B3%BC%ED%95%B4%EC%84%9D%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a></nav>
+<main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>시각화 결과 해석은 그래프에서 패턴과 관계를 읽고, 표현 방식의 한계와 왜곡 가능성까지 판단하는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>그래프는 데이터를 쉽게 보이게 하지만, 축·단위·색·표본·출처에 따라 결론이 달라질 수 있다.</div>
+<div class="card goal"><b>핵심 질문</b><br>우리가 그래프에서 본 것은 데이터의 진실인가, 표현 방식이 만든 인상인가?</div></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅴ. 데이터 시각화 - 시각화 결과 해석하기</td></tr>
+<tr><td>수업 목표</td><td>① 시각화 결과 해석의 절차를 설명한다.<br>② 제목, 축, 단위, 범례, 출처를 확인하여 그래프를 읽는다.<br>③ 패턴, 추세, 이상값, 관계를 구별해 해석한다.<br>④ 그래프 왜곡과 과장 가능성을 판단한다.<br>⑤ 관찰·근거·한계·추가 질문을 포함한 해석문을 작성한다.</td></tr>
+<tr><td>지식 목표</td><td>패턴, 추세, 이상값, 축 왜곡, 범례, 표본 수, 출처, 상관관계, 인과관계, 해석의 한계의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>그래프 정보 확인, y축 범위 비교, 이상값 표시, 상관관계 해석, 해석문 작성 코드를 활용한다.</td></tr>
+<tr><td>태도 목표</td><td>그래프를 무비판적으로 믿지 않고, 근거와 한계를 함께 설명하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 같은 데이터 다른 축 그래프 비교 → 전개 30분: 해석 기준과 코드 실습 → 정리 10분: 그래프 왜곡 토론 → 평가 10분</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">그래프를 보면 우리는 빠르게 판단합니다. “늘고 있네.” “차이가 크네.” “관계가 있네.” 하지만 정말 그럴까요? 축이 어디서 시작하는지, 단위가 무엇인지, 표본은 충분한지, 색은 무엇을 뜻하는지에 따라 그래프의 인상은 크게 달라집니다. 인문 철학적으로 시각화 해석은 “보이는 것을 어떻게 믿을 것인가”의 문제입니다. 오늘 우리는 그래프를 보는 눈을 넘어, 그래프를 의심하고 검토하는 눈을 기릅니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 시각화 결과 해석</h3><p>그래프에서 나타나는 패턴, 차이, 추세, 관계, 이상값을 읽고 그 의미를 설명하는 과정이다. 단순히 높고 낮음을 말하는 것이 아니라 왜 그렇게 보이는지 근거를 제시해야 한다.</p>
+<h3>② 제목과 축 확인</h3><p>그래프 제목은 무엇을 보여 주는지 알려 주고, 축 이름은 각 방향의 값이 무엇인지 알려 준다. 축 이름이 없으면 그래프의 의미를 오해할 수 있다.</p>
+<h3>③ 단위 확인</h3><p>단위는 값의 크기를 해석하는 기준이다. 명, %, 원, kg, 점처럼 단위가 다르면 숫자의 의미가 완전히 달라진다.</p>
+<h3>④ 범례 확인</h3><p>범례는 색, 선, 점 모양이 어떤 집단이나 항목을 의미하는지 설명한다. 여러 집단을 비교하는 그래프에서는 범례가 중요하다.</p>
+<h3>⑤ 패턴과 추세</h3><p>패턴은 데이터에서 반복되거나 눈에 띄는 구조이고, 추세는 시간이 지나며 증가·감소·유지되는 흐름이다. 일시적 변화와 전체 흐름을 구별해야 한다.</p>
+<h3>⑥ 이상값 해석</h3><p>그래프에서 다른 점들과 동떨어진 값은 이상값 후보이다. 이상값은 오류일 수도 있고 중요한 사건일 수도 있으므로 삭제하기 전에 원인을 확인해야 한다.</p>
+<h3>⑦ 상관과 인과 구별</h3><p>산점도에서 두 변수가 함께 움직여 보여도 하나가 다른 하나의 원인이라고 단정할 수 없다. 제3의 변수, 우연, 표본 편향 가능성을 고려해야 한다.</p>
+<h3>⑧ 그래프 왜곡</h3><p>축 범위를 과도하게 줄이거나, 3D 효과로 면적을 과장하거나, 일부 데이터만 선택하면 그래프가 사실을 왜곡할 수 있다.</p>
+<h3>⑨ 해석문 작성</h3><p>좋은 해석문은 관찰 내용, 근거 수치, 가능한 설명, 해석의 한계, 추가로 필요한 질문을 포함한다.</p></section>
+
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 그래프 기본 요소 포함하기</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"year": [2024, 2025, 2026], "score": [80, 82, 83]})
+
+plt.plot(df["year"], df["score"], marker="o", label="Score")
+plt.title("Score Change")
+plt.xlabel("Year")
+plt.ylabel("Score")
+plt.legend()
+plt.show()</code></pre><p>제목, 축 이름, 범례를 넣어 그래프의 의미를 분명히 한다.</p>
+
+<h3>② 축 범위에 따른 인상 비교</h3><pre><code>import matplotlib.pyplot as plt
+
+years = [2024, 2025, 2026]
+scores = [80, 82, 83]
+
+plt.plot(years, scores, marker="o")
+plt.title("Score Change with Full Axis")
+plt.xlabel("Year")
+plt.ylabel("Score")
+plt.ylim(0, 100)
+plt.show()</code></pre><p>y축을 0부터 100까지 표시하면 변화가 과장되지 않게 보인다.</p>
+
+<h3>③ 이상값 표시하기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({"price": [1000, 1200, 1100, 1300, 100000]})
+outliers = df[df["price"] &gt; 10000]
+print(outliers)</code></pre><p>일반적인 범위를 벗어난 값을 이상값 후보로 찾아 해석 전에 확인한다.</p>
+
+<h3>④ 상관관계와 산점도</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"study": [1, 2, 3, 4, 5], "score": [55, 63, 70, 82, 90]})
+
+print(df.corr(numeric_only=True))
+plt.scatter(df["study"], df["score"])
+plt.title("Study and Score")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()</code></pre><p>상관관계가 보여도 인과관계를 단정하지 않고 추가 근거를 확인해야 한다.</p>
+
+<h3>⑤ 해석문 자동 생성 예시</h3><pre><code>start = 80
+end = 83
+change = end - start
+
+print(f"관찰: 점수는 80점에서 83점으로 {change}점 증가했다.")
+print("한계: 표본 수와 평가 기준 변화 여부를 추가로 확인해야 한다.")</code></pre><p>관찰 결과와 해석의 한계를 함께 쓰는 연습이다.</p></section>
+
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 만족도 변화 해석</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"year": [2024, 2025, 2026], "satisfaction": [91, 92, 93]})
+
+plt.plot(df["year"], df["satisfaction"], marker="o")
+plt.ylim(0, 100)
+plt.title("Satisfaction Rate")
+plt.xlabel("Year")
+plt.ylabel("Rate (%)")
+plt.show()</code></pre><p><b>상세 설명:</b> 만족도가 증가했지만 y축을 0~100으로 보면 변화가 크지 않다는 점을 균형 있게 해석할 수 있다.</p>
+
+<h3>예제 2. 메뉴 선호도 그래프 해석</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"menu": ["Rice", "Curry", "Pasta"], "votes": [30, 55, 45]})
+
+plt.bar(df["menu"], df["votes"])
+plt.title("Menu Preference")
+plt.xlabel("Menu")
+plt.ylabel("Votes")
+plt.show()</code></pre><p><b>상세 설명:</b> Curry가 가장 많은 선택을 받았지만, 전체 응답자 수와 조사 대상이 누구인지 확인해야 한다.</p>
+
+<h3>예제 3. 산점도 관계 해석</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"sleep": [5, 6, 7, 8, 9], "focus": [60, 68, 75, 82, 80]})
+
+plt.scatter(df["sleep"], df["focus"])
+plt.title("Sleep and Focus")
+plt.xlabel("Sleep Hours")
+plt.ylabel("Focus Score")
+plt.show()</code></pre><p><b>상세 설명:</b> 수면 시간과 집중도 사이에 양의 관계가 있어 보이지만, 개인차와 생활 습관 같은 다른 요인도 고려해야 한다.</p>
+
+<h3>예제 4. 지역별 비율 해석</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({"region": ["A", "B"], "cases": [100, 80], "population": [10000, 1000]})
+df["rate"] = df["cases"] / df["population"] * 100
+print(df)</code></pre><p><b>상세 설명:</b> 발생 수는 A가 많지만, 인구 대비 비율은 B가 더 높을 수 있다. 절대값과 비율을 구별해야 한다.</p>
+
+<h3>예제 5. 그래프 해석문 만들기</h3><pre><code>data = {"관찰": "2024년부터 2026년까지 만족도가 91%에서 93%로 증가했다.",
+        "근거": "그래프의 y값이 91, 92, 93으로 나타난다.",
+        "한계": "표본 수와 조사 문항이 동일했는지 확인해야 한다.",
+        "추가질문": "증가 원인이 실제 정책 변화 때문인지 확인할 필요가 있다."}
+
+for k, v in data.items():
+    print(k + ":", v)</code></pre><p><b>상세 설명:</b> 좋은 그래프 해석은 관찰, 근거, 한계, 추가 질문을 함께 포함한다.</p></section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 시각화 결과를 해석할 때는 그래프 제목, 축 이름, 단위를 확인해야 한다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 제목, 축 이름, 단위는 그래프가 무엇을 나타내는지 이해하는 기본 정보이다.</div></div><div class="q"><b>OX 2. 그래프가 예쁘면 항상 정확한 해석을 제공한다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 보기 좋은 그래프라도 축 왜곡, 단위 누락, 부적절한 그래프 선택이 있으면 오해를 만들 수 있다.</div></div><div class="q"><b>OX 3. 그래프의 축 범위는 결과 해석에 영향을 줄 수 있다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 축 범위가 좁으면 차이가 과장되어 보이고, 너무 넓으면 차이가 축소되어 보일 수 있다.</div></div><div class="q"><b>OX 4. 시각화에서 이상값은 무조건 제거해야 한다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 이상값은 오류일 수도 있지만 중요한 사건일 수 있으므로 원인을 확인해야 한다.</div></div><div class="q"><b>OX 5. 산점도에서 두 변수가 함께 변해 보여도 인과관계를 바로 단정하면 안 된다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않으며 제3의 변수 가능성을 고려해야 한다.</div></div><div class="q"><b>OX 6. 범례는 색이나 선이 무엇을 의미하는지 알려 준다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 범례가 있어야 여러 집단이나 항목을 구별할 수 있다.</div></div><div class="q"><b>OX 7. 비율 그래프를 해석할 때 전체 기준이 무엇인지 확인해야 한다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 비율은 전체 기준이 달라지면 의미가 달라질 수 있다.</div></div><div class="q"><b>OX 8. 지도 시각화는 면적이 넓은 지역이 더 중요해 보이는 착시를 줄 수 있다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 넓은 지역은 값과 상관없이 시각적으로 크게 보일 수 있어 주의가 필요하다.</div></div><div class="q"><b>OX 9. 그래프 해석에는 데이터 출처와 수집 방법도 중요하다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 출처와 수집 방식은 데이터 신뢰도와 편향 가능성을 판단하는 근거가 된다.</div></div><div class="q"><b>OX 10. 좋은 시각화 해석은 관찰 내용, 근거, 한계, 추가 질문을 함께 제시한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 해석은 결론만 말하기보다 근거와 한계를 포함해야 신뢰할 수 있다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 시각화 결과 해석에서 가장 먼저 확인할 정보로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 제목, 축, 단위, 범례</label><label><input type="radio" name="mc0" value="1"> 2. 그래프 색의 예쁨만</label><label><input type="radio" name="mc0" value="2"> 3. 파일 이름 길이</label><label><input type="radio" name="mc0" value="3"> 4. 컴퓨터 배경화면</label><label><input type="radio" name="mc0" value="4"> 5. 마우스 속도</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 제목, 축, 단위, 범례는 그래프 의미를 이해하는 핵심 정보이다.</div></div><div class="q"><b>문항 2. y축 범위를 좁게 설정하면 생길 수 있는 문제는?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 차이가 실제보다 과장되어 보일 수 있다</label><label><input type="radio" name="mc1" value="1"> 2. 항상 더 정확해진다</label><label><input type="radio" name="mc1" value="2"> 3. 값이 자동으로 커진다</label><label><input type="radio" name="mc1" value="3"> 4. 범례가 필요 없어진다</label><label><input type="radio" name="mc1" value="4"> 5. 데이터가 삭제된다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 축 범위 조정은 차이의 시각적 인상을 바꿀 수 있다.</div></div><div class="q"><b>문항 3. 산점도 해석에서 주의할 점은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 상관관계를 인과관계로 단정하지 않는다</label><label><input type="radio" name="mc2" value="1"> 2. 점이 많으면 무조건 원인이다</label><label><input type="radio" name="mc2" value="2"> 3. 축 이름은 필요 없다</label><label><input type="radio" name="mc2" value="3"> 4. 이상값은 항상 숨긴다</label><label><input type="radio" name="mc2" value="4"> 5. 색은 의미가 없다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 산점도는 관계를 보여 주지만 원인을 증명하지는 않는다.</div></div><div class="q"><b>문항 4. 그래프에서 범례의 역할은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 색, 선, 표시가 어떤 집단이나 항목을 뜻하는지 설명한다</label><label><input type="radio" name="mc3" value="1"> 2. 데이터를 삭제한다</label><label><input type="radio" name="mc3" value="2"> 3. 축 범위를 바꾼다</label><label><input type="radio" name="mc3" value="3"> 4. 파일을 저장한다</label><label><input type="radio" name="mc3" value="4"> 5. 코드를 실행한다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 범례는 여러 항목을 구분하는 설명이다.</div></div><div class="q"><b>문항 5. 시각화에서 이상값을 발견했을 때 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 원인을 확인하고 오류인지 중요한 신호인지 판단한다</label><label><input type="radio" name="mc4" value="1"> 2. 무조건 삭제한다</label><label><input type="radio" name="mc4" value="2"> 3. 무조건 평균으로 바꾼다</label><label><input type="radio" name="mc4" value="3"> 4. 항상 무시한다</label><label><input type="radio" name="mc4" value="4"> 5. 제목을 지운다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 이상값은 오류일 수도 의미 있는 사건일 수도 있다.</div></div><div class="q"><b>문항 6. 원그래프 해석에서 확인해야 할 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 전체 기준과 각 항목의 비율</label><label><input type="radio" name="mc5" value="1"> 2. 시간 순서만</label><label><input type="radio" name="mc5" value="2"> 3. 두 변수의 상관계수만</label><label><input type="radio" name="mc5" value="3"> 4. 위도와 경도만</label><label><input type="radio" name="mc5" value="4"> 5. 표준편차만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 원그래프는 전체 중 구성 비율을 보여 주므로 전체 기준을 확인해야 한다.</div></div><div class="q"><b>문항 7. 지도 시각화 해석에서 주의할 점은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 절대값과 비율, 지역 면적 효과를 구별한다</label><label><input type="radio" name="mc6" value="1"> 2. 넓은 지역은 항상 값이 크다고 본다</label><label><input type="radio" name="mc6" value="2"> 3. 범례를 보지 않는다</label><label><input type="radio" name="mc6" value="3"> 4. 색 기준을 무시한다</label><label><input type="radio" name="mc6" value="4"> 5. 출처가 필요 없다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 지도는 면적과 색 때문에 오해가 생길 수 있어 기준 확인이 중요하다.</div></div><div class="q"><b>문항 8. 그래프 해석의 한계로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 데이터 수집 방식과 표본에 편향이 있을 수 있다</label><label><input type="radio" name="mc7" value="1"> 2. 그래프는 언제나 완벽하다</label><label><input type="radio" name="mc7" value="2"> 3. 축은 해석에 영향을 주지 않는다</label><label><input type="radio" name="mc7" value="3"> 4. 출처는 필요 없다</label><label><input type="radio" name="mc7" value="4"> 5. 값은 확인하지 않아도 된다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 수집 방식, 표본, 결측값, 측정 기준은 해석의 한계가 될 수 있다.</div></div><div class="q"><b>문항 9. 좋은 해석문에 포함되면 좋은 요소는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 관찰한 패턴, 근거, 한계, 추가 질문</label><label><input type="radio" name="mc8" value="1"> 2. 느낌만</label><label><input type="radio" name="mc8" value="2"> 3. 색깔 평가만</label><label><input type="radio" name="mc8" value="3"> 4. 파일 경로만</label><label><input type="radio" name="mc8" value="4"> 5. 컴퓨터 사양만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 좋은 해석은 무엇을 보았고 왜 그렇게 판단했는지, 한계가 무엇인지 제시한다.</div></div><div class="q"><b>문항 10. 시각화 결과를 비판적으로 읽는 이유는?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 그래프도 선택과 표현 방식에 따라 오해를 만들 수 있기 때문에</label><label><input type="radio" name="mc9" value="1"> 2. 그래프는 항상 거짓이기 때문에</label><label><input type="radio" name="mc9" value="2"> 3. 숫자를 모두 지우기 위해</label><label><input type="radio" name="mc9" value="3"> 4. 코드를 짧게 만들기 위해</label><label><input type="radio" name="mc9" value="4"> 5. 색을 없애기 위해</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 그래프는 강력한 전달 도구이므로 표현 방식의 영향을 비판적으로 읽어야 한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터55_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 그래프를 그리는 법을 넘어, 그래프를 읽고 의심하고 해석하는 법을 배웠습니다. 컴퓨터과학은 데이터를 시각화하는 도구를 제공하고, 수학은 축과 단위와 비율을 정확히 따지게 하며, 과학은 관찰과 원인 추론을 구별하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “보이는 것을 곧바로 진실이라고 믿고 있지는 않은가?” 좋은 데이터 과학자는 그래프를 잘 만드는 사람일 뿐 아니라, 그래프가 보여 주는 것과 숨기는 것을 함께 읽어 내는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터55 시각화 결과 해석하기</footer>
+</main></div>
+
+<script>
+const oxQuestions = [{"q": "시각화 결과를 해석할 때는 그래프 제목, 축 이름, 단위를 확인해야 한다.", "a": "O", "e": "제목, 축 이름, 단위는 그래프가 무엇을 나타내는지 이해하는 기본 정보이다."}, {"q": "그래프가 예쁘면 항상 정확한 해석을 제공한다.", "a": "X", "e": "보기 좋은 그래프라도 축 왜곡, 단위 누락, 부적절한 그래프 선택이 있으면 오해를 만들 수 있다."}, {"q": "그래프의 축 범위는 결과 해석에 영향을 줄 수 있다.", "a": "O", "e": "축 범위가 좁으면 차이가 과장되어 보이고, 너무 넓으면 차이가 축소되어 보일 수 있다."}, {"q": "시각화에서 이상값은 무조건 제거해야 한다.", "a": "X", "e": "이상값은 오류일 수도 있지만 중요한 사건일 수 있으므로 원인을 확인해야 한다."}, {"q": "산점도에서 두 변수가 함께 변해 보여도 인과관계를 바로 단정하면 안 된다.", "a": "O", "e": "상관관계는 인과관계를 증명하지 않으며 제3의 변수 가능성을 고려해야 한다."}, {"q": "범례는 색이나 선이 무엇을 의미하는지 알려 준다.", "a": "O", "e": "범례가 있어야 여러 집단이나 항목을 구별할 수 있다."}, {"q": "비율 그래프를 해석할 때 전체 기준이 무엇인지 확인해야 한다.", "a": "O", "e": "비율은 전체 기준이 달라지면 의미가 달라질 수 있다."}, {"q": "지도 시각화는 면적이 넓은 지역이 더 중요해 보이는 착시를 줄 수 있다.", "a": "O", "e": "넓은 지역은 값과 상관없이 시각적으로 크게 보일 수 있어 주의가 필요하다."}, {"q": "그래프 해석에는 데이터 출처와 수집 방법도 중요하다.", "a": "O", "e": "출처와 수집 방식은 데이터 신뢰도와 편향 가능성을 판단하는 근거가 된다."}, {"q": "좋은 시각화 해석은 관찰 내용, 근거, 한계, 추가 질문을 함께 제시한다.", "a": "O", "e": "해석은 결론만 말하기보다 근거와 한계를 포함해야 신뢰할 수 있다."}];
+const mcQuestions = [{"q": "시각화 결과 해석에서 가장 먼저 확인할 정보로 적절한 것은?", "c": ["제목, 축, 단위, 범례", "그래프 색의 예쁨만", "파일 이름 길이", "컴퓨터 배경화면", "마우스 속도"], "a": 0, "e": "제목, 축, 단위, 범례는 그래프 의미를 이해하는 핵심 정보이다."}, {"q": "y축 범위를 좁게 설정하면 생길 수 있는 문제는?", "c": ["차이가 실제보다 과장되어 보일 수 있다", "항상 더 정확해진다", "값이 자동으로 커진다", "범례가 필요 없어진다", "데이터가 삭제된다"], "a": 0, "e": "축 범위 조정은 차이의 시각적 인상을 바꿀 수 있다."}, {"q": "산점도 해석에서 주의할 점은?", "c": ["상관관계를 인과관계로 단정하지 않는다", "점이 많으면 무조건 원인이다", "축 이름은 필요 없다", "이상값은 항상 숨긴다", "색은 의미가 없다"], "a": 0, "e": "산점도는 관계를 보여 주지만 원인을 증명하지는 않는다."}, {"q": "그래프에서 범례의 역할은?", "c": ["색, 선, 표시가 어떤 집단이나 항목을 뜻하는지 설명한다", "데이터를 삭제한다", "축 범위를 바꾼다", "파일을 저장한다", "코드를 실행한다"], "a": 0, "e": "범례는 여러 항목을 구분하는 설명이다."}, {"q": "시각화에서 이상값을 발견했을 때 바람직한 태도는?", "c": ["원인을 확인하고 오류인지 중요한 신호인지 판단한다", "무조건 삭제한다", "무조건 평균으로 바꾼다", "항상 무시한다", "제목을 지운다"], "a": 0, "e": "이상값은 오류일 수도 의미 있는 사건일 수도 있다."}, {"q": "원그래프 해석에서 확인해야 할 것은?", "c": ["전체 기준과 각 항목의 비율", "시간 순서만", "두 변수의 상관계수만", "위도와 경도만", "표준편차만"], "a": 0, "e": "원그래프는 전체 중 구성 비율을 보여 주므로 전체 기준을 확인해야 한다."}, {"q": "지도 시각화 해석에서 주의할 점은?", "c": ["절대값과 비율, 지역 면적 효과를 구별한다", "넓은 지역은 항상 값이 크다고 본다", "범례를 보지 않는다", "색 기준을 무시한다", "출처가 필요 없다"], "a": 0, "e": "지도는 면적과 색 때문에 오해가 생길 수 있어 기준 확인이 중요하다."}, {"q": "그래프 해석의 한계로 적절한 것은?", "c": ["데이터 수집 방식과 표본에 편향이 있을 수 있다", "그래프는 언제나 완벽하다", "축은 해석에 영향을 주지 않는다", "출처는 필요 없다", "값은 확인하지 않아도 된다"], "a": 0, "e": "수집 방식, 표본, 결측값, 측정 기준은 해석의 한계가 될 수 있다."}, {"q": "좋은 해석문에 포함되면 좋은 요소는?", "c": ["관찰한 패턴, 근거, 한계, 추가 질문", "느낌만", "색깔 평가만", "파일 경로만", "컴퓨터 사양만"], "a": 0, "e": "좋은 해석은 무엇을 보았고 왜 그렇게 판단했는지, 한계가 무엇인지 제시한다."}, {"q": "시각화 결과를 비판적으로 읽는 이유는?", "c": ["그래프도 선택과 표현 방식에 따라 오해를 만들 수 있기 때문에", "그래프는 항상 거짓이기 때문에", "숫자를 모두 지우기 위해", "코드를 짧게 만들기 위해", "색을 없애기 위해"], "a": 0, "e": "그래프는 강력한 전달 도구이므로 표현 방식의 영향을 비판적으로 읽어야 한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅴ. 데이터 시각화 - 시각화 결과 해석하기\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n시각화 결과 해석은 제목·축·단위·범례·출처를 확인하고, 관찰·근거·한계·추가 질문을 함께 제시해야 한다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터55_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+</body></html>

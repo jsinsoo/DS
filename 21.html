@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0167)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025교육과정 고등학교 데이터 과학 - 데이터의 종류</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f4f7fb;color:#1f2937;line-height:1.7} header{background:linear-gradient(135deg,#1e3a8a,#0f766e);color:white;padding:34px 42px} header h1{margin:0;font-size:30px} header p{margin:8px 0 0;font-size:16px;opacity:.95}.wrap{display:grid;grid-template-columns:260px 1fr;min-height:100vh} nav{background:#111827;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto} nav h2{font-size:18px;margin:0 0 16px} nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;border-radius:10px;margin:5px 0;font-size:14px} nav a:hover{background:#374151}.content{padding:28px;max-width:1180px}.card{background:white;border-radius:18px;padding:24px;margin-bottom:22px;box-shadow:0 8px 24px rgba(15,23,42,.08);border:1px solid #e5e7eb}.card h2{color:#0f766e;margin-top:0;border-bottom:3px solid #ccfbf1;padding-bottom:8px}.card h3{color:#1e3a8a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.box{background:#f8fafc;border-left:6px solid #14b8a6;padding:16px;border-radius:14px}.goal{border-left-color:#2563eb}.warn{border-left-color:#f59e0b;background:#fffbeb}.quote{font-size:18px;background:#eef2ff;border-left:6px solid #6366f1;padding:18px;border-radius:14px}pre{background:#0b1020;color:#e5e7eb;padding:16px;border-radius:14px;overflow:auto;font-size:14px}code{font-family:Consolas,monospace}.q{border:1px solid #d1d5db;border-radius:14px;padding:16px;margin:14px 0;background:#fff}.q:hover{background:#f9fafb}.choices label{display:block;padding:9px 12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0;cursor:pointer}.choices label:hover{background:#ecfeff}.answer{display:none;background:#f0fdf4;border-left:5px solid #22c55e;margin-top:10px;padding:12px;border-radius:10px}.btn{border:0;background:#0f766e;color:white;padding:12px 18px;border-radius:12px;font-weight:bold;cursor:pointer;margin:6px}.btn:hover{background:#115e59}.btn2{background:#1e3a8a}.score{font-size:20px;font-weight:bold;color:#b45309}.inputrow{display:flex;gap:10px;flex-wrap:wrap}.inputrow input{padding:12px;border:1px solid #cbd5e1;border-radius:10px;font-size:15px}.tag{display:inline-block;background:#dbeafe;color:#1e40af;padding:4px 9px;border-radius:999px;font-size:12px;margin:2px}table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#ecfeff}.footer{font-size:13px;color:#64748b;text-align:center;padding:28px}@media(max-width:850px){.wrap{grid-template-columns:1fr}nav{position:relative;height:auto}.content{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+<h1>2025교육과정 고등학교 데이터 과학 Ⅱ. 데이터 수집</h1>
+<p>주제: 데이터의 종류 | 개념기반 목표지향 수업지도안</p>
+</header>
+<div class="wrap">
+<nav>
+<h2>📘 수업 메뉴</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#intro">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#formative">형성평가</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#life">실생활 코드예제</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B021_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EC%A2%85%EB%A5%98_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#closing">마무리 멘트</a>
+</nav>
+<main class="content">
+<section id="intro" class="card">
+<h2>🌱 수업을 여는 멘트</h2>
+<div class="quote">여러분이 아침에 본 날씨 앱, 급식 만족도 설문, 병원 진료 기록, SNS 사진, 실험 센서값은 모두 ‘데이터’입니다. 그러나 모든 데이터가 같은 모양과 의미를 갖지는 않습니다. 철학적으로 보면 데이터는 세상을 있는 그대로 비추는 거울이 아니라, 인간이 무엇을 보고 무엇을 중요하게 여기는지 드러내는 선택의 흔적입니다. 오늘은 데이터의 종류를 구분하며, 우리가 세상을 어떤 방식으로 이해하고 판단하는지 함께 탐구합니다.</div>
+</section>
+<section id="plan" class="card">
+<h2>🎯 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="box goal"><h3>핵심 개념</h3><p>데이터는 형태, 의미, 생성 방식, 수집 목적에 따라 구분되며, 데이터의 종류를 이해하면 적절한 수집·분석·해석 방법을 선택할 수 있다.</p></div>
+<div class="box goal"><h3>핵심 질문</h3><p>같은 현상도 왜 서로 다른 종류의 데이터로 표현될 수 있을까?</p><p>데이터의 종류를 잘못 이해하면 어떤 분석 오류가 생길까?</p></div>
+<div class="box goal"><h3>지식 목표</h3><p>정형·반정형·비정형 데이터, 양적·질적 데이터, 1차·2차 데이터, 시계열·범주형 데이터의 뜻을 설명한다.</p></div>
+<div class="box goal"><h3>기능 목표</h3><p>주어진 데이터 사례를 분류하고, 파이썬으로 데이터 형식과 기본 특징을 확인한다.</p></div>
+<div class="box goal"><h3>태도 목표</h3><p>데이터가 사회적 맥락 속에서 만들어진다는 점을 이해하고, 책임 있는 수집 태도를 가진다.</p></div>
+<div class="box goal"><h3>평가 방법</h3><p>진단평가 OX, 형성평가 5지선다형, 실생활 코드 분석 과제, 수업 참여 관찰을 종합한다.</p></div>
+</div>
+<table><tbody><tr><th>단계</th><th>활동</th><th>교사·학생 활동</th></tr><tr><td>도입</td><td>생활 속 데이터 찾기</td><td>날씨, 성적, 사진, 댓글, 위치 기록을 제시하고 데이터 종류를 예상한다.</td></tr><tr><td>전개 1</td><td>개념 탐구</td><td>형태·의미·출처·시간 기준으로 데이터를 분류한다.</td></tr><tr><td>전개 2</td><td>파이썬 실습</td><td>DataFrame, JSON, 텍스트, 이미지 파일명을 예로 들어 데이터 구조를 확인한다.</td></tr><tr><td>정리</td><td>개념 연결</td><td>데이터 종류와 분석 방법의 관계를 토의한다.</td></tr><tr><td>평가</td><td>자동 채점</td><td>OX와 5지선다형을 풀고 TXT 결과 파일을 저장한다.</td></tr></tbody></table>
+</section>
+<section id="concept" class="card">
+<h2>🔍 각각의 개념에 대한 상세 설명</h2>
+<div class="grid">
+<div class="box"><h3>1. 정형 데이터</h3><p>행과 열처럼 일정한 구조를 가진 데이터입니다. 성적표, 출석부, 매출표처럼 표 형태로 저장하기 쉽고, 통계 분석이나 데이터베이스 처리에 적합합니다.</p><span class="tag">표</span><span class="tag">DB</span><span class="tag">CSV</span></div>
+<div class="box"><h3>2. 반정형 데이터</h3><p>완전한 표 구조는 아니지만 태그나 키-값 구조처럼 일정한 규칙이 있는 데이터입니다. JSON, XML, HTML 문서가 대표적입니다.</p><span class="tag">JSON</span><span class="tag">XML</span><span class="tag">키-값</span></div>
+<div class="box"><h3>3. 비정형 데이터</h3><p>정해진 행·열 구조가 없는 데이터입니다. 사진, 음성, 동영상, 자유 서술형 글, SNS 댓글 등이 포함됩니다. 인공지능 분석에서 매우 중요합니다.</p><span class="tag">이미지</span><span class="tag">음성</span><span class="tag">텍스트</span></div>
+<div class="box"><h3>4. 양적 데이터</h3><p>숫자로 측정할 수 있는 데이터입니다. 키, 몸무게, 온도, 시간, 점수처럼 계산과 비교가 가능합니다.</p><span class="tag">수치형</span><span class="tag">평균</span><span class="tag">분산</span></div>
+<div class="box"><h3>5. 질적 데이터</h3><p>분류나 특성을 나타내는 데이터입니다. 혈액형, 선호 과목, 만족도 등은 숫자가 붙어도 본질적으로 범주를 뜻할 수 있습니다.</p><span class="tag">범주형</span><span class="tag">분류</span></div>
+<div class="box"><h3>6. 1차 데이터</h3><p>연구자나 분석자가 목적에 맞게 직접 수집한 데이터입니다. 직접 설문, 실험 측정, 센서 수집 자료가 예입니다.</p><span class="tag">직접 수집</span><span class="tag">설문</span></div>
+<div class="box"><h3>7. 2차 데이터</h3><p>이미 다른 목적을 위해 수집되어 공개되거나 보관된 데이터입니다. 공공데이터, 논문 자료, 기존 통계 자료가 예입니다.</p><span class="tag">공공데이터</span><span class="tag">기존 자료</span></div>
+<div class="box"><h3>8. 시계열 데이터</h3><p>시간 순서에 따라 기록된 데이터입니다. 기온 변화, 주가, 심박수, 미세먼지 농도처럼 시간 흐름 분석이 중요합니다.</p><span class="tag">시간</span><span class="tag">추세</span></div>
+</div>
+</section>
+<section id="python" class="card">
+<h2>💻 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>정형 데이터: 표 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "학생": ["민수", "지우", "하린"],
+    "점수": [88, 92, 79]
+})
+print(df)
+print(df["점수"].mean())</code></pre>
+<h3>반정형 데이터: JSON 구조 읽기</h3><pre><code>data = {"name": "weather", "value": 23.5, "unit": "C"}
+print(data["name"])
+print(data["value"])</code></pre>
+<h3>비정형 데이터: 문장 길이 분석</h3><pre><code>comments = ["수업이 재미있다", "데이터 분석은 어렵지만 유용하다"]
+for text in comments:
+    print(text, len(text))</code></pre>
+<h3>양적·질적 데이터 구분</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({"온도": [21.5, 22.1, 20.8], "날씨": ["맑음", "흐림", "비"]})
+print(df.dtypes)</code></pre>
+<h3>시계열 데이터</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "날짜": pd.to_datetime(["2026-05-01", "2026-05-02", "2026-05-03"]),
+    "기온": [18, 20, 19]
+})
+print(df.sort_values("날짜"))</code></pre>
+</section>
+<section id="diag" class="card">
+<h2>✅ 진단평가 OX 예제 10개</h2>
+<div id="oxBox"><div class="q"><b>OX 1.</b> 정형 데이터는 보통 행과 열의 구조를 가진다.<div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa0&#39;)">상세 풀이 보기</button><div class="answer" id="oxa0"><b>정답: O</b><br>성적표나 매출표처럼 표 구조를 가지므로 O입니다.</div></div><div class="q"><b>OX 2.</b> 비정형 데이터는 항상 숫자로만 이루어진다.<div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa1&#39;)">상세 풀이 보기</button><div class="answer" id="oxa1"><b>정답: X</b><br>이미지, 음성, 동영상, 자유 텍스트처럼 숫자가 아닌 경우가 많습니다.</div></div><div class="q"><b>OX 3.</b> JSON은 반정형 데이터의 예로 볼 수 있다.<div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa2&#39;)">상세 풀이 보기</button><div class="answer" id="oxa2"><b>정답: O</b><br>키-값 구조라는 규칙이 있으므로 반정형 데이터입니다.</div></div><div class="q"><b>OX 4.</b> 양적 데이터는 계산과 비교가 가능한 수치 데이터이다.<div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa3&#39;)">상세 풀이 보기</button><div class="answer" id="oxa3"><b>정답: O</b><br>온도, 점수, 길이처럼 평균이나 합계를 구할 수 있습니다.</div></div><div class="q"><b>OX 5.</b> 질적 데이터는 반드시 평균을 구해야 의미가 있다.<div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa4&#39;)">상세 풀이 보기</button><div class="answer" id="oxa4"><b>정답: X</b><br>질적 데이터는 범주나 특성을 나타내므로 빈도나 비율이 더 적절할 수 있습니다.</div></div><div class="q"><b>OX 6.</b> 직접 설문조사로 얻은 자료는 1차 데이터가 될 수 있다.<div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa5&#39;)">상세 풀이 보기</button><div class="answer" id="oxa5"><b>정답: O</b><br>분석 목적에 맞게 직접 수집한 자료이므로 1차 데이터입니다.</div></div><div class="q"><b>OX 7.</b> 공공기관이 이미 공개한 통계자료는 2차 데이터로 활용될 수 있다.<div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa6&#39;)">상세 풀이 보기</button><div class="answer" id="oxa6"><b>정답: O</b><br>기존에 수집된 자료를 활용하므로 2차 데이터입니다.</div></div><div class="q"><b>OX 8.</b> 시계열 데이터는 시간 순서가 중요하지 않다.<div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa7&#39;)">상세 풀이 보기</button><div class="answer" id="oxa7"><b>정답: X</b><br>시계열 데이터는 시간 흐름과 순서가 핵심입니다.</div></div><div class="q"><b>OX 9.</b> SNS 댓글은 비정형 텍스트 데이터의 예이다.<div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa8&#39;)">상세 풀이 보기</button><div class="answer" id="oxa8"><b>정답: O</b><br>자유롭게 작성된 문장이므로 비정형 데이터입니다.</div></div><div class="q"><b>OX 10.</b> 데이터의 종류를 알면 분석 방법을 선택하는 데 도움이 된다.<div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><button class="btn" onclick="toggleAns(&#39;oxa9&#39;)">상세 풀이 보기</button><div class="answer" id="oxa9"><b>정답: O</b><br>데이터 특성에 따라 통계, 시각화, 모델링 방법이 달라집니다.</div></div></div>
+</section>
+<section id="formative" class="card">
+<h2>📝 형성평가 5지선다형 10개</h2>
+<div id="mcBox"><div class="q"><b>문항 1.</b> 다음 중 정형 데이터에 가장 가까운 것은?<div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 학생 성적표</label><label><input type="radio" name="mc0" value="1"> 2. 강의 녹음 파일</label><label><input type="radio" name="mc0" value="2"> 3. 풍경 사진</label><label><input type="radio" name="mc0" value="3"> 4. 자유 서술형 감상문</label><label><input type="radio" name="mc0" value="4"> 5. 동영상</label></div><button class="btn" onclick="toggleAns(&#39;mca0&#39;)">상세 풀이 보기</button><div class="answer" id="mca0"><b>정답: 1번</b><br>성적표는 행과 열이 있는 표 형태입니다.</div></div><div class="q"><b>문항 2.</b> 반정형 데이터의 대표 예는?<div class="choices"><label><input type="radio" name="mc1" value="0"> 1. JSON</label><label><input type="radio" name="mc1" value="1"> 2. 흑백 사진</label><label><input type="radio" name="mc1" value="2"> 3. 음성 녹음</label><label><input type="radio" name="mc1" value="3"> 4. 손글씨 그림</label><label><input type="radio" name="mc1" value="4"> 5. 동영상</label></div><button class="btn" onclick="toggleAns(&#39;mca1&#39;)">상세 풀이 보기</button><div class="answer" id="mca1"><b>정답: 1번</b><br>JSON은 키-값 구조를 가진 반정형 데이터입니다.</div></div><div class="q"><b>문항 3.</b> 비정형 데이터에 해당하지 않는 것은?<div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 출석부 표</label><label><input type="radio" name="mc2" value="1"> 2. SNS 댓글</label><label><input type="radio" name="mc2" value="2"> 3. 사진</label><label><input type="radio" name="mc2" value="3"> 4. 음성 파일</label><label><input type="radio" name="mc2" value="4"> 5. 동영상</label></div><button class="btn" onclick="toggleAns(&#39;mca2&#39;)">상세 풀이 보기</button><div class="answer" id="mca2"><b>정답: 1번</b><br>출석부 표는 정형 데이터입니다.</div></div><div class="q"><b>문항 4.</b> 양적 데이터의 예로 가장 적절한 것은?<div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 기온</label><label><input type="radio" name="mc3" value="1"> 2. 혈액형</label><label><input type="radio" name="mc3" value="2"> 3. 좋아하는 색</label><label><input type="radio" name="mc3" value="3"> 4. 성별 구분</label><label><input type="radio" name="mc3" value="4"> 5. 지역명</label></div><button class="btn" onclick="toggleAns(&#39;mca3&#39;)">상세 풀이 보기</button><div class="answer" id="mca3"><b>정답: 1번</b><br>기온은 숫자로 측정하고 평균을 구할 수 있습니다.</div></div><div class="q"><b>문항 5.</b> 질적 데이터 분석에 자주 쓰이는 방법은?<div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 범주별 빈도 세기</label><label><input type="radio" name="mc4" value="1"> 2. 평균 기온 계산</label><label><input type="radio" name="mc4" value="2"> 3. 수치 합계 계산</label><label><input type="radio" name="mc4" value="3"> 4. 표준편차만 계산</label><label><input type="radio" name="mc4" value="4"> 5. 미분값 계산</label></div><button class="btn" onclick="toggleAns(&#39;mca4&#39;)">상세 풀이 보기</button><div class="answer" id="mca4"><b>정답: 1번</b><br>질적 데이터는 범주별 빈도와 비율을 살펴보기 좋습니다.</div></div><div class="q"><b>문항 6.</b> 1차 데이터에 대한 설명으로 옳은 것은?<div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 목적에 맞게 직접 수집한 데이터</label><label><input type="radio" name="mc5" value="1"> 2. 항상 인터넷에서 내려받은 데이터</label><label><input type="radio" name="mc5" value="2"> 3. 절대 오류가 없는 데이터</label><label><input type="radio" name="mc5" value="3"> 4. 이미 분석된 보고서만 의미함</label><label><input type="radio" name="mc5" value="4"> 5. 사진 데이터만 의미함</label></div><button class="btn" onclick="toggleAns(&#39;mca5&#39;)">상세 풀이 보기</button><div class="answer" id="mca5"><b>정답: 1번</b><br>직접 설문, 실험, 센서 측정 등이 1차 데이터입니다.</div></div><div class="q"><b>문항 7.</b> 2차 데이터의 예로 가장 적절한 것은?<div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 공개 통계청 자료 활용</label><label><input type="radio" name="mc6" value="1"> 2. 직접 실험 측정</label><label><input type="radio" name="mc6" value="2"> 3. 직접 인터뷰</label><label><input type="radio" name="mc6" value="3"> 4. 학교에서 새로 실시한 설문</label><label><input type="radio" name="mc6" value="4"> 5. 센서로 방금 측정한 온도</label></div><button class="btn" onclick="toggleAns(&#39;mca6&#39;)">상세 풀이 보기</button><div class="answer" id="mca6"><b>정답: 1번</b><br>이미 기관이 수집해 공개한 자료를 활용하면 2차 데이터입니다.</div></div><div class="q"><b>문항 8.</b> 시계열 데이터에서 가장 중요한 요소는?<div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 시간 순서</label><label><input type="radio" name="mc7" value="1"> 2. 글자 색상</label><label><input type="radio" name="mc7" value="2"> 3. 파일 이름 길이</label><label><input type="radio" name="mc7" value="3"> 4. 작성자의 취미</label><label><input type="radio" name="mc7" value="4"> 5. 압축 여부</label></div><button class="btn" onclick="toggleAns(&#39;mca7&#39;)">상세 풀이 보기</button><div class="answer" id="mca7"><b>정답: 1번</b><br>시계열 데이터는 시간 순서에 따른 변화 분석이 핵심입니다.</div></div><div class="q"><b>문항 9.</b> 데이터 종류를 구분해야 하는 이유는?<div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 적절한 분석 방법을 선택하기 위해</label><label><input type="radio" name="mc8" value="1"> 2. 데이터를 모두 삭제하기 위해</label><label><input type="radio" name="mc8" value="2"> 3. 항상 같은 그래프만 그리기 위해</label><label><input type="radio" name="mc8" value="3"> 4. 개인정보를 무시하기 위해</label><label><input type="radio" name="mc8" value="4"> 5. 코드를 쓰지 않기 위해</label></div><button class="btn" onclick="toggleAns(&#39;mca8&#39;)">상세 풀이 보기</button><div class="answer" id="mca8"><b>정답: 1번</b><br>데이터 종류에 따라 전처리, 시각화, 모델링 방법이 달라집니다.</div></div><div class="q"><b>문항 10.</b> 다음 중 질적 데이터에 가까운 것은?<div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 선호 과목</label><label><input type="radio" name="mc9" value="1"> 2. 시험 점수</label><label><input type="radio" name="mc9" value="2"> 3. 키</label><label><input type="radio" name="mc9" value="3"> 4. 온도</label><label><input type="radio" name="mc9" value="4"> 5. 운동 시간</label></div><button class="btn" onclick="toggleAns(&#39;mca9&#39;)">상세 풀이 보기</button><div class="answer" id="mca9"><b>정답: 1번</b><br>선호 과목은 범주를 나타내므로 질적 데이터입니다.</div></div></div>
+</section>
+<section id="life" class="card">
+<h2>🌏 실생활 관련 코드예제 5개</h2>
+<h3>예제 1. 급식 만족도 데이터 분류</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({"메뉴": ["비빔밥", "카레", "국수"], "만족도": [5, 4, 3]})
+print("정형 데이터")
+print(df.describe())</code></pre><p>메뉴는 질적 데이터, 만족도는 수치로 계산 가능한 양적 데이터입니다.</p>
+<h3>예제 2. 날씨 센서 데이터</h3><pre><code>temps = [18.2, 19.0, 21.3, 20.1]
+print("평균 기온:", sum(temps) / len(temps))</code></pre><p>센서가 직접 측정한 값이므로 1차 데이터이며, 숫자형 양적 데이터입니다.</p>
+<h3>예제 3. 공공데이터 활용 여부 표시</h3><pre><code>source = "공공데이터포털"
+kind = "2차 데이터"
+print(source, "자료는", kind, "로 볼 수 있습니다.")</code></pre><p>이미 기관이 수집해 공개한 자료는 보통 2차 데이터로 활용합니다.</p>
+<h3>예제 4. SNS 댓글 길이 분석</h3><pre><code>comments = ["좋아요", "설명이 친절해요", "다시 보고 싶어요"]
+lengths = [len(c) for c in comments]
+print(lengths)</code></pre><p>SNS 댓글은 비정형 텍스트 데이터이지만 길이처럼 수치 특징으로 변환할 수 있습니다.</p>
+<h3>예제 5. 시간 순서 미세먼지 데이터</h3><pre><code>dust = [("09:00", 35), ("10:00", 42), ("11:00", 39)]
+for time, value in dust:
+    print(time, value)</code></pre><p>시간에 따라 기록된 미세먼지 수치는 시계열 데이터입니다.</p>
+</section>
+<section id="save" class="card">
+<h2>💾 평가 점수 저장</h2>
+<div class="inputrow"><input id="studentId" placeholder="학번"><input id="studentName" placeholder="이름"></div>
+<button class="btn" onclick="gradeAll()">채점하기</button><button class="btn btn2" onclick="downloadResult()">TXT 결과 저장</button>
+<p id="scoreText" class="score">아직 채점하지 않았습니다.</p>
+<div id="detail"></div>
+</section>
+<section id="closing" class="card">
+<h2>🌙 수업을 마무리 하는 멘트</h2>
+<div class="quote">오늘 우리는 데이터가 단순한 숫자 더미가 아니라, 컴퓨터과학에서는 저장 구조와 알고리즘의 대상이고, 수학에서는 패턴과 관계를 찾는 재료이며, 과학에서는 현상을 검증하는 증거라는 사실을 배웠습니다. 동시에 인문 철학의 관점에서 데이터는 인간이 무엇을 기록하고 무엇을 잊는지에 대한 질문을 던집니다. 좋은 데이터 과학자는 데이터를 잘 다루는 사람을 넘어, 데이터 뒤에 있는 사람과 사회를 함께 생각하는 사람입니다.</div>
+</section>
+<div class="footer">© 고등학교 데이터 과학 수업자료 | 데이터21</div>
+</main></div>
+<script>
+const ox=[
+['정형 데이터는 보통 행과 열의 구조를 가진다.','O','성적표나 매출표처럼 표 구조를 가지므로 O입니다.'],
+['비정형 데이터는 항상 숫자로만 이루어진다.','X','이미지, 음성, 동영상, 자유 텍스트처럼 숫자가 아닌 경우가 많습니다.'],
+['JSON은 반정형 데이터의 예로 볼 수 있다.','O','키-값 구조라는 규칙이 있으므로 반정형 데이터입니다.'],
+['양적 데이터는 계산과 비교가 가능한 수치 데이터이다.','O','온도, 점수, 길이처럼 평균이나 합계를 구할 수 있습니다.'],
+['질적 데이터는 반드시 평균을 구해야 의미가 있다.','X','질적 데이터는 범주나 특성을 나타내므로 빈도나 비율이 더 적절할 수 있습니다.'],
+['직접 설문조사로 얻은 자료는 1차 데이터가 될 수 있다.','O','분석 목적에 맞게 직접 수집한 자료이므로 1차 데이터입니다.'],
+['공공기관이 이미 공개한 통계자료는 2차 데이터로 활용될 수 있다.','O','기존에 수집된 자료를 활용하므로 2차 데이터입니다.'],
+['시계열 데이터는 시간 순서가 중요하지 않다.','X','시계열 데이터는 시간 흐름과 순서가 핵심입니다.'],
+['SNS 댓글은 비정형 텍스트 데이터의 예이다.','O','자유롭게 작성된 문장이므로 비정형 데이터입니다.'],
+['데이터의 종류를 알면 분석 방법을 선택하는 데 도움이 된다.','O','데이터 특성에 따라 통계, 시각화, 모델링 방법이 달라집니다.']
+];
+const mc=[
+['다음 중 정형 데이터에 가장 가까운 것은?',['학생 성적표','강의 녹음 파일','풍경 사진','자유 서술형 감상문','동영상'],0,'성적표는 행과 열이 있는 표 형태입니다.'],
+['반정형 데이터의 대표 예는?',['JSON','흑백 사진','음성 녹음','손글씨 그림','동영상'],0,'JSON은 키-값 구조를 가진 반정형 데이터입니다.'],
+['비정형 데이터에 해당하지 않는 것은?',['출석부 표','SNS 댓글','사진','음성 파일','동영상'],0,'출석부 표는 정형 데이터입니다.'],
+['양적 데이터의 예로 가장 적절한 것은?',['기온','혈액형','좋아하는 색','성별 구분','지역명'],0,'기온은 숫자로 측정하고 평균을 구할 수 있습니다.'],
+['질적 데이터 분석에 자주 쓰이는 방법은?',['범주별 빈도 세기','평균 기온 계산','수치 합계 계산','표준편차만 계산','미분값 계산'],0,'질적 데이터는 범주별 빈도와 비율을 살펴보기 좋습니다.'],
+['1차 데이터에 대한 설명으로 옳은 것은?',['목적에 맞게 직접 수집한 데이터','항상 인터넷에서 내려받은 데이터','절대 오류가 없는 데이터','이미 분석된 보고서만 의미함','사진 데이터만 의미함'],0,'직접 설문, 실험, 센서 측정 등이 1차 데이터입니다.'],
+['2차 데이터의 예로 가장 적절한 것은?',['공개 통계청 자료 활용','직접 실험 측정','직접 인터뷰','학교에서 새로 실시한 설문','센서로 방금 측정한 온도'],0,'이미 기관이 수집해 공개한 자료를 활용하면 2차 데이터입니다.'],
+['시계열 데이터에서 가장 중요한 요소는?',['시간 순서','글자 색상','파일 이름 길이','작성자의 취미','압축 여부'],0,'시계열 데이터는 시간 순서에 따른 변화 분석이 핵심입니다.'],
+['데이터 종류를 구분해야 하는 이유는?',['적절한 분석 방법을 선택하기 위해','데이터를 모두 삭제하기 위해','항상 같은 그래프만 그리기 위해','개인정보를 무시하기 위해','코드를 쓰지 않기 위해'],0,'데이터 종류에 따라 전처리, 시각화, 모델링 방법이 달라집니다.'],
+['다음 중 질적 데이터에 가까운 것은?',['선호 과목','시험 점수','키','온도','운동 시간'],0,'선호 과목은 범주를 나타내므로 질적 데이터입니다.']
+];
+function render(){let h='';ox.forEach((q,i)=>{h+=`<div class="q"><b>OX ${i+1}.</b> ${q[0]}<div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><button class="btn" onclick="toggleAns('oxa${i}')">상세 풀이 보기</button><div class="answer" id="oxa${i}"><b>정답: ${q[1]}</b><br>${q[2]}</div></div>`});document.getElementById('oxBox').innerHTML=h;h='';mc.forEach((q,i)=>{h+=`<div class="q"><b>문항 ${i+1}.</b> ${q[0]}<div class="choices">`;q[1].forEach((c,j)=>h+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${c}</label>`);h+=`</div><button class="btn" onclick="toggleAns('mca${i}')">상세 풀이 보기</button><div class="answer" id="mca${i}"><b>정답: ${q[2]+1}번</b><br>${q[3]}</div></div>`});document.getElementById('mcBox').innerHTML=h}
+function toggleAns(id){const e=document.getElementById(id);e.style.display=e.style.display==='block'?'none':'block'}
+let lastScore=0,lastTotal=20,lastLines=[];
+function gradeAll(){let score=0;lastLines=[];ox.forEach((q,i)=>{const v=document.querySelector(`input[name=ox${i}]:checked`);const ok=v&&v.value===q[1];if(ok)score++;lastLines.push(`OX${i+1}: ${v?v.value:'미응답'} / 정답 ${q[1]} / ${ok?'정답':'오답'} - ${q[2]}`)});mc.forEach((q,i)=>{const v=document.querySelector(`input[name=mc${i}]:checked`);const ok=v&&Number(v.value)===q[2];if(ok)score++;lastLines.push(`선다${i+1}: ${v?Number(v.value)+1+'번':'미응답'} / 정답 ${q[2]+1}번 / ${ok?'정답':'오답'} - ${q[3]}`)});lastScore=score;document.getElementById('scoreText').textContent=`점수: ${score} / ${lastTotal}점`;document.getElementById('detail').innerHTML='<pre>'+lastLines.join('\n')+'</pre>'}
+function pad(n){return String(n).padStart(2,'0')}
+function downloadResult(){if(lastLines.length===0)gradeAll();const id=document.getElementById('studentId').value.trim()||'학번';const name=document.getElementById('studentName').value.trim()||'이름';const d=new Date();const stamp=`${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;const filename=`${id}_${name}_데이터21_${lastScore}_점수_${stamp}.txt`;const text=`2025교육과정 고등학교 데이터 과학\nⅡ. 데이터 수집 - 데이터의 종류\n학생: ${id} ${name}\n점수: ${lastScore}/${lastTotal}\n응시시각: ${stamp}\n\n[문항별 정오답 및 상세풀이]\n${lastLines.join('\n')}`;const blob=new Blob([text],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();URL.revokeObjectURL(a.href)}
+render();
+</script>
+</body></html>

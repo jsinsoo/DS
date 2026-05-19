@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0141)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터74_Matplotlib 활용_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f172a,#ef4444,#f59e0b);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#ef4444}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#dc2626;border-left:8px solid #f59e0b;padding-left:12px}h3{color:#d97706;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#fff7ed;border-left:6px solid #ef4444}
+.quote{font-size:18px;background:#fffbeb;border-left:7px solid #f59e0b;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#fee2e2;border:1px solid #fca5a5;border-radius:999px;padding:8px 13px;font-weight:700;color:#7f1d1d}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#fed7aa}
+.q{border:1px solid #fecaca;background:#fffafa;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#fee2e2}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#ef4444;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#dc2626}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터74. Matplotlib 활용</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅶ. 데이터 과학 프로그래밍 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B074_Matplotlib%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>Matplotlib은 데이터를 그래프로 표현하여 변화, 비교, 관계, 분포를 시각적으로 이해하게 하는 파이썬 시각화 도구이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터 시각화는 숫자를 그림으로 바꾸는 작업을 넘어, 데이터의 의미를 명확하고 정직하게 전달하는 과정이다.</div>
+<div class="card goal"><b>핵심 질문</b><br>어떤 그래프를 선택해야 데이터가 말하는 의미를 가장 정확하게 전달할 수 있는가?</div></div>
+<div class="flow"><span class="step">pyplot</span><span class="step">plot</span><span class="step">bar</span><span class="step">scatter</span><span class="step">hist</span><span class="step">title</span><span class="step">axis</span><span class="step">legend</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅶ. 데이터 과학 프로그래밍 - Matplotlib 활용</td></tr>
+<tr><td>수업 목표</td><td>① Matplotlib의 역할과 pyplot 사용법을 설명한다.<br>② 선그래프, 막대그래프, 산점도, 히스토그램의 용도를 구별한다.<br>③ 제목, 축 이름, 범례, 축 범위를 설정한다.<br>④ 실생활 데이터를 그래프로 표현하고 해석한다.<br>⑤ 그래프 왜곡 가능성과 시각화 윤리를 이해한다.</td></tr>
+<tr><td>지식 목표</td><td>plot, bar, scatter, hist, title, xlabel, ylabel, legend, ylim, show의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>Matplotlib으로 다양한 그래프를 만들고 그래프 요소를 설정한다.</td></tr>
+<tr><td>태도 목표</td><td>그래프를 예쁘게 만드는 것보다 정확하고 정직하게 전달하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 같은 데이터를 표와 그래프로 비교 → 전개 30분: 그래프 유형별 코드 실습 → 정리 10분: 그래프 선택과 해석 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 실생활 데이터 시각화 활동</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">숫자만 가득한 표를 보면 변화와 차이를 한눈에 파악하기 어렵습니다. 하지만 그래프로 바꾸면 증가하는 흐름, 가장 큰 값, 관계와 분포가 눈에 들어옵니다. Matplotlib은 데이터를 그림으로 번역하는 도구입니다. 인문 철학적으로 시각화는 “무엇을 보이게 할 것인가”의 선택이기도 합니다. 오늘 우리는 데이터를 잘 보이게 하되, 왜곡하지 않고 정직하게 보여 주는 방법을 배웁니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① Matplotlib</h3><p>Matplotlib은 파이썬에서 그래프를 그리는 대표적인 시각화 라이브러리이다. 데이터 분석 결과를 선, 막대, 점, 구간 분포 등 다양한 형태로 표현할 수 있다.</p>
+<h3>② pyplot</h3><p>pyplot은 Matplotlib에서 그래프를 쉽게 그리기 위한 모듈이다. 보통 <code>import matplotlib.pyplot as plt</code>로 불러온다.</p>
+<h3>③ Figure와 Axes</h3><p>Figure는 그래프가 그려지는 전체 도화지이고, Axes는 실제 그래프가 표시되는 좌표 영역이다. 기초 수업에서는 pyplot 방식으로 쉽게 시작할 수 있다.</p>
+<h3>④ 선그래프</h3><p>선그래프는 시간에 따른 변화와 추세를 표현하는 데 적합하다. 월별 매출, 일별 기온, 연도별 변화에 자주 사용된다.</p>
+<h3>⑤ 막대그래프</h3><p>막대그래프는 범주별 값의 크기를 비교할 때 사용한다. 학급별 평균, 메뉴별 투표 수, 지역별 이용자 수에 적합하다.</p>
+<h3>⑥ 산점도</h3><p>산점도는 두 수치형 변수 사이의 관계를 점으로 나타낸다. 공부 시간과 점수, 수면 시간과 집중도처럼 두 변수의 관계를 볼 수 있다.</p>
+<h3>⑦ 히스토그램</h3><p>히스토그램은 수치 데이터가 어떤 구간에 얼마나 많이 분포하는지 보여 준다. 점수 분포, 키 분포, 센서값 분포에 활용된다.</p>
+<h3>⑧ 그래프 요소</h3><p>제목, 축 이름, 범례, 눈금, 축 범위는 그래프 해석에 중요한 요소이다. 좋은 그래프는 보는 사람이 의미를 쉽게 이해할 수 있도록 돕는다.</p>
+<h3>⑨ 한글 표시</h3><p>Matplotlib에서 한글이 깨질 수 있으므로 수업 환경에 맞는 한글 폰트를 설정해야 한다. 웹 배포용 예제에서는 영어 라벨을 쓰면 오류와 경고를 줄일 수 있다.</p>
+<h3>⑩ 시각화 윤리</h3><p>그래프는 사람의 판단에 영향을 준다. 축을 과도하게 조정하거나 일부 데이터만 선택하면 오해를 만들 수 있으므로 정직한 표현이 중요하다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① pyplot 불러오기</h3><pre><code>import matplotlib.pyplot as plt
+
+print("Matplotlib is ready")</code></pre><p>Matplotlib의 pyplot 모듈을 plt라는 이름으로 불러온다.</p>
+
+<h3>② 선그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+months = [1, 2, 3, 4]
+sales = [100, 120, 150, 130]
+
+plt.plot(months, sales, marker="o")
+plt.title("Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()</code></pre><p>월별 판매량의 변화 추세를 선으로 나타낸다.</p>
+
+<h3>③ 막대그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+classes = ["A", "B", "C"]
+scores = [82, 88, 79]
+
+plt.bar(classes, scores)
+plt.title("Average Score by Class")
+plt.xlabel("Class")
+plt.ylabel("Score")
+plt.show()</code></pre><p>학급별 평균 점수를 막대로 비교한다.</p>
+
+<h3>④ 산점도</h3><pre><code>import matplotlib.pyplot as plt
+
+study = [1, 2, 3, 4, 5]
+score = [55, 65, 72, 83, 90]
+
+plt.scatter(study, score)
+plt.title("Study Time and Score")
+plt.xlabel("Study Time")
+plt.ylabel("Score")
+plt.show()</code></pre><p>공부 시간과 점수의 관계를 점으로 확인한다.</p>
+
+<h3>⑤ 히스토그램</h3><pre><code>import matplotlib.pyplot as plt
+
+scores = [60, 70, 75, 80, 85, 90, 95, 95]
+
+plt.hist(scores, bins=5)
+plt.title("Score Distribution")
+plt.xlabel("Score")
+plt.ylabel("Count")
+plt.show()</code></pre><p>점수들이 어떤 구간에 많이 분포하는지 확인한다.</p>
+
+<h3>⑥ 범례가 있는 그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+a = [10, 20, 25, 30]
+b = [8, 18, 22, 28]
+
+plt.plot(x, a, label="A")
+plt.plot(x, b, label="B")
+plt.title("A and B Comparison")
+plt.xlabel("Time")
+plt.ylabel("Value")
+plt.legend()
+plt.show()</code></pre><p>여러 선이 있을 때 범례로 각 선의 의미를 설명한다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 월별 독서량 선그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+months = ["Mar", "Apr", "May", "Jun"]
+books = [12, 18, 15, 22]
+
+plt.plot(months, books, marker="o")
+plt.title("Monthly Reading")
+plt.xlabel("Month")
+plt.ylabel("Books")
+plt.show()</code></pre><p><b>상세 설명:</b> 월별 독서량 변화 추세를 선그래프로 확인한다.</p>
+
+<h3>예제 2. 급식 메뉴 선호도 막대그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+menus = ["Rice", "Curry", "Pasta", "Soup"]
+votes = [35, 50, 42, 28]
+
+plt.bar(menus, votes)
+plt.title("Menu Preference")
+plt.xlabel("Menu")
+plt.ylabel("Votes")
+plt.show()</code></pre><p><b>상세 설명:</b> 메뉴별 투표 수처럼 범주별 크기 비교에는 막대그래프가 적합하다.</p>
+
+<h3>예제 3. 수면 시간과 집중도 산점도</h3><pre><code>import matplotlib.pyplot as plt
+
+sleep = [5, 6, 7, 8, 9]
+focus = [55, 65, 75, 82, 80]
+
+plt.scatter(sleep, focus)
+plt.title("Sleep and Focus")
+plt.xlabel("Sleep Hours")
+plt.ylabel("Focus Score")
+plt.show()</code></pre><p><b>상세 설명:</b> 두 수치형 변수의 관계를 산점도로 확인한다.</p>
+
+<h3>예제 4. 시험 점수 분포 히스토그램</h3><pre><code>import matplotlib.pyplot as plt
+
+scores = [55, 60, 65, 70, 70, 75, 80, 85, 90, 95]
+
+plt.hist(scores, bins=5)
+plt.title("Score Distribution")
+plt.xlabel("Score")
+plt.ylabel("Count")
+plt.show()</code></pre><p><b>상세 설명:</b> 점수 분포를 구간별 빈도로 확인한다.</p>
+
+<h3>예제 5. 두 반의 성장 비교</h3><pre><code>import matplotlib.pyplot as plt
+
+weeks = [1, 2, 3, 4]
+class_a = [70, 75, 80, 85]
+class_b = [72, 74, 78, 83]
+
+plt.plot(weeks, class_a, marker="o", label="Class A")
+plt.plot(weeks, class_b, marker="o", label="Class B")
+plt.title("Weekly Score Growth")
+plt.xlabel("Week")
+plt.ylabel("Score")
+plt.legend()
+plt.ylim(0, 100)
+plt.show()</code></pre><p><b>상세 설명:</b> 두 반의 점수 변화 추세를 비교한다. y축을 0~100으로 두어 과장된 해석을 줄인다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. Matplotlib은 파이썬에서 그래프와 시각화를 만들 때 자주 사용하는 라이브러리이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> Matplotlib은 선그래프, 막대그래프, 산점도, 히스토그램 등 다양한 그래프를 만들 수 있다.</div></div><div class="q"><b>OX 2. pyplot은 Matplotlib에서 그래프를 쉽게 그리기 위해 자주 사용하는 모듈이다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 보통 import matplotlib.pyplot as plt 형태로 불러와 사용한다.</div></div><div class="q"><b>OX 3. plt.plot()은 주로 선그래프를 그릴 때 사용한다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 시간에 따른 변화나 추세를 나타낼 때 plot()을 사용할 수 있다.</div></div><div class="q"><b>OX 4. plt.bar()는 산점도를 그릴 때만 사용한다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> plt.bar()는 막대그래프를 그릴 때 사용한다.</div></div><div class="q"><b>OX 5. plt.scatter()는 두 수치형 변수의 관계를 점으로 표현할 때 사용한다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 산점도는 두 변수 사이의 관계, 이상값, 군집을 살펴보는 데 유용하다.</div></div><div class="q"><b>OX 6. plt.hist()는 데이터의 분포를 히스토그램으로 나타낼 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 히스토그램은 값이 어떤 구간에 얼마나 많이 분포하는지 보여 준다.</div></div><div class="q"><b>OX 7. 그래프 제목과 축 이름은 해석에 도움이 된다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> title, xlabel, ylabel을 설정하면 그래프의 의미를 더 명확히 전달할 수 있다.</div></div><div class="q"><b>OX 8. legend는 여러 선이나 항목의 의미를 설명하는 범례이다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 여러 데이터 계열을 함께 나타낼 때 범례가 중요하다.</div></div><div class="q"><b>OX 9. 그래프의 축 범위는 해석에 전혀 영향을 주지 않는다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 축 범위가 차이를 과장하거나 축소해 보이게 할 수 있으므로 주의해야 한다.</div></div><div class="q"><b>OX 10. 데이터 시각화는 예쁘게 꾸미는 것보다 정확하고 정직하게 의미를 전달하는 것이 중요하다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 좋은 시각화는 데이터의 의미를 왜곡하지 않고 명확하게 전달해야 한다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. Matplotlib의 주요 용도는?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 파이썬에서 데이터 시각화 그래프 만들기</label><label><input type="radio" name="mc0" value="1"> 2. 컴퓨터 전원 끄기</label><label><input type="radio" name="mc0" value="2"> 3. 문서만 번역하기</label><label><input type="radio" name="mc0" value="3"> 4. 파일 압축만 하기</label><label><input type="radio" name="mc0" value="4"> 5. 인터넷 속도 높이기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> Matplotlib은 파이썬의 대표적인 시각화 라이브러리이다.</div></div><div class="q"><b>문항 2. Matplotlib pyplot을 불러오는 일반적인 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. import matplotlib.pyplot as plt</label><label><input type="radio" name="mc1" value="1"> 2. import pandas as plt</label><label><input type="radio" name="mc1" value="2"> 3. open matplotlib</label><label><input type="radio" name="mc1" value="3"> 4. use graph only</label><label><input type="radio" name="mc1" value="4"> 5. print pyplot</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 일반적으로 pyplot을 plt라는 별칭으로 불러온다.</div></div><div class="q"><b>문항 3. 시간에 따른 변화 추세를 나타내기 좋은 함수는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. plt.plot()</label><label><input type="radio" name="mc2" value="1"> 2. plt.pie()만</label><label><input type="radio" name="mc2" value="2"> 3. plt.delete()</label><label><input type="radio" name="mc2" value="3"> 4. plt.sound()</label><label><input type="radio" name="mc2" value="4"> 5. plt.input()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> plot()은 선그래프를 그려 시간 변화나 추세를 표현하기 좋다.</div></div><div class="q"><b>문항 4. 범주별 값의 크기를 비교하는 그래프 함수는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. plt.bar()</label><label><input type="radio" name="mc3" value="1"> 2. plt.scatter()만</label><label><input type="radio" name="mc3" value="2"> 3. plt.hist()만</label><label><input type="radio" name="mc3" value="3"> 4. plt.text_delete()</label><label><input type="radio" name="mc3" value="4"> 5. plt.sleep()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> bar()는 막대그래프를 만든다.</div></div><div class="q"><b>문항 5. 두 수치형 변수의 관계를 점으로 나타내는 함수는?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. plt.scatter()</label><label><input type="radio" name="mc4" value="1"> 2. plt.bar()</label><label><input type="radio" name="mc4" value="2"> 3. plt.title()</label><label><input type="radio" name="mc4" value="3"> 4. plt.xlabel()</label><label><input type="radio" name="mc4" value="4"> 5. plt.legend()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> scatter()는 산점도를 만든다.</div></div><div class="q"><b>문항 6. 값의 분포를 구간별 빈도로 나타내는 그래프는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 히스토그램</label><label><input type="radio" name="mc5" value="1"> 2. 원그래프만</label><label><input type="radio" name="mc5" value="2"> 3. 산점도만</label><label><input type="radio" name="mc5" value="3"> 4. 지도만</label><label><input type="radio" name="mc5" value="4"> 5. 문자열</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 히스토그램은 데이터 분포를 구간별 빈도로 보여 준다.</div></div><div class="q"><b>문항 7. 그래프 제목을 설정하는 함수는?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. plt.title()</label><label><input type="radio" name="mc6" value="1"> 2. plt.name()</label><label><input type="radio" name="mc6" value="2"> 3. plt.file()</label><label><input type="radio" name="mc6" value="3"> 4. plt.power()</label><label><input type="radio" name="mc6" value="4"> 5. plt.reset()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> plt.title()은 그래프 제목을 설정한다.</div></div><div class="q"><b>문항 8. x축 이름을 설정하는 함수는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. plt.xlabel()</label><label><input type="radio" name="mc7" value="1"> 2. plt.ylabel()</label><label><input type="radio" name="mc7" value="2"> 3. plt.legend()</label><label><input type="radio" name="mc7" value="3"> 4. plt.hist()</label><label><input type="radio" name="mc7" value="4"> 5. plt.show()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> plt.xlabel()은 x축 이름을 설정한다.</div></div><div class="q"><b>문항 9. 범례를 표시하는 함수는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. plt.legend()</label><label><input type="radio" name="mc8" value="1"> 2. plt.axis_delete()</label><label><input type="radio" name="mc8" value="2"> 3. plt.sound()</label><label><input type="radio" name="mc8" value="3"> 4. plt.read()</label><label><input type="radio" name="mc8" value="4"> 5. plt.save_text()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> legend()는 여러 데이터 계열의 의미를 설명한다.</div></div><div class="q"><b>문항 10. 그래프를 해석할 때 주의할 점으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 제목, 축, 단위, 범례, 축 범위를 확인한다</label><label><input type="radio" name="mc9" value="1"> 2. 색이 예쁘면 무조건 믿는다</label><label><input type="radio" name="mc9" value="2"> 3. 축 이름은 필요 없다</label><label><input type="radio" name="mc9" value="3"> 4. 데이터 출처는 중요하지 않다</label><label><input type="radio" name="mc9" value="4"> 5. 값은 보지 않는다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 그래프 해석에는 제목, 축, 단위, 범례, 축 범위 확인이 필요하다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터74_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 Matplotlib으로 데이터를 선, 막대, 점, 분포의 형태로 표현하는 방법을 배웠습니다. 컴퓨터과학은 데이터를 시각화하는 도구와 절차를 제공하고, 수학은 좌표와 축, 비율과 분포의 의미를 설명하며, 과학은 관찰 결과를 검토 가능한 그림으로 표현하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “그래프가 보여 주는 것은 데이터의 진실인가, 표현 방식이 만든 인상인가?” 좋은 데이터 과학자는 그래프를 그리는 사람을 넘어, 그래프의 의미와 한계를 함께 설명하는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터74 Matplotlib 활용</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "Matplotlib은 파이썬에서 그래프와 시각화를 만들 때 자주 사용하는 라이브러리이다.", "a": "O", "e": "Matplotlib은 선그래프, 막대그래프, 산점도, 히스토그램 등 다양한 그래프를 만들 수 있다."}, {"q": "pyplot은 Matplotlib에서 그래프를 쉽게 그리기 위해 자주 사용하는 모듈이다.", "a": "O", "e": "보통 import matplotlib.pyplot as plt 형태로 불러와 사용한다."}, {"q": "plt.plot()은 주로 선그래프를 그릴 때 사용한다.", "a": "O", "e": "시간에 따른 변화나 추세를 나타낼 때 plot()을 사용할 수 있다."}, {"q": "plt.bar()는 산점도를 그릴 때만 사용한다.", "a": "X", "e": "plt.bar()는 막대그래프를 그릴 때 사용한다."}, {"q": "plt.scatter()는 두 수치형 변수의 관계를 점으로 표현할 때 사용한다.", "a": "O", "e": "산점도는 두 변수 사이의 관계, 이상값, 군집을 살펴보는 데 유용하다."}, {"q": "plt.hist()는 데이터의 분포를 히스토그램으로 나타낼 수 있다.", "a": "O", "e": "히스토그램은 값이 어떤 구간에 얼마나 많이 분포하는지 보여 준다."}, {"q": "그래프 제목과 축 이름은 해석에 도움이 된다.", "a": "O", "e": "title, xlabel, ylabel을 설정하면 그래프의 의미를 더 명확히 전달할 수 있다."}, {"q": "legend는 여러 선이나 항목의 의미를 설명하는 범례이다.", "a": "O", "e": "여러 데이터 계열을 함께 나타낼 때 범례가 중요하다."}, {"q": "그래프의 축 범위는 해석에 전혀 영향을 주지 않는다.", "a": "X", "e": "축 범위가 차이를 과장하거나 축소해 보이게 할 수 있으므로 주의해야 한다."}, {"q": "데이터 시각화는 예쁘게 꾸미는 것보다 정확하고 정직하게 의미를 전달하는 것이 중요하다.", "a": "O", "e": "좋은 시각화는 데이터의 의미를 왜곡하지 않고 명확하게 전달해야 한다."}];
+const mcQuestions = [{"q": "Matplotlib의 주요 용도는?", "c": ["파이썬에서 데이터 시각화 그래프 만들기", "컴퓨터 전원 끄기", "문서만 번역하기", "파일 압축만 하기", "인터넷 속도 높이기"], "a": 0, "e": "Matplotlib은 파이썬의 대표적인 시각화 라이브러리이다."}, {"q": "Matplotlib pyplot을 불러오는 일반적인 코드로 적절한 것은?", "c": ["import matplotlib.pyplot as plt", "import pandas as plt", "open matplotlib", "use graph only", "print pyplot"], "a": 0, "e": "일반적으로 pyplot을 plt라는 별칭으로 불러온다."}, {"q": "시간에 따른 변화 추세를 나타내기 좋은 함수는?", "c": ["plt.plot()", "plt.pie()만", "plt.delete()", "plt.sound()", "plt.input()"], "a": 0, "e": "plot()은 선그래프를 그려 시간 변화나 추세를 표현하기 좋다."}, {"q": "범주별 값의 크기를 비교하는 그래프 함수는?", "c": ["plt.bar()", "plt.scatter()만", "plt.hist()만", "plt.text_delete()", "plt.sleep()"], "a": 0, "e": "bar()는 막대그래프를 만든다."}, {"q": "두 수치형 변수의 관계를 점으로 나타내는 함수는?", "c": ["plt.scatter()", "plt.bar()", "plt.title()", "plt.xlabel()", "plt.legend()"], "a": 0, "e": "scatter()는 산점도를 만든다."}, {"q": "값의 분포를 구간별 빈도로 나타내는 그래프는?", "c": ["히스토그램", "원그래프만", "산점도만", "지도만", "문자열"], "a": 0, "e": "히스토그램은 데이터 분포를 구간별 빈도로 보여 준다."}, {"q": "그래프 제목을 설정하는 함수는?", "c": ["plt.title()", "plt.name()", "plt.file()", "plt.power()", "plt.reset()"], "a": 0, "e": "plt.title()은 그래프 제목을 설정한다."}, {"q": "x축 이름을 설정하는 함수는?", "c": ["plt.xlabel()", "plt.ylabel()", "plt.legend()", "plt.hist()", "plt.show()"], "a": 0, "e": "plt.xlabel()은 x축 이름을 설정한다."}, {"q": "범례를 표시하는 함수는?", "c": ["plt.legend()", "plt.axis_delete()", "plt.sound()", "plt.read()", "plt.save_text()"], "a": 0, "e": "legend()는 여러 데이터 계열의 의미를 설명한다."}, {"q": "그래프를 해석할 때 주의할 점으로 적절한 것은?", "c": ["제목, 축, 단위, 범례, 축 범위를 확인한다", "색이 예쁘면 무조건 믿는다", "축 이름은 필요 없다", "데이터 출처는 중요하지 않다", "값은 보지 않는다"], "a": 0, "e": "그래프 해석에는 제목, 축, 단위, 범례, 축 범위 확인이 필요하다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅶ. 데이터 과학 프로그래밍 - Matplotlib 활용\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\nMatplotlib은 데이터를 선그래프·막대그래프·산점도·히스토그램으로 표현하여 변화, 비교, 관계, 분포를 해석하게 해 주는 도구이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터74_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

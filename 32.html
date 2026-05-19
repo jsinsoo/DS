@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!-- saved from url=(0185)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터32_표형태데이터이해_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f766e,#2563eb);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}
+header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#0f766e}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#0f766e;border-left:8px solid #2563eb;padding-left:12px}
+h3{color:#1d4ed8;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#ecfdf5;border-left:6px solid #10b981}
+.quote{font-size:18px;background:#fffbeb;border-left:7px solid #f59e0b;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#ccfbf1}
+.q{border:1px solid #99f6e4;background:#fbfffe;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#ccfbf1}
+.answer{display:none;background:#eff6ff;border-left:6px solid #3b82f6;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#0f766e;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#115e59}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;border-radius:20px;padding:4px 10px;margin:3px;font-size:13px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터32. 표 형태 데이터 이해</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅲ. 데이터 저장과 관리 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B032_%ED%91%9C%ED%98%95%ED%83%9C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>표 형태 데이터는 행과 열로 구성되어 관찰 대상과 속성을 체계적으로 표현하는 데이터 구조이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터를 표로 정리하면 비교·검색·정렬·필터링·분석이 쉬워지지만, 열의 의미와 자료형, 결측값을 정확히 이해해야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>표의 한 칸에 들어 있는 값은 어떤 대상의 어떤 속성을 말하고 있는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅲ. 데이터 저장과 관리 - 표 형태 데이터 이해</td></tr>
+<tr><td>수업 목표</td><td>① 표 형태 데이터의 행, 열, 셀, 인덱스 개념을 설명한다.<br>② 레코드와 필드의 의미를 이해한다.<br>③ 자료형과 결측값이 분석에 미치는 영향을 설명한다.<br>④ 파이썬 Pandas로 표 데이터를 생성·조회·정렬·필터링한다.<br>⑤ 표 데이터를 해석할 때 단위, 출처, 열 의미를 확인하는 태도를 기른다.</td></tr>
+<tr><td>지식 목표</td><td>행, 열, 셀, 인덱스, 레코드, 필드, 자료형, 결측값, 정렬, 필터링, 요약 통계의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>DataFrame 만들기, 열 선택, 행 선택, 조건 필터링, 정렬, 결측값 확인, 기본 통계 계산을 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>표에 담긴 데이터의 의미를 성급히 판단하지 않고, 맥락과 단위를 확인하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 출석부·성적표·시간표 사례 → 전개 30분: 표 구조와 Pandas 코드 실습 → 정리 10분: 표 해석 오류 토론 → 평가 10분: OX 및 5지선다</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 표 데이터 오류 찾기 활동</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+우리는 생활 속에서 수많은 표를 만납니다. 출석부, 성적표, 시간표, 급식표, 경기 기록표, 병원 검사 결과표가 모두 표 형태 데이터입니다.
+표는 단순히 네모 칸을 나열한 것이 아니라, 세상을 비교하고 기억하기 위해 만든 질서입니다.
+인문 철학적으로 보면 표는 복잡한 현실을 일정한 기준으로 나누어 이해하려는 인간의 사고 방식입니다.
+오늘 우리는 표의 행과 열을 읽는 법을 배우며, 숫자와 글자 뒤에 숨어 있는 의미를 정확히 해석하는 힘을 기릅니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 표 형태 데이터</h3>
+<p>표 형태 데이터는 행과 열로 구성된 데이터이다. 일반적으로 한 행은 하나의 관찰 대상이나 사건을 나타내고, 한 열은 그 대상의 속성을 나타낸다. 예를 들어 학생 성적표에서 한 행은 한 학생, 열은 이름·학번·국어·수학·과학 점수이다.</p>
+
+<h3>② 행과 레코드</h3>
+<p>행은 표에서 가로 방향의 한 줄이며, 데이터베이스에서는 레코드라고도 한다. 한 행은 하나의 대상에 대한 여러 속성 값을 묶어 표현한다. 행을 잘못 해석하면 한 사람의 정보와 여러 사람의 정보를 혼동할 수 있다.</p>
+
+<h3>③ 열과 필드</h3>
+<p>열은 표에서 세로 방향의 한 줄이며, 데이터베이스에서는 필드 또는 속성이라고도 한다. 열 이름은 데이터의 의미를 알려 주므로 분석 전에 반드시 확인해야 한다.</p>
+
+<h3>④ 셀</h3>
+<p>셀은 행과 열이 만나는 한 칸이다. 셀 하나에는 특정 대상의 특정 속성 값이 들어 있다. 예를 들어 “김데이터 학생의 수학 점수 95점”은 하나의 셀 값이다.</p>
+
+<h3>⑤ 인덱스</h3>
+<p>인덱스는 행을 구별하기 위한 이름이나 번호이다. Pandas에서는 기본적으로 0부터 시작하는 인덱스가 붙는다. 데이터베이스의 기본키와 비슷하게 행을 구분하는 데 도움을 줄 수 있지만, 항상 고유한 식별자라고 단정해서는 안 된다.</p>
+
+<h3>⑥ 자료형</h3>
+<p>자료형은 값의 종류를 뜻한다. 숫자형은 계산할 수 있고, 문자열은 글자로 처리되며, 날짜형은 시간 순서 분석에 적합하다. 숫자처럼 보여도 문자열로 저장되어 있으면 평균 계산이 되지 않을 수 있다.</p>
+
+<h3>⑦ 결측값</h3>
+<p>결측값은 비어 있는 값이다. 설문에 응답하지 않았거나, 센서가 측정하지 못했거나, 파일 변환 과정에서 값이 누락될 때 발생한다. 결측값은 평균, 합계, 비율 분석에 영향을 줄 수 있다.</p>
+
+<h3>⑧ 정렬과 필터링</h3>
+<p>정렬은 데이터를 특정 기준에 따라 순서대로 배열하는 것이고, 필터링은 조건에 맞는 행만 선택하는 것이다. 예를 들어 점수가 높은 순서로 정렬하거나, 80점 이상 학생만 골라낼 수 있다.</p>
+
+<h3>⑨ 요약 통계</h3>
+<p>요약 통계는 평균, 합계, 최댓값, 최솟값, 개수처럼 데이터를 간단히 설명하는 값이다. 표가 클수록 요약 통계는 전체 경향을 파악하는 데 유용하다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① DataFrame 만들기</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가은", "나래", "다온"],
+    "수학": [95, 82, 76],
+    "과학": [90, 88, 92]
+})
+
+print(df)</code></pre>
+<p>딕셔너리를 이용해 표 형태 데이터인 DataFrame을 만든다. 열 이름은 이름, 수학, 과학이다.</p>
+
+<h3>② 열 선택</h3>
+<pre><code>print(df["수학"])</code></pre>
+<p>수학 열만 선택한다. 하나의 열은 같은 속성에 대한 값들의 모음이다.</p>
+
+<h3>③ 행 선택</h3>
+<pre><code>print(df.loc[0])</code></pre>
+<p>인덱스가 0인 첫 번째 행을 선택한다. 한 행은 한 학생의 전체 정보를 나타낸다.</p>
+
+<h3>④ 조건 필터링</h3>
+<pre><code>high = df[df["수학"] &gt;= 80]
+print(high)</code></pre>
+<p>수학 점수가 80점 이상인 행만 선택한다. 조건에 맞는 데이터를 골라내는 필터링이다.</p>
+
+<h3>⑤ 정렬과 평균</h3>
+<pre><code>sorted_df = df.sort_values("과학", ascending=False)
+print(sorted_df)
+
+print("수학 평균:", df["수학"].mean())</code></pre>
+<p>과학 점수를 기준으로 내림차순 정렬하고, 수학 점수의 평균을 계산한다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 급식 선호도 표 데이터</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "메뉴": ["비빔밥", "카레", "김치찌개", "스파게티"],
+    "선호도": [4.5, 4.2, 3.8, 4.7]
+})
+
+print(df.sort_values("선호도", ascending=False))</code></pre>
+<p><b>상세 설명:</b> 메뉴별 선호도를 표로 만들고 선호도가 높은 순서로 정렬한다. 급식 개선 의견을 데이터로 확인할 수 있다.</p>
+
+<h3>예제 2. 출석 데이터 필터링</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가은", "나래", "다온", "라온"],
+    "상태": ["출석", "지각", "출석", "결석"]
+})
+
+late_or_absent = df[df["상태"] != "출석"]
+print(late_or_absent)</code></pre>
+<p><b>상세 설명:</b> 출석이 아닌 학생만 필터링한다. 조건 필터링은 필요한 행만 빠르게 찾을 때 유용하다.</p>
+
+<h3>예제 3. 운동 기록 요약</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "요일": ["월", "화", "수", "목", "금"],
+    "걸음수": [8200, 7600, 9100, 6500, 10000]
+})
+
+print("평균 걸음수:", df["걸음수"].mean())
+print("최대 걸음수:", df["걸음수"].max())</code></pre>
+<p><b>상세 설명:</b> 요일별 걸음수 표에서 평균과 최댓값을 계산한다. 표 데이터의 요약 통계 예이다.</p>
+
+<h3>예제 4. 결측값 있는 설문 데이터</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가은", "나래", "다온"],
+    "만족도": [5, None, 4]
+})
+
+print(df.isna().sum())</code></pre>
+<p><b>상세 설명:</b> 응답하지 않은 값이 있는지 확인한다. 결측값은 분석 전에 반드시 점검해야 한다.</p>
+
+<h3>예제 5. 열 추가로 총점 계산</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가은", "나래", "다온"],
+    "국어": [90, 85, 78],
+    "수학": [95, 80, 88]
+})
+
+df["총점"] = df["국어"] + df["수학"]
+print(df)</code></pre>
+<p><b>상세 설명:</b> 기존 열을 이용해 새로운 열을 만든다. 표 데이터는 여러 속성을 조합해 새로운 정보를 만들 수 있다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q">
+   <b>OX 1. 표 형태 데이터는 일반적으로 행과 열로 구성된다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox0" value="O"> O</label>
+   <label><input type="radio" name="ox0" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 표 형태 데이터는 행과 열을 이용해 관찰 대상과 속성을 체계적으로 표현한다.</div>
+   </div><div class="q">
+   <b>OX 2. 한 행은 보통 하나의 관찰 대상이나 사건을 나타낼 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox1" value="O"> O</label>
+   <label><input type="radio" name="ox1" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 학생 성적표에서 한 행은 한 학생의 정보를 나타낼 수 있다.</div>
+   </div><div class="q">
+   <b>OX 3. 열은 데이터의 속성 또는 필드를 나타낸다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox2" value="O"> O</label>
+   <label><input type="radio" name="ox2" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 열은 이름, 점수, 날짜처럼 같은 종류의 속성을 모은 것이다.</div>
+   </div><div class="q">
+   <b>OX 4. 셀은 행과 열이 만나는 한 칸이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox3" value="O"> O</label>
+   <label><input type="radio" name="ox3" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 셀에는 특정 대상의 특정 속성 값이 들어간다.</div>
+   </div><div class="q">
+   <b>OX 5. Pandas의 인덱스는 항상 데이터베이스의 기본키처럼 고유하고 변하지 않는다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox4" value="O"> O</label>
+   <label><input type="radio" name="ox4" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> Pandas 인덱스는 행 구분에 도움을 주지만 항상 고유한 기본키라고 볼 수는 없다.</div>
+   </div><div class="q">
+   <b>OX 6. 자료형이 잘못 지정되면 평균 계산이 어려울 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox5" value="O"> O</label>
+   <label><input type="radio" name="ox5" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 숫자가 문자열로 저장되면 수치 계산이 제대로 되지 않을 수 있다.</div>
+   </div><div class="q">
+   <b>OX 7. 결측값은 분석 결과에 영향을 줄 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox6" value="O"> O</label>
+   <label><input type="radio" name="ox6" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 결측값은 평균, 합계, 비율 계산에 영향을 미치므로 확인해야 한다.</div>
+   </div><div class="q">
+   <b>OX 8. 정렬은 조건에 맞는 행만 골라내는 작업이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox7" value="O"> O</label>
+   <label><input type="radio" name="ox7" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 정렬은 순서를 바꾸는 작업이고, 조건에 맞는 행만 고르는 것은 필터링이다.</div>
+   </div><div class="q">
+   <b>OX 9. 필터링은 조건을 만족하는 데이터만 선택하는 작업이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox8" value="O"> O</label>
+   <label><input type="radio" name="ox8" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 예를 들어 80점 이상 학생만 선택하는 것이 필터링이다.</div>
+   </div><div class="q">
+   <b>OX 10. 표 데이터를 해석할 때 열 이름, 단위, 출처를 확인하는 것이 중요하다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox9" value="O"> O</label>
+   <label><input type="radio" name="ox9" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 같은 숫자라도 단위와 맥락에 따라 의미가 달라질 수 있다.</div>
+   </div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q">
+   <b>문항 1. 표 형태 데이터의 설명으로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 행과 열로 구성되어 대상을 속성별로 표현하는 데이터</label><label><input type="radio" name="mc0" value="1"> 2. 그림만 저장하는 데이터</label><label><input type="radio" name="mc0" value="2"> 3. 소리만 저장하는 데이터</label><label><input type="radio" name="mc0" value="3"> 4. 무조건 한 줄 문자열</label><label><input type="radio" name="mc0" value="4"> 5. 컴퓨터 전원 설정</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 표 형태 데이터는 행과 열을 이용해 여러 대상과 속성을 정리한다.</div>
+   </div><div class="q">
+   <b>문항 2. 학생 성적표에서 한 행이 보통 의미하는 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 한 학생의 전체 정보</label><label><input type="radio" name="mc1" value="1"> 2. 수학 점수 열 전체</label><label><input type="radio" name="mc1" value="2"> 3. 표의 제목만</label><label><input type="radio" name="mc1" value="3"> 4. 파일 이름</label><label><input type="radio" name="mc1" value="4"> 5. 컴퓨터 이름</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 한 행은 보통 하나의 관찰 대상, 즉 한 학생의 정보를 담는다.</div>
+   </div><div class="q">
+   <b>문항 3. 열에 대한 설명으로 옳은 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 같은 속성의 값들이 모인 세로 방향 데이터</label><label><input type="radio" name="mc2" value="1"> 2. 항상 한 명의 학생 전체 정보</label><label><input type="radio" name="mc2" value="2"> 3. 표의 배경색</label><label><input type="radio" name="mc2" value="3"> 4. 파일 저장 위치</label><label><input type="radio" name="mc2" value="4"> 5. 마우스 포인터</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 열은 이름, 점수, 지역처럼 같은 종류의 속성을 나타낸다.</div>
+   </div><div class="q">
+   <b>문항 4. 셀의 의미는?</b>
+   <div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 행과 열이 만나는 한 칸의 값</label><label><input type="radio" name="mc3" value="1"> 2. 표 전체</label><label><input type="radio" name="mc3" value="2"> 3. 파일 확장자</label><label><input type="radio" name="mc3" value="3"> 4. 그래프 축 이름</label><label><input type="radio" name="mc3" value="4"> 5. 컴퓨터 암호</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 셀은 특정 행과 특정 열이 만나는 위치의 데이터 값이다.</div>
+   </div><div class="q">
+   <b>문항 5. 자료형을 확인해야 하는 이유는?</b>
+   <div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 계산과 처리 방법이 달라지기 때문에</label><label><input type="radio" name="mc4" value="1"> 2. 글자 색을 바꾸기 위해</label><label><input type="radio" name="mc4" value="2"> 3. 컴퓨터를 끄기 위해</label><label><input type="radio" name="mc4" value="3"> 4. 파일을 무조건 삭제하기 위해</label><label><input type="radio" name="mc4" value="4"> 5. 출석을 자동으로 하기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 숫자형, 문자열형, 날짜형에 따라 가능한 분석과 처리 방법이 다르다.</div>
+   </div><div class="q">
+   <b>문항 6. 결측값에 대한 설명으로 옳은 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 비어 있거나 누락된 값</label><label><input type="radio" name="mc5" value="1"> 2. 항상 0과 같은 값</label><label><input type="radio" name="mc5" value="2"> 3. 가장 큰 값</label><label><input type="radio" name="mc5" value="3"> 4. 열 이름</label><label><input type="radio" name="mc5" value="4"> 5. 정렬 기준</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 결측값은 응답 누락, 측정 실패 등으로 비어 있는 값이다.</div>
+   </div><div class="q">
+   <b>문항 7. 정렬의 예로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 점수가 높은 순서로 학생을 나열하기</label><label><input type="radio" name="mc6" value="1"> 2. 80점 이상만 고르기</label><label><input type="radio" name="mc6" value="2"> 3. 결측값 개수 세기</label><label><input type="radio" name="mc6" value="3"> 4. 열 이름 바꾸기</label><label><input type="radio" name="mc6" value="4"> 5. 데이터 출처 쓰기</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 정렬은 특정 기준에 따라 데이터의 순서를 바꾸는 작업이다.</div>
+   </div><div class="q">
+   <b>문항 8. 필터링의 예로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 수학 점수 80점 이상인 행만 선택하기</label><label><input type="radio" name="mc7" value="1"> 2. 이름순으로 전체를 나열하기</label><label><input type="radio" name="mc7" value="2"> 3. 모든 데이터를 저장하기</label><label><input type="radio" name="mc7" value="3"> 4. 글꼴 바꾸기</label><label><input type="radio" name="mc7" value="4"> 5. CSV 파일 이름 정하기</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 필터링은 조건을 만족하는 데이터만 선택하는 것이다.</div>
+   </div><div class="q">
+   <b>문항 9. Pandas에서 DataFrame은 무엇을 표현하는 데 적합한가?</b>
+   <div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 표 형태 데이터</label><label><input type="radio" name="mc8" value="1"> 2. 소리 파형만</label><label><input type="radio" name="mc8" value="2"> 3. 이미지 픽셀만</label><label><input type="radio" name="mc8" value="3"> 4. 비밀번호만</label><label><input type="radio" name="mc8" value="4"> 5. 컴퓨터 전원 상태만</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> DataFrame은 행과 열로 이루어진 표 형태 데이터를 다루는 Pandas의 핵심 구조이다.</div>
+   </div><div class="q">
+   <b>문항 10. 표 데이터를 해석할 때 가장 바람직한 태도는?</b>
+   <div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 열 이름, 단위, 출처, 결측값을 함께 확인한다</label><label><input type="radio" name="mc9" value="1"> 2. 숫자만 보고 바로 결론을 낸다</label><label><input type="radio" name="mc9" value="2"> 3. 결측값을 무조건 숨긴다</label><label><input type="radio" name="mc9" value="3"> 4. 단위를 무시한다</label><label><input type="radio" name="mc9" value="4"> 5. 열 이름을 보지 않는다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 표 데이터는 맥락과 단위를 함께 확인해야 정확히 해석할 수 있다.</div>
+   </div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터32_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 표 형태 데이터가 행과 열이라는 질서 속에서 현실을 표현한다는 것을 배웠습니다.
+컴퓨터과학은 DataFrame과 데이터베이스를 통해 표를 저장하고 처리하게 해 주고,
+수학은 평균, 합계, 비교, 비율을 통해 표의 의미를 해석하게 하며,
+과학은 데이터가 어떤 조건에서 수집되었는지 묻도록 합니다.
+그리고 인문 철학은 우리에게 말합니다.
+“표는 현실을 보여 주지만, 현실 전체를 다 담지는 못한다.”
+좋은 데이터 과학자는 표를 빠르게 계산하는 사람일 뿐 아니라, 표가 말하는 것과 말하지 못하는 것을 함께 읽는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터32 표 형태 데이터 이해</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [
+ {q:"표 형태 데이터는 일반적으로 행과 열로 구성된다.", a:"O", e:"표 형태 데이터는 행과 열을 이용해 관찰 대상과 속성을 체계적으로 표현한다."},
+ {q:"한 행은 보통 하나의 관찰 대상이나 사건을 나타낼 수 있다.", a:"O", e:"학생 성적표에서 한 행은 한 학생의 정보를 나타낼 수 있다."},
+ {q:"열은 데이터의 속성 또는 필드를 나타낸다.", a:"O", e:"열은 이름, 점수, 날짜처럼 같은 종류의 속성을 모은 것이다."},
+ {q:"셀은 행과 열이 만나는 한 칸이다.", a:"O", e:"셀에는 특정 대상의 특정 속성 값이 들어간다."},
+ {q:"Pandas의 인덱스는 항상 데이터베이스의 기본키처럼 고유하고 변하지 않는다.", a:"X", e:"Pandas 인덱스는 행 구분에 도움을 주지만 항상 고유한 기본키라고 볼 수는 없다."},
+ {q:"자료형이 잘못 지정되면 평균 계산이 어려울 수 있다.", a:"O", e:"숫자가 문자열로 저장되면 수치 계산이 제대로 되지 않을 수 있다."},
+ {q:"결측값은 분석 결과에 영향을 줄 수 있다.", a:"O", e:"결측값은 평균, 합계, 비율 계산에 영향을 미치므로 확인해야 한다."},
+ {q:"정렬은 조건에 맞는 행만 골라내는 작업이다.", a:"X", e:"정렬은 순서를 바꾸는 작업이고, 조건에 맞는 행만 고르는 것은 필터링이다."},
+ {q:"필터링은 조건을 만족하는 데이터만 선택하는 작업이다.", a:"O", e:"예를 들어 80점 이상 학생만 선택하는 것이 필터링이다."},
+ {q:"표 데이터를 해석할 때 열 이름, 단위, 출처를 확인하는 것이 중요하다.", a:"O", e:"같은 숫자라도 단위와 맥락에 따라 의미가 달라질 수 있다."}
+];
+
+const mcQuestions = [
+ {q:"표 형태 데이터의 설명으로 가장 적절한 것은?", c:["행과 열로 구성되어 대상을 속성별로 표현하는 데이터","그림만 저장하는 데이터","소리만 저장하는 데이터","무조건 한 줄 문자열","컴퓨터 전원 설정"], a:0, e:"표 형태 데이터는 행과 열을 이용해 여러 대상과 속성을 정리한다."},
+ {q:"학생 성적표에서 한 행이 보통 의미하는 것은?", c:["한 학생의 전체 정보","수학 점수 열 전체","표의 제목만","파일 이름","컴퓨터 이름"], a:0, e:"한 행은 보통 하나의 관찰 대상, 즉 한 학생의 정보를 담는다."},
+ {q:"열에 대한 설명으로 옳은 것은?", c:["같은 속성의 값들이 모인 세로 방향 데이터","항상 한 명의 학생 전체 정보","표의 배경색","파일 저장 위치","마우스 포인터"], a:0, e:"열은 이름, 점수, 지역처럼 같은 종류의 속성을 나타낸다."},
+ {q:"셀의 의미는?", c:["행과 열이 만나는 한 칸의 값","표 전체","파일 확장자","그래프 축 이름","컴퓨터 암호"], a:0, e:"셀은 특정 행과 특정 열이 만나는 위치의 데이터 값이다."},
+ {q:"자료형을 확인해야 하는 이유는?", c:["계산과 처리 방법이 달라지기 때문에","글자 색을 바꾸기 위해","컴퓨터를 끄기 위해","파일을 무조건 삭제하기 위해","출석을 자동으로 하기 위해"], a:0, e:"숫자형, 문자열형, 날짜형에 따라 가능한 분석과 처리 방법이 다르다."},
+ {q:"결측값에 대한 설명으로 옳은 것은?", c:["비어 있거나 누락된 값","항상 0과 같은 값","가장 큰 값","열 이름","정렬 기준"], a:0, e:"결측값은 응답 누락, 측정 실패 등으로 비어 있는 값이다."},
+ {q:"정렬의 예로 적절한 것은?", c:["점수가 높은 순서로 학생을 나열하기","80점 이상만 고르기","결측값 개수 세기","열 이름 바꾸기","데이터 출처 쓰기"], a:0, e:"정렬은 특정 기준에 따라 데이터의 순서를 바꾸는 작업이다."},
+ {q:"필터링의 예로 적절한 것은?", c:["수학 점수 80점 이상인 행만 선택하기","이름순으로 전체를 나열하기","모든 데이터를 저장하기","글꼴 바꾸기","CSV 파일 이름 정하기"], a:0, e:"필터링은 조건을 만족하는 데이터만 선택하는 것이다."},
+ {q:"Pandas에서 DataFrame은 무엇을 표현하는 데 적합한가?", c:["표 형태 데이터","소리 파형만","이미지 픽셀만","비밀번호만","컴퓨터 전원 상태만"], a:0, e:"DataFrame은 행과 열로 이루어진 표 형태 데이터를 다루는 Pandas의 핵심 구조이다."},
+ {q:"표 데이터를 해석할 때 가장 바람직한 태도는?", c:["열 이름, 단위, 출처, 결측값을 함께 확인한다","숫자만 보고 바로 결론을 낸다","결측값을 무조건 숨긴다","단위를 무시한다","열 이름을 보지 않는다"], a:0, e:"표 데이터는 맥락과 단위를 함께 확인해야 정확히 해석할 수 있다."}
+];
+
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q">
+   <b>OX ${i+1}. ${item.q}</b>
+   <div class="choices">
+   <label><input type="radio" name="ox${i}" value="O"> O</label>
+   <label><input type="radio" name="ox${i}" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{
+     labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;
+   });
+   area.innerHTML += `<div class="q">
+   <b>문항 ${i+1}. ${item.q}</b>
+   <div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){
+ document.getElementById("scoreText").innerText = oxScore + mcScore;
+}
+
+function showAll(cls){
+ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block");
+}
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\\n";
+ content += "Ⅲ. 데이터 저장과 관리 - 표 형태 데이터 이해\\n";
+ content += "학번: " + id + "\\n";
+ content += "이름: " + name + "\\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\\n";
+ content += "형성평가 점수: " + mcScore + " / 50\\n";
+ content += "총점: " + total + " / 100\\n";
+ content += "응시시각: " + time + "\\n";
+ content += "\\n[학습 성찰]\\n표 형태 데이터는 행과 열로 대상을 속성별로 표현하며, 자료형·결측값·단위·출처를 확인해야 정확히 해석할 수 있다.\\n";
+
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터32_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

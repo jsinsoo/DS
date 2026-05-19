@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터82_미세먼지 데이터 분석_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f172a,#64748b,#22c55e);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#64748b}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#475569;border-left:8px solid #22c55e;padding-left:12px}h3{color:#15803d;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#f1f5f9;border-left:6px solid #64748b}
+.quote{font-size:18px;background:#f0fdf4;border-left:7px solid #22c55e;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#e2e8f0;border:1px solid #94a3b8;border-radius:999px;padding:8px 13px;font-weight:700;color:#334155}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#dcfce7}
+.q{border:1px solid #cbd5e1;background:#fbfdff;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#e2e8f0}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#64748b;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#475569}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터82. 미세먼지 데이터 분석</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅷ. 실생활 데이터 프로젝트 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B082_%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>미세먼지 데이터 분석은 PM10과 PM2.5 농도를 수집·정리·시각화하여 대기질 변화와 건강 관련 의미를 해석하는 프로젝트이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>대기질 데이터는 보이지 않는 환경 위험을 수치로 드러내지만, 출처·측정 위치·기간·기준을 함께 확인해야 신뢰할 수 있다.</div>
+<div class="card goal"><b>핵심 질문</b><br>보이지 않는 공기의 위험을 데이터로 어떻게 읽고, 생활 속 의사결정에 어떻게 활용할 수 있는가?</div></div>
+<div class="flow"><span class="step">PM10</span><span class="step">PM2.5</span><span class="step">대기질 등급</span><span class="step">지역 비교</span><span class="step">시간 변화</span><span class="step">건강 행동</span><span class="step">한계</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅷ. 실생활 데이터 프로젝트 - 미세먼지 데이터 분석</td></tr>
+<tr><td>수업 목표</td><td>① PM10과 PM2.5의 의미를 설명한다.<br>② Pandas로 미세먼지 데이터를 정리하고 평균·최댓값을 계산한다.<br>③ 시간 변화, 지역별 비교, 변수 관계를 그래프로 표현한다.<br>④ 결측값과 이상값을 확인하고 해석한다.<br>⑤ 미세먼지 분석 결과를 건강 행동과 환경 문제에 연결해 설명한다.</td></tr>
+<tr><td>지식 목표</td><td>PM10, PM2.5, 대기질 등급, 단위, 결측값, 이상값, 평균, 지역 비교, 시계열, 시각화, 데이터 한계의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>Pandas 필터링·그룹화·통계 계산, Matplotlib 선그래프·막대그래프·산점도 작성, 생활 행동 판단 코드를 작성한다.</td></tr>
+<tr><td>태도 목표</td><td>환경 데이터를 건강과 사회 문제 해결에 책임 있게 활용하고, 데이터 출처와 해석의 한계를 함께 고려한다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: “오늘 체육 수업을 밖에서 해도 될까?” 질문 제시 → 전개 35분: 미세먼지 분석 코드 실습 → 정리 10분: 건강 행동과 환경 윤리 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 미세먼지 데이터 분석 미니 보고서</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">미세먼지는 눈에 잘 보이지 않지만 우리의 호흡과 생활에 직접 영향을 줍니다. 아침에 공기질을 확인하는 일은 단순한 습관이 아니라 건강을 지키는 데이터 기반 의사결정입니다. 인문 철학적으로 미세먼지 데이터 분석은 보이지 않는 위험을 사회가 어떻게 감지하고 함께 대응할 것인가의 문제입니다. 오늘 우리는 PM10과 PM2.5 데이터를 분석하며, 환경 데이터를 생활 속 판단과 책임 있는 행동으로 연결하는 방법을 배웁니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 미세먼지 데이터</h3><p>미세먼지 데이터는 대기 중에 떠다니는 작은 입자상 물질의 농도를 수치로 기록한 데이터이다. 지역, 시간, 날씨, 계절, 교통량 등에 따라 달라질 수 있다.</p>
+<h3>② PM10</h3><p>PM10은 지름이 10마이크로미터 이하인 미세먼지를 뜻한다. 대기질을 판단하는 대표적인 지표이며 단위는 보통 ㎍/㎥를 사용한다.</p>
+<h3>③ PM2.5</h3><p>PM2.5는 지름이 2.5마이크로미터 이하인 초미세먼지를 뜻한다. 입자가 더 작아 건강 영향에 주의가 필요하다.</p>
+<h3>④ 대기질 등급</h3><p>미세먼지 농도는 좋음, 보통, 나쁨, 매우 나쁨과 같은 등급으로 해석될 수 있다. 등급 기준은 기관과 지표에 따라 다를 수 있으므로 기준 확인이 필요하다.</p>
+<h3>⑤ 지역별 비교</h3><p>측정소나 지역별 평균 농도를 비교하면 어느 지역의 대기질이 상대적으로 나쁜지 파악할 수 있다. 단, 측정 위치와 기간이 다르면 해석에 주의해야 한다.</p>
+<h3>⑥ 시간 변화 분석</h3><p>시간별, 일별, 월별 미세먼지 변화를 분석하면 고농도 시간대나 계절적 패턴을 찾을 수 있다.</p>
+<h3>⑦ 결측값과 이상값</h3><p>측정기 오류, 통신 장애, 데이터 누락으로 결측값이 생길 수 있다. 매우 높은 값은 실제 고농도 현상일 수도 있고 측정 오류일 수도 있으므로 확인해야 한다.</p>
+<h3>⑧ 시각화</h3><p>선그래프는 시간 변화, 막대그래프는 지역별 비교, 산점도는 PM10과 PM2.5의 관계를 표현하는 데 유용하다.</p>
+<h3>⑨ 건강과 생활 활용</h3><p>미세먼지 분석은 야외활동 조절, 마스크 착용, 환기 계획, 학교 체육활동 결정, 환경 정책 이해에 활용될 수 있다.</p>
+<h3>⑩ 데이터 윤리와 한계</h3><p>분석 결과를 제시할 때는 데이터 출처, 측정 기간, 지역 범위, 단위, 등급 기준을 명확히 밝혀야 한다. 일부 측정소 자료만으로 전체 지역을 단정하면 안 된다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 미세먼지 DataFrame 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "date": ["2026-05-01", "2026-05-02", "2026-05-03"],
+    "region": ["Jeonju", "Jeonju", "Jeonju"],
+    "pm10": [35, 70, 45],
+    "pm25": [18, 38, 22]
+})
+
+print(df)</code></pre><p>날짜, 지역, PM10, PM2.5 데이터를 표 형태로 만든다.</p>
+
+<h3>② 요약 통계 확인</h3><pre><code>print(df[["pm10", "pm25"]].describe())</code></pre><p>미세먼지 농도의 평균, 최솟값, 최댓값 등 기본 통계를 확인한다.</p>
+
+<h3>③ 평균 미세먼지 계산</h3><pre><code>avg_pm10 = df["pm10"].mean()
+avg_pm25 = df["pm25"].mean()
+
+print("Average PM10:", avg_pm10)
+print("Average PM2.5:", avg_pm25)</code></pre><p>기간 동안의 평균 PM10과 PM2.5 농도를 계산한다.</p>
+
+<h3>④ 나쁨 수준 날짜 필터링</h3><pre><code>bad_days = df[df["pm10"] &gt;= 80]
+print(bad_days)</code></pre><p>PM10이 일정 기준 이상인 날만 선택한다. 실제 기준은 기관별 기준을 확인해야 한다.</p>
+
+<h3>⑤ PM10 변화 선그래프</h3><pre><code>import matplotlib.pyplot as plt
+
+plt.plot(df["date"], df["pm10"], marker="o")
+plt.title("PM10 Change")
+plt.xlabel("Date")
+plt.ylabel("PM10")
+plt.xticks(rotation=30)
+plt.show()</code></pre><p>날짜별 PM10 변화 추세를 선그래프로 나타낸다.</p>
+
+<h3>⑥ PM10과 PM2.5 산점도</h3><pre><code>plt.scatter(df["pm10"], df["pm25"])
+plt.title("PM10 and PM2.5")
+plt.xlabel("PM10")
+plt.ylabel("PM2.5")
+plt.show()</code></pre><p>PM10과 PM2.5가 함께 증가하는 경향이 있는지 확인한다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 일주일 평균 PM10 구하기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "day": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "pm10": [32, 45, 80, 62, 38]
+})
+
+print("average PM10:", df["pm10"].mean())</code></pre><p><b>상세 설명:</b> 일주일 PM10 평균을 계산해 전체적인 미세먼지 수준을 파악한다.</p>
+
+<h3>예제 2. 고농도 미세먼지 날짜 찾기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "day": ["Mon", "Tue", "Wed", "Thu"],
+    "pm10": [35, 90, 55, 110]
+})
+
+high_pm = df[df["pm10"] &gt;= 80]
+print(high_pm)</code></pre><p><b>상세 설명:</b> PM10이 80 이상인 날을 찾아 건강 주의가 필요한 날짜로 해석한다.</p>
+
+<h3>예제 3. 지역별 평균 PM2.5 비교</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "region": ["A", "A", "B", "B"],
+    "pm25": [20, 28, 35, 40]
+})
+
+print(df.groupby("region")["pm25"].mean())</code></pre><p><b>상세 설명:</b> 지역별 초미세먼지 평균을 비교한다.</p>
+
+<h3>예제 4. 월별 PM10 막대그래프</h3><pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "month": ["Mar", "Apr", "May", "Jun"],
+    "pm10": [55, 48, 42, 35]
+})
+
+plt.bar(df["month"], df["pm10"])
+plt.title("Monthly PM10")
+plt.xlabel("Month")
+plt.ylabel("PM10")
+plt.show()</code></pre><p><b>상세 설명:</b> 월별 PM10 평균을 막대그래프로 비교한다.</p>
+
+<h3>예제 5. PM10과 야외활동 판단</h3><pre><code>pm10 = 95
+
+if pm10 &gt;= 80:
+    print("Reduce outdoor activity")
+elif pm10 &gt;= 30:
+    print("Check air quality")
+else:
+    print("Good for outdoor activity")</code></pre><p><b>상세 설명:</b> 미세먼지 수치에 따라 야외활동 판단 메시지를 출력한다. 실제 생활에서는 공식 기준과 개인 건강 상태를 함께 고려해야 한다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 미세먼지 데이터 분석은 대기 중 입자상 물질의 농도를 이용해 대기질 상태와 변화를 해석하는 활동이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 미세먼지 데이터는 PM10, PM2.5 같은 수치를 통해 대기질 상태를 파악하게 해 준다.</div></div><div class="q"><b>OX 2. PM10은 지름이 10마이크로미터 이하인 입자상 물질을 의미한다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> PM10은 비교적 큰 미세먼지 입자를 나타내는 대표 지표이다.</div></div><div class="q"><b>OX 3. PM2.5는 PM10보다 더 작은 초미세먼지 입자를 의미한다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> PM2.5는 지름이 2.5마이크로미터 이하인 입자상 물질이다.</div></div><div class="q"><b>OX 4. 미세먼지 농도가 높을수록 항상 대기질이 좋다고 해석한다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 농도가 높을수록 대기질은 나빠지며 건강 주의가 필요하다.</div></div><div class="q"><b>OX 5. 미세먼지 데이터는 지역별 차이를 비교하는 데 활용될 수 있다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 지역별 PM10, PM2.5 평균을 비교하면 대기질 차이를 파악할 수 있다.</div></div><div class="q"><b>OX 6. 시간별 미세먼지 변화는 선그래프로 표현할 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 선그래프는 시간에 따른 농도 변화와 추세를 보여 주는 데 적합하다.</div></div><div class="q"><b>OX 7. 결측값이 있는 미세먼지 데이터는 분석 전에 확인하는 것이 좋다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 측정소 오류나 통신 문제로 결측값이 생길 수 있으므로 전처리가 필요하다.</div></div><div class="q"><b>OX 8. 미세먼지 수치와 건강 행동 지침은 아무 관련이 없다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 미세먼지 농도가 높으면 야외활동 조절, 마스크 착용, 환기 조절 등 생활 행동과 연결된다.</div></div><div class="q"><b>OX 9. 평균값만 보면 특정 시간대의 고농도 발생을 놓칠 수 있다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 평균은 전체 경향을 보여 주지만 순간적인 고농도나 이상값을 숨길 수 있다.</div></div><div class="q"><b>OX 10. 미세먼지 분석 결과를 제시할 때 데이터 출처와 측정 기간을 함께 밝히는 것이 좋다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 출처, 기간, 지역, 측정 기준을 제시해야 결과를 신뢰성 있게 해석할 수 있다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 미세먼지 데이터 분석에서 자주 쓰이는 지표가 아닌 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 키보드 밝기</label><label><input type="radio" name="mc0" value="1"> 2. PM10</label><label><input type="radio" name="mc0" value="2"> 3. PM2.5</label><label><input type="radio" name="mc0" value="3"> 4. 대기질 등급</label><label><input type="radio" name="mc0" value="4"> 5. 측정 시간</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 키보드 밝기는 대기질과 관련된 지표가 아니다.</div></div><div class="q"><b>문항 2. PM2.5에 대한 설명으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 지름 2.5마이크로미터 이하의 초미세먼지</label><label><input type="radio" name="mc1" value="1"> 2. 강수량 단위</label><label><input type="radio" name="mc1" value="2"> 3. 풍속 단위</label><label><input type="radio" name="mc1" value="3"> 4. 파일 크기</label><label><input type="radio" name="mc1" value="4"> 5. 기온 단위</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> PM2.5는 초미세먼지 지표이다.</div></div><div class="q"><b>문항 3. 시간에 따른 PM10 변화를 나타내기 좋은 그래프는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 선그래프</label><label><input type="radio" name="mc2" value="1"> 2. 원그래프만</label><label><input type="radio" name="mc2" value="2"> 3. 파일 목록</label><label><input type="radio" name="mc2" value="3"> 4. 문자열 표</label><label><input type="radio" name="mc2" value="4"> 5. 폴더 구조</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 선그래프는 시간 변화와 추세를 나타내기 좋다.</div></div><div class="q"><b>문항 4. 지역별 평균 미세먼지 농도를 비교하기 좋은 그래프는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 막대그래프</label><label><input type="radio" name="mc3" value="1"> 2. 산점도만</label><label><input type="radio" name="mc3" value="2"> 3. 원그래프만</label><label><input type="radio" name="mc3" value="3"> 4. 음악 파일</label><label><input type="radio" name="mc3" value="4"> 5. 문자열</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 막대그래프는 지역별 평균 농도 비교에 적합하다.</div></div><div class="q"><b>문항 5. Pandas에서 PM10 평균을 구하는 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. df['pm10'].mean()</label><label><input type="radio" name="mc4" value="1"> 2. df['pm10'].paint()</label><label><input type="radio" name="mc4" value="2"> 3. df.pm10.delete()</label><label><input type="radio" name="mc4" value="3"> 4. df.sleep()</label><label><input type="radio" name="mc4" value="4"> 5. df.sound()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> mean()은 평균을 계산한다.</div></div><div class="q"><b>문항 6. 미세먼지 데이터 전처리에서 확인해야 할 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 결측값과 이상값</label><label><input type="radio" name="mc5" value="1"> 2. 글꼴 색상</label><label><input type="radio" name="mc5" value="2"> 3. 마우스 속도</label><label><input type="radio" name="mc5" value="3"> 4. 배경 음악</label><label><input type="radio" name="mc5" value="4"> 5. 파일 아이콘</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 측정 오류나 누락값이 있을 수 있으므로 결측값과 이상값을 확인해야 한다.</div></div><div class="q"><b>문항 7. 미세먼지 농도가 높은 날의 생활 행동으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 야외활동을 줄이고 건강 주의 정보를 확인한다</label><label><input type="radio" name="mc6" value="1"> 2. 창문을 항상 오래 열어 둔다</label><label><input type="radio" name="mc6" value="2"> 3. 측정값을 무시한다</label><label><input type="radio" name="mc6" value="3"> 4. 데이터 출처를 삭제한다</label><label><input type="radio" name="mc6" value="4"> 5. 수치를 낮게 고친다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 고농도 미세먼지 날에는 건강 보호 행동이 필요하다.</div></div><div class="q"><b>문항 8. 미세먼지 데이터 분석에서 평균만으로 부족할 수 있는 이유는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 특정 시간의 고농도나 이상값을 놓칠 수 있기 때문</label><label><input type="radio" name="mc7" value="1"> 2. 평균은 절대 계산할 수 없기 때문</label><label><input type="radio" name="mc7" value="2"> 3. 그래프를 못 그리기 때문</label><label><input type="radio" name="mc7" value="3"> 4. 모든 값이 항상 같기 때문</label><label><input type="radio" name="mc7" value="4"> 5. 데이터가 항상 완벽하기 때문</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 평균은 대표값이지만 순간적 고농도는 따로 확인해야 한다.</div></div><div class="q"><b>문항 9. PM10과 PM2.5의 관계를 살펴보는 데 적합한 그래프는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 산점도</label><label><input type="radio" name="mc8" value="1"> 2. 막대그래프만</label><label><input type="radio" name="mc8" value="2"> 3. 원그래프만</label><label><input type="radio" name="mc8" value="3"> 4. 파일 트리</label><label><input type="radio" name="mc8" value="4"> 5. 텍스트만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 두 수치형 변수의 관계는 산점도로 볼 수 있다.</div></div><div class="q"><b>문항 10. 좋은 미세먼지 분석 보고서에 포함될 내용은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 데이터 출처, 기간, 지역, 분석 방법, 결과, 한계</label><label><input type="radio" name="mc9" value="1"> 2. 결론만 한 줄</label><label><input type="radio" name="mc9" value="2"> 3. 출처 없는 그래프</label><label><input type="radio" name="mc9" value="3"> 4. 단위 숨기기</label><label><input type="radio" name="mc9" value="4"> 5. 불리한 값 삭제</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 신뢰할 수 있는 보고서에는 근거와 한계가 포함되어야 한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터82_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 미세먼지 데이터를 통해 보이지 않는 대기질 문제를 수치와 그래프로 읽는 방법을 배웠습니다. 컴퓨터과학은 환경 데이터를 수집하고 처리하는 도구를 제공하고, 수학은 평균과 변화량, 상관관계를 설명하며, 과학은 대기 중 입자상 물질이 건강과 환경에 미치는 영향을 탐구하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “깨끗한 공기는 누구의 권리이며, 데이터는 그 권리를 지키는 데 어떻게 쓰여야 하는가?” 좋은 데이터 과학자는 미세먼지 수치를 계산하는 사람을 넘어, 그 수치가 사람의 건강과 공동체의 삶에 어떤 의미를 갖는지 설명하는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터82 미세먼지 데이터 분석</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "미세먼지 데이터 분석은 대기 중 입자상 물질의 농도를 이용해 대기질 상태와 변화를 해석하는 활동이다.", "a": "O", "e": "미세먼지 데이터는 PM10, PM2.5 같은 수치를 통해 대기질 상태를 파악하게 해 준다."}, {"q": "PM10은 지름이 10마이크로미터 이하인 입자상 물질을 의미한다.", "a": "O", "e": "PM10은 비교적 큰 미세먼지 입자를 나타내는 대표 지표이다."}, {"q": "PM2.5는 PM10보다 더 작은 초미세먼지 입자를 의미한다.", "a": "O", "e": "PM2.5는 지름이 2.5마이크로미터 이하인 입자상 물질이다."}, {"q": "미세먼지 농도가 높을수록 항상 대기질이 좋다고 해석한다.", "a": "X", "e": "농도가 높을수록 대기질은 나빠지며 건강 주의가 필요하다."}, {"q": "미세먼지 데이터는 지역별 차이를 비교하는 데 활용될 수 있다.", "a": "O", "e": "지역별 PM10, PM2.5 평균을 비교하면 대기질 차이를 파악할 수 있다."}, {"q": "시간별 미세먼지 변화는 선그래프로 표현할 수 있다.", "a": "O", "e": "선그래프는 시간에 따른 농도 변화와 추세를 보여 주는 데 적합하다."}, {"q": "결측값이 있는 미세먼지 데이터는 분석 전에 확인하는 것이 좋다.", "a": "O", "e": "측정소 오류나 통신 문제로 결측값이 생길 수 있으므로 전처리가 필요하다."}, {"q": "미세먼지 수치와 건강 행동 지침은 아무 관련이 없다.", "a": "X", "e": "미세먼지 농도가 높으면 야외활동 조절, 마스크 착용, 환기 조절 등 생활 행동과 연결된다."}, {"q": "평균값만 보면 특정 시간대의 고농도 발생을 놓칠 수 있다.", "a": "O", "e": "평균은 전체 경향을 보여 주지만 순간적인 고농도나 이상값을 숨길 수 있다."}, {"q": "미세먼지 분석 결과를 제시할 때 데이터 출처와 측정 기간을 함께 밝히는 것이 좋다.", "a": "O", "e": "출처, 기간, 지역, 측정 기준을 제시해야 결과를 신뢰성 있게 해석할 수 있다."}];
+const mcQuestions = [{"q": "미세먼지 데이터 분석에서 자주 쓰이는 지표가 아닌 것은?", "c": ["키보드 밝기", "PM10", "PM2.5", "대기질 등급", "측정 시간"], "a": 0, "e": "키보드 밝기는 대기질과 관련된 지표가 아니다."}, {"q": "PM2.5에 대한 설명으로 옳은 것은?", "c": ["지름 2.5마이크로미터 이하의 초미세먼지", "강수량 단위", "풍속 단위", "파일 크기", "기온 단위"], "a": 0, "e": "PM2.5는 초미세먼지 지표이다."}, {"q": "시간에 따른 PM10 변화를 나타내기 좋은 그래프는?", "c": ["선그래프", "원그래프만", "파일 목록", "문자열 표", "폴더 구조"], "a": 0, "e": "선그래프는 시간 변화와 추세를 나타내기 좋다."}, {"q": "지역별 평균 미세먼지 농도를 비교하기 좋은 그래프는?", "c": ["막대그래프", "산점도만", "원그래프만", "음악 파일", "문자열"], "a": 0, "e": "막대그래프는 지역별 평균 농도 비교에 적합하다."}, {"q": "Pandas에서 PM10 평균을 구하는 코드로 적절한 것은?", "c": ["df['pm10'].mean()", "df['pm10'].paint()", "df.pm10.delete()", "df.sleep()", "df.sound()"], "a": 0, "e": "mean()은 평균을 계산한다."}, {"q": "미세먼지 데이터 전처리에서 확인해야 할 것은?", "c": ["결측값과 이상값", "글꼴 색상", "마우스 속도", "배경 음악", "파일 아이콘"], "a": 0, "e": "측정 오류나 누락값이 있을 수 있으므로 결측값과 이상값을 확인해야 한다."}, {"q": "미세먼지 농도가 높은 날의 생활 행동으로 적절한 것은?", "c": ["야외활동을 줄이고 건강 주의 정보를 확인한다", "창문을 항상 오래 열어 둔다", "측정값을 무시한다", "데이터 출처를 삭제한다", "수치를 낮게 고친다"], "a": 0, "e": "고농도 미세먼지 날에는 건강 보호 행동이 필요하다."}, {"q": "미세먼지 데이터 분석에서 평균만으로 부족할 수 있는 이유는?", "c": ["특정 시간의 고농도나 이상값을 놓칠 수 있기 때문", "평균은 절대 계산할 수 없기 때문", "그래프를 못 그리기 때문", "모든 값이 항상 같기 때문", "데이터가 항상 완벽하기 때문"], "a": 0, "e": "평균은 대표값이지만 순간적 고농도는 따로 확인해야 한다."}, {"q": "PM10과 PM2.5의 관계를 살펴보는 데 적합한 그래프는?", "c": ["산점도", "막대그래프만", "원그래프만", "파일 트리", "텍스트만"], "a": 0, "e": "두 수치형 변수의 관계는 산점도로 볼 수 있다."}, {"q": "좋은 미세먼지 분석 보고서에 포함될 내용은?", "c": ["데이터 출처, 기간, 지역, 분석 방법, 결과, 한계", "결론만 한 줄", "출처 없는 그래프", "단위 숨기기", "불리한 값 삭제"], "a": 0, "e": "신뢰할 수 있는 보고서에는 근거와 한계가 포함되어야 한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅷ. 실생활 데이터 프로젝트 - 미세먼지 데이터 분석\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n미세먼지 데이터 분석은 PM10·PM2.5 농도를 정리하고 시각화하여 대기질 변화와 건강 행동의 근거를 해석하는 프로젝트이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터82_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0137)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터72_Pandas 활용_수업지도안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f172a,#10b981,#2563eb);color:white;padding:34px 46px}header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}nav a:hover{background:#10b981}
+main{padding:30px;max-width:1200px}section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#059669;border-left:8px solid #2563eb;padding-left:12px}h3{color:#1d4ed8;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}.goal{background:#ecfdf5;border-left:6px solid #10b981}
+.quote{font-size:18px;background:#eff6ff;border-left:7px solid #2563eb;padding:18px;border-radius:14px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.step{background:#d1fae5;border:1px solid #6ee7b7;border-radius:999px;padding:8px 13px;font-weight:700;color:#064e3b}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}th{background:#d1fae5}
+.q{border:1px solid #bbf7d0;background:#fbfffc;border-radius:14px;padding:16px;margin:14px 0}.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}.choices label:hover{background:#dcfce7}
+.answer{display:none;background:#eff6ff;border-left:6px solid #3b82f6;padding:12px;margin-top:10px;border-radius:10px}button{border:0;background:#10b981;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}button:hover{background:#059669}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터72. Pandas 활용</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅶ. 데이터 과학 프로그래밍 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap"><nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B072_Pandas%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav><main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid"><div class="card goal"><b>핵심 개념</b><br>Pandas는 표 형태 데이터를 읽고, 정리하고, 선택하고, 집계하여 데이터 분석의 기초를 만드는 도구이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터 과학에서 좋은 분석은 데이터를 잘 불러오고 구조를 파악하며 필요한 형태로 정리하는 과정에서 시작된다.</div>
+<div class="card goal"><b>핵심 질문</b><br>복잡한 표 데이터를 어떻게 필요한 정보로 바꾸어 분석 가능한 형태로 만들 수 있는가?</div></div>
+<div class="flow"><span class="step">Series</span><span class="step">DataFrame</span><span class="step">확인</span><span class="step">선택</span><span class="step">필터링</span><span class="step">정렬</span><span class="step">그룹화</span><span class="step">결측값</span></div>
+<table><tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅶ. 데이터 과학 프로그래밍 - Pandas 활용</td></tr>
+<tr><td>수업 목표</td><td>① Pandas의 역할과 DataFrame 구조를 설명한다.<br>② 데이터의 앞부분, 자료형, 요약 통계를 확인한다.<br>③ 열 선택, 조건 필터링, 정렬을 수행한다.<br>④ groupby로 범주별 집계를 수행한다.<br>⑤ 결측값을 확인하고 간단히 처리한다.</td></tr>
+<tr><td>지식 목표</td><td>Series, DataFrame, index, column, head, info, describe, filtering, sorting, groupby, missing value의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>DataFrame 생성, 열 선택, 조건 필터링, sort_values, groupby, isna, fillna를 활용한다.</td></tr>
+<tr><td>태도 목표</td><td>데이터를 분석하기 전에 구조와 품질을 먼저 확인하는 신중한 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 엑셀 표와 Pandas 비교 → 전개 30분: 핵심 기능 코드 실습 → 정리 10분: 데이터 정리의 중요성 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 실생활 DataFrame 분석 활동</td></tr></tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">데이터 과학자는 거대한 표 속에서 의미 있는 질문을 찾아내는 사람입니다. 하지만 표를 제대로 읽고 정리하지 못하면 좋은 분석도 시작할 수 없습니다. Pandas는 복잡한 데이터를 정돈된 표로 보고, 필요한 행과 열을 선택하고, 그룹별로 요약하게 해 주는 도구입니다. 인문 철학적으로 Pandas 활용은 혼란스러운 현실을 해석 가능한 질서로 정리하는 과정과 닮았습니다. 오늘 우리는 데이터 표를 읽는 눈과 다루는 손을 함께 기르겠습니다.</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① Pandas</h3><p>Pandas는 파이썬에서 표 형태 데이터를 다루는 대표적인 라이브러리이다. 데이터 수집, 정리, 분석, 시각화 전 단계에서 자주 사용된다.</p>
+<h3>② Series</h3><p>Series는 Pandas의 1차원 자료구조이다. 하나의 열처럼 인덱스와 값으로 구성된다.</p>
+<h3>③ DataFrame</h3><p>DataFrame은 행과 열로 이루어진 2차원 표 형태 자료구조이다. 엑셀 표나 CSV 파일과 비슷한 구조로 이해할 수 있다.</p>
+<h3>④ 데이터 확인</h3><p>데이터 분석 전에는 head(), tail(), info(), describe()를 이용해 데이터의 구조와 특징을 먼저 살펴본다.</p>
+<h3>⑤ 열 선택과 행 선택</h3><p>특정 열은 df["열이름"]으로 선택할 수 있고, 조건을 이용하면 특정 행만 필터링할 수 있다.</p>
+<h3>⑥ 조건 필터링</h3><p>조건 필터링은 특정 조건을 만족하는 행만 선택하는 방법이다. 예를 들어 점수가 80점 이상인 학생만 고를 수 있다.</p>
+<h3>⑦ 정렬</h3><p>sort_values()는 특정 열을 기준으로 데이터를 오름차순 또는 내림차순으로 정렬한다.</p>
+<h3>⑧ 그룹화</h3><p>groupby()는 범주별 평균, 합계, 개수 등을 구할 때 사용한다. 반별 평균 점수, 지역별 판매량 같은 분석에 유용하다.</p>
+<h3>⑨ 결측값 처리</h3><p>결측값은 비어 있는 값이다. isna(), fillna(), dropna()를 이용해 확인하거나 채우거나 제거할 수 있다.</p>
+<h3>⑩ CSV 입출력</h3><p>read_csv()로 CSV 파일을 읽고, to_csv()로 분석 결과를 파일로 저장할 수 있다.</p>
+</section>
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① DataFrame 만들기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가은", "나래", "다온"],
+    "점수": [85, 92, 78]
+})
+
+print(df)</code></pre><p>딕셔너리를 이용해 표 형태 DataFrame을 만든다.</p>
+
+<h3>② 데이터 구조 확인</h3><pre><code>print(df.head())
+print(df.info())
+print(df.describe())</code></pre><p>데이터 앞부분, 자료형, 요약 통계를 확인한다.</p>
+
+<h3>③ 열 선택</h3><pre><code>scores = df["점수"]
+print(scores)</code></pre><p>점수 열만 선택하여 Series로 확인한다.</p>
+
+<h3>④ 조건 필터링</h3><pre><code>high = df[df["점수"] &gt;= 80]
+print(high)</code></pre><p>점수가 80점 이상인 행만 선택한다.</p>
+
+<h3>⑤ 정렬</h3><pre><code>sorted_df = df.sort_values("점수", ascending=False)
+print(sorted_df)</code></pre><p>점수를 기준으로 내림차순 정렬한다.</p>
+
+<h3>⑥ 그룹별 평균</h3><pre><code>df = pd.DataFrame({
+    "반": ["A", "A", "B", "B"],
+    "점수": [80, 90, 70, 85]
+})
+
+print(df.groupby("반")["점수"].mean())</code></pre><p>반별 평균 점수를 구한다.</p>
+
+<h3>⑦ 결측값 처리</h3><pre><code>df = pd.DataFrame({"점수": [80, None, 90]})
+
+print(df.isna().sum())
+df["점수"] = df["점수"].fillna(df["점수"].mean())
+print(df)</code></pre><p>결측값을 평균으로 채운다.</p>
+</section>
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 학생 성적표 분석</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "name": ["A", "B", "C"],
+    "score": [85, 92, 78]
+})
+
+print("average:", df["score"].mean())
+print("max:", df["score"].max())</code></pre><p><b>상세 설명:</b> 학생 점수의 평균과 최고점을 계산한다.</p>
+
+<h3>예제 2. 80점 이상 학생 찾기</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "name": ["A", "B", "C", "D"],
+    "score": [75, 88, 91, 60]
+})
+
+result = df[df["score"] &gt;= 80]
+print(result)</code></pre><p><b>상세 설명:</b> 조건 필터링으로 80점 이상 학생만 추출한다.</p>
+
+<h3>예제 3. 상품 판매량 정렬</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "product": ["apple", "banana", "melon"],
+    "sales": [120, 90, 150]
+})
+
+print(df.sort_values("sales", ascending=False))</code></pre><p><b>상세 설명:</b> 판매량이 많은 상품부터 정렬한다.</p>
+
+<h3>예제 4. 지역별 평균 미세먼지</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "region": ["Jeonju", "Jeonju", "Iksan", "Iksan"],
+    "pm10": [35, 45, 50, 40]
+})
+
+print(df.groupby("region")["pm10"].mean())</code></pre><p><b>상세 설명:</b> 지역별 미세먼지 평균을 groupby로 계산한다.</p>
+
+<h3>예제 5. 결측값 있는 설문 데이터 처리</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "satisfaction": [5, 4, None, 3, 5]
+})
+
+df["satisfaction"] = df["satisfaction"].fillna(df["satisfaction"].mean())
+print(df)</code></pre><p><b>상세 설명:</b> 비어 있는 만족도 값을 평균으로 채워 분석 가능한 형태로 만든다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. Pandas는 표 형태 데이터를 다루는 데 자주 사용되는 파이썬 라이브러리이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> Pandas는 Series와 DataFrame을 이용해 표 형태 데이터를 효율적으로 처리한다.</div></div><div class="q"><b>OX 2. DataFrame은 행과 열로 이루어진 2차원 표 형태 자료구조이다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> DataFrame은 엑셀 표처럼 행과 열을 가진 데이터 구조이다.</div></div><div class="q"><b>OX 3. Series는 Pandas의 1차원 자료구조이다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> Series는 하나의 열처럼 인덱스와 값으로 이루어진 1차원 자료구조이다.</div></div><div class="q"><b>OX 4. df.head()는 데이터의 마지막 행만 보여 준다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> head()는 기본적으로 앞부분 5행을 보여 주며, 마지막 행 확인에는 tail()을 사용한다.</div></div><div class="q"><b>OX 5. df.info()는 열 이름, 결측값이 아닌 값의 개수, 자료형 등을 확인하는 데 유용하다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> info()는 데이터 구조와 자료형을 빠르게 파악하는 데 쓰인다.</div></div><div class="q"><b>OX 6. df.describe()는 수치형 데이터의 요약 통계를 확인하는 데 사용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> describe()는 개수, 평균, 표준편차, 최솟값, 사분위수, 최댓값 등을 보여 준다.</div></div><div class="q"><b>OX 7. 조건 필터링은 특정 조건을 만족하는 행만 선택할 때 사용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 예를 들어 df[df['점수'] &gt;= 80]처럼 조건에 맞는 행을 선택할 수 있다.</div></div><div class="q"><b>OX 8. sort_values()는 데이터를 정렬할 때 사용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 특정 열을 기준으로 오름차순이나 내림차순 정렬을 할 수 있다.</div></div><div class="q"><b>OX 9. groupby()는 그룹별 합계나 평균을 구할 때 사용할 수 없다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> groupby()는 범주별 집계에 매우 자주 사용된다.</div></div><div class="q"><b>OX 10. Pandas에서도 결측값 처리가 중요하다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 결측값은 분석 결과를 왜곡할 수 있으므로 isna(), fillna(), dropna() 등으로 처리한다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. Pandas의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 표 형태 데이터를 다루는 파이썬 라이브러리</label><label><input type="radio" name="mc0" value="1"> 2. 이미지만 편집하는 프로그램</label><label><input type="radio" name="mc0" value="2"> 3. 컴퓨터 전원을 끄는 명령</label><label><input type="radio" name="mc0" value="3"> 4. 문자열만 삭제하는 함수</label><label><input type="radio" name="mc0" value="4"> 5. 인터넷 브라우저</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> Pandas는 데이터 분석에서 표 형태 데이터를 다루는 핵심 라이브러리이다.</div></div><div class="q"><b>문항 2. DataFrame의 의미로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 행과 열로 이루어진 2차원 표 형태 자료구조</label><label><input type="radio" name="mc1" value="1"> 2. 숫자 하나만 저장하는 자료형</label><label><input type="radio" name="mc1" value="2"> 3. 조건문 이름</label><label><input type="radio" name="mc1" value="3"> 4. 그래프 제목</label><label><input type="radio" name="mc1" value="4"> 5. 파일 압축 방식</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> DataFrame은 표처럼 행과 열을 가진 자료구조이다.</div></div><div class="q"><b>문항 3. Series의 의미로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 1차원 자료구조</label><label><input type="radio" name="mc2" value="1"> 2. 3차원 지도</label><label><input type="radio" name="mc2" value="2"> 3. 반복문</label><label><input type="radio" name="mc2" value="3"> 4. 웹 주소</label><label><input type="radio" name="mc2" value="4"> 5. 컴퓨터 장치</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> Series는 하나의 열처럼 동작하는 1차원 자료구조이다.</div></div><div class="q"><b>문항 4. 데이터 앞부분을 확인하는 Pandas 함수는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. head()</label><label><input type="radio" name="mc3" value="1"> 2. tail_only()</label><label><input type="radio" name="mc3" value="2"> 3. paint()</label><label><input type="radio" name="mc3" value="3"> 4. sound()</label><label><input type="radio" name="mc3" value="4"> 5. power()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> head()는 데이터의 앞부분을 확인한다.</div></div><div class="q"><b>문항 5. 데이터의 열별 자료형과 결측 개수를 확인하는 데 유용한 함수는?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. info()</label><label><input type="radio" name="mc4" value="1"> 2. color()</label><label><input type="radio" name="mc4" value="2"> 3. sleep()</label><label><input type="radio" name="mc4" value="3"> 4. music()</label><label><input type="radio" name="mc4" value="4"> 5. print_all_only()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> info()는 열 이름, 자료형, 결측이 아닌 값의 수를 보여 준다.</div></div><div class="q"><b>문항 6. 수치형 데이터의 평균, 표준편차, 사분위수 등을 확인하는 함수는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. describe()</label><label><input type="radio" name="mc5" value="1"> 2. delete()</label><label><input type="radio" name="mc5" value="2"> 3. font()</label><label><input type="radio" name="mc5" value="3"> 4. icon()</label><label><input type="radio" name="mc5" value="4"> 5. window()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> describe()는 수치형 데이터의 요약 통계를 제공한다.</div></div><div class="q"><b>문항 7. 점수가 80점 이상인 행만 고르는 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. df[df['점수'] &gt;= 80]</label><label><input type="radio" name="mc6" value="1"> 2. df['점수'] = 80</label><label><input type="radio" name="mc6" value="2"> 3. df.sort() only</label><label><input type="radio" name="mc6" value="3"> 4. df.color('점수')</label><label><input type="radio" name="mc6" value="4"> 5. df.delete('점수')</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 조건식을 DataFrame 안에 넣으면 조건을 만족하는 행을 필터링할 수 있다.</div></div><div class="q"><b>문항 8. 특정 열 기준으로 정렬할 때 사용하는 함수는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. sort_values()</label><label><input type="radio" name="mc7" value="1"> 2. group_color()</label><label><input type="radio" name="mc7" value="2"> 3. read_sound()</label><label><input type="radio" name="mc7" value="3"> 4. input_df()</label><label><input type="radio" name="mc7" value="4"> 5. print_style()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> sort_values()는 지정한 열을 기준으로 데이터를 정렬한다.</div></div><div class="q"><b>문항 9. 반별 평균 점수를 구할 때 적절한 코드는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. df.groupby('반')['점수'].mean()</label><label><input type="radio" name="mc8" value="1"> 2. df['반'].delete()</label><label><input type="radio" name="mc8" value="2"> 3. df.mean('반') only</label><label><input type="radio" name="mc8" value="3"> 4. df.colorby('반')</label><label><input type="radio" name="mc8" value="4"> 5. df.input('점수')</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> groupby()와 mean()을 함께 사용하면 그룹별 평균을 구할 수 있다.</div></div><div class="q"><b>문항 10. 결측값 확인 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. df.isna().sum()</label><label><input type="radio" name="mc9" value="1"> 2. df.paint().sum()</label><label><input type="radio" name="mc9" value="2"> 3. df.sound()</label><label><input type="radio" name="mc9" value="3"> 4. df.reset_computer()</label><label><input type="radio" name="mc9" value="4"> 5. df.no_missing_only()</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> isna().sum()은 열별 결측값 개수를 확인한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터72_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">오늘 우리는 Pandas를 이용해 표 데이터를 만들고, 확인하고, 선택하고, 정렬하고, 그룹별로 요약하는 방법을 배웠습니다. 컴퓨터과학은 데이터를 효율적으로 처리하는 구조를 제공하고, 수학은 평균과 합계 같은 집계의 의미를 설명하며, 과학은 관찰된 데이터를 검토 가능한 형태로 정리하게 합니다. 그리고 인문 철학은 우리에게 묻습니다. “우리가 정리한 데이터의 틀은 현실을 얼마나 공정하게 담고 있는가?” 좋은 데이터 과학자는 코드를 실행하는 사람을 넘어, 데이터의 구조와 품질을 먼저 살피는 사람입니다.</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터72 Pandas 활용</footer>
+</main></div>
+<script>
+const oxQuestions = [{"q": "Pandas는 표 형태 데이터를 다루는 데 자주 사용되는 파이썬 라이브러리이다.", "a": "O", "e": "Pandas는 Series와 DataFrame을 이용해 표 형태 데이터를 효율적으로 처리한다."}, {"q": "DataFrame은 행과 열로 이루어진 2차원 표 형태 자료구조이다.", "a": "O", "e": "DataFrame은 엑셀 표처럼 행과 열을 가진 데이터 구조이다."}, {"q": "Series는 Pandas의 1차원 자료구조이다.", "a": "O", "e": "Series는 하나의 열처럼 인덱스와 값으로 이루어진 1차원 자료구조이다."}, {"q": "df.head()는 데이터의 마지막 행만 보여 준다.", "a": "X", "e": "head()는 기본적으로 앞부분 5행을 보여 주며, 마지막 행 확인에는 tail()을 사용한다."}, {"q": "df.info()는 열 이름, 결측값이 아닌 값의 개수, 자료형 등을 확인하는 데 유용하다.", "a": "O", "e": "info()는 데이터 구조와 자료형을 빠르게 파악하는 데 쓰인다."}, {"q": "df.describe()는 수치형 데이터의 요약 통계를 확인하는 데 사용할 수 있다.", "a": "O", "e": "describe()는 개수, 평균, 표준편차, 최솟값, 사분위수, 최댓값 등을 보여 준다."}, {"q": "조건 필터링은 특정 조건을 만족하는 행만 선택할 때 사용할 수 있다.", "a": "O", "e": "예를 들어 df[df['점수'] >= 80]처럼 조건에 맞는 행을 선택할 수 있다."}, {"q": "sort_values()는 데이터를 정렬할 때 사용할 수 있다.", "a": "O", "e": "특정 열을 기준으로 오름차순이나 내림차순 정렬을 할 수 있다."}, {"q": "groupby()는 그룹별 합계나 평균을 구할 때 사용할 수 없다.", "a": "X", "e": "groupby()는 범주별 집계에 매우 자주 사용된다."}, {"q": "Pandas에서도 결측값 처리가 중요하다.", "a": "O", "e": "결측값은 분석 결과를 왜곡할 수 있으므로 isna(), fillna(), dropna() 등으로 처리한다."}];
+const mcQuestions = [{"q": "Pandas의 설명으로 가장 적절한 것은?", "c": ["표 형태 데이터를 다루는 파이썬 라이브러리", "이미지만 편집하는 프로그램", "컴퓨터 전원을 끄는 명령", "문자열만 삭제하는 함수", "인터넷 브라우저"], "a": 0, "e": "Pandas는 데이터 분석에서 표 형태 데이터를 다루는 핵심 라이브러리이다."}, {"q": "DataFrame의 의미로 옳은 것은?", "c": ["행과 열로 이루어진 2차원 표 형태 자료구조", "숫자 하나만 저장하는 자료형", "조건문 이름", "그래프 제목", "파일 압축 방식"], "a": 0, "e": "DataFrame은 표처럼 행과 열을 가진 자료구조이다."}, {"q": "Series의 의미로 옳은 것은?", "c": ["1차원 자료구조", "3차원 지도", "반복문", "웹 주소", "컴퓨터 장치"], "a": 0, "e": "Series는 하나의 열처럼 동작하는 1차원 자료구조이다."}, {"q": "데이터 앞부분을 확인하는 Pandas 함수는?", "c": ["head()", "tail_only()", "paint()", "sound()", "power()"], "a": 0, "e": "head()는 데이터의 앞부분을 확인한다."}, {"q": "데이터의 열별 자료형과 결측 개수를 확인하는 데 유용한 함수는?", "c": ["info()", "color()", "sleep()", "music()", "print_all_only()"], "a": 0, "e": "info()는 열 이름, 자료형, 결측이 아닌 값의 수를 보여 준다."}, {"q": "수치형 데이터의 평균, 표준편차, 사분위수 등을 확인하는 함수는?", "c": ["describe()", "delete()", "font()", "icon()", "window()"], "a": 0, "e": "describe()는 수치형 데이터의 요약 통계를 제공한다."}, {"q": "점수가 80점 이상인 행만 고르는 코드로 적절한 것은?", "c": ["df[df['점수'] >= 80]", "df['점수'] = 80", "df.sort() only", "df.color('점수')", "df.delete('점수')"], "a": 0, "e": "조건식을 DataFrame 안에 넣으면 조건을 만족하는 행을 필터링할 수 있다."}, {"q": "특정 열 기준으로 정렬할 때 사용하는 함수는?", "c": ["sort_values()", "group_color()", "read_sound()", "input_df()", "print_style()"], "a": 0, "e": "sort_values()는 지정한 열을 기준으로 데이터를 정렬한다."}, {"q": "반별 평균 점수를 구할 때 적절한 코드는?", "c": ["df.groupby('반')['점수'].mean()", "df['반'].delete()", "df.mean('반') only", "df.colorby('반')", "df.input('점수')"], "a": 0, "e": "groupby()와 mean()을 함께 사용하면 그룹별 평균을 구할 수 있다."}, {"q": "결측값 확인 코드로 적절한 것은?", "c": ["df.isna().sum()", "df.paint().sum()", "df.sound()", "df.reset_computer()", "df.no_missing_only()"], "a": 0, "e": "isna().sum()은 열별 결측값 개수를 확인한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅶ. 데이터 과학 프로그래밍 - Pandas 활용\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\nPandas는 DataFrame을 중심으로 표 데이터를 확인·선택·필터링·정렬·집계·결측값 처리하는 데이터 과학의 핵심 도구이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터72_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>

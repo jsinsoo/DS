@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- saved from url=(0176)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터22_공공데이터활용_수업지도안</title>
+<style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f4f7fb;color:#1f2937;line-height:1.75}
+    header{background:linear-gradient(135deg,#2563eb,#14b8a6);color:white;padding:34px 46px}
+    header h1{margin:0;font-size:30px}
+    header p{margin:10px 0 0;font-size:17px;opacity:.95}
+    .wrap{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+    nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+    nav h2{font-size:18px;margin:0 0 15px}
+    nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+    nav a:hover{background:#2563eb}
+    main{padding:30px;max-width:1180px}
+    section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+    h2{color:#1d4ed8;border-left:8px solid #14b8a6;padding-left:12px}
+    h3{color:#0f766e;margin-top:26px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+    .card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+    .goal{background:#ecfeff;border-left:6px solid #06b6d4}
+    .quote{font-size:18px;background:#fffbeb;border-left:7px solid #f59e0b;padding:18px;border-radius:14px}
+    pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+    code{font-family:Consolas,monospace}
+    table{width:100%;border-collapse:collapse;margin:15px 0}
+    th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+    th{background:#e0f2fe}
+    .q{border:1px solid #dbeafe;background:#f8fbff;border-radius:14px;padding:16px;margin:14px 0}
+    .choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+    .choices label:hover{background:#eff6ff}
+    .answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+    button{border:0;background:#2563eb;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+    button:hover{background:#1d4ed8}
+    input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+    .notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+    footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+    <h1>데이터22. 공공데이터 활용</h1>
+    <p>2025교육과정 고등학교 데이터 과학 · Ⅱ. 데이터 수집 · 개념기반 목표지향 수업지도안</p>
+</header>
+<div class="wrap">
+<nav>
+    <h2>목차</h2>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+    <a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B022_%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+<main>
+
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>공공데이터는 공공기관이 생성·관리하며 국민과 사회가 함께 활용할 수 있도록 개방한 데이터이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>공공데이터는 사회 문제를 발견하고 해결하는 근거가 되지만, 출처·품질·라이선스·윤리를 함께 고려해야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>공공데이터는 누구의 것이며, 우리는 그것을 어떤 책임으로 활용해야 하는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅱ. 데이터 수집 - 공공데이터 활용</td></tr>
+<tr><td>수업 목표</td><td>① 공공데이터의 의미와 필요성을 설명한다.<br>② 공공데이터 포털, CSV, API의 차이를 이해한다.<br>③ 파이썬으로 공공데이터를 읽고 간단히 분석한다.<br>④ 공공데이터 활용 시 출처, 개인정보, 라이선스를 고려한다.</td></tr>
+<tr><td>지식 목표</td><td>공공데이터, 오픈 API, CSV, JSON, 메타데이터, 라이선스, 데이터 품질을 설명할 수 있다.</td></tr>
+<tr><td>기능 목표</td><td>CSV 파일 읽기, API 응답 구조 이해, 결측값 확인, 집계·시각화 기초를 수행할 수 있다.</td></tr>
+<tr><td>태도 목표</td><td>데이터를 공익적이고 책임 있게 활용하려는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 생활 속 공공데이터 찾기 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 윤리와 활용 가치 토론 → 평가 10분: OX 및 5지선다</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석 활동, 공공데이터 활용 아이디어 발표</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+우리가 오늘 아침 확인한 날씨, 미세먼지, 버스 도착 시간, 학교 주변 교통량은 단순한 숫자가 아닙니다.
+그 숫자들은 공공기관이 시민의 삶을 더 안전하고 편리하게 만들기 위해 모은 기록입니다.
+철학적으로 보면 공공데이터는 “공동체가 함께 남긴 기억”입니다.
+데이터를 읽는다는 것은 사회가 남긴 흔적을 해석하는 일이고, 좋은 데이터 과학자는 그 흔적을 이용해 더 공정하고 지혜로운 선택을 돕는 사람입니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 공공데이터</h3>
+<p>공공데이터는 중앙정부, 지방자치단체, 공공기관 등이 업무 수행 과정에서 생성하거나 관리하는 데이터이다. 예를 들어 기상 정보, 교통 정보, 인구 통계, 학교 현황, 대기오염 정보 등이 있다. 공공데이터는 시민, 기업, 연구자, 학생이 활용하여 새로운 서비스와 정책 아이디어를 만들 수 있다는 점에서 사회적 가치가 크다.</p>
+
+<h3>② 공공데이터 포털</h3>
+<p>공공데이터 포털은 여러 공공기관의 데이터를 한곳에서 검색하고 다운로드하거나 API로 호출할 수 있도록 제공하는 플랫폼이다. 학생들은 포털에서 데이터의 제목뿐 아니라 제공기관, 갱신 주기, 파일 형식, 활용 조건, 설명 자료를 함께 확인해야 한다.</p>
+
+<h3>③ CSV 데이터</h3>
+<p>CSV는 쉼표로 구분된 표 형식 데이터이다. 엑셀처럼 행과 열로 이루어진 데이터를 저장할 때 자주 쓰이며, 파이썬의 Pandas로 쉽게 읽고 분석할 수 있다. 다만 인코딩 문제, 결측값, 열 이름 불일치 등을 주의해야 한다.</p>
+
+<h3>④ 오픈 API</h3>
+<p>오픈 API는 사용자가 정해진 주소와 매개변수를 이용하여 실시간 또는 최신 데이터를 요청할 수 있게 해 주는 방식이다. 버스 도착 정보, 날씨 정보, 미세먼지 정보처럼 자주 바뀌는 데이터에 적합하다. API를 사용할 때는 인증키, 요청 제한, 응답 형식(JSON/XML)을 확인해야 한다.</p>
+
+<h3>⑤ 메타데이터</h3>
+<p>메타데이터는 데이터에 대한 데이터이다. 데이터의 제공기관, 생성일, 갱신일, 단위, 열의 의미, 수집 방법 등을 설명한다. 메타데이터를 확인하지 않으면 숫자의 의미를 잘못 해석할 수 있다.</p>
+
+<h3>⑥ 데이터 품질</h3>
+<p>공공데이터라고 해서 항상 완벽한 것은 아니다. 결측값, 중복값, 오래된 데이터, 단위 불일치, 오탈자 등이 있을 수 있다. 데이터 과학자는 데이터를 그대로 믿기보다 품질을 점검하고 분석 목적에 맞게 정제해야 한다.</p>
+
+<h3>⑦ 라이선스와 출처 표기</h3>
+<p>공공데이터는 개방되어 있지만 아무렇게나 사용할 수 있는 것은 아니다. 활용 조건, 저작권, 출처 표기, 상업적 이용 가능 여부를 확인해야 한다. 좋은 데이터 활용은 기술적 능력뿐 아니라 책임 있는 태도에서 시작된다.</p>
+
+<h3>⑧ 개인정보 보호</h3>
+<p>공공데이터에 개인을 식별할 수 있는 정보가 포함되어서는 안 된다. 이름, 전화번호, 주소뿐 아니라 여러 데이터를 결합했을 때 특정 개인을 추정할 수 있는 정보도 조심해야 한다. 데이터 활용의 목적이 공익적이어도 개인의 권리를 침해해서는 안 된다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① CSV 공공데이터 읽기</h3>
+<pre><code>import pandas as pd
+
+df = pd.read_csv("public_data.csv", encoding="utf-8")
+print(df.head())</code></pre>
+<p>CSV 파일을 Pandas DataFrame으로 읽어 처음 5행을 확인한다. 실제 공공데이터 파일은 인코딩이 cp949인 경우도 있으므로 오류가 나면 encoding="cp949"를 시도할 수 있다.</p>
+
+<h3>② 열 이름과 기본 정보 확인</h3>
+<pre><code>print(df.columns)
+print(df.info())</code></pre>
+<p>열 이름과 데이터 형식을 확인한다. 분석 전에 어떤 항목이 있고 숫자형·문자형이 어떻게 저장되어 있는지 파악하는 단계이다.</p>
+
+<h3>③ 결측값 확인</h3>
+<pre><code>missing = df.isna().sum()
+print(missing)</code></pre>
+<p>각 열에 비어 있는 값이 몇 개 있는지 확인한다. 결측값이 많으면 평균, 합계, 비율 계산이 왜곡될 수 있다.</p>
+
+<h3>④ 지역별 데이터 집계</h3>
+<pre><code>result = df.groupby("지역")["이용자수"].sum()
+print(result)</code></pre>
+<p>지역별 이용자 수를 합산한다. 공공시설 이용 현황, 교통량, 관광객 수 등을 지역 단위로 비교할 때 사용할 수 있다.</p>
+
+<h3>⑤ JSON 형태 API 응답 이해</h3>
+<pre><code>sample = {
+    "city": "Jeonju",
+    "temperature": 23,
+    "pm10": 35
+}
+
+print(sample["city"])
+print(sample["pm10"])</code></pre>
+<p>API 응답은 JSON 구조로 제공되는 경우가 많다. 딕셔너리의 key를 이용해 원하는 값을 꺼내는 연습이다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 지역별 도서관 이용자 수 분석</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "지역": ["전주", "익산", "군산", "전주", "익산"],
+    "도서관": ["A", "B", "C", "D", "E"],
+    "이용자수": [1200, 850, 930, 1500, 760]
+})
+
+result = df.groupby("지역")["이용자수"].sum()
+print(result)</code></pre>
+<p><b>상세 설명:</b> 지역별 공공도서관 이용자 수를 합산한다. 공공시설을 어디에 확충해야 하는지 판단할 때 근거 자료가 될 수 있다.</p>
+
+<h3>예제 2. 미세먼지 등급 분류</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "지역": ["전주", "서울", "부산", "대전"],
+    "PM10": [28, 82, 45, 110]
+})
+
+def grade(pm10):
+    if pm10 &lt;= 30:
+        return "좋음"
+    elif pm10 &lt;= 80:
+        return "보통"
+    elif pm10 &lt;= 150:
+        return "나쁨"
+    return "매우 나쁨"
+
+df["등급"] = df["PM10"].apply(grade)
+print(df)</code></pre>
+<p><b>상세 설명:</b> 미세먼지 수치를 기준에 따라 등급으로 바꾼다. 숫자를 사람이 이해하기 쉬운 정보로 변환하는 과정이다.</p>
+
+<h3>예제 3. 버스 도착 정보 구조 이해</h3>
+<pre><code>bus = [
+    {"노선": "101", "정류장": "전북과학고", "도착분": 3},
+    {"노선": "165", "정류장": "전북과학고", "도착분": 8},
+    {"노선": "970", "정류장": "전북과학고", "도착분": 15}
+]
+
+soon = [b for b in bus if b["도착분"] &lt;= 10]
+print(soon)</code></pre>
+<p><b>상세 설명:</b> API에서 받은 버스 도착 정보를 리스트와 딕셔너리 구조로 가정하고, 10분 이내 도착 버스만 필터링한다.</p>
+
+<h3>예제 4. 공공데이터 결측값 점검</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "지역": ["전주", "익산", "군산", None],
+    "강수량": [12.5, None, 5.0, 9.2]
+})
+
+print(df.isna().sum())</code></pre>
+<p><b>상세 설명:</b> 공공데이터에 비어 있는 값이 있는지 확인한다. 결측값을 점검해야 잘못된 평균이나 통계를 줄일 수 있다.</p>
+
+<h3>예제 5. 공공데이터 출처 문구 만들기</h3>
+<pre><code>agency = "공공데이터포털"
+dataset = "전국 공공도서관 이용 현황"
+year = 2026
+
+citation = f"출처: {agency}, {dataset}, {year}년 자료 활용"
+print(citation)</code></pre>
+<p><b>상세 설명:</b> 데이터 분석 결과를 발표할 때 출처를 명확히 밝히는 습관을 기른다. 출처 표기는 데이터 윤리의 기본이다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q">
+   <b>OX 1. 공공데이터는 공공기관이 생성하거나 관리하는 데이터를 말한다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox0" value="O"> O</label>
+   <label><input type="radio" name="ox0" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 공공데이터는 정부, 지방자치단체, 공공기관 등이 업무 과정에서 생성·관리하는 데이터이다.</div>
+   </div><div class="q">
+   <b>OX 2. 공공데이터는 항상 개인정보를 포함해야 가치가 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox1" value="O"> O</label>
+   <label><input type="radio" name="ox1" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 개인정보는 보호되어야 하며, 공공데이터는 개인을 식별하지 않아도 사회적 가치를 만들 수 있다.</div>
+   </div><div class="q">
+   <b>OX 3. CSV는 행과 열로 구성된 표 형식 데이터를 저장할 때 자주 사용된다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox2" value="O"> O</label>
+   <label><input type="radio" name="ox2" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> CSV는 쉼표로 값을 구분한 텍스트 파일이며 표 형식 데이터에 적합하다.</div>
+   </div><div class="q">
+   <b>OX 4. 오픈 API는 실시간으로 변하는 데이터를 요청할 때 유용하다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox3" value="O"> O</label>
+   <label><input type="radio" name="ox3" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 날씨, 버스 도착, 미세먼지처럼 계속 바뀌는 정보는 API 방식이 적합하다.</div>
+   </div><div class="q">
+   <b>OX 5. 공공데이터를 활용할 때 출처 표기는 필요 없다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox4" value="O"> O</label>
+   <label><input type="radio" name="ox4" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 출처 표기는 데이터 신뢰성과 윤리적 활용을 위해 필요하다.</div>
+   </div><div class="q">
+   <b>OX 6. 메타데이터는 데이터의 의미, 단위, 갱신일 등을 설명하는 정보이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox5" value="O"> O</label>
+   <label><input type="radio" name="ox5" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 메타데이터를 통해 데이터의 맥락과 사용 조건을 확인할 수 있다.</div>
+   </div><div class="q">
+   <b>OX 7. 공공데이터는 공개되어 있으므로 품질 검사가 필요 없다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox6" value="O"> O</label>
+   <label><input type="radio" name="ox6" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 공공데이터도 결측값, 중복값, 단위 오류, 갱신 지연이 있을 수 있다.</div>
+   </div><div class="q">
+   <b>OX 8. JSON은 API 응답 형식으로 자주 사용된다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox7" value="O"> O</label>
+   <label><input type="radio" name="ox7" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> JSON은 key-value 구조를 가지며 웹 API에서 널리 사용된다.</div>
+   </div><div class="q">
+   <b>OX 9. 데이터 활용 목적이 좋다면 개인정보 보호 원칙을 무시해도 된다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox8" value="O"> O</label>
+   <label><input type="radio" name="ox8" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 공익 목적이라도 개인의 권리와 개인정보 보호 원칙을 지켜야 한다.</div>
+   </div><div class="q">
+   <b>OX 10. 공공데이터 활용은 교통, 환경, 복지, 교육 등 다양한 사회 문제 해결에 도움을 줄 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox9" value="O"> O</label>
+   <label><input type="radio" name="ox9" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 공공데이터는 정책 설계, 서비스 개선, 연구, 시민 참여에 활용될 수 있다.</div>
+   </div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q">
+   <b>문항 1. 공공데이터에 대한 설명으로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 개인이 비밀로 관리하는 사진</label><label><input type="radio" name="mc0" value="1"> 2. 공공기관이 생성·관리하고 개방하는 데이터</label><label><input type="radio" name="mc0" value="2"> 3. 컴퓨터 내부의 임시 파일</label><label><input type="radio" name="mc0" value="3"> 4. 게임 점수만 모은 데이터</label><label><input type="radio" name="mc0" value="4"> 5. 광고 회사만 사용할 수 있는 데이터</label></div>
+   <div class="answer mc"><b>정답:</b> 2번<br><b>상세풀이:</b> 공공데이터는 공공기관이 생성·관리하며 국민이 활용할 수 있도록 개방한 데이터이다.</div>
+   </div><div class="q">
+   <b>문항 2. CSV 파일의 특징으로 옳은 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 이미지만 저장한다</label><label><input type="radio" name="mc1" value="1"> 2. 쉼표 등 구분자로 표 형식 데이터를 저장한다</label><label><input type="radio" name="mc1" value="2"> 3. 반드시 비밀번호가 필요하다</label><label><input type="radio" name="mc1" value="3"> 4. 동영상 전용 형식이다</label><label><input type="radio" name="mc1" value="4"> 5. 인터넷 연결 없이는 열 수 없다</label></div>
+   <div class="answer mc"><b>정답:</b> 2번<br><b>상세풀이:</b> CSV는 행과 열 구조의 데이터를 구분자로 저장하는 텍스트 기반 형식이다.</div>
+   </div><div class="q">
+   <b>문항 3. 오픈 API를 사용할 때 가장 먼저 확인해야 할 사항으로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 글자 색</label><label><input type="radio" name="mc2" value="1"> 2. 인증키와 요청 방식</label><label><input type="radio" name="mc2" value="2"> 3. 컴퓨터 배경화면</label><label><input type="radio" name="mc2" value="3"> 4. 마우스 속도</label><label><input type="radio" name="mc2" value="4"> 5. 프린터 종류</label></div>
+   <div class="answer mc"><b>정답:</b> 2번<br><b>상세풀이:</b> API는 인증키, 요청 URL, 파라미터, 응답 형식, 호출 제한을 확인해야 한다.</div>
+   </div><div class="q">
+   <b>문항 4. 메타데이터의 예로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 데이터의 제공기관과 갱신일</label><label><input type="radio" name="mc3" value="1"> 2. 학생의 점수 자체</label><label><input type="radio" name="mc3" value="2"> 3. 버스의 현재 위치 숫자만</label><label><input type="radio" name="mc3" value="3"> 4. 그래프의 색깔만</label><label><input type="radio" name="mc3" value="4"> 5. 파일을 삭제하는 명령</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 메타데이터는 데이터의 출처, 갱신일, 단위, 설명 등 데이터에 관한 정보이다.</div>
+   </div><div class="q">
+   <b>문항 5. 공공데이터 품질 점검에 해당하지 않는 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 결측값 확인</label><label><input type="radio" name="mc4" value="1"> 2. 중복값 확인</label><label><input type="radio" name="mc4" value="2"> 3. 단위 확인</label><label><input type="radio" name="mc4" value="3"> 4. 갱신일 확인</label><label><input type="radio" name="mc4" value="4"> 5. 출처를 숨기기</label></div>
+   <div class="answer mc"><b>정답:</b> 5번<br><b>상세풀이:</b> 출처를 숨기는 것은 품질 점검이 아니라 비윤리적 활용에 가깝다.</div>
+   </div><div class="q">
+   <b>문항 6. 다음 중 공공데이터 활용 사례로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 근거 없이 소문 퍼뜨리기</label><label><input type="radio" name="mc5" value="1"> 2. 미세먼지 데이터를 활용한 건강 주의 알림</label><label><input type="radio" name="mc5" value="2"> 3. 개인정보 무단 공개</label><label><input type="radio" name="mc5" value="3"> 4. 데이터 출처 삭제</label><label><input type="radio" name="mc5" value="4"> 5. 임의로 숫자 조작</label></div>
+   <div class="answer mc"><b>정답:</b> 2번<br><b>상세풀이:</b> 환경 데이터를 이용한 건강 알림은 공익적 공공데이터 활용 사례이다.</div>
+   </div><div class="q">
+   <b>문항 7. JSON 데이터 구조를 파이썬에서 다룰 때 자주 대응되는 자료형은?</b>
+   <div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 딕셔너리</label><label><input type="radio" name="mc6" value="1"> 2. 튜플만</label><label><input type="radio" name="mc6" value="2"> 3. 이미지</label><label><input type="radio" name="mc6" value="3"> 4. 소리 파일</label><label><input type="radio" name="mc6" value="4"> 5. 주석</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> JSON의 key-value 구조는 파이썬 딕셔너리와 유사하게 다룰 수 있다.</div>
+   </div><div class="q">
+   <b>문항 8. 공공데이터 활용 시 개인정보 보호가 중요한 이유는?</b>
+   <div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 분석 속도가 느려져서</label><label><input type="radio" name="mc7" value="1"> 2. 개인의 권리와 사생활을 보호해야 하기 때문에</label><label><input type="radio" name="mc7" value="2"> 3. 파일 크기가 작아져서</label><label><input type="radio" name="mc7" value="3"> 4. 그래프가 예쁘지 않아서</label><label><input type="radio" name="mc7" value="4"> 5. 코드가 짧아지기 때문에</label></div>
+   <div class="answer mc"><b>정답:</b> 2번<br><b>상세풀이:</b> 데이터 활용은 개인의 권리와 사생활을 침해하지 않는 범위에서 이루어져야 한다.</div>
+   </div><div class="q">
+   <b>문항 9. 데이터를 분석하기 전 메타데이터를 확인해야 하는 이유는?</b>
+   <div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 숫자의 의미와 단위를 정확히 알기 위해</label><label><input type="radio" name="mc8" value="1"> 2. 컴퓨터를 끄기 위해</label><label><input type="radio" name="mc8" value="2"> 3. 글꼴을 바꾸기 위해</label><label><input type="radio" name="mc8" value="3"> 4. 파일 이름을 무조건 짧게 하기 위해</label><label><input type="radio" name="mc8" value="4"> 5. 인터넷 검색을 금지하기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 같은 숫자라도 단위와 수집 기준이 다르면 의미가 달라지므로 메타데이터 확인이 필요하다.</div>
+   </div><div class="q">
+   <b>문항 10. 책임 있는 공공데이터 활용 태도로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 출처를 밝히고 데이터 품질과 개인정보를 확인한다</label><label><input type="radio" name="mc9" value="1"> 2. 데이터를 임의로 조작한다</label><label><input type="radio" name="mc9" value="2"> 3. 불리한 결과는 숨긴다</label><label><input type="radio" name="mc9" value="3"> 4. 개인정보를 공개한다</label><label><input type="radio" name="mc9" value="4"> 5. 갱신일을 확인하지 않는다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 공공데이터 활용에는 출처 표기, 품질 점검, 개인정보 보호, 윤리적 해석이 필요하다.</div>
+   </div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터22_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 공공데이터를 단순한 파일이나 숫자가 아니라 사회를 이해하는 창으로 바라보았습니다.
+컴퓨터과학은 데이터를 수집하고 처리하는 방법을 제공하고, 수학은 그 안의 패턴과 관계를 설명하며,
+과학은 관찰과 검증의 태도를 가르쳐 줍니다.
+그리고 인문 철학은 우리에게 묻습니다.
+“이 데이터는 누구를 위한 것인가? 이 분석은 더 나은 공동체를 만드는가?”
+데이터 과학은 기술의 문제가 아니라 인간과 사회를 더 깊이 이해하려는 지적 활동입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터22 공공데이터 활용</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [
+ {q:"공공데이터는 공공기관이 생성하거나 관리하는 데이터를 말한다.", a:"O", e:"공공데이터는 정부, 지방자치단체, 공공기관 등이 업무 과정에서 생성·관리하는 데이터이다."},
+ {q:"공공데이터는 항상 개인정보를 포함해야 가치가 있다.", a:"X", e:"개인정보는 보호되어야 하며, 공공데이터는 개인을 식별하지 않아도 사회적 가치를 만들 수 있다."},
+ {q:"CSV는 행과 열로 구성된 표 형식 데이터를 저장할 때 자주 사용된다.", a:"O", e:"CSV는 쉼표로 값을 구분한 텍스트 파일이며 표 형식 데이터에 적합하다."},
+ {q:"오픈 API는 실시간으로 변하는 데이터를 요청할 때 유용하다.", a:"O", e:"날씨, 버스 도착, 미세먼지처럼 계속 바뀌는 정보는 API 방식이 적합하다."},
+ {q:"공공데이터를 활용할 때 출처 표기는 필요 없다.", a:"X", e:"출처 표기는 데이터 신뢰성과 윤리적 활용을 위해 필요하다."},
+ {q:"메타데이터는 데이터의 의미, 단위, 갱신일 등을 설명하는 정보이다.", a:"O", e:"메타데이터를 통해 데이터의 맥락과 사용 조건을 확인할 수 있다."},
+ {q:"공공데이터는 공개되어 있으므로 품질 검사가 필요 없다.", a:"X", e:"공공데이터도 결측값, 중복값, 단위 오류, 갱신 지연이 있을 수 있다."},
+ {q:"JSON은 API 응답 형식으로 자주 사용된다.", a:"O", e:"JSON은 key-value 구조를 가지며 웹 API에서 널리 사용된다."},
+ {q:"데이터 활용 목적이 좋다면 개인정보 보호 원칙을 무시해도 된다.", a:"X", e:"공익 목적이라도 개인의 권리와 개인정보 보호 원칙을 지켜야 한다."},
+ {q:"공공데이터 활용은 교통, 환경, 복지, 교육 등 다양한 사회 문제 해결에 도움을 줄 수 있다.", a:"O", e:"공공데이터는 정책 설계, 서비스 개선, 연구, 시민 참여에 활용될 수 있다."}
+];
+
+const mcQuestions = [
+ {q:"공공데이터에 대한 설명으로 가장 적절한 것은?", c:["개인이 비밀로 관리하는 사진","공공기관이 생성·관리하고 개방하는 데이터","컴퓨터 내부의 임시 파일","게임 점수만 모은 데이터","광고 회사만 사용할 수 있는 데이터"], a:1, e:"공공데이터는 공공기관이 생성·관리하며 국민이 활용할 수 있도록 개방한 데이터이다."},
+ {q:"CSV 파일의 특징으로 옳은 것은?", c:["이미지만 저장한다","쉼표 등 구분자로 표 형식 데이터를 저장한다","반드시 비밀번호가 필요하다","동영상 전용 형식이다","인터넷 연결 없이는 열 수 없다"], a:1, e:"CSV는 행과 열 구조의 데이터를 구분자로 저장하는 텍스트 기반 형식이다."},
+ {q:"오픈 API를 사용할 때 가장 먼저 확인해야 할 사항으로 적절한 것은?", c:["글자 색","인증키와 요청 방식","컴퓨터 배경화면","마우스 속도","프린터 종류"], a:1, e:"API는 인증키, 요청 URL, 파라미터, 응답 형식, 호출 제한을 확인해야 한다."},
+ {q:"메타데이터의 예로 가장 적절한 것은?", c:["데이터의 제공기관과 갱신일","학생의 점수 자체","버스의 현재 위치 숫자만","그래프의 색깔만","파일을 삭제하는 명령"], a:0, e:"메타데이터는 데이터의 출처, 갱신일, 단위, 설명 등 데이터에 관한 정보이다."},
+ {q:"공공데이터 품질 점검에 해당하지 않는 것은?", c:["결측값 확인","중복값 확인","단위 확인","갱신일 확인","출처를 숨기기"], a:4, e:"출처를 숨기는 것은 품질 점검이 아니라 비윤리적 활용에 가깝다."},
+ {q:"다음 중 공공데이터 활용 사례로 가장 적절한 것은?", c:["근거 없이 소문 퍼뜨리기","미세먼지 데이터를 활용한 건강 주의 알림","개인정보 무단 공개","데이터 출처 삭제","임의로 숫자 조작"], a:1, e:"환경 데이터를 이용한 건강 알림은 공익적 공공데이터 활용 사례이다."},
+ {q:"JSON 데이터 구조를 파이썬에서 다룰 때 자주 대응되는 자료형은?", c:["딕셔너리","튜플만","이미지","소리 파일","주석"], a:0, e:"JSON의 key-value 구조는 파이썬 딕셔너리와 유사하게 다룰 수 있다."},
+ {q:"공공데이터 활용 시 개인정보 보호가 중요한 이유는?", c:["분석 속도가 느려져서","개인의 권리와 사생활을 보호해야 하기 때문에","파일 크기가 작아져서","그래프가 예쁘지 않아서","코드가 짧아지기 때문에"], a:1, e:"데이터 활용은 개인의 권리와 사생활을 침해하지 않는 범위에서 이루어져야 한다."},
+ {q:"데이터를 분석하기 전 메타데이터를 확인해야 하는 이유는?", c:["숫자의 의미와 단위를 정확히 알기 위해","컴퓨터를 끄기 위해","글꼴을 바꾸기 위해","파일 이름을 무조건 짧게 하기 위해","인터넷 검색을 금지하기 위해"], a:0, e:"같은 숫자라도 단위와 수집 기준이 다르면 의미가 달라지므로 메타데이터 확인이 필요하다."},
+ {q:"책임 있는 공공데이터 활용 태도로 가장 적절한 것은?", c:["출처를 밝히고 데이터 품질과 개인정보를 확인한다","데이터를 임의로 조작한다","불리한 결과는 숨긴다","개인정보를 공개한다","갱신일을 확인하지 않는다"], a:0, e:"공공데이터 활용에는 출처 표기, 품질 점검, 개인정보 보호, 윤리적 해석이 필요하다."}
+];
+
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q">
+   <b>OX ${i+1}. ${item.q}</b>
+   <div class="choices">
+   <label><input type="radio" name="ox${i}" value="O"> O</label>
+   <label><input type="radio" name="ox${i}" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{
+     labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;
+   });
+   area.innerHTML += `<div class="q">
+   <b>문항 ${i+1}. ${item.q}</b>
+   <div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){
+ document.getElementById("scoreText").innerText = oxScore + mcScore;
+}
+
+function showAll(cls){
+ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block");
+}
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\\n";
+ content += "Ⅱ. 데이터 수집 - 공공데이터 활용\\n";
+ content += "학번: " + id + "\\n";
+ content += "이름: " + name + "\\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\\n";
+ content += "형성평가 점수: " + mcScore + " / 50\\n";
+ content += "총점: " + total + " / 100\\n";
+ content += "응시시각: " + time + "\\n";
+ content += "\\n[학습 성찰]\\n공공데이터는 사회 문제 해결의 근거가 되며, 출처 표기·데이터 품질·개인정보 보호를 함께 고려해야 한다.\\n";
+
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터22_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데이터14_데이터의 가치와 활용</title>
+<style>
+:root{--main:#2563eb;--sub:#eef6ff;--ink:#1f2937;--soft:#f8fafc;--ok:#16a34a;--bad:#dc2626;--line:#dbeafe}
+*{box-sizing:border-box}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:var(--ink);background:linear-gradient(135deg,#f8fbff,#eef6ff)}
+header{padding:34px 42px;background:linear-gradient(135deg,#1d4ed8,#38bdf8);color:white}header h1{margin:0;font-size:30px}header p{font-size:17px;margin:10px 0 0}
+.wrap{display:grid;grid-template-columns:250px 1fr;gap:22px;padding:22px;max-width:1450px;margin:auto}.nav{position:sticky;top:15px;height:max-content;background:white;border-radius:18px;padding:16px;box-shadow:0 8px 25px #bfdbfe}.nav a{display:block;padding:12px 14px;border-radius:12px;text-decoration:none;color:#1e40af;font-weight:700;margin:5px 0}.nav a:hover{background:#dbeafe}.card{background:white;border-radius:20px;padding:26px;margin-bottom:22px;box-shadow:0 7px 20px #dbeafe}h2{color:#1d4ed8;border-left:8px solid #60a5fa;padding-left:12px}h3{color:#0f766e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.box{background:var(--soft);border:1px solid var(--line);border-radius:15px;padding:16px}.concept{background:#f0f9ff;border-left:6px solid #38bdf8}.code{background:#0f172a;color:#e5e7eb;border-radius:14px;padding:16px;white-space:pre-wrap;overflow:auto;font-family:Consolas,monospace;font-size:14px}.q{border:1px solid #dbeafe;border-radius:14px;padding:15px;margin:12px 0;background:#fbfdff}.choices label{display:block;padding:9px 11px;border-radius:10px;margin:6px 0;background:#f1f5f9;cursor:pointer}.choices label:hover{background:#dbeafe}.choices input:checked+span{font-weight:800;color:#1d4ed8}.answer{display:none;background:#ecfdf5;border-left:5px solid var(--ok);padding:10px;border-radius:10px;margin-top:8px}.wrong{background:#fef2f2;border-left-color:var(--bad)}button{border:0;border-radius:12px;padding:12px 18px;background:#2563eb;color:white;font-weight:800;cursor:pointer;margin:6px}button:hover{background:#1d4ed8}input[type=text]{padding:11px;border:1px solid #bfdbfe;border-radius:10px;margin:6px;width:180px}.score{font-size:20px;font-weight:900;color:#1d4ed8}.tag{display:inline-block;background:#dbeafe;color:#1e3a8a;padding:4px 9px;border-radius:999px;font-size:13px;font-weight:700}.footer{font-size:14px;color:#64748b;text-align:center;padding:30px}@media(max-width:850px){.wrap{grid-template-columns:1fr}.nav{position:relative}}
+</style>
+</head>
+<body>
+<header>
+<h1>2025 교육과정 고등학교 데이터 과학 · Ⅰ. 데이터 과학의 이해</h1>
+<p>주제: 데이터의 가치와 활용 — 개념기반 목표지향 수업지도안</p>
+</header>
+<div class="wrap">
+<nav class="nav">
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concepts">개념 상세 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#codes">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#life">실생활 코드 예제</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diagnosis">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#formative">형성평가</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B014_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%EA%B0%80%EC%B9%98%EC%99%80%ED%99%9C%EC%9A%A9_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">마무리 멘트</a>
+</nav>
+<main>
+<section class="card" id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="box"><h3>핵심 개념</h3><p>데이터는 단순한 숫자나 기록이 아니라, 맥락·해석·의사결정과 결합할 때 사회적·경제적·과학적 가치를 만든다.</p></div>
+<div class="box"><h3>일반화</h3><p>데이터의 가치는 수집량이 아니라 문제 해결에 적합하게 정제·분석·해석·활용되는 과정에서 형성된다.</p></div>
+<div class="box"><h3>핵심 질문</h3><p>같은 데이터라도 어떤 관점과 목적을 가지느냐에 따라 왜 서로 다른 가치가 만들어질까?</p></div>
+<div class="box"><h3>성취 목표</h3><p>학생은 데이터의 가치 창출 과정을 설명하고, 실생활 문제에서 데이터 활용 방안을 설계할 수 있다.</p></div>
+</div>
+<h3>수업 흐름</h3>
+<ol>
+<li>도입: 스마트폰 추천, 교통 앱, 건강 앱 사례로 데이터 가치 질문 제기</li>
+<li>전개 1: 데이터 가치의 의미, 정제, 분석, 시각화, 의사결정 개념 학습</li>
+<li>전개 2: 공공·과학·산업·인문사회 문제 해결 사례 탐구</li>
+<li>실습: 파이썬으로 간단한 데이터 분석과 가치 발견 활동</li>
+<li>평가: OX 진단평가와 5지선다 형성평가 자동 채점</li>
+<li>정리: 인간 중심 데이터 활용과 윤리적 책임 토론</li>
+</ol>
+<h3>목표 체계</h3>
+<div class="grid">
+<div class="box"><b>지식 목표</b><br>데이터 가치, 활용, 의사결정, 데이터 기반 문제 해결의 의미를 설명한다.</div>
+<div class="box"><b>기능 목표</b><br>간단한 데이터를 파이썬으로 처리하여 의미 있는 정보를 도출한다.</div>
+<div class="box"><b>태도 목표</b><br>데이터 활용의 편리함과 함께 개인정보, 편향, 책임의 문제를 성찰한다.</div>
+</div>
+</section>
+
+<section class="card" id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<p>여러분이 아침에 날씨 앱을 보고 우산을 챙기고, 지도 앱을 보고 빠른 길을 선택하며, 음악 앱의 추천을 따라 새로운 노래를 듣는 순간마다 데이터는 조용히 우리의 삶을 바꾸고 있습니다. 그런데 여기서 중요한 질문이 생깁니다. 데이터는 정말 객관적인 사실일까요, 아니면 인간이 어떤 질문을 던지고 어떤 기준으로 해석하느냐에 따라 달라지는 또 하나의 ‘세계 읽기’일까요?</p>
+<p>철학적으로 보면 데이터는 세상을 바라보는 하나의 렌즈입니다. 같은 기록이라도 어떤 사람에게는 단순한 숫자이고, 어떤 사람에게는 생명을 구하는 단서이며, 어떤 사회에는 더 공정한 정책을 설계하는 근거가 됩니다. 오늘 수업에서는 데이터가 어떻게 가치가 되고, 그 가치를 어떻게 책임 있게 활용해야 하는지 함께 탐구하겠습니다.</p>
+</section>
+
+<section class="card" id="concepts">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+<div class="box concept"><h3>① 데이터의 가치</h3><p>데이터의 가치는 데이터 자체가 가진 양이나 형식만으로 결정되지 않는다. 데이터가 어떤 문제를 해결하는 데 사용되는지, 얼마나 신뢰할 수 있는지, 어떤 맥락에서 해석되는지에 따라 가치가 달라진다. 예를 들어 기온 데이터는 단순한 숫자이지만, 농업에서는 작물 관리, 보건에서는 폭염 대응, 에너지 분야에서는 전력 수요 예측에 활용될 수 있다.</p></div>
+<div class="box concept"><h3>② 데이터 활용</h3><p>데이터 활용은 수집된 데이터를 정리하고 분석하여 새로운 판단이나 행동으로 연결하는 과정이다. 데이터 활용은 기업의 마케팅뿐 아니라 학교 교육, 의료 진단, 환경 보호, 교통 안전, 과학 연구 등 다양한 분야에서 이루어진다.</p></div>
+<div class="box concept"><h3>③ 가치 창출 과정</h3><p>데이터는 수집 → 정제 → 분석 → 해석 → 시각화 → 의사결정 → 행동의 과정을 거치며 가치를 만든다. 이 과정에서 잘못된 데이터나 편향된 해석이 들어가면 잘못된 결론으로 이어질 수 있으므로 검증이 필요하다.</p></div>
+<div class="box concept"><h3>④ 데이터 기반 의사결정</h3><p>데이터 기반 의사결정은 직관이나 경험만이 아니라 실제 데이터 분석 결과를 근거로 선택하는 방식이다. 하지만 데이터가 항상 완전한 것은 아니므로 인간의 판단, 윤리, 맥락 이해가 함께 필요하다.</p></div>
+<div class="box concept"><h3>⑤ 공공 데이터와 사회 문제 해결</h3><p>공공 데이터는 정부와 공공기관이 제공하는 교통, 기상, 환경, 인구, 안전 관련 데이터이다. 이러한 데이터는 시민 편의 서비스, 재난 대응, 지역 정책 수립, 환경 문제 해결에 활용될 수 있다.</p></div>
+<div class="box concept"><h3>⑥ 데이터 윤리</h3><p>데이터를 활용할 때는 개인정보 보호, 알고리즘 편향, 차별, 투명성, 책임성이 중요하다. 데이터의 가치가 커질수록 그 활용이 인간의 존엄성과 공동체의 공정성을 해치지 않도록 관리해야 한다.</p></div>
+</section>
+
+<section class="card" id="codes">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 데이터의 가치를 평균으로 발견하기</h3><div class="code">scores = [82, 91, 77, 88, 95]
+average = sum(scores) / len(scores)
+print("평균 점수:", average)
+print("학습 수준 판단:", "우수" if average &gt;= 85 else "보충 필요")</div><p>점수 목록이라는 단순 데이터가 평균 계산을 거치면 학습 상태 판단에 활용되는 정보가 된다.</p>
+<h3>② 데이터 정제</h3><div class="code">data = [23, None, 25, 24, None, 26]
+cleaned = [x for x in data if x is not None]
+print("정제 전:", data)
+print("정제 후:", cleaned)</div><p>결측값을 제거하면 분석 가능한 데이터가 되어 더 신뢰할 수 있는 결과를 얻을 수 있다.</p>
+<h3>③ 데이터 활용과 의사결정</h3><div class="code">rain = [10, 20, 80, 60, 30]
+for i, p in enumerate(rain, 1):
+    print(i, "교시 후 우산 필요" if p &gt;= 60 else "우산 가능성 낮음")</div><p>강수확률 데이터를 기준으로 우산 준비 여부를 판단하는 예이다.</p>
+<h3>④ 공공 데이터 활용 모형</h3><div class="code">pm10 = {"전주": 42, "서울": 58, "부산": 35}
+for city, value in pm10.items():
+    grade = "나쁨" if value &gt;= 51 else "보통 이하"
+    print(city, value, grade)</div><p>지역별 미세먼지 수치를 시민 건강 정보로 바꾸는 예이다.</p>
+<h3>⑤ 데이터 윤리 점검</h3><div class="code">columns = ["이름", "나이", "성적", "주소"]
+sensitive = ["이름", "주소", "전화번호", "주민번호"]
+for c in columns:
+    print(c, "개인정보 주의" if c in sensitive else "분석 가능")</div><p>데이터 분석 전에 민감 정보를 확인하여 책임 있는 활용을 준비한다.</p>
+</section>
+
+<section class="card" id="life">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 편의점 판매 데이터로 인기 상품 찾기</h3><div class="code">sales = {"물": 35, "김밥": 48, "우유": 22, "샌드위치": 41}
+best = max(sales, key=sales.get)
+print("가장 많이 팔린 상품:", best)
+print("판매량:", sales[best])</div><p><b>설명:</b> 상품별 판매량을 비교하면 발주량 조절과 진열 전략에 활용할 수 있다.</p>
+<h3>예제 2. 학교 도서관 대출 데이터 분석</h3><div class="code">books = ["과학", "문학", "과학", "역사", "과학", "문학"]
+count = {}
+for b in books:
+    count[b] = count.get(b, 0) + 1
+print(count)</div><p><b>설명:</b> 대출 분야를 분석하면 학생 관심 분야에 맞춘 도서 구입에 활용할 수 있다.</p>
+<h3>예제 3. 운동 기록으로 건강 상태 확인</h3><div class="code">steps = [4200, 7600, 8300, 5100, 10000]
+avg = sum(steps) / len(steps)
+print("평균 걸음 수:", avg)
+print("활동 수준:", "활동적" if avg &gt;= 7000 else "운동 증가 필요")</div><p><b>설명:</b> 개인 활동 데이터를 이용해 건강 습관을 점검할 수 있다.</p>
+<h3>예제 4. 전기 사용량으로 절약 필요일 찾기</h3><div class="code">usage = [12, 15, 21, 19, 25, 14]
+for day, u in enumerate(usage, 1):
+    if u &gt;= 20:
+        print(day, "일: 절약 필요")</div><p><b>설명:</b> 에너지 사용량 데이터를 분석하면 낭비가 큰 날을 찾아 절약 행동으로 연결할 수 있다.</p>
+<h3>예제 5. 설문 데이터로 만족도 판단</h3><div class="code">survey = [5, 4, 3, 5, 4, 2, 5]
+avg = sum(survey) / len(survey)
+print("평균 만족도:", round(avg, 2))
+print("결론:", "만족도 높음" if avg &gt;= 4 else "개선 필요")</div><p><b>설명:</b> 설문 응답 데이터는 서비스나 수업 개선 방향을 찾는 근거가 된다.</p>
+</section>
+
+<section class="card" id="diagnosis">
+<h2>6. 진단평가 OX 10문항</h2>
+<div id="oxArea"><div class="q"><b>OX 1.</b> 데이터의 가치는 데이터의 양만 많으면 자동으로 생긴다.<div class="choices"><label><input type="radio" name="ox0" value="true"><span> O</span></label><label><input type="radio" name="ox0" value="false"><span> X</span></label></div><div class="answer ox">정답: X<br>상세풀이: 데이터의 가치는 양뿐 아니라 정확성, 맥락, 목적, 해석, 활용 가능성에 의해 결정된다.</div></div><div class="q"><b>OX 2.</b> 같은 데이터도 활용 목적에 따라 서로 다른 가치를 가질 수 있다.<div class="choices"><label><input type="radio" name="ox1" value="true"><span> O</span></label><label><input type="radio" name="ox1" value="false"><span> X</span></label></div><div class="answer ox">정답: O<br>상세풀이: 기온 데이터는 농업, 보건, 에너지 등 다양한 분야에서 다른 가치로 활용된다.</div></div><div class="q"><b>OX 3.</b> 데이터 정제는 분석 결과의 신뢰도와 관련이 없다.<div class="choices"><label><input type="radio" name="ox2" value="true"><span> O</span></label><label><input type="radio" name="ox2" value="false"><span> X</span></label></div><div class="answer ox">정답: X<br>상세풀이: 결측값과 오류를 처리하지 않으면 분석 결과가 왜곡될 수 있다.</div></div><div class="q"><b>OX 4.</b> 데이터 기반 의사결정은 경험과 직관을 완전히 배제한다.<div class="choices"><label><input type="radio" name="ox3" value="true"><span> O</span></label><label><input type="radio" name="ox3" value="false"><span> X</span></label></div><div class="answer ox">정답: X<br>상세풀이: 데이터는 중요한 근거이지만 인간의 맥락 판단과 윤리적 성찰도 필요하다.</div></div><div class="q"><b>OX 5.</b> 공공 데이터는 사회 문제 해결에 활용될 수 있다.<div class="choices"><label><input type="radio" name="ox4" value="true"><span> O</span></label><label><input type="radio" name="ox4" value="false"><span> X</span></label></div><div class="answer ox">정답: O<br>상세풀이: 교통, 환경, 기상 데이터는 시민 편의와 안전 정책에 활용될 수 있다.</div></div><div class="q"><b>OX 6.</b> 데이터 시각화는 데이터를 더 이해하기 쉽게 표현하는 방법이다.<div class="choices"><label><input type="radio" name="ox5" value="true"><span> O</span></label><label><input type="radio" name="ox5" value="false"><span> X</span></label></div><div class="answer ox">정답: O<br>상세풀이: 그래프와 표는 복잡한 데이터를 직관적으로 파악하도록 돕는다.</div></div><div class="q"><b>OX 7.</b> 개인정보가 포함된 데이터도 목적이 좋으면 마음대로 사용해도 된다.<div class="choices"><label><input type="radio" name="ox6" value="true"><span> O</span></label><label><input type="radio" name="ox6" value="false"><span> X</span></label></div><div class="answer ox">정답: X<br>상세풀이: 목적이 좋아도 개인정보 보호와 동의, 안전한 처리가 필요하다.</div></div><div class="q"><b>OX 8.</b> 데이터 분석 결과는 항상 절대적으로 옳다.<div class="choices"><label><input type="radio" name="ox7" value="true"><span> O</span></label><label><input type="radio" name="ox7" value="false"><span> X</span></label></div><div class="answer ox">정답: X<br>상세풀이: 데이터 품질, 분석 방법, 편향에 따라 결과가 달라질 수 있다.</div></div><div class="q"><b>OX 9.</b> 데이터 활용은 기업뿐 아니라 교육, 의료, 환경, 과학 분야에서도 중요하다.<div class="choices"><label><input type="radio" name="ox8" value="true"><span> O</span></label><label><input type="radio" name="ox8" value="false"><span> X</span></label></div><div class="answer ox">정답: O<br>상세풀이: 데이터는 다양한 사회 영역에서 문제 해결과 의사결정에 활용된다.</div></div><div class="q"><b>OX 10.</b> 데이터의 가치는 해석과 행동으로 연결될 때 커진다.<div class="choices"><label><input type="radio" name="ox9" value="true"><span> O</span></label><label><input type="radio" name="ox9" value="false"><span> X</span></label></div><div class="answer ox">정답: O<br>상세풀이: 분석 결과가 의사결정과 실제 행동으로 이어질 때 실질적 가치가 만들어진다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 보기</button><p class="score" id="oxScore"></p>
+</section>
+
+<section class="card" id="formative">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q"><b>문항 1.</b> 데이터의 가치에 대한 설명으로 가장 적절한 것은?<div class="choices"><label><input type="radio" name="mc0" value="0"><span> 1. 데이터는 저장만 해도 가치가 생긴다</span></label><label><input type="radio" name="mc0" value="1"><span> 2. 데이터는 맥락과 목적에 맞게 활용될 때 가치가 커진다</span></label><label><input type="radio" name="mc0" value="2"><span> 3. 데이터는 많을수록 항상 정확하다</span></label><label><input type="radio" name="mc0" value="3"><span> 4. 데이터는 숫자일 때만 가치가 있다</span></label><label><input type="radio" name="mc0" value="4"><span> 5. 데이터 분석에는 해석이 필요 없다</span></label></div><div class="answer mc">정답: 2번<br>상세풀이: 데이터는 문제 해결 목적, 맥락, 해석, 활용 가능성과 결합할 때 가치가 커진다.</div></div><div class="q"><b>문항 2.</b> 데이터 가치 창출 과정의 일반적인 순서로 적절한 것은?<div class="choices"><label><input type="radio" name="mc1" value="0"><span> 1. 행동-수집-정제-분석</span></label><label><input type="radio" name="mc1" value="1"><span> 2. 수집-정제-분석-해석-활용</span></label><label><input type="radio" name="mc1" value="2"><span> 3. 해석-수집-삭제-활용</span></label><label><input type="radio" name="mc1" value="3"><span> 4. 시각화-수집-무시-판단</span></label><label><input type="radio" name="mc1" value="4"><span> 5. 정제-행동-수집-분석</span></label></div><div class="answer mc">정답: 2번<br>상세풀이: 데이터는 보통 수집, 정제, 분석, 해석, 활용의 흐름으로 가치가 만들어진다.</div></div><div class="q"><b>문항 3.</b> 결측값을 처리하는 이유로 가장 적절한 것은?<div class="choices"><label><input type="radio" name="mc2" value="0"><span> 1. 데이터 크기를 무조건 줄이기 위해</span></label><label><input type="radio" name="mc2" value="1"><span> 2. 분석 결과의 왜곡을 줄이기 위해</span></label><label><input type="radio" name="mc2" value="2"><span> 3. 그래프를 없애기 위해</span></label><label><input type="radio" name="mc2" value="3"><span> 4. 개인정보를 늘리기 위해</span></label><label><input type="radio" name="mc2" value="4"><span> 5. 코드를 어렵게 만들기 위해</span></label></div><div class="answer mc">정답: 2번<br>상세풀이: 결측값을 적절히 처리하면 분석 결과의 신뢰성을 높일 수 있다.</div></div><div class="q"><b>문항 4.</b> 공공 데이터 활용 사례로 가장 적절한 것은?<div class="choices"><label><input type="radio" name="mc3" value="0"><span> 1. 개인 비밀번호 공개</span></label><label><input type="radio" name="mc3" value="1"><span> 2. 미세먼지 데이터로 건강 알림 제공</span></label><label><input type="radio" name="mc3" value="2"><span> 3. 근거 없는 소문 확산</span></label><label><input type="radio" name="mc3" value="3"><span> 4. 데이터 삭제만 반복</span></label><label><input type="radio" name="mc3" value="4"><span> 5. 무작위 광고 전송</span></label></div><div class="answer mc">정답: 2번<br>상세풀이: 공공 미세먼지 데이터는 시민 건강 알림과 환경 정책에 활용될 수 있다.</div></div><div class="q"><b>문항 5.</b> 데이터 기반 의사결정의 장점은?<div class="choices"><label><input type="radio" name="mc4" value="0"><span> 1. 근거 있는 판단을 돕는다</span></label><label><input type="radio" name="mc4" value="1"><span> 2. 항상 인간 판단을 없앤다</span></label><label><input type="radio" name="mc4" value="2"><span> 3. 윤리가 필요 없다</span></label><label><input type="radio" name="mc4" value="3"><span> 4. 데이터 오류를 자동으로 없앤다</span></label><label><input type="radio" name="mc4" value="4"><span> 5. 모든 문제를 즉시 해결한다</span></label></div><div class="answer mc">정답: 1번<br>상세풀이: 데이터 기반 의사결정은 실제 자료를 근거로 판단하도록 돕는다.</div></div><div class="q"><b>문항 6.</b> 데이터 윤리에서 중요하지 않은 것은?<div class="choices"><label><input type="radio" name="mc5" value="0"><span> 1. 개인정보 보호</span></label><label><input type="radio" name="mc5" value="1"><span> 2. 편향 점검</span></label><label><input type="radio" name="mc5" value="2"><span> 3. 투명성</span></label><label><input type="radio" name="mc5" value="3"><span> 4. 책임성</span></label><label><input type="radio" name="mc5" value="4"><span> 5. 무단 수집 장려</span></label></div><div class="answer mc">정답: 5번<br>상세풀이: 무단 수집은 데이터 윤리에 어긋난다.</div></div><div class="q"><b>문항 7.</b> 데이터 시각화의 목적은?<div class="choices"><label><input type="radio" name="mc6" value="0"><span> 1. 데이터를 숨기기 위해</span></label><label><input type="radio" name="mc6" value="1"><span> 2. 복잡한 정보를 이해하기 쉽게 표현하기 위해</span></label><label><input type="radio" name="mc6" value="2"><span> 3. 분석을 금지하기 위해</span></label><label><input type="radio" name="mc6" value="3"><span> 4. 오류를 만들기 위해</span></label><label><input type="radio" name="mc6" value="4"><span> 5. 코드를 삭제하기 위해</span></label></div><div class="answer mc">정답: 2번<br>상세풀이: 시각화는 데이터의 패턴과 차이를 직관적으로 이해하도록 돕는다.</div></div><div class="q"><b>문항 8.</b> 학교에서 데이터 활용 예로 적절한 것은?<div class="choices"><label><input type="radio" name="mc7" value="0"><span> 1. 출석 데이터를 분석해 상담 지원 계획 세우기</span></label><label><input type="radio" name="mc7" value="1"><span> 2. 학생 개인정보 무단 공개</span></label><label><input type="radio" name="mc7" value="2"><span> 3. 성적표를 임의로 조작</span></label><label><input type="radio" name="mc7" value="3"><span> 4. 설문 결과를 보지 않기</span></label><label><input type="radio" name="mc7" value="4"><span> 5. 도서 대출 기록 삭제</span></label></div><div class="answer mc">정답: 1번<br>상세풀이: 출석이나 학습 데이터를 적절히 분석하면 학생 지원에 활용할 수 있다.</div></div><div class="q"><b>문항 9.</b> 데이터 편향이 위험한 이유는?<div class="choices"><label><input type="radio" name="mc8" value="0"><span> 1. 분석 시간이 짧아지기 때문</span></label><label><input type="radio" name="mc8" value="1"><span> 2. 특정 집단에 불공정한 결과를 만들 수 있기 때문</span></label><label><input type="radio" name="mc8" value="2"><span> 3. 파일 크기가 줄기 때문</span></label><label><input type="radio" name="mc8" value="3"><span> 4. 그래프가 예뻐지기 때문</span></label><label><input type="radio" name="mc8" value="4"><span> 5. 코드가 쉬워지기 때문</span></label></div><div class="answer mc">정답: 2번<br>상세풀이: 편향된 데이터는 차별적 판단과 불공정한 의사결정으로 이어질 수 있다.</div></div><div class="q"><b>문항 10.</b> 데이터의 가치를 가장 잘 설명하는 문장은?<div class="choices"><label><input type="radio" name="mc9" value="0"><span> 1. 데이터는 인간의 질문과 해석을 통해 의미 있는 정보가 된다</span></label><label><input type="radio" name="mc9" value="1"><span> 2. 데이터는 항상 완전하다</span></label><label><input type="radio" name="mc9" value="2"><span> 3. 데이터는 윤리와 무관하다</span></label><label><input type="radio" name="mc9" value="3"><span> 4. 데이터는 저장 공간만 차지한다</span></label><label><input type="radio" name="mc9" value="4"><span> 5. 데이터는 분석하면 안 된다</span></label></div><div class="answer mc">정답: 1번<br>상세풀이: 데이터는 인간이 질문을 던지고 해석하며 활용할 때 의미와 가치가 만들어진다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 보기</button><p class="score" id="mcScore"></p>
+</section>
+
+<section class="card" id="save">
+<h2>8. 점수 저장</h2>
+<p>학번과 이름을 입력한 뒤 저장하면 <b>학번_이름_데이터14_점수_응시시각.txt</b> 파일이 생성됩니다.</p>
+<input type="text" id="studentId" placeholder="학번"><input type="text" id="studentName" placeholder="이름"><button onclick="saveResult()">TXT 저장하기</button>
+<p id="saveMsg"></p>
+</section>
+
+<section class="card" id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<p>오늘 우리는 데이터가 단순한 기록을 넘어 어떻게 가치가 되는지 살펴보았습니다. 컴퓨터과학은 데이터를 저장하고 처리하는 방법을 제공하고, 수학은 패턴과 관계를 분석하는 언어를 제공하며, 과학은 데이터로 자연과 사회 현상을 검증하는 태도를 길러 줍니다.</p>
+<p>하지만 데이터 과학은 기술만의 문제가 아닙니다. 인문학과 철학은 우리에게 묻습니다. “이 데이터는 누구를 위한 것인가?”, “이 분석은 공정한가?”, “편리함을 위해 인간의 존엄성을 놓치고 있지는 않은가?” 데이터의 진정한 가치는 더 빠른 계산이 아니라 더 나은 판단, 더 공정한 사회, 더 깊은 이해를 만드는 데 있습니다.</p>
+</section>
+</main></div><div class="footer">© 고등학교 데이터 과학 수업자료 · 데이터14</div>
+<script>
+const ox=[
+['데이터의 가치는 데이터의 양만 많으면 자동으로 생긴다.',false,'데이터의 가치는 양뿐 아니라 정확성, 맥락, 목적, 해석, 활용 가능성에 의해 결정된다.'],
+['같은 데이터도 활용 목적에 따라 서로 다른 가치를 가질 수 있다.',true,'기온 데이터는 농업, 보건, 에너지 등 다양한 분야에서 다른 가치로 활용된다.'],
+['데이터 정제는 분석 결과의 신뢰도와 관련이 없다.',false,'결측값과 오류를 처리하지 않으면 분석 결과가 왜곡될 수 있다.'],
+['데이터 기반 의사결정은 경험과 직관을 완전히 배제한다.',false,'데이터는 중요한 근거이지만 인간의 맥락 판단과 윤리적 성찰도 필요하다.'],
+['공공 데이터는 사회 문제 해결에 활용될 수 있다.',true,'교통, 환경, 기상 데이터는 시민 편의와 안전 정책에 활용될 수 있다.'],
+['데이터 시각화는 데이터를 더 이해하기 쉽게 표현하는 방법이다.',true,'그래프와 표는 복잡한 데이터를 직관적으로 파악하도록 돕는다.'],
+['개인정보가 포함된 데이터도 목적이 좋으면 마음대로 사용해도 된다.',false,'목적이 좋아도 개인정보 보호와 동의, 안전한 처리가 필요하다.'],
+['데이터 분석 결과는 항상 절대적으로 옳다.',false,'데이터 품질, 분석 방법, 편향에 따라 결과가 달라질 수 있다.'],
+['데이터 활용은 기업뿐 아니라 교육, 의료, 환경, 과학 분야에서도 중요하다.',true,'데이터는 다양한 사회 영역에서 문제 해결과 의사결정에 활용된다.'],
+['데이터의 가치는 해석과 행동으로 연결될 때 커진다.',true,'분석 결과가 의사결정과 실제 행동으로 이어질 때 실질적 가치가 만들어진다.']
+];
+const mc=[
+['데이터의 가치에 대한 설명으로 가장 적절한 것은?',['데이터는 저장만 해도 가치가 생긴다','데이터는 맥락과 목적에 맞게 활용될 때 가치가 커진다','데이터는 많을수록 항상 정확하다','데이터는 숫자일 때만 가치가 있다','데이터 분석에는 해석이 필요 없다'],1,'데이터는 문제 해결 목적, 맥락, 해석, 활용 가능성과 결합할 때 가치가 커진다.'],
+['데이터 가치 창출 과정의 일반적인 순서로 적절한 것은?',['행동-수집-정제-분석','수집-정제-분석-해석-활용','해석-수집-삭제-활용','시각화-수집-무시-판단','정제-행동-수집-분석'],1,'데이터는 보통 수집, 정제, 분석, 해석, 활용의 흐름으로 가치가 만들어진다.'],
+['결측값을 처리하는 이유로 가장 적절한 것은?',['데이터 크기를 무조건 줄이기 위해','분석 결과의 왜곡을 줄이기 위해','그래프를 없애기 위해','개인정보를 늘리기 위해','코드를 어렵게 만들기 위해'],1,'결측값을 적절히 처리하면 분석 결과의 신뢰성을 높일 수 있다.'],
+['공공 데이터 활용 사례로 가장 적절한 것은?',['개인 비밀번호 공개','미세먼지 데이터로 건강 알림 제공','근거 없는 소문 확산','데이터 삭제만 반복','무작위 광고 전송'],1,'공공 미세먼지 데이터는 시민 건강 알림과 환경 정책에 활용될 수 있다.'],
+['데이터 기반 의사결정의 장점은?',['근거 있는 판단을 돕는다','항상 인간 판단을 없앤다','윤리가 필요 없다','데이터 오류를 자동으로 없앤다','모든 문제를 즉시 해결한다'],0,'데이터 기반 의사결정은 실제 자료를 근거로 판단하도록 돕는다.'],
+['데이터 윤리에서 중요하지 않은 것은?',['개인정보 보호','편향 점검','투명성','책임성','무단 수집 장려'],4,'무단 수집은 데이터 윤리에 어긋난다.'],
+['데이터 시각화의 목적은?',['데이터를 숨기기 위해','복잡한 정보를 이해하기 쉽게 표현하기 위해','분석을 금지하기 위해','오류를 만들기 위해','코드를 삭제하기 위해'],1,'시각화는 데이터의 패턴과 차이를 직관적으로 이해하도록 돕는다.'],
+['학교에서 데이터 활용 예로 적절한 것은?',['출석 데이터를 분석해 상담 지원 계획 세우기','학생 개인정보 무단 공개','성적표를 임의로 조작','설문 결과를 보지 않기','도서 대출 기록 삭제'],0,'출석이나 학습 데이터를 적절히 분석하면 학생 지원에 활용할 수 있다.'],
+['데이터 편향이 위험한 이유는?',['분석 시간이 짧아지기 때문','특정 집단에 불공정한 결과를 만들 수 있기 때문','파일 크기가 줄기 때문','그래프가 예뻐지기 때문','코드가 쉬워지기 때문'],1,'편향된 데이터는 차별적 판단과 불공정한 의사결정으로 이어질 수 있다.'],
+['데이터의 가치를 가장 잘 설명하는 문장은?',['데이터는 인간의 질문과 해석을 통해 의미 있는 정보가 된다','데이터는 항상 완전하다','데이터는 윤리와 무관하다','데이터는 저장 공간만 차지한다','데이터는 분석하면 안 된다'],0,'데이터는 인간이 질문을 던지고 해석하며 활용할 때 의미와 가치가 만들어진다.']
+];
+let oxScore=0,mcScore=0;
+function render(){let o='';ox.forEach((q,i)=>{o+=`<div class="q"><b>OX ${i+1}.</b> ${q[0]}<div class="choices"><label><input type="radio" name="ox${i}" value="true"><span> O</span></label><label><input type="radio" name="ox${i}" value="false"><span> X</span></label></div><div class="answer ox">정답: ${q[1]?'O':'X'}<br>상세풀이: ${q[2]}</div></div>`});document.getElementById('oxArea').innerHTML=o;let m='';mc.forEach((q,i)=>{m+=`<div class="q"><b>문항 ${i+1}.</b> ${q[0]}<div class="choices">`;q[1].forEach((c,j)=>{m+=`<label><input type="radio" name="mc${i}" value="${j}"><span> ${j+1}. ${c}</span></label>`});m+=`</div><div class="answer mc">정답: ${q[2]+1}번<br>상세풀이: ${q[3]}</div></div>`});document.getElementById('mcArea').innerHTML=m}
+function gradeOX(){oxScore=0;ox.forEach((q,i)=>{let v=document.querySelector(`input[name=ox${i}]:checked`);if(v&&String(q[1])===v.value)oxScore++});document.getElementById('oxScore').textContent=`OX 점수: ${oxScore}/10`}
+function gradeMC(){mcScore=0;mc.forEach((q,i)=>{let v=document.querySelector(`input[name=mc${i}]:checked`);if(v&&Number(v.value)===q[2])mcScore++});document.getElementById('mcScore').textContent=`형성평가 점수: ${mcScore}/10`}
+function showAll(cls){document.querySelectorAll('.'+cls).forEach(e=>e.style.display='block')}
+function pad(n){return String(n).padStart(2,'0')}
+function saveResult(){gradeOX();gradeMC();let id=document.getElementById('studentId').value.trim()||'학번';let name=document.getElementById('studentName').value.trim()||'이름';let total=oxScore+mcScore;let now=new Date();let t=`${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;let file=`${id}_${name}_데이터14_${total}점_${t}.txt`;let content=`2025교육과정 고등학교 데이터 과학\nⅠ. 데이터 과학의 이해 - 데이터의 가치와 활용\n학번: ${id}\n이름: ${name}\nOX 점수: ${oxScore}/10\n형성평가 점수: ${mcScore}/10\n총점: ${total}/20\n응시시각: ${now.toLocaleString()}\n`;
+let blob=new Blob([content],{type:'text/plain;charset=utf-8'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file;a.click();URL.revokeObjectURL(a.href);document.getElementById('saveMsg').textContent=`저장 파일명: ${file}`}
+render();
+</script>
+
+
+</body></html>

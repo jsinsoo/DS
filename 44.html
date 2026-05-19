@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!-- saved from url=(0167)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터44_상관관계 이해_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f766e,#7c3aed);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px} header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#0f766e}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#0f766e;border-left:8px solid #7c3aed;padding-left:12px}
+h3{color:#6d28d9;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#ecfdf5;border-left:6px solid #0f766e}
+.quote{font-size:18px;background:#faf5ff;border-left:7px solid #7c3aed;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#ccfbf1}
+.q{border:1px solid #c4b5fd;background:#fdfbff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#ede9fe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#0f766e;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#115e59}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+.formula{background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:16px;font-size:18px;text-align:center}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]},
+  svg: {fontCache: 'global'}
+};
+</script>
+<script src="./44_2025교육과정 고등학교 데이터 과학 -상관관계 이해_files/tex-svg.js.다운로드"></script><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style>
+<style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+<body>
+<header>
+<h1>데이터44. 상관관계 이해</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅳ. 데이터 분석 기초 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B044_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%9D%B4%ED%95%B4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>상관관계는 두 변수가 함께 변하는 방향과 강도를 나타내지만, 그 자체가 인과관계를 증명하지는 않는다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터 속 관계를 발견하는 것은 중요하지만, 관계를 원인으로 오해하지 않는 비판적 해석이 필요하다.</div>
+<div class="card goal"><b>핵심 질문</b><br>두 변수가 함께 움직인다는 사실만으로 하나가 다른 하나의 원인이라고 말할 수 있는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅳ. 데이터 분석 기초 - 상관관계 이해</td></tr>
+<tr><td>수업 목표</td><td>① 상관관계의 의미와 종류를 설명한다.<br>② 양의 상관, 음의 상관, 무상관을 산점도로 구별한다.<br>③ 상관계수의 범위와 해석 방법을 이해한다.<br>④ Pandas와 Matplotlib으로 상관계수와 산점도를 확인한다.<br>⑤ 상관관계와 인과관계를 구별하고 제3의 변수를 고려한다.</td></tr>
+<tr><td>지식 목표</td><td>양의 상관, 음의 상관, 무상관, 상관계수, 산점도, 인과관계, 제3의 변수의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>corr(), scatter(), 데이터프레임 상관행렬, 산점도 해석을 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>상관관계를 발견했을 때 성급히 원인으로 단정하지 않고, 맥락과 추가 근거를 확인하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 아이스크림 판매량과 익사 사고 사례 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 상관과 인과 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 산점도 해석 활동</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+여름이 되면 아이스크림 판매량도 늘고, 물놀이 사고도 늘 수 있습니다.
+그렇다면 아이스크림이 물놀이 사고의 원인일까요?
+아마도 두 현상 뒤에는 “더운 날씨”라는 제3의 변수가 있을 것입니다.
+인문 철학적으로 상관관계는 “함께 나타나는 것과 원인인 것을 어떻게 구별할 것인가”라는 오래된 질문과 연결됩니다.
+오늘 우리는 데이터 속 관계를 발견하되, 그 관계를 성급히 원인으로 단정하지 않는 과학적이고 비판적인 태도를 배웁니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 상관관계</h3>
+<p>상관관계는 두 변수가 함께 변하는 경향을 의미한다. 예를 들어 공부 시간이 늘수록 점수가 높아지는 경향이 있다면 두 변수 사이에 상관관계가 있다고 말할 수 있다.</p>
+
+<h3>② 양의 상관관계</h3>
+<p>양의 상관관계는 한 변수가 증가할 때 다른 변수도 증가하는 경향이다. 산점도에서는 점들이 왼쪽 아래에서 오른쪽 위로 향하는 패턴을 보인다.</p>
+
+<h3>③ 음의 상관관계</h3>
+<p>음의 상관관계는 한 변수가 증가할 때 다른 변수는 감소하는 경향이다. 산점도에서는 점들이 왼쪽 위에서 오른쪽 아래로 향하는 패턴을 보인다.</p>
+
+<h3>④ 무상관</h3>
+<p>무상관은 두 변수 사이에 뚜렷한 선형 관계가 보이지 않는 경우이다. 점들이 특별한 방향 없이 흩어져 있을 수 있다. 단, 선형 상관이 약하다고 해서 모든 관계가 없다는 뜻은 아니다.</p>
+
+<h3>⑤ 상관계수</h3>
+<p>상관계수는 두 변수 사이의 선형 관계 방향과 강도를 수치로 나타낸 값이다. 피어슨 상관계수는 -1에서 1 사이의 값을 가지며, 1에 가까우면 강한 양의 상관, -1에 가까우면 강한 음의 상관, 0에 가까우면 약한 선형 관계를 뜻한다.</p>
+<div class="formula">피어슨 상관계수: <mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="0" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="22.495ex" height="4.023ex" role="img" focusable="false" viewBox="0 -1047.1 9942.6 1778.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.654ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45F" xlink:href="#MJX-TEX-I-1D45F"></use></g><g data-mml-node="mo" transform="translate(728.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(1784.6,0)"><g data-mml-node="mrow" transform="translate(1623.3,516.8) scale(0.707)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-TEX-SO-2211"></use></g><g data-mml-node="mo" transform="translate(1056,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msub" transform="translate(1445,0)"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-TEX-I-1D465"></use></g><g data-mml-node="mi" transform="translate(605,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(2344,0)"><use data-c="2212" xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3122,0)"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(313.8,3) translate(-250 0)"><use data-c="AF" xlink:href="#MJX-TEX-N-AF"></use></g></g></g><g data-mml-node="mo" transform="translate(3694,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(4083,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msub" transform="translate(4472,0)"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-TEX-I-1D466"></use></g><g data-mml-node="mi" transform="translate(523,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(5288.9,0)"><use data-c="2212" xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(6066.9,0)"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-TEX-I-1D466"></use></g><g data-mml-node="mo" transform="translate(300.6,3) translate(-250 0)"><use data-c="AF" xlink:href="#MJX-TEX-N-AF"></use></g></g></g><g data-mml-node="mo" transform="translate(6556.9,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g></g><g data-mml-node="mrow" transform="translate(220,-534.7) scale(0.707)"><g data-mml-node="msqrt"><g transform="translate(1020,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-TEX-SO-2211"></use></g><g data-mml-node="mo" transform="translate(1056,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msub" transform="translate(1445,0)"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-TEX-I-1D465"></use></g><g data-mml-node="mi" transform="translate(605,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(2344,0)"><use data-c="2212" xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3122,0)"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(313.8,3) translate(-250 0)"><use data-c="AF" xlink:href="#MJX-TEX-N-AF"></use></g></g></g><g data-mml-node="msup" transform="translate(3694,0)"><g data-mml-node="mo"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mn" transform="translate(422,289) scale(0.707)"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g></g></g><g data-mml-node="mo" transform="translate(0,54.9)"><use data-c="221A" xlink:href="#MJX-TEX-SO-221A"></use></g><rect width="4519.5" height="42.4" x="1020" y="862.5"></rect></g><g data-mml-node="msqrt" transform="translate(5539.5,0)"><g transform="translate(1020,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-TEX-SO-2211"></use></g><g data-mml-node="mo" transform="translate(1056,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msub" transform="translate(1445,0)"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-TEX-I-1D466"></use></g><g data-mml-node="mi" transform="translate(523,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(2262,0)"><use data-c="2212" xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3040,0)"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-TEX-I-1D466"></use></g><g data-mml-node="mo" transform="translate(300.6,3) translate(-250 0)"><use data-c="AF" xlink:href="#MJX-TEX-N-AF"></use></g></g></g><g data-mml-node="msup" transform="translate(3530,0)"><g data-mml-node="mo"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mn" transform="translate(422,289) scale(0.707)"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g></g></g><g data-mml-node="mo" transform="translate(0,54.9)"><use data-c="221A" xlink:href="#MJX-TEX-SO-221A"></use></g><rect width="4355.5" height="42.4" x="1020" y="862.5"></rect></g></g><rect width="7918.1" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mo>=</mo><mfrac><mrow><mo data-mjx-texclass="OP">∑</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mrow data-mjx-texclass="ORD"><mover><mi>x</mi><mo stretchy="false">¯</mo></mover></mrow><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mrow data-mjx-texclass="ORD"><mover><mi>y</mi><mo stretchy="false">¯</mo></mover></mrow><mo stretchy="false">)</mo></mrow><mrow><msqrt><mo data-mjx-texclass="OP">∑</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mrow data-mjx-texclass="ORD"><mover><mi>x</mi><mo stretchy="false">¯</mo></mover></mrow><msup><mo stretchy="false">)</mo><mn>2</mn></msup></msqrt><msqrt><mo data-mjx-texclass="OP">∑</mo><mo stretchy="false">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mrow data-mjx-texclass="ORD"><mover><mi>y</mi><mo stretchy="false">¯</mo></mover></mrow><msup><mo stretchy="false">)</mo><mn>2</mn></msup></msqrt></mrow></mfrac></math></mjx-assistive-mml></mjx-container></div>
+
+<h3>⑥ 산점도</h3>
+<p>산점도는 두 수치형 변수를 x축과 y축에 놓고 각 관측값을 점으로 표시한 그래프이다. 상관계수 숫자만 보는 것보다 산점도를 함께 보면 이상값, 군집, 비선형 패턴을 더 잘 알 수 있다.</p>
+
+<h3>⑦ 상관관계와 인과관계</h3>
+<p>상관관계는 함께 변한다는 뜻이고, 인과관계는 한 변수가 다른 변수의 원인이 된다는 뜻이다. 상관관계만으로는 인과관계를 증명할 수 없다.</p>
+
+<h3>⑧ 제3의 변수</h3>
+<p>제3의 변수는 두 변수 모두에 영향을 주어 상관관계가 있는 것처럼 보이게 만드는 숨은 변수이다. 예를 들어 더운 날씨는 아이스크림 판매량과 물놀이 사고 모두에 영향을 줄 수 있다.</p>
+
+<h3>⑨ 해석의 책임</h3>
+<p>상관관계는 정책, 광고, 뉴스, 연구 해석에서 자주 사용된다. 하지만 관계를 원인으로 오해하면 잘못된 판단을 내릴 수 있으므로 근거, 실험, 이론, 맥락을 함께 확인해야 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① 양의 상관 데이터 만들기</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "공부시간": [1, 2, 3, 4, 5],
+    "점수": [55, 60, 72, 80, 90]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p>공부시간과 점수가 함께 증가하는 경향을 상관계수로 확인한다.</p>
+
+<h3>② 산점도 그리기</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+plt.scatter(df["공부시간"], df["점수"])
+plt.title("Study Time and Score")
+plt.xlabel("Study Time")
+plt.ylabel("Score")
+plt.show()</code></pre>
+<p>두 변수의 관계를 점의 패턴으로 시각화한다.</p>
+
+<h3>③ 음의 상관 데이터</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "운동시간": [1, 2, 3, 4, 5],
+    "스트레스": [90, 82, 70, 60, 55]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p>운동시간이 늘수록 스트레스 점수가 낮아지는 경향을 확인한다.</p>
+
+<h3>④ 여러 변수의 상관행렬</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "수면": [5, 6, 7, 8, 9],
+    "집중도": [60, 68, 75, 82, 80],
+    "피로도": [90, 80, 70, 55, 50]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p>여러 수치형 변수 사이의 상관관계를 한 번에 확인한다.</p>
+
+<h3>⑤ 상관관계가 약한 데이터</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "신발크기": [240, 250, 260, 270, 280],
+    "수학점수": [80, 65, 90, 70, 75]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p>두 변수 사이에 뚜렷한 선형 관계가 없는 경우 상관계수가 0에 가까울 수 있다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 공부 시간과 시험 점수</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "study": [1, 2, 3, 4, 5],
+    "score": [50, 62, 70, 83, 88]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p><b>상세 설명:</b> 공부 시간이 증가할수록 점수가 증가하는 경향이 있다면 양의 상관관계로 해석할 수 있다. 그러나 점수의 원인은 공부 시간 외에도 다양하다.</p>
+
+<h3>예제 2. 기온과 난방 사용량</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "temperature": [0, 5, 10, 15, 20],
+    "heating": [100, 85, 60, 40, 20]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p><b>상세 설명:</b> 기온이 높아질수록 난방 사용량이 줄어드는 음의 상관관계를 볼 수 있다.</p>
+
+<h3>예제 3. 수면 시간과 집중도 산점도</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "sleep": [5, 6, 7, 8, 9],
+    "focus": [55, 65, 75, 82, 80]
+})
+
+plt.scatter(df["sleep"], df["focus"])
+plt.title("Sleep and Focus")
+plt.xlabel("Sleep Hours")
+plt.ylabel("Focus Score")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 산점도를 통해 수면 시간이 늘어날 때 집중도가 어떤 패턴을 보이는지 시각적으로 확인한다.</p>
+
+<h3>예제 4. 아이스크림과 물놀이 사고</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "icecream_sales": [10, 20, 30, 40, 50],
+    "water_accidents": [1, 2, 3, 5, 6],
+    "temperature": [20, 24, 28, 31, 34]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p><b>상세 설명:</b> 아이스크림 판매량과 사고 수가 함께 증가해도 아이스크림이 사고의 원인이라고 단정할 수 없다. 기온이라는 제3의 변수를 고려해야 한다.</p>
+
+<h3>예제 5. 이상값이 상관계수에 미치는 영향</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "x": [1, 2, 3, 4, 100],
+    "y": [2, 4, 6, 8, 1]
+})
+
+print(df.corr(numeric_only=True))</code></pre>
+<p><b>상세 설명:</b> 이상값 하나가 상관계수 해석을 크게 바꿀 수 있다. 상관계수와 산점도를 함께 확인해야 한다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q"><b>OX 1. 상관관계는 두 변수가 함께 변하는 경향을 나타낸다.</b>
+   <div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 상관관계는 한 변수가 변할 때 다른 변수가 함께 증가하거나 감소하는 경향을 말한다.</div></div><div class="q"><b>OX 2. 상관관계가 있으면 반드시 인과관계가 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 상관관계는 함께 변하는 정도를 뜻하지만 원인과 결과를 증명하지는 않는다.</div></div><div class="q"><b>OX 3. 양의 상관관계는 한 변수가 증가할 때 다른 변수도 증가하는 경향이다.</b>
+   <div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 예를 들어 공부 시간이 늘수록 점수가 높아지는 경향이 있다면 양의 상관이라고 볼 수 있다.</div></div><div class="q"><b>OX 4. 음의 상관관계는 한 변수가 증가할 때 다른 변수가 감소하는 경향이다.</b>
+   <div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 예를 들어 운동 시간이 늘수록 스트레스 점수가 낮아지는 경향이 있다면 음의 상관일 수 있다.</div></div><div class="q"><b>OX 5. 상관계수는 보통 -1에서 1 사이의 값을 가진다.</b>
+   <div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 피어슨 상관계수는 -1과 1 사이의 값으로 선형 관계의 방향과 강도를 나타낸다.</div></div><div class="q"><b>OX 6. 상관계수가 0에 가까우면 두 변수 사이에 강한 선형 관계가 있다고 해석한다.</b>
+   <div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 0에 가까우면 선형 상관관계가 약하다고 해석한다.</div></div><div class="q"><b>OX 7. 산점도는 두 수치형 변수의 관계를 시각적으로 확인하는 데 유용하다.</b>
+   <div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 산점도는 x축과 y축에 두 변수를 놓고 점의 패턴을 확인한다.</div></div><div class="q"><b>OX 8. 상관계수 1은 완전한 양의 선형 관계를 의미한다.</b>
+   <div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 두 변수가 완벽하게 같은 방향의 직선 관계를 보일 때 1에 가까워진다.</div></div><div class="q"><b>OX 9. 제3의 변수가 두 변수의 상관관계를 만들어 낼 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 숨은 변수나 공통 원인이 상관관계를 만들어낼 수 있으므로 주의해야 한다.</div></div><div class="q"><b>OX 10. 상관관계 분석은 그래프 없이 숫자만 보면 항상 충분하다.</b>
+   <div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 상관계수와 함께 산점도를 보면 이상값, 비선형 관계, 군집을 더 잘 파악할 수 있다.</div></div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q"><b>문항 1. 상관관계의 의미로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 두 변수가 함께 변하는 경향</label><label><input type="radio" name="mc0" value="1"> 2. 반드시 원인과 결과</label><label><input type="radio" name="mc0" value="2"> 3. 자료의 개수만</label><label><input type="radio" name="mc0" value="3"> 4. 파일 저장 위치</label><label><input type="radio" name="mc0" value="4"> 5. 문자열 길이</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 두 변수의 변화가 서로 관련되어 보이는 정도를 뜻한다.</div></div><div class="q"><b>문항 2. 양의 상관관계의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 공부 시간이 늘수록 점수가 높아지는 경향</label><label><input type="radio" name="mc1" value="1"> 2. 기온이 오를수록 난방 사용량이 줄어드는 경향</label><label><input type="radio" name="mc1" value="2"> 3. 변수 사이에 아무 패턴이 없음</label><label><input type="radio" name="mc1" value="3"> 4. 파일 크기와 글자 색</label><label><input type="radio" name="mc1" value="4"> 5. 컴퓨터 전원과 책상 높이</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 두 변수가 같은 방향으로 증가하는 경향이 양의 상관이다.</div></div><div class="q"><b>문항 3. 음의 상관관계의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 기온이 오를수록 난방 사용량이 줄어드는 경향</label><label><input type="radio" name="mc2" value="1"> 2. 키가 클수록 몸무게가 늘어나는 경향</label><label><input type="radio" name="mc2" value="2"> 3. 공부 시간이 늘수록 점수가 늘어나는 경향</label><label><input type="radio" name="mc2" value="3"> 4. 두 변수 모두 증가</label><label><input type="radio" name="mc2" value="4"> 5. 완전한 무관계</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 한 변수가 증가할 때 다른 변수가 감소하는 경향이 음의 상관이다.</div></div><div class="q"><b>문항 4. 피어슨 상관계수의 일반적인 범위는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. -1에서 1</label><label><input type="radio" name="mc3" value="1"> 2. 0에서 100</label><label><input type="radio" name="mc3" value="2"> 3. 항상 10 이상</label><label><input type="radio" name="mc3" value="3"> 4. 항상 음수</label><label><input type="radio" name="mc3" value="4"> 5. 파일마다 다름</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 피어슨 상관계수는 -1부터 1 사이의 값을 가진다.</div></div><div class="q"><b>문항 5. 상관계수가 0에 가까울 때의 해석으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 선형 관계가 약하다</label><label><input type="radio" name="mc4" value="1"> 2. 완전한 양의 상관이다</label><label><input type="radio" name="mc4" value="2"> 3. 완전한 음의 상관이다</label><label><input type="radio" name="mc4" value="3"> 4. 인과관계가 확실하다</label><label><input type="radio" name="mc4" value="4"> 5. 항상 데이터 오류이다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 0에 가까우면 두 변수 사이의 선형 상관이 약하다고 볼 수 있다.</div></div><div class="q"><b>문항 6. 두 수치형 변수의 관계를 시각적으로 보기 좋은 그래프는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 산점도</label><label><input type="radio" name="mc5" value="1"> 2. 원고지</label><label><input type="radio" name="mc5" value="2"> 3. 파일 아이콘</label><label><input type="radio" name="mc5" value="3"> 4. 막대코드만</label><label><input type="radio" name="mc5" value="4"> 5. 문자표</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 산점도는 두 변수의 관계와 패턴을 시각적으로 확인하는 데 유용하다.</div></div><div class="q"><b>문항 7. 상관관계와 인과관계에 대한 설명으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 상관관계만으로 인과관계를 단정할 수 없다</label><label><input type="radio" name="mc6" value="1"> 2. 상관관계는 항상 인과관계이다</label><label><input type="radio" name="mc6" value="2"> 3. 인과관계는 그래프와 무관하다</label><label><input type="radio" name="mc6" value="3"> 4. 상관계수는 파일명이다</label><label><input type="radio" name="mc6" value="4"> 5. 산점도는 평균만 계산한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 인과관계를 증명하지 않으므로 실험, 이론, 추가 분석이 필요하다.</div></div><div class="q"><b>문항 8. Pandas에서 상관계수를 계산하는 대표 함수는?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. corr()</label><label><input type="radio" name="mc7" value="1"> 2. color()</label><label><input type="radio" name="mc7" value="2"> 3. sleep()</label><label><input type="radio" name="mc7" value="3"> 4. sound()</label><label><input type="radio" name="mc7" value="4"> 5. font()</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> DataFrame이나 Series의 corr()을 사용해 상관계수를 계산할 수 있다.</div></div><div class="q"><b>문항 9. 상관관계 해석 시 산점도를 함께 봐야 하는 이유는?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 이상값과 비선형 패턴을 확인하기 위해</label><label><input type="radio" name="mc8" value="1"> 2. 글자 색을 정하기 위해</label><label><input type="radio" name="mc8" value="2"> 3. 파일을 삭제하기 위해</label><label><input type="radio" name="mc8" value="3"> 4. 컴퓨터 속도를 높이기 위해</label><label><input type="radio" name="mc8" value="4"> 5. 인코딩을 바꾸기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관계수만으로는 이상값이나 곡선 관계, 군집 구조를 놓칠 수 있다.</div></div><div class="q"><b>문항 10. 제3의 변수에 대한 설명으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 두 변수의 상관관계에 영향을 줄 수 있는 숨은 변수</label><label><input type="radio" name="mc9" value="1"> 2. 항상 삭제해야 하는 열</label><label><input type="radio" name="mc9" value="2"> 3. 자료형 이름</label><label><input type="radio" name="mc9" value="3"> 4. 그래프 제목</label><label><input type="radio" name="mc9" value="4"> 5. CSV 구분자</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 숨은 변수나 공통 원인이 두 변수의 상관을 만들어낼 수 있다.</div></div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터44_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 두 변수가 함께 움직이는 정도를 상관관계로 살펴보았습니다.
+컴퓨터과학은 상관계수를 빠르게 계산하고 산점도로 시각화하게 해 주며, 수학은 -1에서 1 사이의 수로 관계의 방향과 강도를 표현하게 합니다.
+과학은 관계를 발견한 뒤 원인인지 검증하라고 요구하고, 인문 철학은 우리에게 묻습니다. “함께 나타난다는 이유만으로 원인이라고 믿고 있지는 않은가?”
+좋은 데이터 과학자는 관계를 발견하는 사람일 뿐 아니라, 그 관계를 겸손하고 비판적으로 해석하는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터44 상관관계 이해</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [{"q": "상관관계는 두 변수가 함께 변하는 경향을 나타낸다.", "a": "O", "e": "상관관계는 한 변수가 변할 때 다른 변수가 함께 증가하거나 감소하는 경향을 말한다."}, {"q": "상관관계가 있으면 반드시 인과관계가 있다.", "a": "X", "e": "상관관계는 함께 변하는 정도를 뜻하지만 원인과 결과를 증명하지는 않는다."}, {"q": "양의 상관관계는 한 변수가 증가할 때 다른 변수도 증가하는 경향이다.", "a": "O", "e": "예를 들어 공부 시간이 늘수록 점수가 높아지는 경향이 있다면 양의 상관이라고 볼 수 있다."}, {"q": "음의 상관관계는 한 변수가 증가할 때 다른 변수가 감소하는 경향이다.", "a": "O", "e": "예를 들어 운동 시간이 늘수록 스트레스 점수가 낮아지는 경향이 있다면 음의 상관일 수 있다."}, {"q": "상관계수는 보통 -1에서 1 사이의 값을 가진다.", "a": "O", "e": "피어슨 상관계수는 -1과 1 사이의 값으로 선형 관계의 방향과 강도를 나타낸다."}, {"q": "상관계수가 0에 가까우면 두 변수 사이에 강한 선형 관계가 있다고 해석한다.", "a": "X", "e": "0에 가까우면 선형 상관관계가 약하다고 해석한다."}, {"q": "산점도는 두 수치형 변수의 관계를 시각적으로 확인하는 데 유용하다.", "a": "O", "e": "산점도는 x축과 y축에 두 변수를 놓고 점의 패턴을 확인한다."}, {"q": "상관계수 1은 완전한 양의 선형 관계를 의미한다.", "a": "O", "e": "두 변수가 완벽하게 같은 방향의 직선 관계를 보일 때 1에 가까워진다."}, {"q": "제3의 변수가 두 변수의 상관관계를 만들어 낼 수 있다.", "a": "O", "e": "숨은 변수나 공통 원인이 상관관계를 만들어낼 수 있으므로 주의해야 한다."}, {"q": "상관관계 분석은 그래프 없이 숫자만 보면 항상 충분하다.", "a": "X", "e": "상관계수와 함께 산점도를 보면 이상값, 비선형 관계, 군집을 더 잘 파악할 수 있다."}];
+const mcQuestions = [{"q": "상관관계의 의미로 가장 적절한 것은?", "c": ["두 변수가 함께 변하는 경향", "반드시 원인과 결과", "자료의 개수만", "파일 저장 위치", "문자열 길이"], "a": 0, "e": "상관관계는 두 변수의 변화가 서로 관련되어 보이는 정도를 뜻한다."}, {"q": "양의 상관관계의 예로 적절한 것은?", "c": ["공부 시간이 늘수록 점수가 높아지는 경향", "기온이 오를수록 난방 사용량이 줄어드는 경향", "변수 사이에 아무 패턴이 없음", "파일 크기와 글자 색", "컴퓨터 전원과 책상 높이"], "a": 0, "e": "두 변수가 같은 방향으로 증가하는 경향이 양의 상관이다."}, {"q": "음의 상관관계의 예로 적절한 것은?", "c": ["기온이 오를수록 난방 사용량이 줄어드는 경향", "키가 클수록 몸무게가 늘어나는 경향", "공부 시간이 늘수록 점수가 늘어나는 경향", "두 변수 모두 증가", "완전한 무관계"], "a": 0, "e": "한 변수가 증가할 때 다른 변수가 감소하는 경향이 음의 상관이다."}, {"q": "피어슨 상관계수의 일반적인 범위는?", "c": ["-1에서 1", "0에서 100", "항상 10 이상", "항상 음수", "파일마다 다름"], "a": 0, "e": "피어슨 상관계수는 -1부터 1 사이의 값을 가진다."}, {"q": "상관계수가 0에 가까울 때의 해석으로 적절한 것은?", "c": ["선형 관계가 약하다", "완전한 양의 상관이다", "완전한 음의 상관이다", "인과관계가 확실하다", "항상 데이터 오류이다"], "a": 0, "e": "0에 가까우면 두 변수 사이의 선형 상관이 약하다고 볼 수 있다."}, {"q": "두 수치형 변수의 관계를 시각적으로 보기 좋은 그래프는?", "c": ["산점도", "원고지", "파일 아이콘", "막대코드만", "문자표"], "a": 0, "e": "산점도는 두 변수의 관계와 패턴을 시각적으로 확인하는 데 유용하다."}, {"q": "상관관계와 인과관계에 대한 설명으로 옳은 것은?", "c": ["상관관계만으로 인과관계를 단정할 수 없다", "상관관계는 항상 인과관계이다", "인과관계는 그래프와 무관하다", "상관계수는 파일명이다", "산점도는 평균만 계산한다"], "a": 0, "e": "상관관계는 인과관계를 증명하지 않으므로 실험, 이론, 추가 분석이 필요하다."}, {"q": "Pandas에서 상관계수를 계산하는 대표 함수는?", "c": ["corr()", "color()", "sleep()", "sound()", "font()"], "a": 0, "e": "DataFrame이나 Series의 corr()을 사용해 상관계수를 계산할 수 있다."}, {"q": "상관관계 해석 시 산점도를 함께 봐야 하는 이유는?", "c": ["이상값과 비선형 패턴을 확인하기 위해", "글자 색을 정하기 위해", "파일을 삭제하기 위해", "컴퓨터 속도를 높이기 위해", "인코딩을 바꾸기 위해"], "a": 0, "e": "상관계수만으로는 이상값이나 곡선 관계, 군집 구조를 놓칠 수 있다."}, {"q": "제3의 변수에 대한 설명으로 적절한 것은?", "c": ["두 변수의 상관관계에 영향을 줄 수 있는 숨은 변수", "항상 삭제해야 하는 열", "자료형 이름", "그래프 제목", "CSV 구분자"], "a": 0, "e": "숨은 변수나 공통 원인이 두 변수의 상관을 만들어낼 수 있다."}];
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q"><b>OX ${i+1}. ${item.q}</b>
+   <div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{ labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`; });
+   area.innerHTML += `<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){ document.getElementById("scoreText").innerText = oxScore + mcScore; }
+function showAll(cls){ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block"); }
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\n";
+ content += "Ⅳ. 데이터 분석 기초 - 상관관계 이해\n";
+ content += "학번: " + id + "\n";
+ content += "이름: " + name + "\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\n";
+ content += "형성평가 점수: " + mcScore + " / 50\n";
+ content += "총점: " + total + " / 100\n";
+ content += "응시시각: " + time + "\n";
+ content += "\n[학습 성찰]\n상관관계는 두 변수가 함께 변하는 경향을 나타내지만, 인과관계를 단정하려면 추가 근거와 맥락이 필요하다.\n";
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터44_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+<svg id="MJX-SVG-global-cache" style="display: none;"><defs><path id="MJX-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-TEX-SO-2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path><path id="MJX-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-TEX-N-AF" d="M69 544V590H430V544H69Z"></path><path id="MJX-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-SO-221A" d="M263 249Q264 249 315 130T417 -108T470 -228L725 302Q981 837 982 839Q989 850 1001 850Q1008 850 1013 844T1020 832V826L741 243Q645 43 540 -176Q479 -303 469 -324T453 -348Q449 -350 436 -350L424 -349L315 -96Q206 156 205 156L171 130Q138 104 137 104L111 130L263 249Z"></path><path id="MJX-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs></svg></body></html>

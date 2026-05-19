@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터33_CSV와 JSON 데이터_수업지도안</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#f97316,#2563eb);color:white;padding:34px 46px} header h1{margin:0;font-size:30px} header p{margin:10px 0 0;font-size:17px}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh} nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)} nav a:hover{background:#f97316}
+main{padding:30px;max-width:1200px} section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#ea580c;border-left:8px solid #2563eb;padding-left:12px} h3{color:#1d4ed8;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px} .card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px} .goal{background:#fff7ed;border-left:6px solid #f97316}
+.quote{font-size:18px;background:#eff6ff;border-left:7px solid #2563eb;padding:18px;border-radius:14px} pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace} table{width:100%;border-collapse:collapse;margin:15px 0} th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top} th{background:#fed7aa}
+.q{border:1px solid #fed7aa;background:#fffaf5;border-radius:14px;padding:16px;margin:14px 0} .choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer} .choices label:hover{background:#ffedd5}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px} button{border:0;background:#f97316;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700} button:hover{background:#ea580c}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px} .notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px} footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header><h1>데이터33. CSV와 JSON 데이터</h1><p>2025교육과정 고등학교 데이터 과학 · Ⅲ. 데이터 저장과 관리 · 개념기반 목표지향 수업지도안</p></header>
+<div class="wrap">
+<nav><h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a><a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B033_CSV%EC%99%80JSON%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+<main>
+<section id="plan"><h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>CSV와 JSON은 데이터를 저장하고 교환하기 위한 대표적인 텍스트 기반 데이터 형식이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>CSV는 행과 열이 분명한 표 형태 데이터에 적합하고, JSON은 key-value와 중첩 구조를 가진 데이터에 적합하다.</div>
+<div class="card goal"><b>핵심 질문</b><br>같은 데이터라도 저장 형식이 달라지면 분석과 활용 방식은 어떻게 달라지는가?</div>
+</div>
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅲ. 데이터 저장과 관리 - CSV와 JSON 데이터</td></tr>
+<tr><td>수업 목표</td><td>① CSV와 JSON의 구조와 차이를 설명한다.<br>② Pandas로 CSV를 읽고 저장한다.<br>③ json 모듈로 JSON 데이터를 읽고 저장한다.<br>④ 인코딩, 결측값, 자료형 문제를 점검한다.<br>⑤ 데이터 구조에 맞는 저장 형식을 선택한다.</td></tr>
+<tr><td>지식 목표</td><td>CSV, JSON, 구분자, 인코딩, key-value, 배열, 객체, 중첩 구조, DataFrame, 직렬화의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>CSV 읽기·쓰기, JSON 읽기·쓰기, CSV와 JSON 변환, 열 선택, 자료형 확인을 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>데이터 형식의 편리함만 보지 않고, 의미·출처·보안·호환성을 함께 고려한다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 엑셀표와 API 응답 비교 → 전개 30분: CSV/JSON 개념과 코드 실습 → 정리 10분: 형식 선택 토론 → 평가 10분</td></tr>
+</tbody></table></section>
+
+<section id="open"><h2>2. 수업을 여는 멘트</h2><div class="quote">
+우리가 친구 명단을 엑셀 표로 저장할 때와, 날씨 앱이 서버에서 정보를 받아올 때 데이터의 모양은 다릅니다.
+CSV는 줄과 칸으로 정리된 노트 같고, JSON은 이름표가 붙은 상자들이 서로 들어 있는 구조 같습니다.
+인문 철학적으로 데이터 형식은 기억을 담는 그릇입니다. 같은 사실도 어떤 그릇에 담느냐에 따라 찾기 쉽고, 해석하기 쉽고, 공유하기 쉬운 정도가 달라집니다.
+오늘은 데이터가 어떤 형식으로 저장될 때 가장 잘 이해되고 활용되는지 배웁니다.
+</div></section>
+
+<section id="concept"><h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① CSV</h3><p>CSV는 Comma-Separated Values의 약자로, 쉼표 등 구분자를 이용해 행과 열 형태의 데이터를 저장하는 텍스트 파일이다. 성적표, 출석부, 판매 기록처럼 표 구조가 분명한 데이터에 적합하다.</p>
+<h3>② 구분자</h3><p>구분자는 값과 값을 나누는 기호이다. 일반적으로 쉼표를 쓰지만 탭, 세미콜론을 쓰는 경우도 있다. 데이터 안에 쉼표가 포함되면 따옴표 처리가 필요할 수 있다.</p>
+<h3>③ 인코딩</h3><p>인코딩은 문자를 컴퓨터가 저장하는 방식이다. 한글 CSV 파일은 utf-8, utf-8-sig, cp949 등 인코딩 차이 때문에 깨질 수 있다. 파일을 읽고 쓸 때 인코딩을 확인해야 한다.</p>
+<h3>④ JSON</h3><p>JSON은 JavaScript Object Notation의 약자로, key-value 구조를 이용해 데이터를 표현한다. 웹 API 응답, 설정 파일, 중첩된 데이터 저장에 자주 사용된다.</p>
+<h3>⑤ 객체와 배열</h3><p>JSON 객체는 중괄호로 표현되는 key-value 묶음이며, 파이썬 딕셔너리와 유사하다. JSON 배열은 대괄호로 표현되는 값의 목록이며, 파이썬 리스트와 유사하다.</p>
+<h3>⑥ 중첩 구조</h3><p>JSON은 객체 안에 배열, 배열 안에 객체를 넣을 수 있다. 예를 들어 학생 한 명의 이름, 점수 목록, 동아리 정보 등을 하나의 구조로 표현할 수 있다.</p>
+<h3>⑦ DataFrame</h3><p>Pandas의 DataFrame은 표 형태 데이터를 다루는 핵심 구조이다. CSV는 DataFrame과 잘 연결되며, JSON도 정규화하면 DataFrame으로 변환할 수 있다.</p>
+<h3>⑧ 직렬화</h3><p>직렬화는 파이썬 객체를 파일에 저장하거나 네트워크로 전송할 수 있는 문자열 형태로 바꾸는 과정이다. json.dump는 파이썬 객체를 JSON 파일로 저장하는 직렬화 기능이다.</p>
+<h3>⑨ 형식 선택</h3><p>행과 열이 단순하고 분석 중심이면 CSV가 편리하다. 데이터가 계층적이고 웹 API와 주고받아야 한다면 JSON이 적합하다. 데이터 형식 선택은 데이터 구조와 활용 목적에 따라 달라진다.</p>
+</section>
+
+<section id="python"><h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① CSV 저장</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "이름": ["가은", "나래", "다온"],
+    "점수": [95, 82, 88]
+})
+
+df.to_csv("score.csv", index=False, encoding="utf-8-sig")
+print("CSV 저장 완료")</code></pre><p>DataFrame을 CSV 파일로 저장한다. index=False는 불필요한 인덱스 열 저장을 막는다.</p>
+<h3>② CSV 읽기</h3><pre><code>import pandas as pd
+
+df = pd.read_csv("score.csv", encoding="utf-8-sig")
+print(df)</code></pre><p>CSV 파일을 다시 DataFrame으로 읽는다.</p>
+<h3>③ JSON 저장</h3><pre><code>import json
+
+student = {
+    "이름": "가은",
+    "점수": [95, 90, 88],
+    "동아리": "데이터분석반"
+}
+
+with open("student.json", "w", encoding="utf-8") as f:
+    json.dump(student, f, ensure_ascii=False, indent=2)
+
+print("JSON 저장 완료")</code></pre><p>딕셔너리와 리스트를 포함한 파이썬 객체를 JSON 파일로 저장한다.</p>
+<h3>④ JSON 읽기</h3><pre><code>import json
+
+with open("student.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+print(data["이름"])
+print(data["점수"])</code></pre><p>JSON 파일을 읽어 딕셔너리처럼 key로 값을 꺼낸다.</p>
+<h3>⑤ JSON을 DataFrame으로 변환</h3><pre><code>import pandas as pd
+
+data = [
+    {"이름": "가은", "점수": 95},
+    {"이름": "나래", "점수": 82}
+]
+
+df = pd.DataFrame(data)
+print(df)</code></pre><p>리스트 안에 딕셔너리가 들어 있는 JSON형 데이터를 표 형태로 바꾼다.</p>
+</section>
+
+<section id="realcode"><h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 학생 성적 CSV 저장</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "학번": [101, 102, 103],
+    "이름": ["가은", "나래", "다온"],
+    "평균": [92.5, 84.0, 88.5]
+})
+df.to_csv("students.csv", index=False, encoding="utf-8-sig")
+print(df)</code></pre><p><b>상세 설명:</b> 행과 열이 분명한 학생 성적 데이터는 CSV로 저장하기 좋다.</p>
+<h3>예제 2. 앱 설정 JSON 저장</h3><pre><code>import json
+
+settings = {"theme": "light", "font_size": 16, "alarm": True}
+
+with open("settings.json", "w", encoding="utf-8") as f:
+    json.dump(settings, f, ensure_ascii=False, indent=2)
+
+print("설정 저장 완료")</code></pre><p><b>상세 설명:</b> 앱 설정처럼 key-value 구조가 분명한 데이터는 JSON으로 저장하기 적합하다.</p>
+<h3>예제 3. 날씨 API 응답 흉내 내기</h3><pre><code>weather = {
+    "city": "Jeonju",
+    "temperature": 23,
+    "dust": {"pm10": 35, "grade": "보통"}
+}
+
+print(weather["city"])
+print(weather["dust"]["grade"])</code></pre><p><b>상세 설명:</b> JSON의 중첩 구조에서 필요한 값을 꺼내는 예이다.</p>
+<h3>예제 4. CSV 자료형 확인</h3><pre><code>import pandas as pd
+
+df = pd.DataFrame({"상품": ["사과", "바나나"], "가격": ["1200", "900"]})
+df["가격"] = df["가격"].astype(int)
+
+print(df.dtypes)
+print(df["가격"].mean())</code></pre><p><b>상세 설명:</b> 숫자가 문자열로 저장되면 계산이 어려우므로 정수형으로 변환한다.</p>
+<h3>예제 5. JSON 목록을 표로 바꾸기</h3><pre><code>import pandas as pd
+
+books = [
+    {"제목": "데이터 과학", "분야": "정보"},
+    {"제목": "통계 기초", "분야": "수학"}
+]
+
+df = pd.DataFrame(books)
+print(df)</code></pre><p><b>상세 설명:</b> JSON 형식의 목록을 DataFrame으로 바꾸면 정렬, 필터링, 저장이 쉬워진다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. CSV는 표 형태 데이터를 저장하는 데 자주 사용된다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> CSV는 행과 열 구조의 데이터를 쉼표 등 구분자로 저장하는 형식이다.</div></div><div class="q"><b>OX 2. JSON은 key-value 구조를 표현하기 어렵다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> JSON은 key와 value를 이용해 딕셔너리와 비슷한 구조를 표현하기 좋다.</div></div><div class="q"><b>OX 3. CSV 파일은 일반적으로 한 행이 하나의 레코드를 나타낼 수 있다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 표 형태 데이터에서 한 행은 한 대상이나 사건의 정보를 나타낼 수 있다.</div></div><div class="q"><b>OX 4. JSON은 리스트와 중첩 구조를 표현할 수 있다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> JSON은 배열과 객체를 이용해 중첩된 데이터를 표현할 수 있다.</div></div><div class="q"><b>OX 5. CSV는 모든 데이터의 자료형과 관계를 자동으로 완벽히 보존한다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> CSV는 단순 텍스트 형식이므로 자료형이나 관계 정보가 명확히 보존되지 않을 수 있다.</div></div><div class="q"><b>OX 6. Pandas의 read_csv는 CSV 파일을 DataFrame으로 읽을 수 있다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> read_csv는 CSV 파일을 표 형태 DataFrame으로 불러오는 함수이다.</div></div><div class="q"><b>OX 7. json.dump는 파이썬 객체를 JSON 파일로 저장할 때 사용할 수 있다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> json.dump를 사용하면 딕셔너리나 리스트를 JSON 파일로 저장할 수 있다.</div></div><div class="q"><b>OX 8. 한글 CSV를 엑셀에서 열 때 인코딩 문제가 발생할 수 있다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 인코딩이 맞지 않으면 한글이 깨질 수 있으며 utf-8-sig 또는 cp949를 고려할 수 있다.</div></div><div class="q"><b>OX 9. JSON은 웹 API 응답 형식으로 자주 사용된다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 웹 API는 데이터를 JSON 형식으로 반환하는 경우가 많다.</div></div><div class="q"><b>OX 10. 데이터 형식은 분석 목적과 데이터 구조에 맞게 선택해야 한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 표 형태는 CSV, 계층 구조나 API 데이터는 JSON이 적합한 경우가 많다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. CSV 파일의 특징으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 표 형태 데이터를 쉼표 등 구분자로 저장한다</label><label><input type="radio" name="mc0" value="1"> 2. 이미지 전용 형식이다</label><label><input type="radio" name="mc0" value="2"> 3. 동영상만 저장한다</label><label><input type="radio" name="mc0" value="3"> 4. 항상 암호화된다</label><label><input type="radio" name="mc0" value="4"> 5. 데이터베이스 서버가 반드시 필요하다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> CSV는 행과 열 형태 데이터를 텍스트로 저장하는 간단한 형식이다.</div></div><div class="q"><b>문항 2. JSON 데이터의 기본 구조와 가장 가까운 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. key-value 구조</label><label><input type="radio" name="mc1" value="1"> 2. 픽셀 배열만</label><label><input type="radio" name="mc1" value="2"> 3. 음악 파형만</label><label><input type="radio" name="mc1" value="3"> 4. 종이 문서만</label><label><input type="radio" name="mc1" value="4"> 5. 무작위 숫자</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> JSON은 key와 value를 이용해 데이터를 구조화한다.</div></div><div class="q"><b>문항 3. Pandas에서 CSV 파일을 읽을 때 사용하는 대표 함수는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. read_csv</label><label><input type="radio" name="mc2" value="1"> 2. read_json_only</label><label><input type="radio" name="mc2" value="2"> 3. open_image</label><label><input type="radio" name="mc2" value="3"> 4. play_sound</label><label><input type="radio" name="mc2" value="4"> 5. make_color</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> pd.read_csv()는 CSV 파일을 DataFrame으로 읽는다.</div></div><div class="q"><b>문항 4. 파이썬 객체를 JSON 파일로 저장할 때 사용할 수 있는 모듈은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. json</label><label><input type="radio" name="mc3" value="1"> 2. random만</label><label><input type="radio" name="mc3" value="2"> 3. turtle</label><label><input type="radio" name="mc3" value="3"> 4. pygame만</label><label><input type="radio" name="mc3" value="4"> 5. math만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> json 모듈은 JSON 데이터를 읽고 쓰는 기능을 제공한다.</div></div><div class="q"><b>문항 5. CSV가 특히 적합한 데이터는?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 학생 성적표처럼 행과 열이 분명한 데이터</label><label><input type="radio" name="mc4" value="1"> 2. 복잡한 중첩 설정 데이터만</label><label><input type="radio" name="mc4" value="2"> 3. 고해상도 사진</label><label><input type="radio" name="mc4" value="3"> 4. 음악 파일</label><label><input type="radio" name="mc4" value="4"> 5. 실행 프로그램</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 성적표, 출석부, 판매 기록처럼 표 형태 데이터는 CSV에 적합하다.</div></div><div class="q"><b>문항 6. JSON이 특히 적합한 데이터는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 웹 API 응답처럼 중첩된 key-value 데이터</label><label><input type="radio" name="mc5" value="1"> 2. 단순한 한 줄 숫자만</label><label><input type="radio" name="mc5" value="2"> 3. 종이책</label><label><input type="radio" name="mc5" value="3"> 4. 흑백 사진</label><label><input type="radio" name="mc5" value="4"> 5. 컴퓨터 전원 상태</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> JSON은 중첩 객체와 배열을 표현할 수 있어 API 응답에 자주 사용된다.</div></div><div class="q"><b>문항 7. 한글이 깨지는 CSV 파일을 엑셀에서 열 때 고려할 수 있는 인코딩은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. utf-8-sig</label><label><input type="radio" name="mc6" value="1"> 2. black-white</label><label><input type="radio" name="mc6" value="2"> 3. mp3</label><label><input type="radio" name="mc6" value="3"> 4. jpg</label><label><input type="radio" name="mc6" value="4"> 5. while</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> utf-8-sig는 엑셀에서 한글 깨짐을 줄이는 데 도움이 될 수 있다.</div></div><div class="q"><b>문항 8. CSV와 JSON 선택 기준으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 데이터 구조와 활용 목적</label><label><input type="radio" name="mc7" value="1"> 2. 글자 색만</label><label><input type="radio" name="mc7" value="2"> 3. 컴퓨터 배경화면</label><label><input type="radio" name="mc7" value="3"> 4. 마우스 종류</label><label><input type="radio" name="mc7" value="4"> 5. 프린터 색상</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 표 구조인지 계층 구조인지, 분석 목적이 무엇인지에 따라 형식을 선택한다.</div></div><div class="q"><b>문항 9. JSON에서 배열과 비슷한 파이썬 자료형은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 리스트</label><label><input type="radio" name="mc8" value="1"> 2. 정수 하나만</label><label><input type="radio" name="mc8" value="2"> 3. 주석</label><label><input type="radio" name="mc8" value="3"> 4. 함수 이름</label><label><input type="radio" name="mc8" value="4"> 5. 파일 확장자</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> JSON 배열은 파이썬 리스트와 유사하게 다룰 수 있다.</div></div><div class="q"><b>문항 10. CSV를 사용할 때 주의할 점으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 구분자, 인코딩, 결측값, 자료형을 확인한다</label><label><input type="radio" name="mc9" value="1"> 2. 항상 개인정보를 공개한다</label><label><input type="radio" name="mc9" value="2"> 3. 열 이름을 무조건 삭제한다</label><label><input type="radio" name="mc9" value="3"> 4. 파일 내용을 임의로 바꾼다</label><label><input type="radio" name="mc9" value="4"> 5. 출처를 숨긴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> CSV는 단순하지만 구분자, 인코딩, 결측값, 자료형 문제를 확인해야 한다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+<section id="save"><h2>8. 학번_이름_데이터33_점수_응시시각.txt 생성</h2><p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label><label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p><button onclick="saveTxt()">TXT 저장하기</button></section>
+
+<section id="close"><h2>9. 수업을 마무리 하는 멘트</h2><div class="quote">
+오늘 우리는 CSV와 JSON이라는 두 가지 데이터 그릇을 배웠습니다.
+컴퓨터과학은 데이터를 저장하고 교환하는 형식을 제공하고, 수학은 표 안의 수치와 구조를 분석하게 하며, 과학은 데이터의 정확성과 재현 가능성을 요구합니다.
+그리고 인문 철학은 우리에게 묻습니다. “형식은 내용의 의미를 어떻게 바꾸는가?”
+좋은 데이터 과학자는 데이터를 저장할 줄 아는 사람을 넘어, 데이터의 구조에 가장 알맞은 표현 방식을 선택하는 사람입니다.
+</div></section>
+<footer>© 데이터 과학 수업자료 · 데이터33 CSV와 JSON 데이터</footer>
+</main></div>
+
+<script>
+const oxQuestions = [{"q": "CSV는 표 형태 데이터를 저장하는 데 자주 사용된다.", "a": "O", "e": "CSV는 행과 열 구조의 데이터를 쉼표 등 구분자로 저장하는 형식이다."}, {"q": "JSON은 key-value 구조를 표현하기 어렵다.", "a": "X", "e": "JSON은 key와 value를 이용해 딕셔너리와 비슷한 구조를 표현하기 좋다."}, {"q": "CSV 파일은 일반적으로 한 행이 하나의 레코드를 나타낼 수 있다.", "a": "O", "e": "표 형태 데이터에서 한 행은 한 대상이나 사건의 정보를 나타낼 수 있다."}, {"q": "JSON은 리스트와 중첩 구조를 표현할 수 있다.", "a": "O", "e": "JSON은 배열과 객체를 이용해 중첩된 데이터를 표현할 수 있다."}, {"q": "CSV는 모든 데이터의 자료형과 관계를 자동으로 완벽히 보존한다.", "a": "X", "e": "CSV는 단순 텍스트 형식이므로 자료형이나 관계 정보가 명확히 보존되지 않을 수 있다."}, {"q": "Pandas의 read_csv는 CSV 파일을 DataFrame으로 읽을 수 있다.", "a": "O", "e": "read_csv는 CSV 파일을 표 형태 DataFrame으로 불러오는 함수이다."}, {"q": "json.dump는 파이썬 객체를 JSON 파일로 저장할 때 사용할 수 있다.", "a": "O", "e": "json.dump를 사용하면 딕셔너리나 리스트를 JSON 파일로 저장할 수 있다."}, {"q": "한글 CSV를 엑셀에서 열 때 인코딩 문제가 발생할 수 있다.", "a": "O", "e": "인코딩이 맞지 않으면 한글이 깨질 수 있으며 utf-8-sig 또는 cp949를 고려할 수 있다."}, {"q": "JSON은 웹 API 응답 형식으로 자주 사용된다.", "a": "O", "e": "웹 API는 데이터를 JSON 형식으로 반환하는 경우가 많다."}, {"q": "데이터 형식은 분석 목적과 데이터 구조에 맞게 선택해야 한다.", "a": "O", "e": "표 형태는 CSV, 계층 구조나 API 데이터는 JSON이 적합한 경우가 많다."}];
+const mcQuestions = [{"q": "CSV 파일의 특징으로 가장 적절한 것은?", "c": ["표 형태 데이터를 쉼표 등 구분자로 저장한다", "이미지 전용 형식이다", "동영상만 저장한다", "항상 암호화된다", "데이터베이스 서버가 반드시 필요하다"], "a": 0, "e": "CSV는 행과 열 형태 데이터를 텍스트로 저장하는 간단한 형식이다."}, {"q": "JSON 데이터의 기본 구조와 가장 가까운 것은?", "c": ["key-value 구조", "픽셀 배열만", "음악 파형만", "종이 문서만", "무작위 숫자"], "a": 0, "e": "JSON은 key와 value를 이용해 데이터를 구조화한다."}, {"q": "Pandas에서 CSV 파일을 읽을 때 사용하는 대표 함수는?", "c": ["read_csv", "read_json_only", "open_image", "play_sound", "make_color"], "a": 0, "e": "pd.read_csv()는 CSV 파일을 DataFrame으로 읽는다."}, {"q": "파이썬 객체를 JSON 파일로 저장할 때 사용할 수 있는 모듈은?", "c": ["json", "random만", "turtle", "pygame만", "math만"], "a": 0, "e": "json 모듈은 JSON 데이터를 읽고 쓰는 기능을 제공한다."}, {"q": "CSV가 특히 적합한 데이터는?", "c": ["학생 성적표처럼 행과 열이 분명한 데이터", "복잡한 중첩 설정 데이터만", "고해상도 사진", "음악 파일", "실행 프로그램"], "a": 0, "e": "성적표, 출석부, 판매 기록처럼 표 형태 데이터는 CSV에 적합하다."}, {"q": "JSON이 특히 적합한 데이터는?", "c": ["웹 API 응답처럼 중첩된 key-value 데이터", "단순한 한 줄 숫자만", "종이책", "흑백 사진", "컴퓨터 전원 상태"], "a": 0, "e": "JSON은 중첩 객체와 배열을 표현할 수 있어 API 응답에 자주 사용된다."}, {"q": "한글이 깨지는 CSV 파일을 엑셀에서 열 때 고려할 수 있는 인코딩은?", "c": ["utf-8-sig", "black-white", "mp3", "jpg", "while"], "a": 0, "e": "utf-8-sig는 엑셀에서 한글 깨짐을 줄이는 데 도움이 될 수 있다."}, {"q": "CSV와 JSON 선택 기준으로 적절한 것은?", "c": ["데이터 구조와 활용 목적", "글자 색만", "컴퓨터 배경화면", "마우스 종류", "프린터 색상"], "a": 0, "e": "표 구조인지 계층 구조인지, 분석 목적이 무엇인지에 따라 형식을 선택한다."}, {"q": "JSON에서 배열과 비슷한 파이썬 자료형은?", "c": ["리스트", "정수 하나만", "주석", "함수 이름", "파일 확장자"], "a": 0, "e": "JSON 배열은 파이썬 리스트와 유사하게 다룰 수 있다."}, {"q": "CSV를 사용할 때 주의할 점으로 적절한 것은?", "c": ["구분자, 인코딩, 결측값, 자료형을 확인한다", "항상 개인정보를 공개한다", "열 이름을 무조건 삭제한다", "파일 내용을 임의로 바꾼다", "출처를 숨긴다"], "a": 0, "e": "CSV는 단순하지만 구분자, 인코딩, 결측값, 자료형 문제를 확인해야 한다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea"); oxQuestions.forEach((item,i)=>{area.innerHTML += `<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea"); mcQuestions.forEach((item,i)=>{let labels=""; item.c.forEach((choice,j)=>{labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;}); area.innerHTML += `<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0; oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`); if(checked && checked.value===item.a) oxScore+=5;}); updateScore(); alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0; mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`); if(checked && Number(checked.value)===item.a) mcScore+=5;}); updateScore(); alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date(); const pad=n=>String(n).padStart(2,"0"); return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번"; const name=document.getElementById("studentName").value.trim()||"이름"; const total=oxScore+mcScore; const time=nowString(); let content=""; content+="2025교육과정 고등학교 데이터 과학\n"; content+="Ⅲ. 데이터 저장과 관리 - CSV와 JSON 데이터\n"; content+="학번: "+id+"\n"; content+="이름: "+name+"\n"; content+="진단평가 OX 점수: "+oxScore+" / 50\n"; content+="형성평가 점수: "+mcScore+" / 50\n"; content+="총점: "+total+" / 100\n"; content+="응시시각: "+time+"\n"; content+="\n[학습 성찰]\nCSV는 표 형태 데이터, JSON은 key-value 및 중첩 구조 데이터에 적합하며 목적에 맞게 형식을 선택해야 한다.\n"; const blob=new Blob([content],{type:"text/plain;charset=utf-8"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=`${id}_${name}_데이터33_${total}점_${time}.txt`; a.click(); URL.revokeObjectURL(a.href);}
+renderOX(); renderMC();
+</script>
+</body></html>

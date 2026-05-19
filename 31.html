@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<!-- saved from url=(0200)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터31_파일과데이터베이스_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#334155,#2563eb);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}
+header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#2563eb}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#1d4ed8;border-left:8px solid #64748b;padding-left:12px}
+h3{color:#334155;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#eff6ff;border-left:6px solid #2563eb}
+.quote{font-size:18px;background:#fffbeb;border-left:7px solid #f59e0b;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#dbeafe}
+.q{border:1px solid #bfdbfe;background:#fbfdff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#dbeafe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#2563eb;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#1d4ed8}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;border-radius:20px;padding:4px 10px;margin:3px;font-size:13px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터31. 파일과 데이터베이스</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅲ. 데이터 저장과 관리 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B031_%ED%8C%8C%EC%9D%BC%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>데이터는 파일 또는 데이터베이스에 저장되며, 저장 방식은 검색·수정·공유·보안의 효율성을 결정한다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>파일은 단순하고 편리하지만, 데이터베이스는 대량의 데이터를 구조화하고 일관성 있게 관리하는 데 적합하다.</div>
+<div class="card goal"><b>핵심 질문</b><br>데이터를 어디에 어떻게 저장하느냐가 왜 데이터의 가치와 신뢰성을 바꾸는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅲ. 데이터 저장과 관리 - 파일과 데이터베이스</td></tr>
+<tr><td>수업 목표</td><td>① 파일과 데이터베이스의 차이를 설명한다.<br>② CSV, JSON, TXT 파일의 특징을 이해한다.<br>③ 관계형 데이터베이스의 테이블, 행, 열, 기본키 개념을 설명한다.<br>④ 파이썬으로 파일 저장과 SQLite 데이터베이스 저장을 수행한다.<br>⑤ 데이터 저장 시 무결성, 중복, 보안, 백업의 중요성을 인식한다.</td></tr>
+<tr><td>지식 목표</td><td>파일, 데이터베이스, DBMS, 테이블, 레코드, 필드, 기본키, SQL, CRUD, 백업, 무결성의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>CSV/JSON 파일 저장, 파일 읽기, SQLite 테이블 생성, 데이터 삽입·조회·수정·삭제를 수행한다.</td></tr>
+<tr><td>태도 목표</td><td>데이터를 체계적으로 저장하고, 개인정보·보안·백업을 고려하는 책임 있는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 파일 저장 경험 공유 → 전개 30분: 파일과 DB 개념 및 코드 실습 → 정리 10분: 저장 방식 선택 토론 → 평가 10분: OX 및 5지선다</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 파일과 데이터베이스 비교표 작성</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+여러분이 사진을 저장하고, 메모를 남기고, 게임 기록을 불러오고, 학교 생활기록부가 관리되는 모든 순간에 데이터 저장이 일어납니다.
+저장은 단순히 “어딘가에 넣어 두는 일”이 아닙니다.
+인문 철학적으로 저장은 기억의 방식입니다.
+어떤 기억은 종이에 적고, 어떤 기억은 파일에 남기며, 어떤 사회적 기록은 데이터베이스에 구조화됩니다.
+오늘 우리는 데이터가 어떻게 기억되고, 왜 잘 관리되어야 하는지 배웁니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+
+<h3>① 파일</h3>
+<p>파일은 데이터를 하나의 단위로 저장하는 기본 방식이다. 텍스트 파일, CSV 파일, JSON 파일, 이미지 파일, 엑셀 파일 등이 모두 파일이다. 파일은 만들고 복사하기 쉽지만, 여러 사람이 동시에 수정하거나 복잡한 검색을 수행하기에는 한계가 있다.</p>
+
+<h3>② TXT 파일</h3>
+<p>TXT 파일은 단순한 문자열을 저장하는 파일이다. 로그, 메모, 간단한 결과 저장에 적합하다. 구조가 단순하므로 사람이 읽기 쉽지만, 열과 행이 명확한 데이터 분석에는 추가 처리가 필요하다.</p>
+
+<h3>③ CSV 파일</h3>
+<p>CSV 파일은 쉼표와 줄바꿈을 이용해 표 형태 데이터를 저장한다. Pandas와 엑셀에서 쉽게 읽을 수 있어 데이터 분석에서 자주 사용된다. 다만 자료형, 관계, 제약 조건을 엄격히 관리하기 어렵다.</p>
+
+<h3>④ JSON 파일</h3>
+<p>JSON은 key-value 구조로 데이터를 저장하는 형식이다. 웹 API 응답, 설정 파일, 중첩 구조 데이터 저장에 자주 사용된다. 리스트와 딕셔너리 구조를 표현하기 쉽다.</p>
+
+<h3>⑤ 데이터베이스</h3>
+<p>데이터베이스는 여러 데이터를 체계적으로 저장하고 관리하는 시스템이다. 단순 저장뿐 아니라 검색, 수정, 삭제, 권한 관리, 동시 접근, 무결성 유지 기능을 제공한다.</p>
+
+<h3>⑥ 관계형 데이터베이스</h3>
+<p>관계형 데이터베이스는 데이터를 표, 즉 테이블 형태로 저장한다. 행은 하나의 레코드, 열은 속성을 의미한다. 학생 테이블, 성적 테이블, 수강 테이블처럼 여러 테이블을 연결하여 중복을 줄이고 의미 있는 관계를 표현할 수 있다.</p>
+
+<h3>⑦ 기본키</h3>
+<p>기본키는 각 행을 고유하게 구별하는 값이다. 학생 데이터에서는 학번이 기본키가 될 수 있다. 기본키를 사용하면 같은 이름의 학생이 있어도 정확히 구별할 수 있다.</p>
+
+<h3>⑧ SQL</h3>
+<p>SQL은 관계형 데이터베이스에서 데이터를 생성, 조회, 수정, 삭제하기 위한 언어이다. SELECT는 조회, INSERT는 삽입, UPDATE는 수정, DELETE는 삭제에 사용된다.</p>
+
+<h3>⑨ 데이터 무결성과 백업</h3>
+<p>데이터 무결성은 데이터가 정확하고 일관성 있게 유지되는 상태를 뜻한다. 백업은 데이터 손실에 대비해 복사본을 저장하는 것이다. 중요한 데이터는 저장 구조뿐 아니라 복구 가능성도 고려해야 한다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① TXT 파일 저장</h3>
+<pre><code>text = "데이터 과학 수업 기록입니다."
+
+with open("note.txt", "w", encoding="utf-8") as f:
+    f.write(text)
+
+print("TXT 저장 완료")</code></pre>
+<p>문자열을 텍스트 파일로 저장한다. with 구문은 파일을 안전하게 열고 닫아 준다.</p>
+
+<h3>② CSV 파일 저장</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "학번": [101, 102, 103],
+    "이름": ["김데이터", "이분석", "박저장"],
+    "점수": [90, 85, 95]
+})
+
+df.to_csv("score.csv", index=False, encoding="utf-8-sig")
+print("CSV 저장 완료")</code></pre>
+<p>표 형태 데이터를 CSV 파일로 저장한다. utf-8-sig는 엑셀에서 한글이 깨지는 문제를 줄인다.</p>
+
+<h3>③ JSON 파일 저장</h3>
+<pre><code>import json
+
+student = {
+    "학번": 101,
+    "이름": "김데이터",
+    "관심분야": ["인공지능", "데이터 분석"]
+}
+
+with open("student.json", "w", encoding="utf-8") as f:
+    json.dump(student, f, ensure_ascii=False, indent=2)
+
+print("JSON 저장 완료")</code></pre>
+<p>딕셔너리와 리스트 구조를 JSON 파일로 저장한다. ensure_ascii=False는 한글을 그대로 저장하게 한다.</p>
+
+<h3>④ SQLite 데이터베이스 만들기</h3>
+<pre><code>import sqlite3
+
+conn = sqlite3.connect("school.db")
+cur = conn.cursor()
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    score INTEGER
+)
+""")
+
+conn.commit()
+conn.close()
+print("테이블 생성 완료")</code></pre>
+<p>SQLite는 파이썬 기본 라이브러리로 사용할 수 있는 가벼운 데이터베이스이다. students 테이블을 만든다.</p>
+
+<h3>⑤ 데이터 삽입과 조회</h3>
+<pre><code>import sqlite3
+
+conn = sqlite3.connect("school.db")
+cur = conn.cursor()
+
+cur.execute("INSERT INTO students VALUES (?, ?, ?)", (101, "김데이터", 90))
+cur.execute("SELECT * FROM students")
+
+rows = cur.fetchall()
+print(rows)
+
+conn.commit()
+conn.close()</code></pre>
+<p>데이터베이스에 학생 정보를 삽입하고 전체 데이터를 조회한다. 물음표는 안전한 값 전달 방식이다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 출석 기록 CSV 저장</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "날짜": ["2026-05-01", "2026-05-02", "2026-05-03"],
+    "이름": ["김데이터", "김데이터", "김데이터"],
+    "출석": ["출석", "지각", "출석"]
+})
+
+df.to_csv("attendance.csv", index=False, encoding="utf-8-sig")
+print(df)</code></pre>
+<p><b>상세 설명:</b> 출석 기록은 표 형식이므로 CSV 저장에 적합하다. 날짜, 이름, 출석 상태를 열로 구성한다.</p>
+
+<h3>예제 2. 개인 설정 JSON 저장</h3>
+<pre><code>import json
+
+settings = {
+    "theme": "light",
+    "font_size": 16,
+    "notifications": True
+}
+
+with open("settings.json", "w", encoding="utf-8") as f:
+    json.dump(settings, f, ensure_ascii=False, indent=2)
+
+print("설정 저장 완료")</code></pre>
+<p><b>상세 설명:</b> 앱의 설정처럼 key-value 구조가 분명한 데이터는 JSON으로 저장하기 좋다.</p>
+
+<h3>예제 3. 독서 목록 데이터베이스 저장</h3>
+<pre><code>import sqlite3
+
+conn = sqlite3.connect("library.db")
+cur = conn.cursor()
+
+cur.execute("CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, title TEXT, author TEXT)")
+cur.execute("INSERT INTO books VALUES (?, ?, ?)", (1, "데이터 과학 입문", "홍길동"))
+cur.execute("SELECT title, author FROM books")
+
+print(cur.fetchall())
+
+conn.commit()
+conn.close()</code></pre>
+<p><b>상세 설명:</b> 도서 목록처럼 계속 추가·검색해야 하는 데이터는 데이터베이스에 저장하면 편리하다.</p>
+
+<h3>예제 4. 성적 데이터 조회 조건 적용</h3>
+<pre><code>import sqlite3
+
+conn = sqlite3.connect(":memory:")
+cur = conn.cursor()
+
+cur.execute("CREATE TABLE scores (name TEXT, score INTEGER)")
+cur.executemany("INSERT INTO scores VALUES (?, ?)", [
+    ("가은", 95), ("나래", 82), ("다온", 76)
+])
+
+cur.execute("SELECT name, score FROM scores WHERE score &gt;= 80")
+print(cur.fetchall())
+
+conn.close()</code></pre>
+<p><b>상세 설명:</b> SQL의 WHERE 조건을 이용해 80점 이상 학생만 조회한다. 데이터베이스의 검색 기능을 보여 준다.</p>
+
+<h3>예제 5. CSV 파일과 데이터베이스 선택 기준</h3>
+<pre><code>data_size = "large"
+many_users = True
+
+if data_size == "small" and not many_users:
+    print("CSV 파일 저장이 적합합니다.")
+else:
+    print("데이터베이스 저장이 적합합니다.")</code></pre>
+<p><b>상세 설명:</b> 데이터 양이 적고 단순하면 CSV가 편리하지만, 데이터가 많거나 여러 사용자가 함께 다루면 데이터베이스가 더 적합하다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q">
+   <b>OX 1. 파일은 데이터를 저장하는 기본적인 단위이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox0" value="O"> O</label>
+   <label><input type="radio" name="ox0" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 텍스트, CSV, JSON, 이미지 등 다양한 데이터가 파일 형태로 저장될 수 있다.</div>
+   </div><div class="q">
+   <b>OX 2. CSV 파일은 표 형태 데이터를 저장하는 데 자주 사용된다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox1" value="O"> O</label>
+   <label><input type="radio" name="ox1" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> CSV는 행과 열 구조의 데이터를 쉼표 등 구분자로 저장한다.</div>
+   </div><div class="q">
+   <b>OX 3. JSON은 key-value 구조의 데이터를 표현하기 어렵다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox2" value="O"> O</label>
+   <label><input type="radio" name="ox2" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> JSON은 key-value 구조와 리스트, 중첩 구조를 표현하는 데 적합하다.</div>
+   </div><div class="q">
+   <b>OX 4. 데이터베이스는 데이터의 검색, 수정, 삭제, 권한 관리에 활용될 수 있다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox3" value="O"> O</label>
+   <label><input type="radio" name="ox3" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> DBMS는 단순 저장뿐 아니라 다양한 관리 기능을 제공한다.</div>
+   </div><div class="q">
+   <b>OX 5. 관계형 데이터베이스는 데이터를 표 형태의 테이블로 저장한다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox4" value="O"> O</label>
+   <label><input type="radio" name="ox4" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 관계형 데이터베이스는 행과 열로 이루어진 테이블을 기본 구조로 사용한다.</div>
+   </div><div class="q">
+   <b>OX 6. 기본키는 각 행을 고유하게 구별하는 값이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox5" value="O"> O</label>
+   <label><input type="radio" name="ox5" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 기본키는 같은 이름이나 비슷한 데이터가 있어도 각 레코드를 구분하게 해 준다.</div>
+   </div><div class="q">
+   <b>OX 7. SQL은 데이터베이스를 조회하고 조작하는 언어이다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox6" value="O"> O</label>
+   <label><input type="radio" name="ox6" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> SQL은 SELECT, INSERT, UPDATE, DELETE 등으로 데이터를 다룬다.</div>
+   </div><div class="q">
+   <b>OX 8. 데이터베이스를 사용하면 백업이 전혀 필요 없다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox7" value="O"> O</label>
+   <label><input type="radio" name="ox7" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 데이터베이스도 장애나 실수에 대비해 백업이 필요하다.</div>
+   </div><div class="q">
+   <b>OX 9. 데이터 무결성은 데이터가 정확하고 일관성 있게 유지되는 상태를 뜻한다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox8" value="O"> O</label>
+   <label><input type="radio" name="ox8" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 무결성은 데이터 관리에서 신뢰성을 유지하는 핵심 조건이다.</div>
+   </div><div class="q">
+   <b>OX 10. 여러 사용자가 동시에 데이터를 수정하는 상황에서는 단순 파일보다 데이터베이스가 유리한 경우가 많다.</b>
+   <div class="choices">
+   <label><input type="radio" name="ox9" value="O"> O</label>
+   <label><input type="radio" name="ox9" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터베이스는 동시 접근, 무결성, 권한 관리를 지원하므로 협업 상황에 적합하다.</div>
+   </div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q">
+   <b>문항 1. 파일의 설명으로 가장 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 데이터를 하나의 단위로 저장하는 방식</label><label><input type="radio" name="mc0" value="1"> 2. 인터넷 속도 측정값</label><label><input type="radio" name="mc0" value="2"> 3. 항상 삭제되는 임시 기억</label><label><input type="radio" name="mc0" value="3"> 4. SQL 명령어만 의미</label><label><input type="radio" name="mc0" value="4"> 5. 그래프의 색상</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 파일은 데이터를 저장하는 기본 단위이며 다양한 형식을 가질 수 있다.</div>
+   </div><div class="q">
+   <b>문항 2. CSV 파일의 특징은?</b>
+   <div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 표 형태 데이터를 쉼표 등 구분자로 저장한다</label><label><input type="radio" name="mc1" value="1"> 2. 이미지만 저장한다</label><label><input type="radio" name="mc1" value="2"> 3. 소리만 저장한다</label><label><input type="radio" name="mc1" value="3"> 4. 데이터베이스 서버가 반드시 필요하다</label><label><input type="radio" name="mc1" value="4"> 5. 기본키를 자동으로 강제한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> CSV는 행과 열 형태 데이터를 텍스트로 저장하는 간단한 형식이다.</div>
+   </div><div class="q">
+   <b>문항 3. JSON 파일이 적합한 경우는?</b>
+   <div class="choices"><label><input type="radio" name="mc2" value="0"> 1. key-value 구조와 중첩 데이터를 저장할 때</label><label><input type="radio" name="mc2" value="1"> 2. 사진을 고해상도로 저장할 때</label><label><input type="radio" name="mc2" value="2"> 3. 동영상 압축할 때</label><label><input type="radio" name="mc2" value="3"> 4. 마우스 속도를 측정할 때</label><label><input type="radio" name="mc2" value="4"> 5. 프린터를 연결할 때</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> JSON은 딕셔너리, 리스트와 같은 구조화된 데이터를 표현하기 좋다.</div>
+   </div><div class="q">
+   <b>문항 4. 데이터베이스의 장점으로 적절한 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 검색·수정·삭제·권한 관리가 체계적이다</label><label><input type="radio" name="mc3" value="1"> 2. 항상 데이터가 적을 때만 쓴다</label><label><input type="radio" name="mc3" value="2"> 3. 절대 오류가 발생하지 않는다</label><label><input type="radio" name="mc3" value="3"> 4. 파일보다 무조건 단순하다</label><label><input type="radio" name="mc3" value="4"> 5. 저장 기능이 없다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 데이터베이스는 대량 데이터 관리, 검색, 수정, 권한 관리, 무결성 유지에 유리하다.</div>
+   </div><div class="q">
+   <b>문항 5. 관계형 데이터베이스의 기본 저장 구조는?</b>
+   <div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 테이블</label><label><input type="radio" name="mc4" value="1"> 2. 그림판</label><label><input type="radio" name="mc4" value="2"> 3. 음악 파일</label><label><input type="radio" name="mc4" value="3"> 4. 압축 폴더</label><label><input type="radio" name="mc4" value="4"> 5. 랜덤 문자열</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 관계형 데이터베이스는 행과 열로 구성된 테이블을 사용한다.</div>
+   </div><div class="q">
+   <b>문항 6. 기본키의 역할은?</b>
+   <div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 각 행을 고유하게 구별한다</label><label><input type="radio" name="mc5" value="1"> 2. 파일을 압축한다</label><label><input type="radio" name="mc5" value="2"> 3. 글꼴을 바꾼다</label><label><input type="radio" name="mc5" value="3"> 4. 데이터를 무조건 삭제한다</label><label><input type="radio" name="mc5" value="4"> 5. 인터넷을 연결한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 기본키는 레코드를 고유하게 식별하기 위한 속성이다.</div>
+   </div><div class="q">
+   <b>문항 7. SQL의 SELECT 문은 주로 무엇을 하는가?</b>
+   <div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 데이터 조회</label><label><input type="radio" name="mc6" value="1"> 2. 데이터베이스 종료만</label><label><input type="radio" name="mc6" value="2"> 3. 파일 압축</label><label><input type="radio" name="mc6" value="3"> 4. 이미지 편집</label><label><input type="radio" name="mc6" value="4"> 5. 컴퓨터 재부팅</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> SELECT는 테이블에서 조건에 맞는 데이터를 조회하는 명령이다.</div>
+   </div><div class="q">
+   <b>문항 8. 다음 중 CRUD에 해당하지 않는 것은?</b>
+   <div class="choices"><label><input type="radio" name="mc7" value="0"> 1. Color</label><label><input type="radio" name="mc7" value="1"> 2. Create</label><label><input type="radio" name="mc7" value="2"> 3. Read</label><label><input type="radio" name="mc7" value="3"> 4. Update</label><label><input type="radio" name="mc7" value="4"> 5. Delete</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> CRUD는 생성, 읽기, 수정, 삭제를 의미한다. Color는 해당하지 않는다.</div>
+   </div><div class="q">
+   <b>문항 9. 데이터 무결성이 중요한 이유는?</b>
+   <div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 데이터의 정확성과 일관성을 유지하기 위해</label><label><input type="radio" name="mc8" value="1"> 2. 데이터를 모두 숨기기 위해</label><label><input type="radio" name="mc8" value="2"> 3. 파일 크기를 무조건 키우기 위해</label><label><input type="radio" name="mc8" value="3"> 4. 글자 색을 바꾸기 위해</label><label><input type="radio" name="mc8" value="4"> 5. 인터넷 검색을 막기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 무결성이 유지되어야 데이터 분석과 의사결정의 신뢰성이 높아진다.</div>
+   </div><div class="q">
+   <b>문항 10. 단순 파일보다 데이터베이스가 더 적합한 상황은?</b>
+   <div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 여러 사용자가 계속 데이터를 추가·수정·조회하는 경우</label><label><input type="radio" name="mc9" value="1"> 2. 한 줄 메모를 저장하는 경우</label><label><input type="radio" name="mc9" value="2"> 3. 임시 문장을 한 번 출력하는 경우</label><label><input type="radio" name="mc9" value="3"> 4. 계산 결과 하나만 저장하는 경우</label><label><input type="radio" name="mc9" value="4"> 5. 배경화면을 바꾸는 경우</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 여러 사용자와 많은 데이터, 복잡한 검색·수정이 필요한 경우 데이터베이스가 유리하다.</div>
+   </div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터31_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 데이터가 파일과 데이터베이스에 어떻게 저장되는지 배웠습니다.
+컴퓨터과학은 저장 구조와 SQL, 파일 입출력의 방법을 제공하고,
+수학은 표와 관계 속에서 데이터의 구조를 논리적으로 바라보게 하며,
+과학은 기록의 정확성과 재현 가능성을 중요하게 여깁니다.
+그리고 인문 철학은 우리에게 묻습니다.
+“우리는 무엇을 기억하고, 무엇을 잊게 할 것인가?”
+좋은 데이터 과학자는 데이터를 많이 저장하는 사람이 아니라, 필요한 데이터를 정확하고 안전하며 의미 있게 관리하는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터31 파일과 데이터베이스</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [
+ {q:"파일은 데이터를 저장하는 기본적인 단위이다.", a:"O", e:"텍스트, CSV, JSON, 이미지 등 다양한 데이터가 파일 형태로 저장될 수 있다."},
+ {q:"CSV 파일은 표 형태 데이터를 저장하는 데 자주 사용된다.", a:"O", e:"CSV는 행과 열 구조의 데이터를 쉼표 등 구분자로 저장한다."},
+ {q:"JSON은 key-value 구조의 데이터를 표현하기 어렵다.", a:"X", e:"JSON은 key-value 구조와 리스트, 중첩 구조를 표현하는 데 적합하다."},
+ {q:"데이터베이스는 데이터의 검색, 수정, 삭제, 권한 관리에 활용될 수 있다.", a:"O", e:"DBMS는 단순 저장뿐 아니라 다양한 관리 기능을 제공한다."},
+ {q:"관계형 데이터베이스는 데이터를 표 형태의 테이블로 저장한다.", a:"O", e:"관계형 데이터베이스는 행과 열로 이루어진 테이블을 기본 구조로 사용한다."},
+ {q:"기본키는 각 행을 고유하게 구별하는 값이다.", a:"O", e:"기본키는 같은 이름이나 비슷한 데이터가 있어도 각 레코드를 구분하게 해 준다."},
+ {q:"SQL은 데이터베이스를 조회하고 조작하는 언어이다.", a:"O", e:"SQL은 SELECT, INSERT, UPDATE, DELETE 등으로 데이터를 다룬다."},
+ {q:"데이터베이스를 사용하면 백업이 전혀 필요 없다.", a:"X", e:"데이터베이스도 장애나 실수에 대비해 백업이 필요하다."},
+ {q:"데이터 무결성은 데이터가 정확하고 일관성 있게 유지되는 상태를 뜻한다.", a:"O", e:"무결성은 데이터 관리에서 신뢰성을 유지하는 핵심 조건이다."},
+ {q:"여러 사용자가 동시에 데이터를 수정하는 상황에서는 단순 파일보다 데이터베이스가 유리한 경우가 많다.", a:"O", e:"데이터베이스는 동시 접근, 무결성, 권한 관리를 지원하므로 협업 상황에 적합하다."}
+];
+
+const mcQuestions = [
+ {q:"파일의 설명으로 가장 적절한 것은?", c:["데이터를 하나의 단위로 저장하는 방식","인터넷 속도 측정값","항상 삭제되는 임시 기억","SQL 명령어만 의미","그래프의 색상"], a:0, e:"파일은 데이터를 저장하는 기본 단위이며 다양한 형식을 가질 수 있다."},
+ {q:"CSV 파일의 특징은?", c:["표 형태 데이터를 쉼표 등 구분자로 저장한다","이미지만 저장한다","소리만 저장한다","데이터베이스 서버가 반드시 필요하다","기본키를 자동으로 강제한다"], a:0, e:"CSV는 행과 열 형태 데이터를 텍스트로 저장하는 간단한 형식이다."},
+ {q:"JSON 파일이 적합한 경우는?", c:["key-value 구조와 중첩 데이터를 저장할 때","사진을 고해상도로 저장할 때","동영상 압축할 때","마우스 속도를 측정할 때","프린터를 연결할 때"], a:0, e:"JSON은 딕셔너리, 리스트와 같은 구조화된 데이터를 표현하기 좋다."},
+ {q:"데이터베이스의 장점으로 적절한 것은?", c:["검색·수정·삭제·권한 관리가 체계적이다","항상 데이터가 적을 때만 쓴다","절대 오류가 발생하지 않는다","파일보다 무조건 단순하다","저장 기능이 없다"], a:0, e:"데이터베이스는 대량 데이터 관리, 검색, 수정, 권한 관리, 무결성 유지에 유리하다."},
+ {q:"관계형 데이터베이스의 기본 저장 구조는?", c:["테이블","그림판","음악 파일","압축 폴더","랜덤 문자열"], a:0, e:"관계형 데이터베이스는 행과 열로 구성된 테이블을 사용한다."},
+ {q:"기본키의 역할은?", c:["각 행을 고유하게 구별한다","파일을 압축한다","글꼴을 바꾼다","데이터를 무조건 삭제한다","인터넷을 연결한다"], a:0, e:"기본키는 레코드를 고유하게 식별하기 위한 속성이다."},
+ {q:"SQL의 SELECT 문은 주로 무엇을 하는가?", c:["데이터 조회","데이터베이스 종료만","파일 압축","이미지 편집","컴퓨터 재부팅"], a:0, e:"SELECT는 테이블에서 조건에 맞는 데이터를 조회하는 명령이다."},
+ {q:"다음 중 CRUD에 해당하지 않는 것은?", c:["Color","Create","Read","Update","Delete"], a:0, e:"CRUD는 생성, 읽기, 수정, 삭제를 의미한다. Color는 해당하지 않는다."},
+ {q:"데이터 무결성이 중요한 이유는?", c:["데이터의 정확성과 일관성을 유지하기 위해","데이터를 모두 숨기기 위해","파일 크기를 무조건 키우기 위해","글자 색을 바꾸기 위해","인터넷 검색을 막기 위해"], a:0, e:"무결성이 유지되어야 데이터 분석과 의사결정의 신뢰성이 높아진다."},
+ {q:"단순 파일보다 데이터베이스가 더 적합한 상황은?", c:["여러 사용자가 계속 데이터를 추가·수정·조회하는 경우","한 줄 메모를 저장하는 경우","임시 문장을 한 번 출력하는 경우","계산 결과 하나만 저장하는 경우","배경화면을 바꾸는 경우"], a:0, e:"여러 사용자와 많은 데이터, 복잡한 검색·수정이 필요한 경우 데이터베이스가 유리하다."}
+];
+
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q">
+   <b>OX ${i+1}. ${item.q}</b>
+   <div class="choices">
+   <label><input type="radio" name="ox${i}" value="O"> O</label>
+   <label><input type="radio" name="ox${i}" value="X"> X</label>
+   </div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{
+     labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;
+   });
+   area.innerHTML += `<div class="q">
+   <b>문항 ${i+1}. ${item.q}</b>
+   <div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div>
+   </div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){
+ document.getElementById("scoreText").innerText = oxScore + mcScore;
+}
+
+function showAll(cls){
+ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block");
+}
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\\n";
+ content += "Ⅲ. 데이터 저장과 관리 - 파일과 데이터베이스\\n";
+ content += "학번: " + id + "\\n";
+ content += "이름: " + name + "\\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\\n";
+ content += "형성평가 점수: " + mcScore + " / 50\\n";
+ content += "총점: " + total + " / 100\\n";
+ content += "응시시각: " + time + "\\n";
+ content += "\\n[학습 성찰]\\n파일과 데이터베이스는 데이터를 저장하는 서로 다른 방식이며, 데이터의 규모·관계·검색·보안·백업 조건에 따라 적절히 선택해야 한다.\\n";
+
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터31_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

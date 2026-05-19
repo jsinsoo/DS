@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!-- saved from url=(0176)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터41_데이터 탐색하기_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0ea5e9,#22c55e);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px} header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#0ea5e9}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#0284c7;border-left:8px solid #22c55e;padding-left:12px}
+h3{color:#15803d;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#ecfeff;border-left:6px solid #0ea5e9}
+.quote{font-size:18px;background:#f0fdf4;border-left:7px solid #22c55e;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#d1fae5}
+.q{border:1px solid #bae6fd;background:#fbfeff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#e0f2fe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#0ea5e9;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#0284c7}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터41. 데이터 탐색하기</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅳ. 데이터 분석 기초 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B041_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%90%EC%83%89%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>데이터 탐색은 분석 전에 데이터의 구조, 품질, 분포, 관계를 살펴보며 의미 있는 질문을 만들어 가는 과정이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>데이터를 탐색하면 숨은 패턴과 문제점을 발견할 수 있지만, 통계와 시각화는 맥락과 함께 해석해야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>데이터는 우리에게 어떤 이야기를 하고 있으며, 우리는 그 이야기를 성급하게 오해하고 있지는 않은가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅳ. 데이터 분석 기초 - 데이터 탐색하기</td></tr>
+<tr><td>수업 목표</td><td>① 데이터 탐색의 목적과 절차를 설명한다.<br>② head, info, describe를 활용해 데이터의 기본 구조를 확인한다.<br>③ 결측값, 이상값, 분포, 상관관계를 탐색한다.<br>④ 히스토그램, 박스플롯, 산점도를 이용해 데이터를 시각적으로 해석한다.<br>⑤ 탐색 결과를 바탕으로 분석 질문과 가설을 만든다.</td></tr>
+<tr><td>지식 목표</td><td>탐색적 데이터 분석, 요약 통계, 분포, 이상값, 결측값, 상관관계, 시각화, 가설의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>Pandas의 head, info, describe, value_counts, corr과 Matplotlib 그래프를 활용한다.</td></tr>
+<tr><td>태도 목표</td><td>데이터를 성급히 판단하지 않고, 숫자·그래프·맥락을 함께 고려하는 태도를 기른다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 데이터 첫인상 관찰 → 전개 30분: 통계와 시각화 탐색 실습 → 정리 10분: 탐색 결과로 질문 만들기 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 탐색 보고서 한 줄 작성</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+데이터 분석은 정답을 바로 계산하는 일이 아닙니다.
+처음 만난 데이터를 천천히 살펴보며 “무엇이 기록되어 있는가?”, “어떤 값이 비어 있는가?”, “어떤 값이 유난히 튀는가?”, “어떤 변수들이 함께 움직이는가?”를 묻는 일에서 시작됩니다.
+인문 철학적으로 데이터 탐색은 낯선 세계를 관찰하는 태도와 닮았습니다.
+우리는 오늘 숫자와 표와 그래프를 통해 데이터가 들려주는 첫 목소리를 들어 보겠습니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 데이터 탐색</h3>
+<p>데이터 탐색은 본격적인 분석이나 모델링 전에 데이터의 구조와 특징을 살펴보는 과정이다. 어떤 열이 있는지, 자료형은 무엇인지, 값이 비어 있는지, 분포와 관계가 어떤지를 확인한다.</p>
+
+<h3>② 탐색적 데이터 분석</h3>
+<p>탐색적 데이터 분석은 데이터를 다양한 관점에서 살펴보며 패턴, 이상값, 관계, 가설을 발견하는 분석 접근이다. 정해진 답을 찾기보다 좋은 질문을 만드는 과정에 가깝다.</p>
+
+<h3>③ 데이터 구조 확인</h3>
+<p>데이터 구조 확인은 행과 열의 수, 열 이름, 자료형, 결측값 여부를 확인하는 것이다. Pandas에서는 head(), info(), shape 등을 사용한다.</p>
+
+<h3>④ 요약 통계</h3>
+<p>요약 통계는 평균, 중앙값, 표준편차, 최솟값, 최댓값, 사분위수처럼 데이터를 짧게 설명하는 값이다. describe()를 이용하면 수치형 데이터의 기본 통계를 빠르게 볼 수 있다.</p>
+
+<h3>⑤ 분포</h3>
+<p>분포는 데이터 값들이 어떤 범위에 얼마나 모여 있는지를 나타낸다. 분포를 보면 데이터가 한쪽으로 치우쳤는지, 여러 봉우리가 있는지, 이상값이 있는지 파악할 수 있다.</p>
+
+<h3>⑥ 이상값</h3>
+<p>이상값은 일반적인 값의 범위에서 크게 벗어난 값이다. 탐색 단계에서 이상값을 발견하면 오류인지 중요한 사건인지 확인해야 한다.</p>
+
+<h3>⑦ 결측값</h3>
+<p>결측값은 비어 있는 값이다. 결측값이 많으면 분석 결과가 왜곡될 수 있으므로 어느 열에 얼마나 있는지 확인해야 한다.</p>
+
+<h3>⑧ 상관관계</h3>
+<p>상관관계는 두 변수가 함께 변하는 정도를 의미한다. 키와 몸무게, 공부 시간과 점수처럼 함께 증가하거나 감소하는 경향을 볼 수 있다. 그러나 상관관계는 인과관계를 의미하지 않는다.</p>
+
+<h3>⑨ 시각화</h3>
+<p>시각화는 데이터를 그래프로 표현하여 패턴을 눈으로 확인하는 방법이다. 히스토그램은 분포, 박스플롯은 이상값과 사분위수, 산점도는 두 변수의 관계를 살펴보는 데 유용하다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+
+<h3>① 데이터 기본 구조 확인</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "공부시간": [1, 2, 3, 4, 5],
+    "점수": [55, 60, 70, 80, 90],
+    "수면시간": [6, 7, 6, 8, 7]
+})
+
+print(df.head())
+print(df.shape)</code></pre>
+<p>데이터 앞부분과 행·열 크기를 확인한다.</p>
+
+<h3>② 자료형과 결측값 확인</h3>
+<pre><code>print(df.info())
+print(df.isna().sum())</code></pre>
+<p>열별 자료형과 결측값 개수를 확인한다.</p>
+
+<h3>③ 요약 통계 확인</h3>
+<pre><code>print(df.describe())</code></pre>
+<p>평균, 표준편차, 최솟값, 사분위수, 최댓값을 확인한다.</p>
+
+<h3>④ 상관관계 확인</h3>
+<pre><code>corr = df.corr(numeric_only=True)
+print(corr)</code></pre>
+<p>수치형 변수들 사이의 상관관계를 계산한다.</p>
+
+<h3>⑤ 히스토그램 그리기</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+df["점수"].plot(kind="hist", bins=5)
+plt.title("Score Distribution")
+plt.xlabel("Score")
+plt.ylabel("Frequency")
+plt.show()</code></pre>
+<p>점수 분포를 히스토그램으로 확인한다. 한글 깨짐을 피하기 위해 그래프 제목은 영어로 작성했다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+
+<h3>예제 1. 공부 시간과 점수 탐색</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "study_hour": [1, 2, 3, 4, 5],
+    "score": [55, 60, 70, 80, 90]
+})
+
+print(df.describe())
+print(df.corr(numeric_only=True))</code></pre>
+<p><b>상세 설명:</b> 공부 시간과 점수의 요약 통계와 상관관계를 확인한다. 상관관계가 높아도 반드시 인과관계를 뜻하지는 않는다.</p>
+
+<h3>예제 2. 급식 만족도 빈도 탐색</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "menu": ["rice", "curry", "rice", "pasta", "curry", "rice"]
+})
+
+print(df["menu"].value_counts())</code></pre>
+<p><b>상세 설명:</b> 어떤 메뉴가 많이 선택되었는지 빈도를 확인한다. 범주형 데이터 탐색에 적합하다.</p>
+
+<h3>예제 3. 운동 걸음수 분포 확인</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({"steps": [5200, 7600, 8000, 9100, 10000, 12000]})
+
+df["steps"].plot(kind="hist", bins=4)
+plt.title("Steps Distribution")
+plt.xlabel("Steps")
+plt.ylabel("Frequency")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 걸음수 값들이 어느 구간에 몰려 있는지 히스토그램으로 확인한다.</p>
+
+<h3>예제 4. 쇼핑 데이터 이상값 후보 확인</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({"price": [1000, 1200, 1500, 1300, 100000]})
+
+print(df.describe())
+print(df[df["price"] &gt; 10000])</code></pre>
+<p><b>상세 설명:</b> 가격 데이터에서 매우 큰 값을 이상값 후보로 찾는다. 실제 고가 상품인지 입력 오류인지 확인해야 한다.</p>
+
+<h3>예제 5. 수면 시간과 집중도 산점도</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "sleep": [5, 6, 7, 8, 9],
+    "focus": [60, 68, 75, 82, 80]
+})
+
+plt.scatter(df["sleep"], df["focus"])
+plt.title("Sleep and Focus")
+plt.xlabel("Sleep Hours")
+plt.ylabel("Focus Score")
+plt.show()</code></pre>
+<p><b>상세 설명:</b> 수면 시간과 집중도 점수의 관계를 산점도로 확인한다. 점들이 어떤 방향으로 분포하는지 살펴본다.</p>
+</section>
+
+<section id="diag">
+<h2>6. 진단평가 OX 예제 10개</h2>
+<div id="oxArea"><div class="q"><b>OX 1. 데이터 탐색은 본격적인 분석 전에 데이터의 구조와 특징을 살펴보는 과정이다.</b>
+   <div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 데이터 탐색은 변수, 자료형, 결측값, 분포, 이상값, 관계 등을 먼저 파악하는 과정이다.</div></div><div class="q"><b>OX 2. 데이터 탐색에서는 평균, 중앙값, 최댓값, 최솟값 같은 요약 통계를 사용할 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 요약 통계는 데이터의 전체 경향을 빠르게 이해하는 데 도움이 된다.</div></div><div class="q"><b>OX 3. 데이터 탐색은 시각화 없이 숫자만 보아야 한다.</b>
+   <div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 히스토그램, 산점도, 박스플롯 등 시각화는 데이터 패턴을 발견하는 데 중요하다.</div></div><div class="q"><b>OX 4. 분포를 살펴보면 데이터가 어느 값 주변에 모여 있는지 알 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 분포는 값들이 어떻게 퍼져 있는지, 치우침이나 이상값이 있는지 보여 준다.</div></div><div class="q"><b>OX 5. 상관관계가 있다는 것은 항상 원인과 결과 관계가 있다는 뜻이다.</b>
+   <div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 상관관계는 함께 변하는 경향을 의미하지만, 인과관계를 증명하지는 않는다.</div></div><div class="q"><b>OX 6. describe()는 Pandas에서 수치형 데이터의 요약 통계를 확인하는 데 사용할 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> describe()는 개수, 평균, 표준편차, 최솟값, 사분위수, 최댓값 등을 보여 준다.</div></div><div class="q"><b>OX 7. 결측값 확인은 데이터 탐색 과정에 포함될 수 있다.</b>
+   <div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 결측값은 분석 결과에 영향을 주므로 탐색 단계에서 확인해야 한다.</div></div><div class="q"><b>OX 8. 이상값은 데이터 탐색에서 관심 있게 살펴보아야 한다.</b>
+   <div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 이상값은 오류일 수도 있고 중요한 사례일 수도 있으므로 확인이 필요하다.</div></div><div class="q"><b>OX 9. 데이터 탐색은 정답을 바로 확정하는 과정이다.</b>
+   <div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 탐색은 가설을 만들고 데이터의 특징을 이해하는 과정이지 결론을 성급히 확정하는 과정이 아니다.</div></div><div class="q"><b>OX 10. 좋은 데이터 탐색은 통계적 관찰과 맥락적 해석을 함께 요구한다.</b>
+   <div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 숫자와 그래프를 보되 데이터가 만들어진 상황과 의미를 함께 고려해야 한다.</div></div></div>
+<button onclick="gradeOX()">OX 채점하기</button>
+<button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button>
+</section>
+
+<section id="form">
+<h2>7. 형성평가 5지선다형 10문항</h2>
+<div id="mcArea"><div class="q"><b>문항 1. 데이터 탐색의 주된 목적은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 분석 전에 데이터의 구조와 특징을 파악하기 위해</label><label><input type="radio" name="mc0" value="1"> 2. 파일 이름을 짧게 만들기 위해</label><label><input type="radio" name="mc0" value="2"> 3. 컴퓨터를 종료하기 위해</label><label><input type="radio" name="mc0" value="3"> 4. 그래프 색을 무조건 바꾸기 위해</label><label><input type="radio" name="mc0" value="4"> 5. 데이터를 모두 삭제하기 위해</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 데이터 탐색은 본격 분석 전에 데이터의 상태와 패턴을 이해하는 과정이다.</div></div><div class="q"><b>문항 2. 요약 통계에 해당하지 않는 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 글꼴 종류</label><label><input type="radio" name="mc1" value="1"> 2. 평균</label><label><input type="radio" name="mc1" value="2"> 3. 중앙값</label><label><input type="radio" name="mc1" value="3"> 4. 최댓값</label><label><input type="radio" name="mc1" value="4"> 5. 최솟값</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 글꼴 종류는 통계량이 아니며, 평균·중앙값·최댓값·최솟값은 요약 통계이다.</div></div><div class="q"><b>문항 3. 분포를 확인하는 데 적절한 그래프는?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 히스토그램</label><label><input type="radio" name="mc2" value="1"> 2. 파일 탐색기</label><label><input type="radio" name="mc2" value="2"> 3. 마우스 포인터</label><label><input type="radio" name="mc2" value="3"> 4. 문자열 암호</label><label><input type="radio" name="mc2" value="4"> 5. 컴퓨터 배경화면</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 히스토그램은 값들이 어느 구간에 얼마나 모여 있는지 보여 준다.</div></div><div class="q"><b>문항 4. 두 수치형 변수의 관계를 보는 데 적절한 그래프는?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 산점도</label><label><input type="radio" name="mc3" value="1"> 2. 원고지</label><label><input type="radio" name="mc3" value="2"> 3. 폴더 아이콘</label><label><input type="radio" name="mc3" value="3"> 4. 소리 파일</label><label><input type="radio" name="mc3" value="4"> 5. 문자표</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 산점도는 두 변수 사이의 관계나 패턴을 살펴보는 데 적합하다.</div></div><div class="q"><b>문항 5. 상관관계에 대한 설명으로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 두 변수가 함께 변하는 경향</label><label><input type="radio" name="mc4" value="1"> 2. 반드시 원인과 결과</label><label><input type="radio" name="mc4" value="2"> 3. 항상 오류</label><label><input type="radio" name="mc4" value="3"> 4. 결측값 삭제 명령</label><label><input type="radio" name="mc4" value="4"> 5. 파일 저장 형식</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 상관관계는 두 변수가 함께 변하는 정도를 뜻하지만 인과를 보장하지 않는다.</div></div><div class="q"><b>문항 6. Pandas에서 데이터 앞부분을 확인하는 함수는?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. head()</label><label><input type="radio" name="mc5" value="1"> 2. paint()</label><label><input type="radio" name="mc5" value="2"> 3. sleep()</label><label><input type="radio" name="mc5" value="3"> 4. music()</label><label><input type="radio" name="mc5" value="4"> 5. power()</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> head()는 DataFrame의 앞부분 몇 행을 보여 준다.</div></div><div class="q"><b>문항 7. Pandas에서 열별 자료형을 확인하는 데 유용한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. info()</label><label><input type="radio" name="mc6" value="1"> 2. dance()</label><label><input type="radio" name="mc6" value="2"> 3. sound()</label><label><input type="radio" name="mc6" value="3"> 4. hide()</label><label><input type="radio" name="mc6" value="4"> 5. random_color()</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> info()는 열 이름, 결측이 아닌 값의 개수, 자료형 등을 보여 준다.</div></div><div class="q"><b>문항 8. 결측값 확인 코드로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. df.isna().sum()</label><label><input type="radio" name="mc7" value="1"> 2. df.secret()</label><label><input type="radio" name="mc7" value="2"> 3. df.delete_all()</label><label><input type="radio" name="mc7" value="3"> 4. df.color()</label><label><input type="radio" name="mc7" value="4"> 5. df.font()</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> isna().sum()은 열별 결측값 개수를 확인한다.</div></div><div class="q"><b>문항 9. 박스플롯으로 주로 확인할 수 있는 것은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 중앙값, 사분위수, 이상값 후보</label><label><input type="radio" name="mc8" value="1"> 2. 파일 확장자</label><label><input type="radio" name="mc8" value="2"> 3. 컴퓨터 속도</label><label><input type="radio" name="mc8" value="3"> 4. 글자 크기만</label><label><input type="radio" name="mc8" value="4"> 5. 인터넷 주소</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 박스플롯은 분포의 중심, 퍼짐, 이상값 후보를 확인하는 데 유용하다.</div></div><div class="q"><b>문항 10. 데이터 탐색에서 바람직한 태도는?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 숫자와 그래프를 맥락과 함께 해석한다</label><label><input type="radio" name="mc9" value="1"> 2. 그래프만 보고 무조건 결론낸다</label><label><input type="radio" name="mc9" value="2"> 3. 결측값을 숨긴다</label><label><input type="radio" name="mc9" value="3"> 4. 출처를 보지 않는다</label><label><input type="radio" name="mc9" value="4"> 5. 이상값을 항상 삭제한다</label></div>
+   <div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 탐색 결과는 데이터가 만들어진 맥락과 함께 해석해야 한다.</div></div></div>
+<button onclick="gradeMC()">형성평가 채점하기</button>
+<button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button>
+</section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터41_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 데이터를 분석하기 전에 먼저 관찰하는 법을 배웠습니다.
+컴퓨터과학은 데이터를 불러오고 요약하고 시각화하는 도구를 제공하며, 수학은 평균·분포·상관관계로 패턴을 설명하게 하고, 과학은 관찰에서 가설을 세우고 검증하게 합니다.
+그리고 인문 철학은 우리에게 묻습니다. “우리는 데이터가 말하는 것과 우리가 보고 싶은 것을 혼동하고 있지는 않은가?”
+좋은 데이터 과학자는 정답을 서두르는 사람이 아니라, 데이터를 정직하게 바라보고 좋은 질문을 만들어 내는 사람입니다.
+</div>
+</section>
+
+<footer>© 데이터 과학 수업자료 · 데이터41 데이터 탐색하기</footer>
+</main>
+</div>
+
+<script>
+const oxQuestions = [{"q": "데이터 탐색은 본격적인 분석 전에 데이터의 구조와 특징을 살펴보는 과정이다.", "a": "O", "e": "데이터 탐색은 변수, 자료형, 결측값, 분포, 이상값, 관계 등을 먼저 파악하는 과정이다."}, {"q": "데이터 탐색에서는 평균, 중앙값, 최댓값, 최솟값 같은 요약 통계를 사용할 수 있다.", "a": "O", "e": "요약 통계는 데이터의 전체 경향을 빠르게 이해하는 데 도움이 된다."}, {"q": "데이터 탐색은 시각화 없이 숫자만 보아야 한다.", "a": "X", "e": "히스토그램, 산점도, 박스플롯 등 시각화는 데이터 패턴을 발견하는 데 중요하다."}, {"q": "분포를 살펴보면 데이터가 어느 값 주변에 모여 있는지 알 수 있다.", "a": "O", "e": "분포는 값들이 어떻게 퍼져 있는지, 치우침이나 이상값이 있는지 보여 준다."}, {"q": "상관관계가 있다는 것은 항상 원인과 결과 관계가 있다는 뜻이다.", "a": "X", "e": "상관관계는 함께 변하는 경향을 의미하지만, 인과관계를 증명하지는 않는다."}, {"q": "describe()는 Pandas에서 수치형 데이터의 요약 통계를 확인하는 데 사용할 수 있다.", "a": "O", "e": "describe()는 개수, 평균, 표준편차, 최솟값, 사분위수, 최댓값 등을 보여 준다."}, {"q": "결측값 확인은 데이터 탐색 과정에 포함될 수 있다.", "a": "O", "e": "결측값은 분석 결과에 영향을 주므로 탐색 단계에서 확인해야 한다."}, {"q": "이상값은 데이터 탐색에서 관심 있게 살펴보아야 한다.", "a": "O", "e": "이상값은 오류일 수도 있고 중요한 사례일 수도 있으므로 확인이 필요하다."}, {"q": "데이터 탐색은 정답을 바로 확정하는 과정이다.", "a": "X", "e": "탐색은 가설을 만들고 데이터의 특징을 이해하는 과정이지 결론을 성급히 확정하는 과정이 아니다."}, {"q": "좋은 데이터 탐색은 통계적 관찰과 맥락적 해석을 함께 요구한다.", "a": "O", "e": "숫자와 그래프를 보되 데이터가 만들어진 상황과 의미를 함께 고려해야 한다."}];
+const mcQuestions = [{"q": "데이터 탐색의 주된 목적은?", "c": ["분석 전에 데이터의 구조와 특징을 파악하기 위해", "파일 이름을 짧게 만들기 위해", "컴퓨터를 종료하기 위해", "그래프 색을 무조건 바꾸기 위해", "데이터를 모두 삭제하기 위해"], "a": 0, "e": "데이터 탐색은 본격 분석 전에 데이터의 상태와 패턴을 이해하는 과정이다."}, {"q": "요약 통계에 해당하지 않는 것은?", "c": ["글꼴 종류", "평균", "중앙값", "최댓값", "최솟값"], "a": 0, "e": "글꼴 종류는 통계량이 아니며, 평균·중앙값·최댓값·최솟값은 요약 통계이다."}, {"q": "분포를 확인하는 데 적절한 그래프는?", "c": ["히스토그램", "파일 탐색기", "마우스 포인터", "문자열 암호", "컴퓨터 배경화면"], "a": 0, "e": "히스토그램은 값들이 어느 구간에 얼마나 모여 있는지 보여 준다."}, {"q": "두 수치형 변수의 관계를 보는 데 적절한 그래프는?", "c": ["산점도", "원고지", "폴더 아이콘", "소리 파일", "문자표"], "a": 0, "e": "산점도는 두 변수 사이의 관계나 패턴을 살펴보는 데 적합하다."}, {"q": "상관관계에 대한 설명으로 옳은 것은?", "c": ["두 변수가 함께 변하는 경향", "반드시 원인과 결과", "항상 오류", "결측값 삭제 명령", "파일 저장 형식"], "a": 0, "e": "상관관계는 두 변수가 함께 변하는 정도를 뜻하지만 인과를 보장하지 않는다."}, {"q": "Pandas에서 데이터 앞부분을 확인하는 함수는?", "c": ["head()", "paint()", "sleep()", "music()", "power()"], "a": 0, "e": "head()는 DataFrame의 앞부분 몇 행을 보여 준다."}, {"q": "Pandas에서 열별 자료형을 확인하는 데 유용한 것은?", "c": ["info()", "dance()", "sound()", "hide()", "random_color()"], "a": 0, "e": "info()는 열 이름, 결측이 아닌 값의 개수, 자료형 등을 보여 준다."}, {"q": "결측값 확인 코드로 적절한 것은?", "c": ["df.isna().sum()", "df.secret()", "df.delete_all()", "df.color()", "df.font()"], "a": 0, "e": "isna().sum()은 열별 결측값 개수를 확인한다."}, {"q": "박스플롯으로 주로 확인할 수 있는 것은?", "c": ["중앙값, 사분위수, 이상값 후보", "파일 확장자", "컴퓨터 속도", "글자 크기만", "인터넷 주소"], "a": 0, "e": "박스플롯은 분포의 중심, 퍼짐, 이상값 후보를 확인하는 데 유용하다."}, {"q": "데이터 탐색에서 바람직한 태도는?", "c": ["숫자와 그래프를 맥락과 함께 해석한다", "그래프만 보고 무조건 결론낸다", "결측값을 숨긴다", "출처를 보지 않는다", "이상값을 항상 삭제한다"], "a": 0, "e": "탐색 결과는 데이터가 만들어진 맥락과 함께 해석해야 한다."}];
+let oxScore = 0, mcScore = 0;
+
+function renderOX(){
+ const area = document.getElementById("oxArea");
+ oxQuestions.forEach((item,i)=>{
+   area.innerHTML += `<div class="q"><b>OX ${i+1}. ${item.q}</b>
+   <div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div>
+   <div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function renderMC(){
+ const area = document.getElementById("mcArea");
+ mcQuestions.forEach((item,i)=>{
+   let labels = "";
+   item.c.forEach((choice,j)=>{ labels += `<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`; });
+   area.innerHTML += `<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div>
+   <div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;
+ });
+}
+
+function gradeOX(){
+ oxScore = 0;
+ oxQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="ox${i}"]:checked`);
+   if(checked && checked.value === item.a) oxScore += 5;
+ });
+ updateScore();
+ alert("진단평가 OX 점수: " + oxScore + "점 / 50점");
+}
+
+function gradeMC(){
+ mcScore = 0;
+ mcQuestions.forEach((item,i)=>{
+   const checked = document.querySelector(`input[name="mc${i}"]:checked`);
+   if(checked && Number(checked.value) === item.a) mcScore += 5;
+ });
+ updateScore();
+ alert("형성평가 점수: " + mcScore + "점 / 50점");
+}
+
+function updateScore(){ document.getElementById("scoreText").innerText = oxScore + mcScore; }
+function showAll(cls){ document.querySelectorAll("." + cls).forEach(el => el.style.display = "block"); }
+
+function nowString(){
+ const d = new Date();
+ const pad = n => String(n).padStart(2,"0");
+ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + "_" + pad(d.getHours()) + "-" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+}
+
+function saveTxt(){
+ const id = document.getElementById("studentId").value.trim() || "학번";
+ const name = document.getElementById("studentName").value.trim() || "이름";
+ const total = oxScore + mcScore;
+ const time = nowString();
+ let content = "";
+ content += "2025교육과정 고등학교 데이터 과학\n";
+ content += "Ⅳ. 데이터 분석 기초 - 데이터 탐색하기\n";
+ content += "학번: " + id + "\n";
+ content += "이름: " + name + "\n";
+ content += "진단평가 OX 점수: " + oxScore + " / 50\n";
+ content += "형성평가 점수: " + mcScore + " / 50\n";
+ content += "총점: " + total + " / 100\n";
+ content += "응시시각: " + time + "\n";
+ content += "\n[학습 성찰]\n데이터 탐색은 구조·결측값·이상값·분포·상관관계를 살펴보며 좋은 분석 질문을 만드는 과정이다.\n";
+ const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = `${id}_${name}_데이터41_${total}점_${time}.txt`;
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+renderOX();
+renderMC();
+</script>
+
+
+</body></html>

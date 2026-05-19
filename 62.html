@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- saved from url=(0176)file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터62_머신러닝의 원리_수업지도안</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f6f8fb;color:#1f2937;line-height:1.75}
+header{background:linear-gradient(135deg,#0f172a,#0ea5e9,#22c55e);color:white;padding:34px 46px}
+header h1{margin:0;font-size:30px}header p{margin:10px 0 0;font-size:17px;opacity:.96}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{background:#0f172a;color:white;padding:22px;position:sticky;top:0;height:100vh;overflow:auto}
+nav h2{font-size:18px;margin:0 0 15px}
+nav a{display:block;color:#e5e7eb;text-decoration:none;padding:10px 12px;margin:7px 0;border-radius:10px;background:rgba(255,255,255,.06)}
+nav a:hover{background:#0ea5e9}
+main{padding:30px;max-width:1200px}
+section{background:white;margin-bottom:24px;padding:26px;border-radius:18px;box-shadow:0 6px 20px rgba(15,23,42,.08)}
+h2{color:#0284c7;border-left:8px solid #22c55e;padding-left:12px}
+h3{color:#15803d;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:15px;padding:16px}
+.goal{background:#ecfeff;border-left:6px solid #0ea5e9}
+.quote{font-size:18px;background:#f0fdf4;border-left:7px solid #22c55e;padding:18px;border-radius:14px}
+pre{background:#111827;color:#e5e7eb;padding:18px;border-radius:14px;overflow:auto;font-size:14px;line-height:1.6}
+code{font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top}
+th{background:#d1fae5}
+.q{border:1px solid #bae6fd;background:#fbfeff;border-radius:14px;padding:16px;margin:14px 0}
+.choices label{display:block;padding:8px 10px;margin:6px 0;border-radius:10px;border:1px solid #e5e7eb;cursor:pointer}
+.choices label:hover{background:#e0f2fe}
+.answer{display:none;background:#f0fdf4;border-left:6px solid #22c55e;padding:12px;margin-top:10px;border-radius:10px}
+button{border:0;background:#0ea5e9;color:white;padding:10px 16px;border-radius:10px;cursor:pointer;margin:6px 4px;font-weight:700}
+button:hover{background:#0284c7}
+input{padding:10px;border:1px solid #cbd5e1;border-radius:10px;margin:4px}
+.notice{background:#eef2ff;border-left:6px solid #6366f1;padding:14px;border-radius:12px}
+footer{text-align:center;color:#64748b;padding:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>데이터62. 머신러닝의 원리</h1>
+<p>2025교육과정 고등학교 데이터 과학 · Ⅵ. 인공지능과 머신러닝 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+<nav>
+<h2>목차</h2>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#plan">수업지도안</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#open">수업을 여는 멘트</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#concept">핵심 개념 설명</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#python">개념별 파이썬 코드</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#realcode">실생활 코드 예제 5개</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#diag">진단평가 OX</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#form">형성평가 5지선다</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#save">점수 저장</a>
+<a href="file:///C:/Users/user/Downloads/%EB%8D%B0%EC%9D%B4%ED%84%B062_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%EC%9B%90%EB%A6%AC_%EC%88%98%EC%97%85%EC%A7%80%EB%8F%84%EC%95%88.html#close">수업 마무리 멘트</a>
+</nav>
+
+<main>
+<section id="plan">
+<h2>1. 개념기반 목표지향 수업지도안</h2>
+<div class="grid">
+<div class="card goal"><b>핵심 개념</b><br>머신러닝은 데이터의 특징과 정답 사이의 패턴을 학습하여 새로운 데이터에 대한 예측이나 분류를 수행하는 방법이다.</div>
+<div class="card goal"><b>일반화된 이해</b><br>좋은 머신러닝 모델은 훈련 데이터를 외우는 것이 아니라 새로운 데이터에도 잘 적용되는 일반화 능력을 가져야 한다.</div>
+<div class="card goal"><b>핵심 질문</b><br>컴퓨터는 데이터를 통해 무엇을 배우며, 배운 것을 새로운 상황에 어떻게 적용하는가?</div>
+</div>
+
+<table>
+<tbody><tr><th>구분</th><th>내용</th></tr>
+<tr><td>단원</td><td>Ⅵ. 인공지능과 머신러닝 - 머신러닝의 원리</td></tr>
+<tr><td>수업 목표</td><td>① 머신러닝의 기본 원리를 설명한다.<br>② 특징, 레이블, 훈련 데이터, 테스트 데이터의 의미를 이해한다.<br>③ 분류와 회귀의 차이를 구별한다.<br>④ 간단한 규칙 기반 예측과 데이터 기반 예측 코드를 작성한다.<br>⑤ 과적합, 오차, 일반화의 의미와 윤리적 고려를 설명한다.</td></tr>
+<tr><td>지식 목표</td><td>특징, 레이블, 훈련, 테스트, 모델, 예측, 분류, 회귀, 오차, 과적합, 일반화의 의미를 안다.</td></tr>
+<tr><td>기능 목표</td><td>간단한 예측식, 최근접 이웃 아이디어, 훈련/테스트 분리, 정확도 계산 코드를 해석한다.</td></tr>
+<tr><td>태도 목표</td><td>모델 성능을 숫자 하나로 단정하지 않고, 데이터의 품질과 한계, 사회적 영향을 함께 고려한다.</td></tr>
+<tr><td>수업 흐름</td><td>도입 10분: 사람이 경험으로 배우는 과정과 AI 학습 비교 → 전개 30분: 개념 설명과 코드 실습 → 정리 10분: 과적합과 윤리 토론 → 평가 10분</td></tr>
+<tr><td>평가 방법</td><td>진단평가, 형성평가, 코드 해석, 머신러닝 흐름도 작성</td></tr>
+</tbody></table>
+</section>
+
+<section id="open">
+<h2>2. 수업을 여는 멘트</h2>
+<div class="quote">
+사람은 경험을 통해 배웁니다. 여러 번 문제를 풀다 보면 어떤 유형이 나오는지 알게 되고, 새로운 문제를 만나도 비슷한 방식으로 해결합니다.
+머신러닝도 이와 비슷합니다. 컴퓨터는 과거 데이터에서 패턴을 찾고, 그 패턴을 새로운 데이터에 적용합니다.
+하지만 사람도 잘못된 경험에서 편견을 배울 수 있듯이, 기계도 편향된 데이터에서 잘못된 판단을 배울 수 있습니다.
+오늘 우리는 머신러닝이 어떻게 배우고, 왜 새로운 데이터에서 잘 작동하는지가 중요한지 살펴보겠습니다.
+</div>
+</section>
+
+<section id="concept">
+<h2>3. 각각의 개념에 대한 상세 설명</h2>
+<h3>① 머신러닝</h3><p>머신러닝은 컴퓨터가 데이터에서 패턴을 학습하여 새로운 데이터에 대해 예측이나 분류를 수행하는 인공지능 방법이다. 사람이 모든 규칙을 직접 작성하지 않고 데이터로부터 규칙성을 찾는다는 점이 핵심이다.</p>
+<h3>② 특징</h3><p>특징은 모델이 예측에 사용하는 입력 변수이다. 예를 들어 시험 점수 예측에서는 공부 시간, 수면 시간, 이전 점수 등이 특징이 될 수 있다.</p>
+<h3>③ 레이블</h3><p>레이블은 지도학습에서 모델이 맞히려는 정답 값이다. 스팸 분류에서는 스팸/정상, 점수 예측에서는 실제 시험 점수가 레이블이 된다.</p>
+<h3>④ 훈련 데이터</h3><p>훈련 데이터는 모델이 패턴을 배우는 데 사용하는 데이터이다. 훈련 데이터의 품질이 낮거나 한쪽으로 치우치면 모델도 잘못 배울 수 있다.</p>
+<h3>⑤ 테스트 데이터</h3><p>테스트 데이터는 학습에 사용하지 않은 데이터로, 모델이 새로운 상황에서 잘 작동하는지 평가하는 데 사용된다.</p>
+<h3>⑥ 모델</h3><p>모델은 입력 특징을 받아 예측값을 출력하는 계산 구조이다. 모델은 학습을 통해 입력과 출력 사이의 관계를 찾아낸다.</p>
+<h3>⑦ 분류</h3><p>분류는 데이터를 정해진 범주 중 하나로 나누는 문제이다. 이메일을 스팸/정상으로 나누거나 이미지를 고양이/강아지로 나누는 것이 예이다.</p>
+<h3>⑧ 회귀</h3><p>회귀는 연속적인 숫자 값을 예측하는 문제이다. 집값, 점수, 온도, 판매량 등을 예측하는 경우가 회귀이다.</p>
+<h3>⑨ 과적합과 일반화</h3><p>과적합은 훈련 데이터에는 매우 잘 맞지만 새로운 데이터에는 잘 맞지 않는 상태이다. 일반화는 모델이 학습하지 않은 새로운 데이터에도 잘 작동하는 능력이다.</p>
+</section>
+
+<section id="python">
+<h2>4. 각각의 개념과 관련된 파이썬 코드</h2>
+<h3>① 특징과 레이블 만들기</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    "study_hour": [1, 2, 3, 4],
+    "sleep_hour": [6, 7, 7, 8],
+    "score": [55, 65, 75, 85]
+})
+
+X = df[["study_hour", "sleep_hour"]]
+y = df["score"]
+
+print(X)
+print(y)</code></pre>
+<p>study_hour와 sleep_hour는 특징이고, score는 모델이 맞히려는 레이블이다.</p>
+
+<h3>② 단순한 규칙 기반 예측</h3>
+<pre><code>study_hour = 4
+
+predicted_score = 50 + study_hour * 8
+print("Predicted score:", predicted_score)</code></pre>
+<p>공부 시간이 늘수록 점수가 올라간다고 가정한 단순 예측식이다.</p>
+
+<h3>③ 가장 가까운 값으로 예측하기</h3>
+<pre><code>data = [(1, 55), (2, 65), (3, 75), (4, 85)]
+new_study_hour = 3.2
+
+nearest = min(data, key=lambda x: abs(x[0] - new_study_hour))
+print("Nearest data:", nearest)
+print("Predicted score:", nearest[1])</code></pre>
+<p>새 데이터와 가장 가까운 훈련 데이터를 찾아 그 정답을 예측값으로 사용한다.</p>
+
+<h3>④ 정확도 계산</h3>
+<pre><code>real = ["spam", "normal", "spam", "normal"]
+pred = ["spam", "normal", "normal", "normal"]
+
+accuracy = sum(r == p for r, p in zip(real, pred)) / len(real)
+print("Accuracy:", accuracy)</code></pre>
+<p>분류 모델의 예측이 실제 정답과 얼마나 일치하는지 정확도로 계산한다.</p>
+
+<h3>⑤ 훈련 데이터와 테스트 데이터 개념</h3>
+<pre><code>data = [10, 20, 30, 40, 50]
+
+train = data[:3]
+test = data[3:]
+
+print("Train:", train)
+print("Test:", test)</code></pre>
+<p>일부 데이터는 학습에 사용하고, 나머지는 평가에 사용한다.</p>
+</section>
+
+<section id="realcode">
+<h2>5. 실생활 관련 코드 예제 5개</h2>
+<h3>예제 1. 공부 시간으로 점수 예측</h3>
+<pre><code>study_hour = 5
+predicted_score = 45 + study_hour * 9
+
+print("Predicted score:", predicted_score)</code></pre>
+<p><b>상세 설명:</b> 공부 시간이 많을수록 점수가 높아진다는 단순한 관계를 가정한 예측이다. 실제로는 수면, 집중도, 난이도도 영향을 준다.</p>
+
+<h3>예제 2. 스팸 분류 정확도</h3>
+<pre><code>real = ["spam", "spam", "normal", "normal", "spam"]
+pred = ["spam", "normal", "normal", "normal", "spam"]
+
+correct = sum(r == p for r, p in zip(real, pred))
+accuracy = correct / len(real)
+
+print("Accuracy:", accuracy)</code></pre>
+<p><b>상세 설명:</b> 예측 결과와 실제 정답을 비교해 정확도를 계산한다.</p>
+
+<h3>예제 3. 추천 모델의 특징 사용</h3>
+<pre><code>user = {"likes_science": 1, "likes_music": 0}
+
+if user["likes_science"] == 1:
+    print("Recommend: Science Documentary")
+else:
+    print("Recommend: General Video")</code></pre>
+<p><b>상세 설명:</b> 사용자의 특징을 입력으로 사용해 추천 결과를 결정한다. 실제 추천 시스템은 훨씬 많은 특징을 사용한다.</p>
+
+<h3>예제 4. 가장 가까운 키로 그룹 예측</h3>
+<pre><code>train = [(150, "A"), (160, "A"), (175, "B"), (180, "B")]
+new_height = 170
+
+nearest = min(train, key=lambda x: abs(x[0] - new_height))
+print("Predicted group:", nearest[1])</code></pre>
+<p><b>상세 설명:</b> 새 값과 가장 가까운 훈련 데이터를 찾아 그룹을 예측한다. 최근접 이웃 분류의 기초 아이디어이다.</p>
+
+<h3>예제 5. 과적합의 직관</h3>
+<pre><code>train_accuracy = 1.00
+test_accuracy = 0.55
+
+if train_accuracy &gt; 0.95 and test_accuracy &lt; 0.70:
+    print("Possible overfitting")
+else:
+    print("Check model again")</code></pre>
+<p><b>상세 설명:</b> 훈련 정확도는 매우 높은데 테스트 정확도가 낮다면 과적합을 의심할 수 있다.</p>
+</section>
+
+<section id="diag"><h2>6. 진단평가 OX 예제 10개</h2><div id="oxArea"><div class="q"><b>OX 1. 머신러닝은 데이터에서 패턴을 학습하여 예측이나 분류를 수행하는 방법이다.</b><div class="choices"><label><input type="radio" name="ox0" value="O"> O</label><label><input type="radio" name="ox0" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 머신러닝은 사람이 모든 규칙을 직접 쓰지 않고 데이터로부터 규칙성과 패턴을 학습한다.</div></div><div class="q"><b>OX 2. 특징은 모델이 예측에 사용하는 입력 변수이다.</b><div class="choices"><label><input type="radio" name="ox1" value="O"> O</label><label><input type="radio" name="ox1" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 예를 들어 공부 시간, 수면 시간, 이전 점수 등이 예측에 사용되는 특징이 될 수 있다.</div></div><div class="q"><b>OX 3. 레이블은 지도학습에서 모델이 맞히려는 정답 값이다.</b><div class="choices"><label><input type="radio" name="ox2" value="O"> O</label><label><input type="radio" name="ox2" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 분류에서는 고양이/강아지 같은 범주, 회귀에서는 점수나 가격 같은 수치가 레이블이 될 수 있다.</div></div><div class="q"><b>OX 4. 훈련 데이터는 모델을 학습시키는 데 사용된다.</b><div class="choices"><label><input type="radio" name="ox3" value="O"> O</label><label><input type="radio" name="ox3" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 모델은 훈련 데이터를 바탕으로 패턴을 학습한다.</div></div><div class="q"><b>OX 5. 테스트 데이터는 모델이 이미 외운 데이터를 다시 확인하는 데만 사용한다.</b><div class="choices"><label><input type="radio" name="ox4" value="O"> O</label><label><input type="radio" name="ox4" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 테스트 데이터는 학습에 사용하지 않은 데이터로 모델의 일반화 성능을 평가하는 데 사용한다.</div></div><div class="q"><b>OX 6. 과적합은 훈련 데이터에는 잘 맞지만 새로운 데이터에는 잘 맞지 않는 상태이다.</b><div class="choices"><label><input type="radio" name="ox5" value="O"> O</label><label><input type="radio" name="ox5" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 모델이 훈련 데이터의 세부 사항까지 지나치게 외우면 일반화 성능이 떨어질 수 있다.</div></div><div class="q"><b>OX 7. 모델의 오차는 예측값과 실제값의 차이로 이해할 수 있다.</b><div class="choices"><label><input type="radio" name="ox6" value="O"> O</label><label><input type="radio" name="ox6" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 오차를 줄이는 방향으로 모델이 학습된다.</div></div><div class="q"><b>OX 8. 분류는 연속적인 수치를 예측하는 문제만 의미한다.</b><div class="choices"><label><input type="radio" name="ox7" value="O"> O</label><label><input type="radio" name="ox7" value="X"> X</label></div><div class="answer ox"><b>정답:</b> X<br><b>상세풀이:</b> 분류는 범주를 예측하는 문제이고, 연속 수치 예측은 회귀이다.</div></div><div class="q"><b>OX 9. 회귀는 주로 숫자 값을 예측하는 문제이다.</b><div class="choices"><label><input type="radio" name="ox8" value="O"> O</label><label><input type="radio" name="ox8" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 집값, 점수, 온도처럼 연속적인 수치를 예측하는 문제가 회귀이다.</div></div><div class="q"><b>OX 10. 좋은 머신러닝 모델은 훈련 데이터뿐 아니라 새로운 데이터에도 잘 작동해야 한다.</b><div class="choices"><label><input type="radio" name="ox9" value="O"> O</label><label><input type="radio" name="ox9" value="X"> X</label></div><div class="answer ox"><b>정답:</b> O<br><b>상세풀이:</b> 새로운 데이터에 대한 성능, 즉 일반화 능력이 중요하다.</div></div></div><button onclick="gradeOX()">OX 채점하기</button><button onclick="showAll(&#39;ox&#39;)">OX 상세풀이 모두 보기</button></section>
+<section id="form"><h2>7. 형성평가 5지선다형 10문항</h2><div id="mcArea"><div class="q"><b>문항 1. 머신러닝의 설명으로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc0" value="0"> 1. 데이터에서 패턴을 학습해 예측이나 분류를 수행한다</label><label><input type="radio" name="mc0" value="1"> 2. 사람이 모든 규칙을 직접 손으로 쓰는 것만 뜻한다</label><label><input type="radio" name="mc0" value="2"> 3. 파일을 압축하는 기술이다</label><label><input type="radio" name="mc0" value="3"> 4. 그래프 색을 바꾸는 기술이다</label><label><input type="radio" name="mc0" value="4"> 5. 컴퓨터 전원을 켜는 방법이다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 머신러닝은 데이터로부터 패턴을 학습해 새로운 입력에 대한 결과를 예측한다.</div></div><div class="q"><b>문항 2. 특징의 의미로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc1" value="0"> 1. 모델이 예측에 사용하는 입력 변수</label><label><input type="radio" name="mc1" value="1"> 2. 모델이 맞혀야 하는 정답만</label><label><input type="radio" name="mc1" value="2"> 3. 파일 이름</label><label><input type="radio" name="mc1" value="3"> 4. 그래프 제목</label><label><input type="radio" name="mc1" value="4"> 5. 컴퓨터 배경화면</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 특징은 예측에 활용되는 입력 데이터이다.</div></div><div class="q"><b>문항 3. 레이블의 의미로 옳은 것은?</b><div class="choices"><label><input type="radio" name="mc2" value="0"> 1. 지도학습에서 모델이 맞히려는 정답 값</label><label><input type="radio" name="mc2" value="1"> 2. 입력 변수만</label><label><input type="radio" name="mc2" value="2"> 3. 파일 확장자</label><label><input type="radio" name="mc2" value="3"> 4. 색상 이름</label><label><input type="radio" name="mc2" value="4"> 5. 코드 주석</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 레이블은 지도학습에서 정답 역할을 하는 값이다.</div></div><div class="q"><b>문항 4. 훈련 데이터의 역할은?</b><div class="choices"><label><input type="radio" name="mc3" value="0"> 1. 모델이 패턴을 학습하는 데 사용된다</label><label><input type="radio" name="mc3" value="1"> 2. 모델 평가에만 사용되고 학습에는 쓰지 않는다</label><label><input type="radio" name="mc3" value="2"> 3. 항상 삭제한다</label><label><input type="radio" name="mc3" value="3"> 4. 그래프 축 이름이다</label><label><input type="radio" name="mc3" value="4"> 5. 인코딩 방식이다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 훈련 데이터는 모델을 학습시키는 자료이다.</div></div><div class="q"><b>문항 5. 테스트 데이터의 역할은?</b><div class="choices"><label><input type="radio" name="mc4" value="0"> 1. 학습하지 않은 데이터로 모델 성능을 평가한다</label><label><input type="radio" name="mc4" value="1"> 2. 모델이 외우도록 반복 학습시킨다</label><label><input type="radio" name="mc4" value="2"> 3. 항상 훈련 데이터와 같아야 한다</label><label><input type="radio" name="mc4" value="3"> 4. 레이블을 제거하는 용도만 있다</label><label><input type="radio" name="mc4" value="4"> 5. 파일을 저장하는 데 쓴다</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 테스트 데이터는 새로운 데이터에 대한 성능을 확인하는 데 사용한다.</div></div><div class="q"><b>문항 6. 과적합의 설명으로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc5" value="0"> 1. 훈련 데이터에는 잘 맞지만 새로운 데이터에는 약한 상태</label><label><input type="radio" name="mc5" value="1"> 2. 모델이 아무것도 학습하지 못한 상태만</label><label><input type="radio" name="mc5" value="2"> 3. 항상 좋은 상태</label><label><input type="radio" name="mc5" value="3"> 4. 데이터가 없는 상태</label><label><input type="radio" name="mc5" value="4"> 5. 정답이 없는 상태</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 과적합은 훈련 데이터에 지나치게 맞춰 일반화 성능이 떨어지는 현상이다.</div></div><div class="q"><b>문항 7. 분류 문제의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc6" value="0"> 1. 이메일을 스팸/정상으로 나누기</label><label><input type="radio" name="mc6" value="1"> 2. 내일 기온을 숫자로 예측하기</label><label><input type="radio" name="mc6" value="2"> 3. 집값을 예측하기</label><label><input type="radio" name="mc6" value="3"> 4. 키를 cm로 예측하기</label><label><input type="radio" name="mc6" value="4"> 5. 점수를 숫자로 예측하기</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 스팸/정상처럼 범주를 예측하는 것은 분류이다.</div></div><div class="q"><b>문항 8. 회귀 문제의 예로 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc7" value="0"> 1. 공부 시간으로 시험 점수를 예측하기</label><label><input type="radio" name="mc7" value="1"> 2. 사진을 고양이/강아지로 나누기</label><label><input type="radio" name="mc7" value="2"> 3. 메일을 스팸/정상으로 분류하기</label><label><input type="radio" name="mc7" value="3"> 4. 색을 빨강/파랑으로 나누기</label><label><input type="radio" name="mc7" value="4"> 5. 합격/불합격 예측만</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 점수처럼 연속 수치를 예측하는 것은 회귀이다.</div></div><div class="q"><b>문항 9. 오차의 의미로 가장 적절한 것은?</b><div class="choices"><label><input type="radio" name="mc8" value="0"> 1. 예측값과 실제값의 차이</label><label><input type="radio" name="mc8" value="1"> 2. 파일 크기</label><label><input type="radio" name="mc8" value="2"> 3. 자료형 이름</label><label><input type="radio" name="mc8" value="3"> 4. 그래프 색상</label><label><input type="radio" name="mc8" value="4"> 5. 문자열 길이</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 오차는 모델 예측이 실제 정답과 얼마나 다른지 나타낸다.</div></div><div class="q"><b>문항 10. 머신러닝 모델을 평가할 때 중요한 것은?</b><div class="choices"><label><input type="radio" name="mc9" value="0"> 1. 새로운 데이터에도 잘 작동하는지</label><label><input type="radio" name="mc9" value="1"> 2. 훈련 데이터만 완벽히 외우는지</label><label><input type="radio" name="mc9" value="2"> 3. 그래프가 화려한지</label><label><input type="radio" name="mc9" value="3"> 4. 파일 이름이 긴지</label><label><input type="radio" name="mc9" value="4"> 5. 코드 줄 수가 많은지</label></div><div class="answer mc"><b>정답:</b> 1번<br><b>상세풀이:</b> 일반화 성능은 머신러닝 모델 평가에서 매우 중요하다.</div></div></div><button onclick="gradeMC()">형성평가 채점하기</button><button onclick="showAll(&#39;mc&#39;)">형성평가 상세풀이 모두 보기</button></section>
+
+<section id="save">
+<h2>8. 학번_이름_데이터62_점수_응시시각.txt 생성</h2>
+<p class="notice">학번과 이름을 입력한 뒤 평가를 채점하고 저장 버튼을 누르면 TXT 파일이 생성됩니다.</p>
+<label>학번 <input id="studentId" placeholder="예: 10101"></label>
+<label>이름 <input id="studentName" placeholder="예: 김데이터"></label>
+<p><b>현재 점수:</b> <span id="scoreText">0</span>점 / 100점</p>
+<button onclick="saveTxt()">TXT 저장하기</button>
+</section>
+
+<section id="close">
+<h2>9. 수업을 마무리 하는 멘트</h2>
+<div class="quote">
+오늘 우리는 머신러닝이 데이터를 통해 패턴을 배우고, 새로운 데이터에 예측을 적용하는 원리를 배웠습니다.
+컴퓨터과학은 모델을 만들고 학습시키는 구조를 제공하고, 수학은 오차와 함수, 거리, 확률을 통해 학습 과정을 설명하며, 과학은 예측 결과가 실제 세계에서 검증되는지 묻게 합니다.
+그리고 인문 철학은 우리에게 묻습니다. “기계가 과거 데이터를 배웠다면, 그 안의 편견까지 함께 배운 것은 아닌가?”
+좋은 데이터 과학자는 모델의 정확도만 보는 사람이 아니라, 데이터의 출처와 한계, 과적합과 일반화, 그리고 사회적 책임까지 함께 생각하는 사람입니다.
+</div>
+</section>
+<footer>© 데이터 과학 수업자료 · 데이터62 머신러닝의 원리</footer>
+</main></div>
+
+<script>
+const oxQuestions = [{"q": "머신러닝은 데이터에서 패턴을 학습하여 예측이나 분류를 수행하는 방법이다.", "a": "O", "e": "머신러닝은 사람이 모든 규칙을 직접 쓰지 않고 데이터로부터 규칙성과 패턴을 학습한다."}, {"q": "특징은 모델이 예측에 사용하는 입력 변수이다.", "a": "O", "e": "예를 들어 공부 시간, 수면 시간, 이전 점수 등이 예측에 사용되는 특징이 될 수 있다."}, {"q": "레이블은 지도학습에서 모델이 맞히려는 정답 값이다.", "a": "O", "e": "분류에서는 고양이/강아지 같은 범주, 회귀에서는 점수나 가격 같은 수치가 레이블이 될 수 있다."}, {"q": "훈련 데이터는 모델을 학습시키는 데 사용된다.", "a": "O", "e": "모델은 훈련 데이터를 바탕으로 패턴을 학습한다."}, {"q": "테스트 데이터는 모델이 이미 외운 데이터를 다시 확인하는 데만 사용한다.", "a": "X", "e": "테스트 데이터는 학습에 사용하지 않은 데이터로 모델의 일반화 성능을 평가하는 데 사용한다."}, {"q": "과적합은 훈련 데이터에는 잘 맞지만 새로운 데이터에는 잘 맞지 않는 상태이다.", "a": "O", "e": "모델이 훈련 데이터의 세부 사항까지 지나치게 외우면 일반화 성능이 떨어질 수 있다."}, {"q": "모델의 오차는 예측값과 실제값의 차이로 이해할 수 있다.", "a": "O", "e": "오차를 줄이는 방향으로 모델이 학습된다."}, {"q": "분류는 연속적인 수치를 예측하는 문제만 의미한다.", "a": "X", "e": "분류는 범주를 예측하는 문제이고, 연속 수치 예측은 회귀이다."}, {"q": "회귀는 주로 숫자 값을 예측하는 문제이다.", "a": "O", "e": "집값, 점수, 온도처럼 연속적인 수치를 예측하는 문제가 회귀이다."}, {"q": "좋은 머신러닝 모델은 훈련 데이터뿐 아니라 새로운 데이터에도 잘 작동해야 한다.", "a": "O", "e": "새로운 데이터에 대한 성능, 즉 일반화 능력이 중요하다."}];
+const mcQuestions = [{"q": "머신러닝의 설명으로 가장 적절한 것은?", "c": ["데이터에서 패턴을 학습해 예측이나 분류를 수행한다", "사람이 모든 규칙을 직접 손으로 쓰는 것만 뜻한다", "파일을 압축하는 기술이다", "그래프 색을 바꾸는 기술이다", "컴퓨터 전원을 켜는 방법이다"], "a": 0, "e": "머신러닝은 데이터로부터 패턴을 학습해 새로운 입력에 대한 결과를 예측한다."}, {"q": "특징의 의미로 옳은 것은?", "c": ["모델이 예측에 사용하는 입력 변수", "모델이 맞혀야 하는 정답만", "파일 이름", "그래프 제목", "컴퓨터 배경화면"], "a": 0, "e": "특징은 예측에 활용되는 입력 데이터이다."}, {"q": "레이블의 의미로 옳은 것은?", "c": ["지도학습에서 모델이 맞히려는 정답 값", "입력 변수만", "파일 확장자", "색상 이름", "코드 주석"], "a": 0, "e": "레이블은 지도학습에서 정답 역할을 하는 값이다."}, {"q": "훈련 데이터의 역할은?", "c": ["모델이 패턴을 학습하는 데 사용된다", "모델 평가에만 사용되고 학습에는 쓰지 않는다", "항상 삭제한다", "그래프 축 이름이다", "인코딩 방식이다"], "a": 0, "e": "훈련 데이터는 모델을 학습시키는 자료이다."}, {"q": "테스트 데이터의 역할은?", "c": ["학습하지 않은 데이터로 모델 성능을 평가한다", "모델이 외우도록 반복 학습시킨다", "항상 훈련 데이터와 같아야 한다", "레이블을 제거하는 용도만 있다", "파일을 저장하는 데 쓴다"], "a": 0, "e": "테스트 데이터는 새로운 데이터에 대한 성능을 확인하는 데 사용한다."}, {"q": "과적합의 설명으로 적절한 것은?", "c": ["훈련 데이터에는 잘 맞지만 새로운 데이터에는 약한 상태", "모델이 아무것도 학습하지 못한 상태만", "항상 좋은 상태", "데이터가 없는 상태", "정답이 없는 상태"], "a": 0, "e": "과적합은 훈련 데이터에 지나치게 맞춰 일반화 성능이 떨어지는 현상이다."}, {"q": "분류 문제의 예로 적절한 것은?", "c": ["이메일을 스팸/정상으로 나누기", "내일 기온을 숫자로 예측하기", "집값을 예측하기", "키를 cm로 예측하기", "점수를 숫자로 예측하기"], "a": 0, "e": "스팸/정상처럼 범주를 예측하는 것은 분류이다."}, {"q": "회귀 문제의 예로 적절한 것은?", "c": ["공부 시간으로 시험 점수를 예측하기", "사진을 고양이/강아지로 나누기", "메일을 스팸/정상으로 분류하기", "색을 빨강/파랑으로 나누기", "합격/불합격 예측만"], "a": 0, "e": "점수처럼 연속 수치를 예측하는 것은 회귀이다."}, {"q": "오차의 의미로 가장 적절한 것은?", "c": ["예측값과 실제값의 차이", "파일 크기", "자료형 이름", "그래프 색상", "문자열 길이"], "a": 0, "e": "오차는 모델 예측이 실제 정답과 얼마나 다른지 나타낸다."}, {"q": "머신러닝 모델을 평가할 때 중요한 것은?", "c": ["새로운 데이터에도 잘 작동하는지", "훈련 데이터만 완벽히 외우는지", "그래프가 화려한지", "파일 이름이 긴지", "코드 줄 수가 많은지"], "a": 0, "e": "일반화 성능은 머신러닝 모델 평가에서 매우 중요하다."}];
+let oxScore = 0, mcScore = 0;
+function renderOX(){const area=document.getElementById("oxArea");oxQuestions.forEach((item,i)=>{area.innerHTML+=`<div class="q"><b>OX ${i+1}. ${item.q}</b><div class="choices"><label><input type="radio" name="ox${i}" value="O"> O</label><label><input type="radio" name="ox${i}" value="X"> X</label></div><div class="answer ox"><b>정답:</b> ${item.a}<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function renderMC(){const area=document.getElementById("mcArea");mcQuestions.forEach((item,i)=>{let labels="";item.c.forEach((choice,j)=>{labels+=`<label><input type="radio" name="mc${i}" value="${j}"> ${j+1}. ${choice}</label>`;});area.innerHTML+=`<div class="q"><b>문항 ${i+1}. ${item.q}</b><div class="choices">${labels}</div><div class="answer mc"><b>정답:</b> ${item.a+1}번<br><b>상세풀이:</b> ${item.e}</div></div>`;});}
+function gradeOX(){oxScore=0;oxQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="ox${i}"]:checked`);if(checked&&checked.value===item.a)oxScore+=5;});updateScore();alert("진단평가 OX 점수: "+oxScore+"점 / 50점");}
+function gradeMC(){mcScore=0;mcQuestions.forEach((item,i)=>{const checked=document.querySelector(`input[name="mc${i}"]:checked`);if(checked&&Number(checked.value)===item.a)mcScore+=5;});updateScore();alert("형성평가 점수: "+mcScore+"점 / 50점");}
+function updateScore(){document.getElementById("scoreText").innerText=oxScore+mcScore;}
+function showAll(cls){document.querySelectorAll("."+cls).forEach(el=>el.style.display="block");}
+function nowString(){const d=new Date();const pad=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());}
+function saveTxt(){const id=document.getElementById("studentId").value.trim()||"학번";const name=document.getElementById("studentName").value.trim()||"이름";const total=oxScore+mcScore;const time=nowString();let content="";content+="2025교육과정 고등학교 데이터 과학\n";content+="Ⅵ. 인공지능과 머신러닝 - 머신러닝의 원리\n";content+="학번: "+id+"\n";content+="이름: "+name+"\n";content+="진단평가 OX 점수: "+oxScore+" / 50\n";content+="형성평가 점수: "+mcScore+" / 50\n";content+="총점: "+total+" / 100\n";content+="응시시각: "+time+"\n";content+="\n[학습 성찰]\n머신러닝은 특징과 레이블을 이용해 데이터의 패턴을 학습하고, 새로운 데이터에 대해 예측·분류를 수행하는 원리이다.\n";const blob=new Blob([content],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`${id}_${name}_데이터62_${total}점_${time}.txt`;a.click();URL.revokeObjectURL(a.href);}
+renderOX();renderMC();
+</script>
+
+</body></html>
